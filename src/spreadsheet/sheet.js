@@ -1,10 +1,8 @@
-import {constants} from '../common/constants';
-import {generateBindables} from '../common/decorators';
-import {inlineView, customElement} from '../common/common';
+import {inlineView, customElement, constants, generateBindables} from '../common/common';
 
-@inlineView(`${constants.aureliaTemplateString}`)
+@inlineView('<template><content></content></template>')
 @customElement(`${constants.elementPrefix}sheet`)
-@generateBindables('sheets', ['border', 'cellTypes', 'cFormatRule', 'colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'frozenRows', 'frozenColumns', 'headerStyles', 'hideColumns', 'hideRows', 'mergeCells', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'rows', 'showGridlines', 'showHeader', 'showHeadings', 'sheetName', 'startCell'])
+@generateBindables('sheets', ['colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'headerStyles', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'sheetName', 'showGridlines', 'showHeader', 'showHeadings', 'startCell'])
 
 export class Sheet {
 }

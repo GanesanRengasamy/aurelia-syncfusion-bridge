@@ -14,6 +14,14 @@ export class BasicUse {
     this.captionSettings3 = {textAngle: 0, location: {x: 17, y: 20}, text: 'Revenue YTD', font: {color: null, fontFamily: 'Segoe UI', fontStyle: 'Normal', size: '12px', fontWeight: 'regular', opacity: 1}, subTitle: {textAngle: 0, text: '$ in Thousands', location: {x: 10, y: 35}, font: {color: null, fontFamily: 'Segoe UI', fontStyle: 'Normal ', size: '12px', fontWeight: 'regular', opacity: 1}}};
   }
   onLoad() {
-    this.update.loadBulletTheme();
+	let bulletInstance = $("#graph").data('ejBulletGraph'); 
+	this.update.loadBulletTheme(bulletInstance);	     
+	let bulletInstance1 = $("#graph1").data('ejBulletGraph');   
+    this.update.loadBulletTheme(bulletInstance1);
+	let bulletInstance2 = $("#graph2").data('ejBulletGraph');   
+    this.update.loadBulletTheme(bulletInstance2);
+	let bulletInstance3 = $("#graph3").data('ejBulletGraph');   
+    this.update.loadBulletTheme(bulletInstance3);
+	
   }
 }

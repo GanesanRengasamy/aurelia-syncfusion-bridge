@@ -2,10 +2,7 @@
 
 A set of [Aurelia](http://aurelia.io) wrappers for [Syncfusion Essential Studio for JavaScript](https://www.syncfusion.com/products/javascript)
 
-[![npm version](https://badge.fury.io/js/aurelia-syncfusion-bridge.svg)](https://www.npmjs.com/package/aurelia-syncfusion-bridge)
-[![Join the chat](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/syncfusion/aurelia-syncfusion-bridge?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
-
-
+**NOTE: This plugin is in active development and we would love to hear your feedback**  
 
 ### [Component catalog (demos)](http://aurelia-ui-toolkits.github.io/demo-syncfusion/)
 
@@ -15,10 +12,6 @@ A set of [Aurelia](http://aurelia.io) wrappers for [Syncfusion Essential Studio 
 ## Need help?
 
 Open up an [issue](https://github.com/aurelia-ui-toolkits/aurelia-syncfusion-bridge/issues)
-
-## Documentation
-
-For complete aurelia-syncfusion-bridge documentation, please visit [http://help.syncfusion.com/aurelia/](http://help.syncfusion.com/aurelia/)
 
 ## Running tests
 1. `npm install`

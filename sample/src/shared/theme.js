@@ -20,8 +20,7 @@ export class Theme {
       }
     }
 
-    loadBulletTheme() {
-      let bulletInstance = $('ej-bullet-graph').data('ejBulletGraph');
+    loadBulletTheme(bulletInstance) {
       if (bulletInstance && window.theme) {
         if (window.theme.includes('dark') || window.theme.includes('contrast')) {
           bulletInstance.model.theme = 'flatdark';

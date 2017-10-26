@@ -76,7 +76,7 @@ export class BasicUse {
         visible: true, connectorLine: { height: 30, type: 'line' },
         border: { width: 3, color: 'white' }
       };
-    } else if (jQuery.inArray(chartTarget.model.type, ['funnel']) > -1) {
+    } else if (jQuery.inArray(chartTarget.model.type, ['funnel', 'pyramid']) > -1) {
       chartTarget.model.commonSeriesOptions.marker = {
         dataLabel: {
           visible: true,

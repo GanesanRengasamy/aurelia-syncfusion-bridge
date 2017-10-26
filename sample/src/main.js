@@ -1,7 +1,11 @@
 import { Index as Theme }  from './themes/index';
+import 'jquery';
+import 'jsrender';
+import 'jquery-validation';
+import 'syncfusion-javascript/Scripts/ej/web/ej.web.all.min';
 
 export function configure(aurelia) {
-  window.themeSettings = 'online';
+  window.themeSettings = 'offline';
   aurelia.use
     .standardConfiguration()
     .developmentLogging()

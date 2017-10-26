@@ -45,6 +45,8 @@ export class BasicUse {
           model.axes[j].edgeLabelPlacement = 'hide';
         }
       }
+	  if(model.theme=="flatdark" || model.theme=="gradientdark" || model.theme == "high-contrast-01")	  	  
+	  sender.detail.data.series.marker.dataLabel.connectorLine.color="white";	  
     }
   }
 }

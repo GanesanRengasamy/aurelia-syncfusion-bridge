@@ -16,20 +16,13 @@
     padding: 5px 5px 5px .857em;
 }
 .material .dashboardSamplebutton .anchorclass {
-    height: 26px !important;
-    border-radius: 0;
-    text-decoration: none;
-	padding: 0.1em .4em .3em;
+    height: 22px !important;
 }
 .material .codebutton .anchorclass {
-    height: 29px !important;
-    border-radius: 0 !important;
-    line-height: 23px;
-    margin-left: 132px;
-    margin-top: -43px;
-    padding-left: 4px;
-    width: 20px;
-    text-decoration: none;
+    height: 27px !important;
+}
+.material .codebutton .codeimg:before {
+    margin: -5px 0px 0 -4px !important;
 }
 .theme-dark a {
     color: white;

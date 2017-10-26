@@ -33,10 +33,9 @@ System.config({
     "aurelia-templating": "npm:aurelia-templating@1.1.0",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
-    "bootstrap": "github:twbs/bootstrap@3.3.6",
+    "bootstrap": "github:twbs/bootstrap@3.3.7",
     "core-js": "npm:core-js@2.2.1",
-    "jquery": "npm:jquery@2.2.4",
-    "jquery-easing": "npm:jquery.easing@1.4.1",
+    "jquery": "npm:jquery@3.2.1",
     "jquery-validation": "npm:jquery-validation@1.15.0",
     "jquery-validation-unobtrusive": "npm:jquery-validation-unobtrusive@3.2.6",
     "jsrender": "npm:jsrender@0.9.80",
@@ -63,8 +62,8 @@ System.config({
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
-    "github:twbs/bootstrap@3.3.6": {
-      "jquery": "npm:jquery@2.2.4"
+    "github:twbs/bootstrap@3.3.7": {
+      "jquery": "npm:jquery@3.2.1"
     },
     "npm:assert@1.4.1": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -214,13 +213,10 @@ System.config({
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:jquery-validation-unobtrusive@3.2.6": {
-      "jquery": "npm:jquery@2.2.4",
+      "jquery": "npm:jquery@3.2.1",
       "jquery-validation": "npm:jquery-validation@1.15.0"
     },
     "npm:jquery-validation@1.15.0": {
-      "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:jquery.easing@1.4.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:jsrender@0.9.80": {

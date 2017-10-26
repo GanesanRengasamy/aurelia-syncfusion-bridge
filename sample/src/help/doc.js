@@ -2,8 +2,6 @@ import {inject} from 'aurelia-framework';
 import {Router} from 'aurelia-router';
 import {EventAggregator} from 'aurelia-event-aggregator';
 import registry from './registry.json!';
-import jQuery from 'jquery';
-import 'bootstrap';
 
 @inject(Router, EventAggregator)
 export class Doc {
@@ -32,7 +30,6 @@ export class Doc {
   }
 
   attached() {
-    $('.collapse').collapse();
     this.switchPage('1._introduction', 'about_this_application');
   }
 
@@ -50,7 +47,6 @@ export class Doc {
           this.activeDoc = file.path;
         }
       }
-      this.selectInAccordion(fileName, categoryName);
     }
   }
 
@@ -91,11 +87,6 @@ export class Doc {
         return file;
       }
     }
-  }
-
-  // expand the category by id
-  selectInAccordion(fileName, categoryName) {
-    jQuery('#' + this.encode(categoryName)).collapse('show');
   }
 
   // scroll to top after a doc has been loaded

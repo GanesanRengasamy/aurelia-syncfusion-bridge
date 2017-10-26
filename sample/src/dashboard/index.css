@@ -1,5 +1,5 @@
 .dashboard *{
-    box-sizing: content-box;
+    box-sizing: content-box !important;
     font-size: 10px;
 }
 .page-host {
@@ -57,13 +57,13 @@
     border: 1px solid #AAAAAA;
 }
 .dashboardSamplebutton {
-    margin-left: 20px;
-    margin-top: -43px;
-    position: absolute;
+    margin-left: 20px !important;
+    margin-top: -43px !important;
+    position: absolute !important;
 }
 .imgstyle {
     min-width: 316px;
-    min-height: 344px;
+    min-height: 348px;
     background-repeat: no-repeat;
 }
 .view{
@@ -74,9 +74,9 @@
 }
 .dashboardSamplebutton .anchorclass {
     height: 20px !important;
-    border-radius: 0;
-    text-decoration: none;
-	padding: 0.1em .4em .3em;
+    border-radius: 0 !important;
+    text-decoration: none !important;
+    padding: 3px 5px 6px 5px !important;
 
 }
 .anchorclass :hover *{
@@ -87,21 +87,22 @@
     float: left;
     height: 25px !important;
     border-radius: 0 !important;
-    line-height: 23px;
-    margin-left: 132px;
-    margin-top: -43px;
-    padding-left: 4px;
-    width: 20px;
-    text-decoration: none;
+    line-height: 23px !important;
+    margin-left: 132px !important;
+    margin-top: -43px !important;
+    padding-left: 4px !important;
+    width: 20px !important;
+    text-decoration: none !important;
+    padding-bottom: 3px !important;
 }
 .codebutton .codeimg:before {
     content: "\e780";
-    font-size: 18px;
-    margin: -5px 0px 0 -3px;
+    font-size: 18px !important;
+    margin: -2px 0px 0 -4px !important;
     
 }
 .codebutton{
-    position: absolute;
+    position: absolute !important;
 }
 @media only screen and (max-width:818px)  {
 .dashboard {  
