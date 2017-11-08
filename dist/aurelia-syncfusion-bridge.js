@@ -2543,12 +2543,12 @@ export class ejHeatMapLegend extends WidgetBase {
 }
 
 
-import 'ej.menu.min';
+import 'ej.listbox.min';
 
-@customAttribute(`${constants.attributePrefix}menu`)
-@generateBindables('ejMenu', ['animationType', 'contextMenuTarget', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width'], [], {'enableRTL': 'enableRtl'})
+@customAttribute(`${constants.attributePrefix}list-box`)
+@generateBindables('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
 @inject(Element)
-export class ejMenu extends WidgetBase {
+export class ejListBox extends WidgetBase {
   constructor(element) {
     super();
     this.element = element;
@@ -2556,12 +2556,12 @@ export class ejMenu extends WidgetBase {
 }
 
 
-import 'ej.listbox.min';
+import 'ej.menu.min';
 
-@customAttribute(`${constants.attributePrefix}list-box`)
-@generateBindables('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
+@customAttribute(`${constants.attributePrefix}menu`)
+@generateBindables('ejMenu', ['animationType', 'contextMenuTarget', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width'], [], {'enableRTL': 'enableRtl'})
 @inject(Element)
-export class ejListBox extends WidgetBase {
+export class ejMenu extends WidgetBase {
   constructor(element) {
     super();
     this.element = element;
@@ -3074,6 +3074,465 @@ export class ejToolbar extends WidgetBase {
 }
 
 
+'use strict';
+
+System.register(['aurelia-pal'], function (_export, _context) {
+  "use strict";
+
+  var PLATFORM, EjConfigBuilder;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  return {
+    setters: [function (_aureliaPal) {
+      PLATFORM = _aureliaPal.PLATFORM;
+    }],
+    execute: function () {
+      _export('EjConfigBuilder', EjConfigBuilder = function () {
+        function EjConfigBuilder() {
+          _classCallCheck(this, EjConfigBuilder);
+
+          this.resources = [];
+          this.useGlobalResources = true;
+        }
+
+        EjConfigBuilder.prototype.useAll = function useAll() {
+          this.ejGrid().ejChart().ejSunburstChart().ejMap().ejTreeMap().ejRangeNavigator().ejDiagram().ejHeatMap().ejHeatMapLegend().ejSparkline().ejSymbolPalette().ejOverview().ejPager().ejBulletGraph().ejCircularGauge().ejLinearGauge().ejDigitalGauge().ejSplitter().ejDatePicker().ejGantt().ejTreeGrid().ejColorPicker().ejDialog().ejScroller().ejBarcode().ejPdfViewer().ejNumericTextbox().ejCurrencyTextbox().ejPercentageTextbox().ejTimePicker().ejToolbar().ejMenu().ejMaskEdit().ejTreeView().ejKanban().ejRibbon().ejSpreadsheet().ejRating().ejListBox().ejListView().ejNavigationDrawer().ejRotator().ejRTE().ejDropDownList().ejAutocomplete().ejRadialMenu().ejRadialSlider().ejTile().ejAccordion().ejTab().ejCheckBox().ejRadioButton().ejToggleButton().ejSplitButton().ejGroupButton().ejDateTimePicker().ejDateRangePicker().ejProgressBar().ejTagCloud().ejButton().ejSlider().ejFileExplorer().ejPivotGrid().ejPivotChart().ejPivotGauge().ejPivotSchemaDesigner().ejPivotTreeMap().ejWaitingPopup().ejReportViewer().ejSchedule().ejUploadbox().ejSignature().ejTooltip().ejSpellCheck().ejTemplate();
+          return this;
+        };
+
+        EjConfigBuilder.prototype.withoutGlobalResources = function withoutGlobalResources() {
+          this.useGlobalResources = false;
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejGrid = function ejGrid() {
+          this.resources.push(PLATFORM.moduleName('./grid/grid'));
+          this.resources.push(PLATFORM.moduleName('./grid/column'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejChart = function ejChart() {
+          this.resources.push(PLATFORM.moduleName('./chart/chart'));
+          this.resources.push(PLATFORM.moduleName('./chart/series'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSunburstChart = function ejSunburstChart() {
+          this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstchart'));
+          this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstlevels'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejMap = function ejMap() {
+          this.resources.push(PLATFORM.moduleName('./map/map'));
+          this.resources.push(PLATFORM.moduleName('./map/layer'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTreeMap = function ejTreeMap() {
+          this.resources.push(PLATFORM.moduleName('./treemap/treemap'));
+          this.resources.push(PLATFORM.moduleName('./treemap/level'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRangeNavigator = function ejRangeNavigator() {
+          this.resources.push(PLATFORM.moduleName('./rangenavigator/rangenavigator'));
+          this.resources.push(PLATFORM.moduleName('./rangenavigator/rangeseries'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDiagram = function ejDiagram() {
+          this.resources.push(PLATFORM.moduleName('./diagram/diagram'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejHeatMap = function ejHeatMap() {
+          this.resources.push(PLATFORM.moduleName('./heatmap/heatmap'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejHeatMapLegend = function ejHeatMapLegend() {
+          this.resources.push(PLATFORM.moduleName('./heatmaplegend/heatmaplegend'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSparkline = function ejSparkline() {
+          this.resources.push(PLATFORM.moduleName('./sparkline/sparkline'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSymbolPalette = function ejSymbolPalette() {
+          this.resources.push(PLATFORM.moduleName('./symbolpalette/symbolpalette'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejOverview = function ejOverview() {
+          this.resources.push(PLATFORM.moduleName('./overview/overview'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPager = function ejPager() {
+          this.resources.push(PLATFORM.moduleName('./pager/pager'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejBulletGraph = function ejBulletGraph() {
+          this.resources.push(PLATFORM.moduleName('./bulletgraph/bulletgraph'));
+          this.resources.push(PLATFORM.moduleName('./bulletgraph/qualitativerange'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejCircularGauge = function ejCircularGauge() {
+          this.resources.push(PLATFORM.moduleName('./circulargauge/circulargauge'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejLinearGauge = function ejLinearGauge() {
+          this.resources.push(PLATFORM.moduleName('./lineargauge/lineargauge'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDigitalGauge = function ejDigitalGauge() {
+          this.resources.push(PLATFORM.moduleName('./digitalgauge/digitalgauge'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSplitter = function ejSplitter() {
+          this.resources.push(PLATFORM.moduleName('./splitter/splitter'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDatePicker = function ejDatePicker() {
+          this.resources.push(PLATFORM.moduleName('./datepicker/datepicker'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejGantt = function ejGantt() {
+          this.resources.push(PLATFORM.moduleName('./gantt/gantt'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTreeGrid = function ejTreeGrid() {
+          this.resources.push(PLATFORM.moduleName('./treegrid/treegrid'));
+          this.resources.push(PLATFORM.moduleName('./treegrid/treegridcolumn'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejColorPicker = function ejColorPicker() {
+          this.resources.push(PLATFORM.moduleName('./colorpicker/colorpicker'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDialog = function ejDialog() {
+          this.resources.push(PLATFORM.moduleName('./dialog/dialog'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejScroller = function ejScroller() {
+          this.resources.push(PLATFORM.moduleName('./scroller/scroller'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejBarcode = function ejBarcode() {
+          this.resources.push(PLATFORM.moduleName('./barcode/barcode'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPdfViewer = function ejPdfViewer() {
+          this.resources.push(PLATFORM.moduleName('./pdfviewer/pdfviewer'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejNumericTextbox = function ejNumericTextbox() {
+          this.resources.push(PLATFORM.moduleName('./numerictextbox/numerictextbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejCurrencyTextbox = function ejCurrencyTextbox() {
+          this.resources.push(PLATFORM.moduleName('./currencytextbox/currencytextbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPercentageTextbox = function ejPercentageTextbox() {
+          this.resources.push(PLATFORM.moduleName('./percentagetextbox/percentagetextbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTimePicker = function ejTimePicker() {
+          this.resources.push(PLATFORM.moduleName('./timepicker/timepicker'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejToolbar = function ejToolbar() {
+          this.resources.push(PLATFORM.moduleName('./toolbar/toolbar'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejMenu = function ejMenu() {
+          this.resources.push(PLATFORM.moduleName('./menu/menu'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejMaskEdit = function ejMaskEdit() {
+          this.resources.push(PLATFORM.moduleName('./maskedit/maskedit'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTreeView = function ejTreeView() {
+          this.resources.push(PLATFORM.moduleName('./treeview/treeview'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejKanban = function ejKanban() {
+          this.resources.push(PLATFORM.moduleName('./kanban/kanban'));
+          this.resources.push(PLATFORM.moduleName('./kanban/kanbancolumn'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRibbon = function ejRibbon() {
+          this.resources.push(PLATFORM.moduleName('./ribbon/ribbon'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSpreadsheet = function ejSpreadsheet() {
+          this.resources.push(PLATFORM.moduleName('./spreadsheet/spreadsheet'));
+          this.resources.push(PLATFORM.moduleName('./spreadsheet/sheet'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRating = function ejRating() {
+          this.resources.push(PLATFORM.moduleName('./rating/rating'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejListBox = function ejListBox() {
+          this.resources.push(PLATFORM.moduleName('./listbox/listbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejListView = function ejListView() {
+          this.resources.push(PLATFORM.moduleName('./listview/listview'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejNavigationDrawer = function ejNavigationDrawer() {
+          this.resources.push(PLATFORM.moduleName('./navigationdrawer/navigationdrawer'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRotator = function ejRotator() {
+          this.resources.push(PLATFORM.moduleName('./rotator/rotator'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRTE = function ejRTE() {
+          this.resources.push(PLATFORM.moduleName('./rte/rte'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDropDownList = function ejDropDownList() {
+          this.resources.push(PLATFORM.moduleName('./dropdownlist/dropdownlist'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejAutocomplete = function ejAutocomplete() {
+          this.resources.push(PLATFORM.moduleName('./autocomplete/autocomplete'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRadialMenu = function ejRadialMenu() {
+          this.resources.push(PLATFORM.moduleName('./radialmenu/radialmenu'));
+          this.resources.push(PLATFORM.moduleName('./radialmenu/item'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRadialSlider = function ejRadialSlider() {
+          this.resources.push(PLATFORM.moduleName('./radialslider/radialslider'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTile = function ejTile() {
+          this.resources.push(PLATFORM.moduleName('./tile/tile'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejAccordion = function ejAccordion() {
+          this.resources.push(PLATFORM.moduleName('./accordion/accordion'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTab = function ejTab() {
+          this.resources.push(PLATFORM.moduleName('./tab/tab'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejCheckBox = function ejCheckBox() {
+          this.resources.push(PLATFORM.moduleName('./checkbox/checkbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejRadioButton = function ejRadioButton() {
+          this.resources.push(PLATFORM.moduleName('./radiobutton/radiobutton'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejToggleButton = function ejToggleButton() {
+          this.resources.push(PLATFORM.moduleName('./togglebutton/togglebutton'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSplitButton = function ejSplitButton() {
+          this.resources.push(PLATFORM.moduleName('./splitbutton/splitbutton'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejGroupButton = function ejGroupButton() {
+          this.resources.push(PLATFORM.moduleName('./groupbutton/groupbutton'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDateTimePicker = function ejDateTimePicker() {
+          this.resources.push(PLATFORM.moduleName('./datetimepicker/datetimepicker'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejDateRangePicker = function ejDateRangePicker() {
+          this.resources.push(PLATFORM.moduleName('./daterangepicker/daterangepicker'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejProgressBar = function ejProgressBar() {
+          this.resources.push(PLATFORM.moduleName('./progressbar/progressbar'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTagCloud = function ejTagCloud() {
+          this.resources.push(PLATFORM.moduleName('./tagcloud/tagcloud'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejButton = function ejButton() {
+          this.resources.push(PLATFORM.moduleName('./button/button'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSlider = function ejSlider() {
+          this.resources.push(PLATFORM.moduleName('./slider/slider'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejFileExplorer = function ejFileExplorer() {
+          this.resources.push(PLATFORM.moduleName('./fileexplorer/fileexplorer'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPivotGrid = function ejPivotGrid() {
+          this.resources.push(PLATFORM.moduleName('./pivotgrid/pivotgrid'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPivotChart = function ejPivotChart() {
+          this.resources.push(PLATFORM.moduleName('./pivotchart/pivotchart'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPivotGauge = function ejPivotGauge() {
+          this.resources.push(PLATFORM.moduleName('./pivotgauge/pivotgauge'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPivotSchemaDesigner = function ejPivotSchemaDesigner() {
+          this.resources.push(PLATFORM.moduleName('./pivotschemadesigner/pivotschemadesigner'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejPivotTreeMap = function ejPivotTreeMap() {
+          this.resources.push(PLATFORM.moduleName('./pivottreemap/pivottreemap'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejWaitingPopup = function ejWaitingPopup() {
+          this.resources.push(PLATFORM.moduleName('./waitingpopup/waitingpopup'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejReportViewer = function ejReportViewer() {
+          this.resources.push(PLATFORM.moduleName('./reportviewer/reportviewer'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSchedule = function ejSchedule() {
+          this.resources.push(PLATFORM.moduleName('./schedule/schedule'));
+          this.resources.push(PLATFORM.moduleName('./schedule/scheduleresource'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejUploadbox = function ejUploadbox() {
+          this.resources.push(PLATFORM.moduleName('./uploadbox/uploadbox'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSignature = function ejSignature() {
+          this.resources.push(PLATFORM.moduleName('./signature/signature'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTooltip = function ejTooltip() {
+          this.resources.push(PLATFORM.moduleName('./tooltip/tooltip'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejSpellCheck = function ejSpellCheck() {
+          this.resources.push(PLATFORM.moduleName('./spellcheck/spellcheck'));
+          return this;
+        };
+
+        EjConfigBuilder.prototype.ejTemplate = function ejTemplate() {
+          this.resources.push(PLATFORM.moduleName('./common/template'));
+          return this;
+        };
+
+        return EjConfigBuilder;
+      }());
+
+      _export('EjConfigBuilder', EjConfigBuilder);
+    }
+  };
+});
+'use strict';
+
+System.register(['./config-builder'], function (_export, _context) {
+  "use strict";
+
+  var EjConfigBuilder;
+  function configure(aurelia, configCallback) {
+    var builder = new EjConfigBuilder();
+
+    if (configCallback !== undefined && typeof configCallback === 'function') {
+      configCallback(builder);
+    }
+
+    var resources = builder.resources;
+
+    if (builder.useGlobalResources) {
+      aurelia.globalResources(resources);
+    }
+  }
+
+  _export('configure', configure);
+
+  return {
+    setters: [function (_configBuilder) {
+      EjConfigBuilder = _configBuilder.EjConfigBuilder;
+    }],
+    execute: function () {}
+  };
+});
 define(['exports', 'aurelia-pal'], function (exports, _aureliaPal) {
   'use strict';
 
@@ -3517,6 +3976,434 @@ define(['exports', './config-builder'], function (exports, _configBuilder) {
     }
   }
 });
+/**
+* Plugin configuration builder
+*/
+
+export class EjConfigBuilder {
+
+  resources: string[] = [];
+  useGlobalResources: boolean = true;
+
+  /**
+  * Globally register all EJ wrappers including templating support
+  */
+  useAll() : EjConfigBuilder {
+    this.ejGrid()
+    .ejChart()
+    .ejSunburstChart()
+    .ejMap()
+    .ejTreeMap()
+    .ejRangeNavigator()
+    .ejDiagram()
+    .ejHeatMap()
+    .ejHeatMapLegend()
+    .ejSparkline()
+    .ejSymbolPalette()
+    .ejOverview()
+    .ejPager()
+    .ejBulletGraph()
+    .ejCircularGauge()
+    .ejLinearGauge()
+    .ejDigitalGauge()
+    .ejSplitter()
+    .ejDatePicker()
+    .ejGantt()
+    .ejTreeGrid()
+    .ejColorPicker()
+    .ejDialog()
+    .ejScroller()
+    .ejBarcode()
+    .ejPdfViewer()
+    .ejNumericTextbox()
+    .ejCurrencyTextbox()
+    .ejPercentageTextbox()
+    .ejTimePicker()
+    .ejToolbar()
+    .ejMenu()
+    .ejMaskEdit()
+    .ejTreeView()
+    .ejKanban()
+    .ejRibbon()
+    .ejSpreadsheet()
+    .ejRating()
+    .ejListBox()
+    .ejListView()
+    .ejNavigationDrawer()
+    .ejRotator()
+    .ejRTE()
+    .ejDropDownList()
+    .ejAutocomplete()
+    .ejRadialMenu()
+    .ejRadialSlider()
+    .ejTile()
+    .ejAccordion()
+    .ejTab()
+    .ejCheckBox()
+    .ejRadioButton()
+    .ejToggleButton()
+    .ejSplitButton()
+    .ejGroupButton()
+    .ejDateTimePicker()
+    .ejDateRangePicker()
+    .ejProgressBar()
+    .ejTagCloud()
+    .ejButton()
+    .ejSlider()
+    .ejFileExplorer()
+    .ejPivotGrid()
+    .ejPivotChart()
+    .ejPivotGauge()
+    .ejPivotSchemaDesigner()
+    .ejPivotTreeMap()
+    .ejWaitingPopup()
+    .ejReportViewer()
+    .ejSchedule()
+    .ejUploadbox()
+    .ejSignature()
+    .ejTooltip()
+    .ejSpellCheck()
+    .ejTemplate();
+    return this;
+  }
+ /**
+  * Don't globalize any resources
+  * Allows you to import wrappers yourself via <require></require>
+  */
+  withoutGlobalResources(): EjConfigBuilder {
+    this.useGlobalResources = false;
+    return this;
+  }
+  ejGrid(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./grid/grid'));
+    this.resources.push(PLATFORM.moduleName('./grid/column'));
+    return this;
+  }
+  ejChart(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./chart/chart'));
+    this.resources.push(PLATFORM.moduleName('./chart/series'));
+    return this;
+  }
+  ejSunburstChart(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstchart'));
+    this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstlevels'));
+    return this;
+  }
+  ejMap(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./map/map'));
+    this.resources.push(PLATFORM.moduleName('./map/layer'));
+    return this;
+  }
+  ejTreeMap(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./treemap/treemap'));
+    this.resources.push(PLATFORM.moduleName('./treemap/level'));
+    return this;
+  }
+  ejRangeNavigator(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./rangenavigator/rangenavigator'));
+    this.resources.push(PLATFORM.moduleName('./rangenavigator/rangeseries'));
+    return this;
+  }
+  ejDiagram(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./diagram/diagram'));
+    return this;
+  }
+  ejHeatMap(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./heatmap/heatmap'));
+    return this;
+  }
+  ejHeatMapLegend(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./heatmaplegend/heatmaplegend'));
+    return this;
+  }
+  ejSparkline(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./sparkline/sparkline'));
+    return this;
+  }
+  ejSymbolPalette(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./symbolpalette/symbolpalette'));
+    return this;
+  }
+  ejOverview(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./overview/overview'));
+    return this;
+  }
+  ejPager(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pager/pager'));
+    return this;
+  }
+  ejBulletGraph(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./bulletgraph/bulletgraph'));
+    this.resources.push(PLATFORM.moduleName('./bulletgraph/qualitativerange'));
+    return this;
+  }
+  ejCircularGauge(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./circulargauge/circulargauge'));
+    return this;
+  }
+  ejLinearGauge(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./lineargauge/lineargauge'));
+    return this;
+  }
+  ejDigitalGauge(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./digitalgauge/digitalgauge'));
+    return this;
+  }
+  ejSplitter(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./splitter/splitter'));
+    return this;
+  }
+  ejDatePicker(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./datepicker/datepicker'));
+    return this;
+  }
+  ejGantt(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./gantt/gantt'));
+    return this;
+  }
+  ejTreeGrid(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./treegrid/treegrid'));
+    this.resources.push(PLATFORM.moduleName('./treegrid/treegridcolumn'));
+    return this;
+  }
+  ejColorPicker(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./colorpicker/colorpicker'));
+    return this;
+  }
+  ejDialog(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./dialog/dialog'));
+    return this;
+  }
+  ejScroller(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./scroller/scroller'));
+    return this;
+  }
+  ejBarcode(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./barcode/barcode'));
+    return this;
+  }
+  ejPdfViewer(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pdfviewer/pdfviewer'));
+    return this;
+  }
+  ejNumericTextbox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./numerictextbox/numerictextbox'));
+    return this;
+  }
+  ejCurrencyTextbox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./currencytextbox/currencytextbox'));
+    return this;
+  }
+  ejPercentageTextbox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./percentagetextbox/percentagetextbox'));
+    return this;
+  }
+  ejTimePicker(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./timepicker/timepicker'));
+    return this;
+  }
+  ejToolbar(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./toolbar/toolbar'));
+    return this;
+  }
+  ejMenu(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./menu/menu'));
+    return this;
+  }
+  ejMaskEdit(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./maskedit/maskedit'));
+    return this;
+  }
+  ejTreeView(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./treeview/treeview'));
+    return this;
+  }
+  ejKanban(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./kanban/kanban'));
+    this.resources.push(PLATFORM.moduleName('./kanban/kanbancolumn'));
+    return this;
+  }
+  ejRibbon(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./ribbon/ribbon'));
+    return this;
+  }
+  ejSpreadsheet(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./spreadsheet/spreadsheet'));
+    this.resources.push(PLATFORM.moduleName('./spreadsheet/sheet'));
+    return this;
+  }
+  ejRating(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./rating/rating'));
+    return this;
+  }
+  ejListBox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./listbox/listbox'));
+    return this;
+  }
+  ejListView(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./listview/listview'));
+    return this;
+  }
+  ejNavigationDrawer(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./navigationdrawer/navigationdrawer'));
+    return this;
+  }
+  ejRotator(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./rotator/rotator'));
+    return this;
+  }
+  ejRTE(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./rte/rte'));
+    return this;
+  }
+  ejDropDownList(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./dropdownlist/dropdownlist'));
+    return this;
+  }
+  ejAutocomplete(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./autocomplete/autocomplete'));
+    return this;
+  }
+  ejRadialMenu(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./radialmenu/radialmenu'));
+    this.resources.push(PLATFORM.moduleName('./radialmenu/item'));
+    return this;
+  }
+  ejRadialSlider(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./radialslider/radialslider'));
+    return this;
+  }
+  ejTile(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./tile/tile'));
+    return this;
+  }
+  ejAccordion(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./accordion/accordion'));
+    return this;
+  }
+  ejTab(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./tab/tab'));
+    return this;
+  }
+  ejCheckBox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./checkbox/checkbox'));
+    return this;
+  }
+  ejRadioButton(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./radiobutton/radiobutton'));
+    return this;
+  }
+  ejToggleButton(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./togglebutton/togglebutton'));
+    return this;
+  }
+  ejSplitButton(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./splitbutton/splitbutton'));
+    return this;
+  }
+  ejGroupButton(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./groupbutton/groupbutton'));
+    return this;
+  }
+  ejDateTimePicker(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./datetimepicker/datetimepicker'));
+    return this;
+  }
+  ejDateRangePicker(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./daterangepicker/daterangepicker'));
+    return this;
+  }
+  ejProgressBar(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./progressbar/progressbar'));
+    return this;
+  }
+  ejTagCloud(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./tagcloud/tagcloud'));
+    return this;
+  }
+  ejButton(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./button/button'));
+    return this;
+  }
+  ejSlider(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./slider/slider'));
+    return this;
+  }
+  ejFileExplorer(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./fileexplorer/fileexplorer'));
+    return this;
+  }
+  ejPivotGrid(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pivotgrid/pivotgrid'));
+    return this;
+  }
+  ejPivotChart(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pivotchart/pivotchart'));
+    return this;
+  }
+  ejPivotGauge(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pivotgauge/pivotgauge'));
+    return this;
+  }
+  ejPivotSchemaDesigner(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pivotschemadesigner/pivotschemadesigner'));
+    return this;
+  }
+  ejPivotTreeMap(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./pivottreemap/pivottreemap'));
+    return this;
+  }
+  ejWaitingPopup(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./waitingpopup/waitingpopup'));
+    return this;
+  }
+  ejReportViewer(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./reportviewer/reportviewer'));
+    return this;
+  }
+  ejSchedule(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./schedule/schedule'));
+    this.resources.push(PLATFORM.moduleName('./schedule/scheduleresource'));
+    return this;
+  }
+  ejUploadbox(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./uploadbox/uploadbox'));
+    return this;
+  }
+  ejSignature(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./signature/signature'));
+    return this;
+  }
+  ejTooltip(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./tooltip/tooltip'));
+    return this;
+  }
+  ejSpellCheck(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./spellcheck/spellcheck'));
+    return this;
+  }
+  ejTemplate(): EjConfigBuilder {
+    this.resources.push(PLATFORM.moduleName('./common/template'));
+    return this;
+  }
+}
+
+
+export function configure(aurelia, configCallback?: (builder: EjConfigBuilder) => void) {
+  let builder = new EjConfigBuilder();
+
+  if (configCallback !== undefined && typeof(configCallback) === 'function') {
+    configCallback(builder);
+  }
+
+      // Pull the data off the builder
+  let resources = builder.resources;
+
+  if (builder.useGlobalResources) {
+    aurelia.globalResources(resources);
+  }
+}
+
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -3994,434 +4881,687 @@ var ejColorPicker = exports.ejColorPicker = (_dec = (0, _common.customAttribute)
 
   return ejColorPicker;
 }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-/**
-* Plugin configuration builder
-*/
+'use strict';
 
-export class EjConfigBuilder {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TemplatingEngine = exports.children = exports.customElement = exports.inlineView = exports.inject = exports.bindable = exports.customAttribute = undefined;
 
-  resources: string[] = [];
-  useGlobalResources: boolean = true;
+var _aureliaTemplating = require('aurelia-templating');
 
-  /**
-  * Globally register all EJ wrappers including templating support
-  */
-  useAll() : EjConfigBuilder {
-    this.ejGrid()
-    .ejChart()
-    .ejSunburstChart()
-    .ejMap()
-    .ejTreeMap()
-    .ejRangeNavigator()
-    .ejDiagram()
-    .ejHeatMap()
-    .ejHeatMapLegend()
-    .ejSparkline()
-    .ejSymbolPalette()
-    .ejOverview()
-    .ejPager()
-    .ejBulletGraph()
-    .ejCircularGauge()
-    .ejLinearGauge()
-    .ejDigitalGauge()
-    .ejSplitter()
-    .ejDatePicker()
-    .ejGantt()
-    .ejTreeGrid()
-    .ejColorPicker()
-    .ejDialog()
-    .ejScroller()
-    .ejBarcode()
-    .ejPdfViewer()
-    .ejNumericTextbox()
-    .ejCurrencyTextbox()
-    .ejPercentageTextbox()
-    .ejTimePicker()
-    .ejToolbar()
-    .ejMenu()
-    .ejMaskEdit()
-    .ejTreeView()
-    .ejKanban()
-    .ejRibbon()
-    .ejSpreadsheet()
-    .ejRating()
-    .ejListBox()
-    .ejListView()
-    .ejNavigationDrawer()
-    .ejRotator()
-    .ejRTE()
-    .ejDropDownList()
-    .ejAutocomplete()
-    .ejRadialMenu()
-    .ejRadialSlider()
-    .ejTile()
-    .ejAccordion()
-    .ejTab()
-    .ejCheckBox()
-    .ejRadioButton()
-    .ejToggleButton()
-    .ejSplitButton()
-    .ejGroupButton()
-    .ejDateTimePicker()
-    .ejDateRangePicker()
-    .ejProgressBar()
-    .ejTagCloud()
-    .ejButton()
-    .ejSlider()
-    .ejFileExplorer()
-    .ejPivotGrid()
-    .ejPivotChart()
-    .ejPivotGauge()
-    .ejPivotSchemaDesigner()
-    .ejPivotTreeMap()
-    .ejWaitingPopup()
-    .ejReportViewer()
-    .ejSchedule()
-    .ejUploadbox()
-    .ejSignature()
-    .ejTooltip()
-    .ejSpellCheck()
-    .ejTemplate();
-    return this;
-  }
- /**
-  * Don't globalize any resources
-  * Allows you to import wrappers yourself via <require></require>
-  */
-  withoutGlobalResources(): EjConfigBuilder {
-    this.useGlobalResources = false;
-    return this;
-  }
-  ejGrid(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./grid/grid'));
-    this.resources.push(PLATFORM.moduleName('./grid/column'));
-    return this;
-  }
-  ejChart(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./chart/chart'));
-    this.resources.push(PLATFORM.moduleName('./chart/series'));
-    return this;
-  }
-  ejSunburstChart(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstchart'));
-    this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstlevels'));
-    return this;
-  }
-  ejMap(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./map/map'));
-    this.resources.push(PLATFORM.moduleName('./map/layer'));
-    return this;
-  }
-  ejTreeMap(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./treemap/treemap'));
-    this.resources.push(PLATFORM.moduleName('./treemap/level'));
-    return this;
-  }
-  ejRangeNavigator(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./rangenavigator/rangenavigator'));
-    this.resources.push(PLATFORM.moduleName('./rangenavigator/rangeseries'));
-    return this;
-  }
-  ejDiagram(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./diagram/diagram'));
-    return this;
-  }
-  ejHeatMap(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./heatmap/heatmap'));
-    return this;
-  }
-  ejHeatMapLegend(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./heatmaplegend/heatmaplegend'));
-    return this;
-  }
-  ejSparkline(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./sparkline/sparkline'));
-    return this;
-  }
-  ejSymbolPalette(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./symbolpalette/symbolpalette'));
-    return this;
-  }
-  ejOverview(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./overview/overview'));
-    return this;
-  }
-  ejPager(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pager/pager'));
-    return this;
-  }
-  ejBulletGraph(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./bulletgraph/bulletgraph'));
-    this.resources.push(PLATFORM.moduleName('./bulletgraph/qualitativerange'));
-    return this;
-  }
-  ejCircularGauge(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./circulargauge/circulargauge'));
-    return this;
-  }
-  ejLinearGauge(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./lineargauge/lineargauge'));
-    return this;
-  }
-  ejDigitalGauge(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./digitalgauge/digitalgauge'));
-    return this;
-  }
-  ejSplitter(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./splitter/splitter'));
-    return this;
-  }
-  ejDatePicker(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./datepicker/datepicker'));
-    return this;
-  }
-  ejGantt(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./gantt/gantt'));
-    return this;
-  }
-  ejTreeGrid(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./treegrid/treegrid'));
-    this.resources.push(PLATFORM.moduleName('./treegrid/treegridcolumn'));
-    return this;
-  }
-  ejColorPicker(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./colorpicker/colorpicker'));
-    return this;
-  }
-  ejDialog(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./dialog/dialog'));
-    return this;
-  }
-  ejScroller(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./scroller/scroller'));
-    return this;
-  }
-  ejBarcode(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./barcode/barcode'));
-    return this;
-  }
-  ejPdfViewer(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pdfviewer/pdfviewer'));
-    return this;
-  }
-  ejNumericTextbox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./numerictextbox/numerictextbox'));
-    return this;
-  }
-  ejCurrencyTextbox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./currencytextbox/currencytextbox'));
-    return this;
-  }
-  ejPercentageTextbox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./percentagetextbox/percentagetextbox'));
-    return this;
-  }
-  ejTimePicker(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./timepicker/timepicker'));
-    return this;
-  }
-  ejToolbar(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./toolbar/toolbar'));
-    return this;
-  }
-  ejMenu(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./menu/menu'));
-    return this;
-  }
-  ejMaskEdit(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./maskedit/maskedit'));
-    return this;
-  }
-  ejTreeView(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./treeview/treeview'));
-    return this;
-  }
-  ejKanban(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./kanban/kanban'));
-    this.resources.push(PLATFORM.moduleName('./kanban/kanbancolumn'));
-    return this;
-  }
-  ejRibbon(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./ribbon/ribbon'));
-    return this;
-  }
-  ejSpreadsheet(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./spreadsheet/spreadsheet'));
-    this.resources.push(PLATFORM.moduleName('./spreadsheet/sheet'));
-    return this;
-  }
-  ejRating(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./rating/rating'));
-    return this;
-  }
-  ejListBox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./listbox/listbox'));
-    return this;
-  }
-  ejListView(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./listview/listview'));
-    return this;
-  }
-  ejNavigationDrawer(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./navigationdrawer/navigationdrawer'));
-    return this;
-  }
-  ejRotator(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./rotator/rotator'));
-    return this;
-  }
-  ejRTE(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./rte/rte'));
-    return this;
-  }
-  ejDropDownList(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./dropdownlist/dropdownlist'));
-    return this;
-  }
-  ejAutocomplete(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./autocomplete/autocomplete'));
-    return this;
-  }
-  ejRadialMenu(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./radialmenu/radialmenu'));
-    this.resources.push(PLATFORM.moduleName('./radialmenu/item'));
-    return this;
-  }
-  ejRadialSlider(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./radialslider/radialslider'));
-    return this;
-  }
-  ejTile(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./tile/tile'));
-    return this;
-  }
-  ejAccordion(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./accordion/accordion'));
-    return this;
-  }
-  ejTab(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./tab/tab'));
-    return this;
-  }
-  ejCheckBox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./checkbox/checkbox'));
-    return this;
-  }
-  ejRadioButton(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./radiobutton/radiobutton'));
-    return this;
-  }
-  ejToggleButton(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./togglebutton/togglebutton'));
-    return this;
-  }
-  ejSplitButton(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./splitbutton/splitbutton'));
-    return this;
-  }
-  ejGroupButton(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./groupbutton/groupbutton'));
-    return this;
-  }
-  ejDateTimePicker(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./datetimepicker/datetimepicker'));
-    return this;
-  }
-  ejDateRangePicker(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./daterangepicker/daterangepicker'));
-    return this;
-  }
-  ejProgressBar(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./progressbar/progressbar'));
-    return this;
-  }
-  ejTagCloud(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./tagcloud/tagcloud'));
-    return this;
-  }
-  ejButton(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./button/button'));
-    return this;
-  }
-  ejSlider(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./slider/slider'));
-    return this;
-  }
-  ejFileExplorer(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./fileexplorer/fileexplorer'));
-    return this;
-  }
-  ejPivotGrid(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pivotgrid/pivotgrid'));
-    return this;
-  }
-  ejPivotChart(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pivotchart/pivotchart'));
-    return this;
-  }
-  ejPivotGauge(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pivotgauge/pivotgauge'));
-    return this;
-  }
-  ejPivotSchemaDesigner(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pivotschemadesigner/pivotschemadesigner'));
-    return this;
-  }
-  ejPivotTreeMap(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./pivottreemap/pivottreemap'));
-    return this;
-  }
-  ejWaitingPopup(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./waitingpopup/waitingpopup'));
-    return this;
-  }
-  ejReportViewer(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./reportviewer/reportviewer'));
-    return this;
-  }
-  ejSchedule(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./schedule/schedule'));
-    this.resources.push(PLATFORM.moduleName('./schedule/scheduleresource'));
-    return this;
-  }
-  ejUploadbox(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./uploadbox/uploadbox'));
-    return this;
-  }
-  ejSignature(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./signature/signature'));
-    return this;
-  }
-  ejTooltip(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./tooltip/tooltip'));
-    return this;
-  }
-  ejSpellCheck(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./spellcheck/spellcheck'));
-    return this;
-  }
-  ejTemplate(): EjConfigBuilder {
-    this.resources.push(PLATFORM.moduleName('./common/template'));
-    return this;
-  }
+var _aureliaDependencyInjection = require('aurelia-dependency-injection');
+
+exports.customAttribute = _aureliaTemplating.customAttribute;
+exports.bindable = _aureliaTemplating.bindable;
+exports.inject = _aureliaDependencyInjection.inject;
+exports.inlineView = _aureliaTemplating.inlineView;
+exports.customElement = _aureliaTemplating.customElement;
+exports.children = _aureliaTemplating.children;
+exports.TemplatingEngine = _aureliaTemplating.TemplatingEngine;
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var constants = exports.constants = {
+  eventPrefix: 'e-on-',
+  bindablePrefix: 'e-',
+  attributePrefix: 'ej-',
+  elementPrefix: 'ej-',
+  aureliaTemplateString: '<template><slot></slot></template>'
+};
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.generateBindables = generateBindables;
+exports.delayed = delayed;
+
+var _aureliaTemplating = require('aurelia-templating');
+
+var _aureliaDependencyInjection = require('aurelia-dependency-injection');
+
+var _aureliaMetadata = require('aurelia-metadata');
+
+var _aureliaTaskQueue = require('aurelia-task-queue');
+
+var _aureliaBinding = require('aurelia-binding');
+
+var _util = require('./util');
+
+function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
+  return function (target, key, descriptor) {
+    var behaviorResource = _aureliaMetadata.metadata.getOrCreateOwn(_aureliaMetadata.metadata.resource, _aureliaTemplating.HtmlBehaviorResource, target);
+    var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
+    var util = container.get(_util.Util);
+    var bindingInstance = container.get(_aureliaBinding.BindingEngine);
+    inputs.push('options');
+    inputs.push('widget');
+    var len = inputs.length;
+    if (observerCollection) {
+      target.prototype.arrayObserver = [];
+      observerCollection.forEach(function (element) {
+        target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
+      });
+      target.prototype.bindingInstance = bindingInstance;
+    }
+    target.prototype.controlName = controlName;
+    target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
+    target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
+    if (len) {
+      target.prototype.controlProperties = inputs;
+      for (var i = 0; i < len; i++) {
+        var option = inputs[i];
+        if (abbrevProperties && option in abbrevProperties) {
+          option = abbrevProperties[option];
+        }
+        var nameOrConfigOrTarget = {
+          name: util.getBindablePropertyName(option)
+        };
+
+        if (option === 'widget') {
+          nameOrConfigOrTarget.defaultBindingMode = _aureliaBinding.bindingMode.twoWay;
+        }
+
+        var prop = new _aureliaTemplating.BindableProperty(nameOrConfigOrTarget);
+        prop.registerWith(target, behaviorResource, descriptor);
+      }
+    }
+  };
 }
 
+function delayed() {
+  return function (target, key, descriptor) {
+    var taskQueue = (_aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container()).get(_aureliaTaskQueue.TaskQueue);
+    var ptr = descriptor.value;
 
-export function configure(aurelia, configCallback?: (builder: EjConfigBuilder) => void) {
-  let builder = new EjConfigBuilder();
+    descriptor.value = function () {
+      var _this = this;
 
-  if (configCallback !== undefined && typeof(configCallback) === 'function') {
-    configCallback(builder);
+      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      if (this.childPropertyName) {
+        taskQueue.queueTask(function () {
+          return ptr.apply(_this, args);
+        });
+      } else {
+        ptr.apply(this, args);
+      }
+    };
+
+    return descriptor;
+  };
+}
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getEventOption = getEventOption;
+exports.fireEvent = fireEvent;
+
+var _util = require('./util');
+
+var _aureliaDependencyInjection = require('aurelia-dependency-injection');
+
+var _constants = require('./constants');
+
+function getEventOption(element) {
+  var name = void 0;
+  var attr = void 0;
+  var attributes = element.attributes;
+  var option = {};
+  var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
+  var util = container.get(_util.Util);
+
+  var _loop = function _loop(i, len) {
+    attr = attributes[i];
+    name = attr.name;
+    if (!name.startsWith(_constants.constants.eventPrefix)) {
+      return 'continue';
+    }
+    var actualEventName = name.split('.')[0];
+    var eventName = util._unhyphenate(actualEventName.split(_constants.constants.eventPrefix)[1]);
+    option[eventName] = function (e) {
+      return fireEvent(element, actualEventName, e);
+    };
+  };
+
+  for (var i = 0, len = attributes.length; i < len; i++) {
+    var _ret = _loop(i, len);
+
+    if (_ret === 'continue') continue;
+  }
+  return option;
+}
+function fireEvent(element, name) {
+  var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+  var event = new CustomEvent(name, {
+    detail: data,
+    bubbles: true
+  });
+  element.dispatchEvent(event);
+  return event;
+}
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TemplateProcessor = undefined;
+
+var _dec, _class;
+
+var _aureliaDependencyInjection = require('aurelia-dependency-injection');
+
+var _util = require('../common/util');
+
+var _aureliaTemplating = require('aurelia-templating');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var TemplateProcessor = exports.TemplateProcessor = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TemplatingEngine, _util.Util), _dec(_class = function () {
+  function TemplateProcessor(context, templateEngine) {
+    _classCallCheck(this, TemplateProcessor);
+
+    this.context = context;
+    this.templatingEngine = templateEngine;
+    this.util = new _util.Util();
   }
 
-      // Pull the data off the builder
-  let resources = builder.resources;
+  TemplateProcessor.prototype.initTemplate = function initTemplate() {
+    var proxy = this;
+    ej.template.render = function (self, selector, data, index) {
+      return proxy.renderStringTemplate(self, selector, data, index);
+    };
+  };
 
-  if (builder.useGlobalResources) {
-    aurelia.globalResources(resources);
-  }
+  TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
+    if (this.context.widget.aureliaTemplate) {
+      this.compileTemplate(this.context.widget.element);
+    }
+    var proxy = this.context;
+    var element = this.context.widget.element;
+    element.on(this.context.widget.pluginName + 'refresh', function () {
+      if (proxy.widget.aureliaTemplate) {
+        proxy.templateProcessor.compileTemplate(element);
+      }
+    });
+  };
+
+  TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
+    var templateObject = self.aureliaTemplate;
+    if (!templateObject || !templateObject[selector]) {
+      templateObject = templateObject || {};
+      templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
+      self.aureliaTemplate = templateObject;
+    }
+    var scope = templateObject[selector];
+    if (this.util.hasValue(index)) {
+      scope.itemData[index] = data;
+    } else {
+      scope.itemData = [data];
+    }
+    var actElement = $(selector).html();
+    var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
+    return tempElement;
+  };
+
+  TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
+    var templates = $(element).find('.ej-aurelia-template');
+    var templateObject = this.context.widget.aureliaTemplate;
+    for (var template in templateObject) {
+      var tmplElement = templates.filter('.' + templateObject[template].key);
+      if (tmplElement.length) {
+        for (var i = 0; i < tmplElement.length; i++) {
+          var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
+          var view = this.templatingEngine.enhance(tmplElement[i]);
+          view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
+          templateObject[template].views[dataIndex] = view;
+        }
+      } else {
+        this.unbindViews(templateObject[template]);
+        delete templateObject[template];
+      }
+    }
+  };
+
+  TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
+    var templateObject = this.context.widget.aureliaTemplate;
+    if (templateObject && Object.keys(templateObject).length) {
+      for (var t in templateObject) {
+        this.unbindViews(templateObject[t]);
+        delete templateObject[t];
+      }
+    }
+  };
+
+  TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
+    for (var i = 0; i < obj.views.length; i++) {
+      var view = obj.views[i];
+      view.unbind();
+    }
+  };
+
+  return TemplateProcessor;
+}()) || _class);
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Template = undefined;
+
+var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
+
+var _aureliaDependencyInjection = require('aurelia-dependency-injection');
+
+var _aureliaTemplating = require('aurelia-templating');
+
+var _constants = require('./constants');
+
+function _initDefineProp(target, property, descriptor, context) {
+  if (!descriptor) return;
+  Object.defineProperty(target, property, {
+    enumerable: descriptor.enumerable,
+    configurable: descriptor.configurable,
+    writable: descriptor.writable,
+    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+  });
 }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+  var desc = {};
+  Object['ke' + 'ys'](descriptor).forEach(function (key) {
+    desc[key] = descriptor[key];
+  });
+  desc.enumerable = !!desc.enumerable;
+  desc.configurable = !!desc.configurable;
+
+  if ('value' in desc || desc.initializer) {
+    desc.writable = true;
+  }
+
+  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+    return decorator(target, property, desc) || desc;
+  }, desc);
+
+  if (context && desc.initializer !== void 0) {
+    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+    desc.initializer = undefined;
+  }
+
+  if (desc.initializer === void 0) {
+    Object['define' + 'Property'](target, property, desc);
+    desc = null;
+  }
+
+  return desc;
+}
+
+function _initializerWarningHelper(descriptor, context) {
+  throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+}
+
+var Template = exports.Template = (_dec = (0, _aureliaTemplating.customElement)(_constants.constants.elementPrefix + 'template'), _dec2 = (0, _aureliaTemplating.noView)(), _dec3 = (0, _aureliaTemplating.processContent)(function (compiler, resources, element, instruction) {
+  var html = element.innerHTML;
+  if (html !== '') {
+    instruction.template = html;
+  }
+  element.innerHTML = '';
+}), _dec4 = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
+  _classCallCheck(this, Template);
+
+  _initDefineProp(this, 'template', _descriptor, this);
+
+  this.template = target.elementInstruction.template;
+}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_aureliaTemplating.bindable], {
+  enumerable: true,
+  initializer: null
+})), _class2)) || _class) || _class) || _class) || _class);
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Util = undefined;
+
+var _constants = require('./constants');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Util = exports.Util = function () {
+  function Util() {
+    _classCallCheck(this, Util);
+  }
+
+  Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
+    var name = '' + _constants.constants.bindablePrefix + propertyName;
+    return this._unhyphenate(name);
+  };
+
+  Util.prototype._unhyphenate = function _unhyphenate(name) {
+    return name.replace(/-([a-z])/g, function (g) {
+      return g[1].toUpperCase();
+    });
+  };
+
+  Util.prototype.getOptions = function getOptions(model, properties) {
+    var bindableproperites = {};
+    var value = void 0;
+    for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+      var _ref;
+
+      if (_isArray) {
+        if (_i >= _iterator.length) break;
+        _ref = _iterator[_i++];
+      } else {
+        _i = _iterator.next();
+        if (_i.done) break;
+        _ref = _i.value;
+      }
+
+      var prop = _ref;
+
+      if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
+        value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
+      } else {
+        value = model[this.getBindablePropertyName(prop)];
+      }
+      if (this.hasValue(value)) {
+        if (typeof value === 'string') {
+          value = this.processData(value);
+        }
+        bindableproperites[prop] = value;
+      }
+    }
+    return bindableproperites;
+  };
+
+  Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
+    var property = void 0;
+    for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
+      var _ref2;
+
+      if (_isArray2) {
+        if (_i2 >= _iterator2.length) break;
+        _ref2 = _iterator2[_i2++];
+      } else {
+        _i2 = _iterator2.next();
+        if (_i2.done) break;
+        _ref2 = _i2.value;
+      }
+
+      var prop = _ref2;
+
+      if (propertyName === this.getBindablePropertyName(prop)) {
+        property = prop;
+        break;
+      }
+    }
+    return property;
+  };
+
+  Util.prototype.hasValue = function hasValue(prop) {
+    return typeof prop !== 'undefined' && prop !== null;
+  };
+
+  Util.prototype.processData = function processData(value) {
+    if (value === 'true') {
+      return true;
+    } else if (value === 'false') {
+      return false;
+    } else if (+value + '' === value) {
+      return +value;
+    }
+    return value;
+  };
+
+  return Util;
+}();
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.WidgetBase = undefined;
+
+var _dec, _desc, _value, _class;
+
+var _events = require('./events');
+
+var _util = require('../common/util');
+
+var _decorators = require('../common/decorators');
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+  var desc = {};
+  Object['ke' + 'ys'](descriptor).forEach(function (key) {
+    desc[key] = descriptor[key];
+  });
+  desc.enumerable = !!desc.enumerable;
+  desc.configurable = !!desc.configurable;
+
+  if ('value' in desc || desc.initializer) {
+    desc.writable = true;
+  }
+
+  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+    return decorator(target, property, desc) || desc;
+  }, desc);
+
+  if (context && desc.initializer !== void 0) {
+    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+    desc.initializer = undefined;
+  }
+
+  if (desc.initializer === void 0) {
+    Object['define' + 'Property'](target, property, desc);
+    desc = null;
+  }
+
+  return desc;
+}
+
+var firstValue = {};
+var WidgetBase = exports.WidgetBase = (_dec = (0, _decorators.delayed)(), (_class = function () {
+  function WidgetBase() {
+    _classCallCheck(this, WidgetBase);
+  }
+
+  WidgetBase.prototype.createWidget = function createWidget(option) {
+    var _this = this;
+
+    this.allOption = this.getWidgetOptions(option.element);
+    if (!this.ejOptions && !this.isEditor) {
+      this.createTwoWays();
+    }
+    this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
+    if (this.templateProcessor) {
+      this.templateProcessor.initWidgetDependancies();
+    }
+    if (this.isEditor) {
+      this.widget.model._change = function (evt) {
+        if ('eValue' in _this) {
+          _this[_this.util.getBindablePropertyName('value')] = evt.value;
+        }
+      };
+    }
+  };
+
+  WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
+    this.parentCtx = overrideCtx;
+    if (this.widget && this.widget.element && this.isEditor) {
+      this.widget.option('value', this.eValue === undefined ? null : this.eValue);
+    }
+  };
+
+  WidgetBase.prototype.createTwoWays = function createTwoWays() {
+    var model = this.allOption;
+    var twoWays = this.twoWays;
+    var len = twoWays.length;
+    for (var i = 0; i < len; i++) {
+      var prop = twoWays[i];
+      ej.createObject(prop, this.addTwoways(prop), model);
+    }
+  };
+
+  WidgetBase.prototype.addTwoways = function addTwoways(prop) {
+    var model = this;
+    var value = firstValue;
+    return function (newVal, isApp) {
+      if (value === firstValue) {
+        var viewModelProp = model.util.getBindablePropertyName(prop);
+        value = model[viewModelProp];
+        if (value === undefined) {
+          value = this.defaults[prop];
+        }
+        return value;
+      }
+      if (newVal === undefined) {
+        return value;
+      }
+      if (value === newVal) {
+        return null;
+      }
+      value = newVal;
+      if (!isApp && model.util.hasValue(newVal)) {
+        var _viewModelProp = model.util.getBindablePropertyName(prop);
+        model[_viewModelProp] = newVal;
+      }
+      return null;
+    };
+  };
+
+  WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
+    var propOptions = void 0;
+    if (this.ejOptions) {
+      propOptions = this.ejOptions;
+    } else {
+      propOptions = this.util.getOptions(this, this.controlProperties);
+    }
+    var eventOption = (0, _events.getEventOption)(element);
+    if (this.hasChildProperty) {
+      this.getChildProperties(propOptions);
+    }
+    return Object.assign({}, propOptions, eventOption);
+  };
+
+  WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
+    var PropertyName = this.childPropertyName;
+    var childCollection = this[PropertyName];
+    var len = childCollection.length;
+    if (len) {
+      options[PropertyName] = [];
+      var childProperties = childCollection[0].controlProperties;
+      for (var i = 0; i < len; i++) {
+        options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
+      }
+    }
+  };
+
+  WidgetBase.prototype.attached = function attached() {
+    if (this.templateProcessor) {
+      this[this.childPropertyName].forEach(function (template) {
+        return template.setTemplates();
+      });
+    }
+    this.util = new _util.Util();
+    this.createWidget({ element: this.element });
+  };
+
+  WidgetBase.prototype.unsubscribe = function unsubscribe() {
+    if (this.subscription) {
+      this.subscription.dispose();
+      this.subscription = null;
+    }
+  };
+
+  WidgetBase.prototype.unbind = function unbind() {
+    this.unsubscribe();
+  };
+
+  WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
+    var _this2 = this;
+
+    if (this.widget) {
+      var modelValue = void 0;
+      var prop = this.util.getControlPropertyName(this, property);
+      this.unsubscribe();
+      if (this.arrayObserver) {
+        this.arrayObserver.forEach(function (arrayProp) {
+          if (_this2[arrayProp] instanceof Array) {
+            _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
+              _this2.update(e);
+            });
+          }
+        });
+      }
+      if (prop) {
+        if (prop === 'widget') {
+          return;
+        } else if (prop !== 'options') {
+          modelValue = this.widget.model[prop];
+          var isTwoway = typeof modelValue === 'function';
+          if (isTwoway) {
+            modelValue = modelValue();
+          }
+          if (modelValue !== newValue) {
+            if (isTwoway) {
+              newValue = this.addTwoways(prop);
+            }
+            this.widget.option(prop, newValue);
+          }
+        } else {
+          this.widget.option(newValue);
+        }
+      }
+    }
+  };
+
+  WidgetBase.prototype.update = function update(e) {
+    var _this3 = this;
+
+    var modelValue = void 0;
+    var newVal = void 0;
+    if (e.length) {
+      this.arrayObserver.forEach(function (arrayProp) {
+        if (_this3[arrayProp] instanceof Array) {
+          var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
+          modelValue = _this3.widget.model[prop];
+          if (typeof modelValue === 'function') {
+            modelValue = modelValue();
+            newVal = modelValue;
+            newVal = _this3.addTwoways(prop);
+            _this3.widget.option(prop, newVal);
+          } else {
+            _this3.widget.option(prop, modelValue);
+          }
+        }
+      });
+    }
+  };
+
+  WidgetBase.prototype.detached = function detached() {
+    if (this.templateProcessor) {
+      this.templateProcessor.clearTempalte();
+    }
+    if (this.widget) {
+      this.widget.destroy();
+    }
+  };
+
+  return WidgetBase;
+}(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class));
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -7757,7973 +8897,6 @@ var ejWaitingPopup = exports.ejWaitingPopup = (_dec = (0, _common.customAttribut
 
   return ejWaitingPopup;
 }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejAccordion = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejAccordion = exports.ejAccordion = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'accordion'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejAccordion', ['ajaxSettings', 'allowKeyboardNavigation', 'collapseSpeed', 'collapsible', 'cssClass', 'customIcon', 'disabledItems', 'enableAnimation', 'enabled', 'enabledItems', 'enableMultipleOpen', 'enablePersistence', 'enableRTL', 'events', 'expandSpeed', 'headerSize', 'height', 'heightAdjustMode', 'htmlAttributes', 'selectedItemIndex', 'selectedItems', 'showCloseButton', 'showRoundedCorner', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejAccordion, _WidgetBase);
-
-    function ejAccordion(element) {
-      _classCallCheck(this, ejAccordion);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejAccordion;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejAutocomplete = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejAutocomplete = exports.ejAutocomplete = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'autocomplete'), _dec2 = (0, _decorators.generateBindables)('ejAutocomplete', ['addNewText', 'allowAddNew', 'allowSorting', 'animateType', 'autoFocus', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delaySuggestionTimeout', 'delimiterChar', 'emptyResultText', 'enableAutoFill', 'enabled', 'enableDistinct', 'enablePersistence', 'enableRTL', 'fields', 'filterType', 'height', 'highlightSearch', 'itemsCount', 'locale', 'minCharacter', 'multiColumnSettings', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectValueByKey', 'showEmptyResultText', 'showLoadingIcon', 'showPopupButton', 'showRoundedCorner', 'showResetIcon', 'sortOrder', 'template', 'validationMessage', 'validationRules', 'value', 'visible', 'watermarkText', 'width'], ['value', 'selectValueByKey'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejAutocomplete, _WidgetBase);
-
-    function ejAutocomplete(element) {
-      _classCallCheck(this, ejAutocomplete);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejAutocomplete;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejBarcode = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejBarcode = exports.ejBarcode = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'barcode'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejBarcode', ['barcodeToTextGapHeight', 'barHeight', 'darkBarColor', 'displayText', 'enabled', 'encodeStartStopSymbol', 'lightBarColor', 'narrowBarWidth', 'quietZone', 'symbologyType', 'text', 'textColor', 'wideBarWidth', 'xDimension']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejBarcode, _WidgetBase);
-
-    function ejBarcode(element) {
-      _classCallCheck(this, ejBarcode);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejBarcode;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-'use strict';
-
-System.register(['aurelia-pal'], function (_export, _context) {
-  "use strict";
-
-  var PLATFORM, EjConfigBuilder;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  return {
-    setters: [function (_aureliaPal) {
-      PLATFORM = _aureliaPal.PLATFORM;
-    }],
-    execute: function () {
-      _export('EjConfigBuilder', EjConfigBuilder = function () {
-        function EjConfigBuilder() {
-          _classCallCheck(this, EjConfigBuilder);
-
-          this.resources = [];
-          this.useGlobalResources = true;
-        }
-
-        EjConfigBuilder.prototype.useAll = function useAll() {
-          this.ejGrid().ejChart().ejSunburstChart().ejMap().ejTreeMap().ejRangeNavigator().ejDiagram().ejHeatMap().ejHeatMapLegend().ejSparkline().ejSymbolPalette().ejOverview().ejPager().ejBulletGraph().ejCircularGauge().ejLinearGauge().ejDigitalGauge().ejSplitter().ejDatePicker().ejGantt().ejTreeGrid().ejColorPicker().ejDialog().ejScroller().ejBarcode().ejPdfViewer().ejNumericTextbox().ejCurrencyTextbox().ejPercentageTextbox().ejTimePicker().ejToolbar().ejMenu().ejMaskEdit().ejTreeView().ejKanban().ejRibbon().ejSpreadsheet().ejRating().ejListBox().ejListView().ejNavigationDrawer().ejRotator().ejRTE().ejDropDownList().ejAutocomplete().ejRadialMenu().ejRadialSlider().ejTile().ejAccordion().ejTab().ejCheckBox().ejRadioButton().ejToggleButton().ejSplitButton().ejGroupButton().ejDateTimePicker().ejDateRangePicker().ejProgressBar().ejTagCloud().ejButton().ejSlider().ejFileExplorer().ejPivotGrid().ejPivotChart().ejPivotGauge().ejPivotSchemaDesigner().ejPivotTreeMap().ejWaitingPopup().ejReportViewer().ejSchedule().ejUploadbox().ejSignature().ejTooltip().ejSpellCheck().ejTemplate();
-          return this;
-        };
-
-        EjConfigBuilder.prototype.withoutGlobalResources = function withoutGlobalResources() {
-          this.useGlobalResources = false;
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejGrid = function ejGrid() {
-          this.resources.push(PLATFORM.moduleName('./grid/grid'));
-          this.resources.push(PLATFORM.moduleName('./grid/column'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejChart = function ejChart() {
-          this.resources.push(PLATFORM.moduleName('./chart/chart'));
-          this.resources.push(PLATFORM.moduleName('./chart/series'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSunburstChart = function ejSunburstChart() {
-          this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstchart'));
-          this.resources.push(PLATFORM.moduleName('./sunburstchart/sunburstlevels'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejMap = function ejMap() {
-          this.resources.push(PLATFORM.moduleName('./map/map'));
-          this.resources.push(PLATFORM.moduleName('./map/layer'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTreeMap = function ejTreeMap() {
-          this.resources.push(PLATFORM.moduleName('./treemap/treemap'));
-          this.resources.push(PLATFORM.moduleName('./treemap/level'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRangeNavigator = function ejRangeNavigator() {
-          this.resources.push(PLATFORM.moduleName('./rangenavigator/rangenavigator'));
-          this.resources.push(PLATFORM.moduleName('./rangenavigator/rangeseries'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDiagram = function ejDiagram() {
-          this.resources.push(PLATFORM.moduleName('./diagram/diagram'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejHeatMap = function ejHeatMap() {
-          this.resources.push(PLATFORM.moduleName('./heatmap/heatmap'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejHeatMapLegend = function ejHeatMapLegend() {
-          this.resources.push(PLATFORM.moduleName('./heatmaplegend/heatmaplegend'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSparkline = function ejSparkline() {
-          this.resources.push(PLATFORM.moduleName('./sparkline/sparkline'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSymbolPalette = function ejSymbolPalette() {
-          this.resources.push(PLATFORM.moduleName('./symbolpalette/symbolpalette'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejOverview = function ejOverview() {
-          this.resources.push(PLATFORM.moduleName('./overview/overview'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPager = function ejPager() {
-          this.resources.push(PLATFORM.moduleName('./pager/pager'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejBulletGraph = function ejBulletGraph() {
-          this.resources.push(PLATFORM.moduleName('./bulletgraph/bulletgraph'));
-          this.resources.push(PLATFORM.moduleName('./bulletgraph/qualitativerange'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejCircularGauge = function ejCircularGauge() {
-          this.resources.push(PLATFORM.moduleName('./circulargauge/circulargauge'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejLinearGauge = function ejLinearGauge() {
-          this.resources.push(PLATFORM.moduleName('./lineargauge/lineargauge'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDigitalGauge = function ejDigitalGauge() {
-          this.resources.push(PLATFORM.moduleName('./digitalgauge/digitalgauge'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSplitter = function ejSplitter() {
-          this.resources.push(PLATFORM.moduleName('./splitter/splitter'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDatePicker = function ejDatePicker() {
-          this.resources.push(PLATFORM.moduleName('./datepicker/datepicker'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejGantt = function ejGantt() {
-          this.resources.push(PLATFORM.moduleName('./gantt/gantt'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTreeGrid = function ejTreeGrid() {
-          this.resources.push(PLATFORM.moduleName('./treegrid/treegrid'));
-          this.resources.push(PLATFORM.moduleName('./treegrid/treegridcolumn'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejColorPicker = function ejColorPicker() {
-          this.resources.push(PLATFORM.moduleName('./colorpicker/colorpicker'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDialog = function ejDialog() {
-          this.resources.push(PLATFORM.moduleName('./dialog/dialog'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejScroller = function ejScroller() {
-          this.resources.push(PLATFORM.moduleName('./scroller/scroller'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejBarcode = function ejBarcode() {
-          this.resources.push(PLATFORM.moduleName('./barcode/barcode'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPdfViewer = function ejPdfViewer() {
-          this.resources.push(PLATFORM.moduleName('./pdfviewer/pdfviewer'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejNumericTextbox = function ejNumericTextbox() {
-          this.resources.push(PLATFORM.moduleName('./numerictextbox/numerictextbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejCurrencyTextbox = function ejCurrencyTextbox() {
-          this.resources.push(PLATFORM.moduleName('./currencytextbox/currencytextbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPercentageTextbox = function ejPercentageTextbox() {
-          this.resources.push(PLATFORM.moduleName('./percentagetextbox/percentagetextbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTimePicker = function ejTimePicker() {
-          this.resources.push(PLATFORM.moduleName('./timepicker/timepicker'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejToolbar = function ejToolbar() {
-          this.resources.push(PLATFORM.moduleName('./toolbar/toolbar'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejMenu = function ejMenu() {
-          this.resources.push(PLATFORM.moduleName('./menu/menu'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejMaskEdit = function ejMaskEdit() {
-          this.resources.push(PLATFORM.moduleName('./maskedit/maskedit'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTreeView = function ejTreeView() {
-          this.resources.push(PLATFORM.moduleName('./treeview/treeview'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejKanban = function ejKanban() {
-          this.resources.push(PLATFORM.moduleName('./kanban/kanban'));
-          this.resources.push(PLATFORM.moduleName('./kanban/kanbancolumn'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRibbon = function ejRibbon() {
-          this.resources.push(PLATFORM.moduleName('./ribbon/ribbon'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSpreadsheet = function ejSpreadsheet() {
-          this.resources.push(PLATFORM.moduleName('./spreadsheet/spreadsheet'));
-          this.resources.push(PLATFORM.moduleName('./spreadsheet/sheet'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRating = function ejRating() {
-          this.resources.push(PLATFORM.moduleName('./rating/rating'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejListBox = function ejListBox() {
-          this.resources.push(PLATFORM.moduleName('./listbox/listbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejListView = function ejListView() {
-          this.resources.push(PLATFORM.moduleName('./listview/listview'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejNavigationDrawer = function ejNavigationDrawer() {
-          this.resources.push(PLATFORM.moduleName('./navigationdrawer/navigationdrawer'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRotator = function ejRotator() {
-          this.resources.push(PLATFORM.moduleName('./rotator/rotator'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRTE = function ejRTE() {
-          this.resources.push(PLATFORM.moduleName('./rte/rte'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDropDownList = function ejDropDownList() {
-          this.resources.push(PLATFORM.moduleName('./dropdownlist/dropdownlist'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejAutocomplete = function ejAutocomplete() {
-          this.resources.push(PLATFORM.moduleName('./autocomplete/autocomplete'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRadialMenu = function ejRadialMenu() {
-          this.resources.push(PLATFORM.moduleName('./radialmenu/radialmenu'));
-          this.resources.push(PLATFORM.moduleName('./radialmenu/item'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRadialSlider = function ejRadialSlider() {
-          this.resources.push(PLATFORM.moduleName('./radialslider/radialslider'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTile = function ejTile() {
-          this.resources.push(PLATFORM.moduleName('./tile/tile'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejAccordion = function ejAccordion() {
-          this.resources.push(PLATFORM.moduleName('./accordion/accordion'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTab = function ejTab() {
-          this.resources.push(PLATFORM.moduleName('./tab/tab'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejCheckBox = function ejCheckBox() {
-          this.resources.push(PLATFORM.moduleName('./checkbox/checkbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejRadioButton = function ejRadioButton() {
-          this.resources.push(PLATFORM.moduleName('./radiobutton/radiobutton'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejToggleButton = function ejToggleButton() {
-          this.resources.push(PLATFORM.moduleName('./togglebutton/togglebutton'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSplitButton = function ejSplitButton() {
-          this.resources.push(PLATFORM.moduleName('./splitbutton/splitbutton'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejGroupButton = function ejGroupButton() {
-          this.resources.push(PLATFORM.moduleName('./groupbutton/groupbutton'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDateTimePicker = function ejDateTimePicker() {
-          this.resources.push(PLATFORM.moduleName('./datetimepicker/datetimepicker'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejDateRangePicker = function ejDateRangePicker() {
-          this.resources.push(PLATFORM.moduleName('./daterangepicker/daterangepicker'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejProgressBar = function ejProgressBar() {
-          this.resources.push(PLATFORM.moduleName('./progressbar/progressbar'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTagCloud = function ejTagCloud() {
-          this.resources.push(PLATFORM.moduleName('./tagcloud/tagcloud'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejButton = function ejButton() {
-          this.resources.push(PLATFORM.moduleName('./button/button'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSlider = function ejSlider() {
-          this.resources.push(PLATFORM.moduleName('./slider/slider'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejFileExplorer = function ejFileExplorer() {
-          this.resources.push(PLATFORM.moduleName('./fileexplorer/fileexplorer'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPivotGrid = function ejPivotGrid() {
-          this.resources.push(PLATFORM.moduleName('./pivotgrid/pivotgrid'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPivotChart = function ejPivotChart() {
-          this.resources.push(PLATFORM.moduleName('./pivotchart/pivotchart'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPivotGauge = function ejPivotGauge() {
-          this.resources.push(PLATFORM.moduleName('./pivotgauge/pivotgauge'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPivotSchemaDesigner = function ejPivotSchemaDesigner() {
-          this.resources.push(PLATFORM.moduleName('./pivotschemadesigner/pivotschemadesigner'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejPivotTreeMap = function ejPivotTreeMap() {
-          this.resources.push(PLATFORM.moduleName('./pivottreemap/pivottreemap'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejWaitingPopup = function ejWaitingPopup() {
-          this.resources.push(PLATFORM.moduleName('./waitingpopup/waitingpopup'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejReportViewer = function ejReportViewer() {
-          this.resources.push(PLATFORM.moduleName('./reportviewer/reportviewer'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSchedule = function ejSchedule() {
-          this.resources.push(PLATFORM.moduleName('./schedule/schedule'));
-          this.resources.push(PLATFORM.moduleName('./schedule/scheduleresource'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejUploadbox = function ejUploadbox() {
-          this.resources.push(PLATFORM.moduleName('./uploadbox/uploadbox'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSignature = function ejSignature() {
-          this.resources.push(PLATFORM.moduleName('./signature/signature'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTooltip = function ejTooltip() {
-          this.resources.push(PLATFORM.moduleName('./tooltip/tooltip'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejSpellCheck = function ejSpellCheck() {
-          this.resources.push(PLATFORM.moduleName('./spellcheck/spellcheck'));
-          return this;
-        };
-
-        EjConfigBuilder.prototype.ejTemplate = function ejTemplate() {
-          this.resources.push(PLATFORM.moduleName('./common/template'));
-          return this;
-        };
-
-        return EjConfigBuilder;
-      }());
-
-      _export('EjConfigBuilder', EjConfigBuilder);
-    }
-  };
-});
-'use strict';
-
-System.register(['./config-builder'], function (_export, _context) {
-  "use strict";
-
-  var EjConfigBuilder;
-  function configure(aurelia, configCallback) {
-    var builder = new EjConfigBuilder();
-
-    if (configCallback !== undefined && typeof configCallback === 'function') {
-      configCallback(builder);
-    }
-
-    var resources = builder.resources;
-
-    if (builder.useGlobalResources) {
-      aurelia.globalResources(resources);
-    }
-  }
-
-  _export('configure', configure);
-
-  return {
-    setters: [function (_configBuilder) {
-      EjConfigBuilder = _configBuilder.EjConfigBuilder;
-    }],
-    execute: function () {}
-  };
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejBulletGraph = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejBulletGraph = exports.ejBulletGraph = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'bullet-graph'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejBulletGraph', ['applyRangeStrokeToLabels', 'applyRangeStrokeToTicks', 'captionSettings', 'comparativeMeasureValue', 'enableAnimation', 'enableResizing', 'flowDirection', 'height', 'isResponsive', 'enableGroupSeparator', 'locale', 'orientation', 'qualitativeRanges', 'qualitativeRangeSize', 'quantitativeScaleLength', 'quantitativeScaleSettings', 'theme', 'tooltipSettings', 'value', 'width']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'qualitative-range'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejBulletGraph, _WidgetBase);
-
-    function ejBulletGraph(element) {
-      _classCallCheck(this, ejBulletGraph);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'qualitativeRanges', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'qualitativeRanges';
-      return _this;
-    }
-
-    return ejBulletGraph;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'qualitativeRanges', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.QualitativeRange = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var QualitativeRange = exports.QualitativeRange = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'qualitative-range'), _dec3 = (0, _decorators.generateBindables)('qualitativeRanges', ['rangeEnd', 'rangeOpacity', 'rangeStroke']), _dec(_class = _dec2(_class = _dec3(_class = function QualitativeRange() {
-    _classCallCheck(this, QualitativeRange);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejChart = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejChart = exports.ejChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejChart', ['annotations', 'background', 'backGroundImageUrl', 'border', 'exportSettings', 'chartArea', 'columnDefinitions', 'commonSeriesOptions', 'selectedDataPointIndexes', 'crosshair', 'depth', 'enable3D', 'enableCanvasRendering', 'initSeriesRender', 'enableRotation', 'indicators', 'isResponsive', 'legend', 'locale', 'palette', 'margin', 'perspectiveAngle', 'primaryXAxis', 'axes', 'primaryYAxis', 'rotation', 'rowDefinitions', 'series', 'sideBySideSeriesPlacement', 'size', 'theme', 'tilt', 'title', 'wallSize', 'zooming']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'series'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejChart, _WidgetBase);
-
-    function ejChart(element) {
-      _classCallCheck(this, ejChart);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'series', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'series';
-      return _this;
-    }
-
-    return ejChart;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'series', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Series = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var Series = exports.Series = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'series'), _dec3 = (0, _decorators.generateBindables)('series', ['bearFillColor', 'border', 'animationDuration', 'bullFillColor', 'columnFacet', 'columnWidth', 'columnSpacing', 'stackingGroup', 'dashArray', 'dataSource', 'cardinalSplineTension', 'doughnutCoefficient', 'doughnutSize', 'drawType', 'enableAnimation', 'enableSmartLabels', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'fill', 'font', 'funnelHeight', 'funnelWidth', 'gapRatio', 'isClosed', 'isStacking', 'isTransposed', 'showMedian', 'labelPosition', 'splitMode', 'boxPlotMode', 'bubbleOptions', 'splineType', 'lineCap', 'lineJoin', 'marker', 'name', 'opacity', 'outlierSettings', 'palette', 'pieCoefficient', 'pieOfPieCoefficient', 'splitValue', 'gapWidth', 'emptyPointSettings', 'positiveFill', 'connectorLine', 'dragSettings', 'errorBar', 'points', 'pyramidMode', 'query', 'startAngle', 'cornerRadius', 'tooltip', 'type', 'visibility', 'visibleOnLegend', 'xAxisName', 'xName', 'yAxisName', 'yName', 'high', 'low', 'open', 'close', 'pointColorMappingName', 'zOrder', 'size', 'trendlines', 'highlightSettings', 'selectionSettings']), _dec(_class = _dec2(_class = _dec3(_class = function Series() {
-    _classCallCheck(this, Series);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejButton = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejButton = exports.ejButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'button'), _dec2 = (0, _decorators.generateBindables)('ejButton', ['contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'repeatButton', 'showRoundedCorner', 'size', 'suffixIcon', 'text', 'timeInterval', 'type', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejButton, _WidgetBase);
-
-    function ejButton(element) {
-      _classCallCheck(this, ejButton);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejButton;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejCheckBox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejCheckBox = exports.ejCheckBox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'check-box'), _dec2 = (0, _decorators.generateBindables)('ejCheckBox', ['checked', 'checkState', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'enableTriState', 'htmlAttributes', 'id', 'idPrefix', 'name', 'showRoundedCorner', 'size', 'text', 'validationMessage', 'validationRules', 'value'], ['checked', 'checkState'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejCheckBox, _WidgetBase);
-
-    function ejCheckBox(element) {
-      _classCallCheck(this, ejCheckBox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejCheckBox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejCircularGauge = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejCircularGauge = exports.ejCircularGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'circular-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejCircularGauge', ['animationSpeed', 'backgroundColor', 'distanceFromCorner', 'rangeZOrder', 'enableAnimation', 'enableGroupSeparator', 'enableResize', 'frame', 'gaugePosition', 'height', 'interiorGradient', 'isRadialGradient', 'isResponsive', 'locale', 'maximum', 'minimum', 'outerCustomLabelPosition', 'radius', 'readOnly', 'scales', 'theme', 'legend', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejCircularGauge, _WidgetBase);
-
-    function ejCircularGauge(element) {
-      _classCallCheck(this, ejCircularGauge);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejCircularGauge;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejColorPicker = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejColorPicker = exports.ejColorPicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'color-picker'), _dec2 = (0, _decorators.generateBindables)('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejColorPicker, _WidgetBase);
-
-    function ejColorPicker(element) {
-      _classCallCheck(this, ejColorPicker);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejColorPicker;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejCurrencyTextbox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejCurrencyTextbox = exports.ejCurrencyTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'currency-textbox'), _dec2 = (0, _decorators.generateBindables)('ejCurrencyTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejCurrencyTextbox, _WidgetBase);
-
-    function ejCurrencyTextbox(element) {
-      _classCallCheck(this, ejCurrencyTextbox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejCurrencyTextbox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDatePicker = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejDatePicker = exports.ejDatePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-picker'), _dec2 = (0, _decorators.generateBindables)('ejDatePicker', ['allowEdit', 'allowDrillDown', 'blackoutDates', 'buttonText', 'cssClass', 'dateFormat', 'dayHeaderFormat', 'depthLevel', 'displayInline', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'fields', 'headerFormat', 'height', 'highlightSection', 'highlightWeekend', 'htmlAttributes', 'locale', 'maxDate', 'minDate', 'readOnly', 'showDisabledRange', 'showFooter', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'showTooltip', 'specialDates', 'startDay', 'startLevel', 'stepMonths', 'tooltipFormat', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'weekNumber', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejDatePicker, _WidgetBase);
-
-    function ejDatePicker(element) {
-      _classCallCheck(this, ejDatePicker);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDatePicker;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDateRangePicker = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejDateRangePicker = exports.ejDateRangePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-range-picker'), _dec2 = (0, _decorators.generateBindables)('ejDateRangePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateFormat', 'enableTimePicker', 'enabled', 'enablePersistence', 'endDate', 'height', 'locale', 'ranges', 'separator', 'startDate', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'watermarkText', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejDateRangePicker, _WidgetBase);
-
-    function ejDateRangePicker(element) {
-      _classCallCheck(this, ejDateRangePicker);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDateRangePicker;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDateTimePicker = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejDateTimePicker = exports.ejDateTimePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-time-picker'), _dec2 = (0, _decorators.generateBindables)('ejDateTimePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateTimeFormat', 'dayHeaderFormat', 'depthLevel', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'headerFormat', 'height', 'htmlAttributes', 'interval', 'locale', 'maxDateTime', 'minDateTime', 'popupPosition', 'readOnly', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'startDay', 'startLevel', 'stepMonths', 'timeDisplayFormat', 'timeDrillDown', 'timePopupWidth', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejDateTimePicker, _WidgetBase);
-
-    function ejDateTimePicker(element) {
-      _classCallCheck(this, ejDateTimePicker);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDateTimePicker;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDiagram = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejDiagram = exports.ejDiagram = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'diagram'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDiagram', ['backgroundColor', 'backgroundImage', 'bridgeDirection', 'commandManager', 'connectors', 'connectorTemplate', 'constraints', 'contextMenu', 'dataSourceSettings', 'defaultSettings', 'drawType', 'enableAutoScroll', 'enableContextMenu', 'height', 'historyManager', 'labelRenderingMode', 'layout', 'locale', 'nodes', 'nodeTemplate', 'pageSettings', 'scrollSettings', 'selectedItems', 'showTooltip', 'serializationSettings', 'rulerSettings', 'snapSettings', 'tool', 'tooltip', 'width', 'zoomFactor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejDiagram, _WidgetBase);
-
-    function ejDiagram(element) {
-      _classCallCheck(this, ejDiagram);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDiagram;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDialog = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejDialog = exports.ejDialog = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'dialog'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDialog', ['actionButtons', 'ajaxSettings', 'allowDraggable', 'allowKeyboardNavigation', 'animation', 'backgroundScroll', 'closeOnEscape', 'containment', 'contentType', 'contentUrl', 'cssClass', 'enableAnimation', 'enabled', 'enableModal', 'enablePersistence', 'enableResize', 'enableRTL', 'faviconCSS', 'height', 'htmlAttributes', 'isResponsive', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'position', 'showHeader', 'showOnInit', 'showRoundedCorner', 'target', 'title', 'tooltip', 'width', 'zIndex', 'showFooter', 'footerTemplateId'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejDialog, _WidgetBase);
-
-    function ejDialog(element) {
-      _classCallCheck(this, ejDialog);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDialog;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDigitalGauge = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejDigitalGauge = exports.ejDigitalGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'digital-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDigitalGauge', ['frame', 'height', 'isResponsive', 'enableResize', 'items', 'matrixSegmentData', 'segmentData', 'themes', 'value', 'width'], ['value']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejDigitalGauge, _WidgetBase);
-
-    function ejDigitalGauge(element) {
-      _classCallCheck(this, ejDigitalGauge);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDigitalGauge;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejDropDownList = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejDropDownList = exports.ejDropDownList = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'drop-down-list'), _dec2 = (0, _decorators.generateBindables)('ejDropDownList', ['allowVirtualScrolling', 'cascadeTo', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delimiterChar', 'enableAnimation', 'enabled', 'enableIncrementalSearch', 'enableFilterSearch', 'enableServerFiltering', 'enablePersistence', 'enablePopupResize', 'enableRTL', 'enableSorting', 'fields', 'filterType', 'headerTemplate', 'height', 'htmlAttributes', 'itemsCount', 'locale', 'maxPopupHeight', 'minPopupHeight', 'maxPopupWidth', 'minPopupWidth', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showPopupOnLoad', 'showRoundedCorner', 'sortOrder', 'targetID', 'template', 'text', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width', 'virtualScrollMode'], ['value'], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejDropDownList, _WidgetBase);
-
-    function ejDropDownList(element) {
-      _classCallCheck(this, ejDropDownList);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejDropDownList;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejFileExplorer = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejFileExplorer = exports.ejFileExplorer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'file-explorer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejFileExplorer', ['ajaxAction', 'ajaxDataType', 'ajaxSettings', 'allowDragAndDrop', 'allowKeyboardNavigation', 'allowMultiSelection', 'contextMenuSettings', 'cssClass', 'enablePersistence', 'enableResize', 'enableRTL', 'enableThumbnailCompress', 'fileTypes', 'filterSettings', 'gridSettings', 'height', 'isResponsive', 'layout', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'path', 'rootFolderName', 'selectedFolder', 'selectedItems', 'showCheckbox', 'showContextMenu', 'showFooter', 'showRoundedCorner', 'showThumbnail', 'showToolbar', 'showNavigationPane', 'tools', 'toolsList', 'uploadSettings', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejFileExplorer, _WidgetBase);
-
-    function ejFileExplorer(element) {
-      _classCallCheck(this, ejFileExplorer);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejFileExplorer;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejGantt = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejGantt = exports.ejGantt = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'gantt'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejGantt', ['addDialogFields', 'allowColumnResize', 'allowGanttChartEditing', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowMultipleExporting', 'allowSelection', 'allowSorting', 'allowDragAndDrop', 'enablePredecessorValidation', 'enableSerialNumber', 'baselineColor', 'workMapping', 'expandStateMapping', 'baselineEndDateMapping', 'baselineStartDateMapping', 'childMapping', 'columnDialogFields', 'connectorLineBackground', 'connectorlineWidth', 'cssClass', 'cellTooltipTemplate', 'dragTooltip', 'dataSource', 'dateFormat', 'dayWorkingTime', 'durationMapping', 'durationUnit', 'editDialogFields', 'filterSettings', 'isResponsive', 'splitterSettings', 'editSettings', 'enableAltRow', 'enableWBS', 'enableWBSPredecessor', 'enableCollapseAll', 'leftTaskLabelMapping', 'rightTaskLabelMapping', 'leftTaskLabelTemplate', 'rightTaskLabelTemplate', 'enableContextMenu', 'enableProgressBarResizing', 'enableResize', 'enableTaskbarDragTooltip', 'enableTaskbarTooltip', 'enableVirtualization', 'endDateMapping', 'highlightWeekends', 'holidays', 'includeWeekend', 'locale', 'milestoneMapping', 'showColumnOptions', 'parentTaskbarTemplate', 'taskType', 'workUnit', 'taskSchedulingMode', 'selectionType', 'parentProgressbarBackground', 'resourceUnitMapping', 'notesMapping', 'taskSchedulingModeMapping', 'durationUnitMapping', 'parentTaskbarBackground', 'parentTaskIdMapping', 'predecessorMapping', 'progressbarBackground', 'progressbarHeight', 'progressbarTooltipTemplate', 'progressbarTooltipTemplateId', 'progressMapping', 'query', 'renderBaseline', 'resourceIdMapping', 'resourceInfoMapping', 'resourceNameMapping', 'resources', 'roundOffDayworkingTime', 'rowHeight', 'scheduleEndDate', 'scheduleHeaderSettings', 'scheduleStartDate', 'selectedRowIndex', 'showColumnChooser', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'showProgressStatus', 'showResourceNames', 'showTaskNames', 'sizeSettings', 'selectedCellIndexes', 'sortSettings', 'splitterPosition', 'startDateMapping', 'stripLines', 'taskbarBackground', 'taskbarEditingTooltipTemplate', 'taskbarEditingTooltipTemplateId', 'taskbarHeight', 'taskbarTooltipTemplate', 'taskbarTemplate', 'milestoneTemplate', 'readOnly', 'taskbarTooltipTemplateId', 'taskIdMapping', 'taskNameMapping', 'toolbarSettings', 'treeColumnIndex', 'selectionMode', 'validateManualTasksOnLinking', 'weekendBackground', 'workingTimeScale', 'workWeek', 'viewType', 'groupCollection', 'resourceCollectionMapping', 'taskCollectionMapping', 'groupIdMapping', 'groupNameMapping'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejGantt, _WidgetBase);
-
-    function ejGantt(element) {
-      _classCallCheck(this, ejGantt);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejGantt;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Column = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
-
-  var Column = exports.Column = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'column'), _dec3 = (0, _decorators.generateBindables)('columns', ['clipMode', 'allowEditing', 'allowFiltering', 'allowGrouping', 'allowSorting', 'allowResizing', 'commands', 'cssClass', 'customAttributes', 'dataSource', 'defaultValue', 'disableHtmlEncode', 'displayAsCheckbox', 'editParams', 'editTemplate', 'editType', 'enableGroupByFormat', 'field', 'filterBarTemplate', 'filterType', 'foreignKeyField', 'foreignKeyValue', 'format', 'headerTemplateID', 'headerText', 'headerTextAlign', 'headerTooltip', 'isFrozen', 'isIdentity', 'isPrimaryKey', 'priority', 'showInColumnChooser', 'template', 'textAlign', 'tooltip', 'type', 'validationRules', 'visible', 'width']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
-    function Column() {
-      _classCallCheck(this, Column);
-
-      _initDefineProp(this, 'template', _descriptor, this);
-    }
-
-    Column.prototype.setTemplates = function setTemplates() {
-      if (this.template[0]) {
-        var util = new _util.Util();
-        this[util.getBindablePropertyName('template')] = this.template[0].template;
-      }
-    };
-
-    return Column;
-  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_dec4], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejGrid = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejGrid = exports.ejGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejGrid', ['allowCellMerging', 'allowGrouping', 'allowKeyboardNavigation', 'allowFiltering', 'allowSorting', 'allowMultiSorting', 'allowPaging', 'allowReordering', 'allowResizeToFit', 'allowResizing', 'allowRowDragAndDrop', 'allowScrolling', 'allowSearching', 'allowSelection', 'allowTextWrap', 'allowMultipleExporting', 'commonWidth', 'gridLines', 'childGrid', 'columnLayout', 'columns', 'contextMenuSettings', 'cssClass', 'dataSource', 'detailsTemplate', 'editSettings', 'enableAltRow', 'enableAutoSaveOnSelectionChange', 'enableHeaderHover', 'enablePersistence', 'enableResponsiveRow', 'enableRowHover', 'enableRTL', 'enableTouch', 'enableToolbarItems', 'exportToExcelAction', 'exportToPdfAction', 'exportToWordAction', 'filterSettings', 'groupSettings', 'isResponsive', 'keySettings', 'locale', 'minWidth', 'pageSettings', 'query', 'resizeSettings', 'rowTemplate', 'rowDropSettings', 'searchSettings', 'selectedRecords', 'selectedRowIndex', 'selectedRowIndices', 'selectionSettings', 'selectionType', 'scrollSettings', 'showColumnChooser', 'showStackedHeader', 'showSummary', 'sortSettings', 'stackedHeaderRows', 'summaryRows', 'textWrapSettings', 'toolbarSettings'], ['dataSource', 'selectedRowIndices'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejGrid, _WidgetBase);
-
-    function ejGrid(element, templateEngine) {
-      _classCallCheck(this, ejGrid);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'columns', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'columns';
-      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
-      _this.templateProcessor.initTemplate();
-      return _this;
-    }
-
-    return ejGrid;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejGroupButton = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejGroupButton = exports.ejGroupButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'group-button'), _dec2 = (0, _decorators.generateBindables)('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejGroupButton, _WidgetBase);
-
-    function ejGroupButton(element) {
-      _classCallCheck(this, ejGroupButton);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejGroupButton;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejHeatMap = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejHeatMap = exports.ejHeatMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'heat-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejHeatMap', ['width', 'height', 'id', 'showTooltip', 'tooltipSettings', 'itemsSource', 'heatMapCell', 'isResponsive', 'enableVirtualization', 'defaultColumnStyle', 'legendCollection', 'itemsMapping', 'colorMappingCollection']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejHeatMap, _WidgetBase);
-
-    function ejHeatMap(element) {
-      _classCallCheck(this, ejHeatMap);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejHeatMap;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejHeatMapLegend = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejHeatMapLegend = exports.ejHeatMapLegend = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'heat-map-legend'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejHeatMapLegend', ['width', 'height', 'isResponsive', 'showLabel', 'colorMappingCollection', 'orientation', 'legendMode']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejHeatMapLegend, _WidgetBase);
-
-    function ejHeatMapLegend(element) {
-      _classCallCheck(this, ejHeatMapLegend);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejHeatMapLegend;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejKanban = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejKanban = exports.ejKanban = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'kanban'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejKanban', ['allowDragAndDrop', 'allowTitle', 'swimlaneSettings', 'allowToggleColumn', 'allowSearching', 'allowFiltering', 'allowSelection', 'allowHover', 'allowKeyboardNavigation', 'allowScrolling', 'allowPrinting', 'contextMenuSettings', 'columns', 'cardSettings', 'customToolbarItems', 'cssClass', 'dataSource', 'enableTouch', 'enableRTL', 'enableTotalCount', 'editSettings', 'fields', 'keyField', 'isResponsive', 'minWidth', 'filterSettings', 'query', 'keySettings', 'scrollSettings', 'searchSettings', 'selectionType', 'stackedHeaderRows', 'tooltipSettings', 'workflows', 'locale'], ['dataSource'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'kanban-column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejKanban, _WidgetBase);
-
-    function ejKanban(element) {
-      _classCallCheck(this, ejKanban);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'columns', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'columns';
-      return _this;
-    }
-
-    return ejKanban;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.KanbanColumn = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var KanbanColumn = exports.KanbanColumn = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'kanban-column'), _dec3 = (0, _decorators.generateBindables)('columns', ['headerText', 'totalCount', 'key', 'allowDrop', 'allowDrag', 'isCollapsed', 'constraints', 'headerTemplate', 'width', 'visible', 'showAddButton']), _dec(_class = _dec2(_class = _dec3(_class = function KanbanColumn() {
-    _classCallCheck(this, KanbanColumn);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejLinearGauge = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejLinearGauge = exports.ejLinearGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'linear-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejLinearGauge', ['animationSpeed', 'backgroundColor', 'borderColor', 'enableAnimation', 'enableMarkerPointerAnimation', 'isResponsive', 'enableGroupSeparator', 'enableResize', 'frame', 'height', 'labelColor', 'locale', 'maximum', 'minimum', 'orientation', 'outerCustomLabelPosition', 'pointerGradient1', 'pointerGradient2', 'readOnly', 'scales', 'theme', 'tickColor', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejLinearGauge, _WidgetBase);
-
-    function ejLinearGauge(element) {
-      _classCallCheck(this, ejLinearGauge);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejLinearGauge;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejListBox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejListBox = exports.ejListBox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'list-box'), _dec2 = (0, _decorators.generateBindables)('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemHeight', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'sortOrder', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejListBox, _WidgetBase);
-
-    function ejListBox(element) {
-      _classCallCheck(this, ejListBox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejListBox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejListView = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejListView = exports.ejListView = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'list-view'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejListView', ['ajaxSettings', 'checkedIndices', 'cssClass', 'dataSource', 'enableAjax', 'enableCache', 'enableCheckMark', 'enableFiltering', 'enableGroupList', 'enablePersistence', 'fieldSettings', 'items', 'headerBackButtonText', 'headerTitle', 'height', 'locale', 'persistSelection', 'preventSelection', 'query', 'renderTemplate', 'selectedItemIndex', 'showHeader', 'showHeaderBackButton', 'templateId', 'width', 'itemRequestCount', 'totalItemsCount', 'allowVirtualScrolling', 'virtualScrollMode'], ['dataSource', 'selectedItemIndex']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejListView, _WidgetBase);
-
-    function ejListView(element) {
-      _classCallCheck(this, ejListView);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejListView;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Layer = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var Layer = exports.Layer = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'layer'), _dec3 = (0, _decorators.generateBindables)('layers', ['bingMapType', 'bubbleSettings', 'dataSource', 'shapeDataPath', 'shapePropertyPath', 'enableMouseHover', 'enableSelection', 'key', 'labelSettings', 'geometryType', 'layerType', 'legendSettings', 'mapItemsTemplate', 'markers', 'markerTemplate', 'selectedMapShapes', 'selectionMode', 'shapeData', 'shapeSettings', 'showMapItems', 'showTooltip', 'tooltipTemplate', 'urlTemplate', 'subLayers']), _dec(_class = _dec2(_class = _dec3(_class = function Layer() {
-    _classCallCheck(this, Layer);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejMap = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejMap = exports.ejMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejMap', ['background', 'baseMapIndex', 'centerPosition', 'draggingOnSelection', 'enableAnimation', 'enableLayerChangeAnimation', 'enablePan', 'enableResize', 'isResponsive', 'zoomSettings', 'navigationControl', 'locale', 'layers'], ['baseMapIndex', 'enablePan', 'enableResize', 'enableAnimation', 'zoomSettings.level', 'zoomSettings.minValue', 'zoomSettings.maxValue', 'zoomSettings.factor', 'zoomSettings.enableZoom', 'zoomSettings.enableZoomOnSelection', 'navigationControl.enableNavigation', 'navigationControl.orientation', 'navigationControl.absolutePosition', 'navigationControl.dockPosition']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'layer'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejMap, _WidgetBase);
-
-    function ejMap(element) {
-      _classCallCheck(this, ejMap);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'layers', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'layers';
-      return _this;
-    }
-
-    return ejMap;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejMaskEdit = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejMaskEdit = exports.ejMaskEdit = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'mask-edit'), _dec2 = (0, _decorators.generateBindables)('ejMaskEdit', ['cssClass', 'customCharacter', 'enabled', 'enablePersistence', 'height', 'hidePromptOnLeave', 'htmlAttributes', 'inputMode', 'locale', 'maskFormat', 'name', 'readOnly', 'showError', 'showPromptChar', 'showRoundedCorner', 'textAlign', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejMaskEdit, _WidgetBase);
-
-    function ejMaskEdit(element) {
-      _classCallCheck(this, ejMaskEdit);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejMaskEdit;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejMenu = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejMenu = exports.ejMenu = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'menu'), _dec2 = (0, _decorators.generateBindables)('ejMenu', ['animationType', 'contextMenuTarget', 'container', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width', 'overflowHeight', 'overflowWidth'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejMenu, _WidgetBase);
-
-    function ejMenu(element) {
-      _classCallCheck(this, ejMenu);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejMenu;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejNavigationDrawer = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejNavigationDrawer = exports.ejNavigationDrawer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'navigation-drawer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejNavigationDrawer', ['ajaxSettings', 'contentId', 'cssClass', 'direction', 'enableListView', 'items', 'listViewSettings', 'position', 'targetId', 'type', 'width', 'isPaneOpen']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejNavigationDrawer, _WidgetBase);
-
-    function ejNavigationDrawer(element) {
-      _classCallCheck(this, ejNavigationDrawer);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejNavigationDrawer;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejNumericTextbox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejNumericTextbox = exports.ejNumericTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'numeric-textbox'), _dec2 = (0, _decorators.generateBindables)('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejNumericTextbox, _WidgetBase);
-
-    function ejNumericTextbox(element) {
-      _classCallCheck(this, ejNumericTextbox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejNumericTextbox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejOverview = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejOverview = exports.ejOverview = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'overview'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejOverview', ['sourceID', 'height', 'width'], [], { 'sourceID': 'sourceId' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejOverview, _WidgetBase);
-
-    function ejOverview(element) {
-      _classCallCheck(this, ejOverview);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejOverview;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPager = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPager = exports.ejPager = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pager'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPager', ['customText', 'currentPage', 'enableExternalMessage', 'enableQueryString', 'enableRTL', 'externalMessage', 'locale', 'pageCount', 'pageSize', 'pageSizeList', 'totalPages', 'totalRecordsCount', 'showPageInfo'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPager, _WidgetBase);
-
-    function ejPager(element) {
-      _classCallCheck(this, ejPager);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPager;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPdfViewer = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPdfViewer = exports.ejPdfViewer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pdf-viewer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPdfViewer', ['locale', 'toolbarSettings', 'serverActionSettings', 'serviceUrl', 'documentPath', 'enableTextMarkupAnnotations', 'enableHighlightAnnotation', 'enableUnderlineAnnotation', 'enableStrikethroughAnnotation', 'enableSignature', 'strikethroughSettings', 'underlineSettings', 'highlightSettings', 'signatureSettings', 'annotationType', 'pageCount', 'currentPageNumber', 'zoomPercentage', 'pdfService', 'interactionMode', 'hyperlinkOpenState', 'enableHyperlink', 'enableTextSelection', 'isResponsive', 'isDocumentEdited', 'allowClientBuffering', 'fileName']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPdfViewer, _WidgetBase);
-
-    function ejPdfViewer(element) {
-      _classCallCheck(this, ejPdfViewer);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPdfViewer;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPercentageTextbox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejPercentageTextbox = exports.ejPercentageTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'percentage-textbox'), _dec2 = (0, _decorators.generateBindables)('ejPercentageTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejPercentageTextbox, _WidgetBase);
-
-    function ejPercentageTextbox(element) {
-      _classCallCheck(this, ejPercentageTextbox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPercentageTextbox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPivotChart = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPivotChart = exports.ejPivotChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotChart', ['analysisMode', 'cssClass', 'zooming', 'commonSeriesOptions', 'dataSource', 'customObject', 'enable3D', 'enableRTL', 'enableMultiLevelLabels', 'isResponsive', 'legend', 'locale', 'operationalMode', 'primaryXAxis', 'primaryYAxis', 'rotation', 'enableContextMenu', 'serviceMethodSettings', 'size', 'url'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPivotChart, _WidgetBase);
-
-    function ejPivotChart(element) {
-      _classCallCheck(this, ejPivotChart);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPivotChart;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPivotGauge = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPivotGauge = exports.ejPivotGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotGauge', ['columnsCount', 'cssClass', 'customObject', 'dataSource', 'enableAnimation', 'enableTooltip', 'enableRTL', 'isResponsive', 'labelFormatSettings', 'locale', 'rowsCount', 'scales', 'serviceMethodSettings', 'showHeaderLabel', 'url', 'analysisMode', 'operationalMode'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPivotGauge, _WidgetBase);
-
-    function ejPivotGauge(element) {
-      _classCallCheck(this, ejPivotGauge);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPivotGauge;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPivotGrid = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPivotGrid = exports.ejPivotGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotGrid', ['analysisMode', 'cssClass', 'pivotTableFieldListID', 'dataSource', 'valueSortSettings', 'frozenHeaderSettings', 'headerSettings', 'showUniqueNameOnPivotButton', 'customObject', 'collapsedMembers', 'enableCellContext', 'enableCellSelection', 'enableDrillThrough', 'enableCellDoubleClick', 'enableCellEditing', 'enableCollapseByDefault', 'enableColumnGrandTotal', 'enableConditionalFormatting', 'enableAdvancedFilter', 'enableDeferUpdate', 'enableGroupingBar', 'enableMemberEditorPaging', 'memberEditorPageSize', 'enableGrandTotal', 'enableJSONRendering', 'enablePivotFieldList', 'enableRowGrandTotal', 'enableRTL', 'enableToolTip', 'enableToolTipAnimation', 'enableColumnResizing', 'resizeColumnsToFit', 'enableContextMenu', 'enableVirtualScrolling', 'enablePaging', 'hyperlinkSettings', 'isResponsive', 'jsonRecords', 'layout', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'], [], { 'pivotTableFieldListID': 'pivotTableFieldListId', 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPivotGrid, _WidgetBase);
-
-    function ejPivotGrid(element) {
-      _classCallCheck(this, ejPivotGrid);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPivotGrid;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPivotSchemaDesigner = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPivotSchemaDesigner = exports.ejPivotSchemaDesigner = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-schema-designer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotSchemaDesigner', ['cssClass', 'customObject', 'enableWrapper', 'enableRTL', 'olap', 'enableDragDrop', 'height', 'locale', 'pivotControl', 'serviceMethods', 'url', 'width', 'layout'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPivotSchemaDesigner, _WidgetBase);
-
-    function ejPivotSchemaDesigner(element) {
-      _classCallCheck(this, ejPivotSchemaDesigner);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPivotSchemaDesigner;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejPivotTreeMap = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejPivotTreeMap = exports.ejPivotTreeMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-tree-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotTreeMap', ['cssClass', 'dataSource', 'customObject', 'isResponsive', 'locale', 'operationalMode', 'serviceMethodSettings', 'url']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejPivotTreeMap, _WidgetBase);
-
-    function ejPivotTreeMap(element) {
-      _classCallCheck(this, ejPivotTreeMap);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejPivotTreeMap;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejProgressBar = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejProgressBar = exports.ejProgressBar = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'progress-bar'), _dec2 = (0, _decorators.generateBindables)('ejProgressBar', ['cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'maxValue', 'minValue', 'percentage', 'showRoundedCorner', 'text', 'value', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejProgressBar, _WidgetBase);
-
-    function ejProgressBar(element) {
-      _classCallCheck(this, ejProgressBar);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejProgressBar;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Item = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
-
-  var Item = exports.Item = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'item'), _dec3 = (0, _decorators.generateBindables)('items', ['imageUrl', 'prependTo', 'text', 'enabled', 'click', 'badge', 'type', 'sliderSettings', 'items']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
-    function Item() {
-      _classCallCheck(this, Item);
-
-      _initDefineProp(this, 'template', _descriptor, this);
-    }
-
-    Item.prototype.setTemplates = function setTemplates() {
-      if (this.template[0]) {
-        var util = new _util.Util();
-        this[util.getBindablePropertyName('template')] = this.template[0].template;
-      }
-    };
-
-    return Item;
-  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_dec4], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRadialMenu = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejRadialMenu = exports.ejRadialMenu = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'radial-menu'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRadialMenu', ['autoOpen', 'backImageClass', 'cssClass', 'enableAnimation', 'imageClass', 'items', 'radius', 'targetElementId', 'position']), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'item'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejRadialMenu, _WidgetBase);
-
-    function ejRadialMenu(element, templateEngine) {
-      _classCallCheck(this, ejRadialMenu);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'items', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'items';
-      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
-      _this.templateProcessor.initTemplate();
-      return _this;
-    }
-
-    return ejRadialMenu;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'items', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRadialSlider = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejRadialSlider = exports.ejRadialSlider = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'radial-slider'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRadialSlider', ['autoOpen', 'cssClass', 'enableAnimation', 'enableRoundOff', 'endAngle', 'inline', 'innerCircleImageClass', 'innerCircleImageUrl', 'labelSpace', 'locale', 'radius', 'showInnerCircle', 'startAngle', 'strokeWidth', 'ticks', 'value'], ['value', 'ticks']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejRadialSlider, _WidgetBase);
-
-    function ejRadialSlider(element) {
-      _classCallCheck(this, ejRadialSlider);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRadialSlider;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRadioButton = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejRadioButton = exports.ejRadioButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'radio-button'), _dec2 = (0, _decorators.generateBindables)('ejRadioButton', ['checked', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'htmlAttributes', 'id', 'idPrefix', 'name', 'size', 'text', 'validationMessage', 'validationRules', 'value'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejRadioButton, _WidgetBase);
-
-    function ejRadioButton(element) {
-      _classCallCheck(this, ejRadioButton);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRadioButton;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRangeNavigator = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejRangeNavigator = exports.ejRangeNavigator = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'range-navigator'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRangeNavigator', ['allowSnapping', 'border', 'dataSource', 'series', 'seriesSettings', 'enableDeferredUpdate', 'enableScrollbar', 'enableAutoResizing', 'enableRTL', 'isResponsive', 'labelSettings', 'locale', 'navigatorStyleSettings', 'padding', 'rangePadding', 'rangeSettings', 'selectedData', 'selectedRangeSettings', 'scrollRangeSettings', 'sizeSettings', 'theme', 'tooltipSettings', 'valueAxisSettings', 'valueType', 'xName', 'yName'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'range-series'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejRangeNavigator, _WidgetBase);
-
-    function ejRangeNavigator(element) {
-      _classCallCheck(this, ejRangeNavigator);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'series', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'series';
-      return _this;
-    }
-
-    return ejRangeNavigator;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'series', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.RangeSeries = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var RangeSeries = exports.RangeSeries = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'range-series'), _dec3 = (0, _decorators.generateBindables)('series', ['xName', 'yName', 'dataSource', 'type', 'enableAnimation', 'fill']), _dec(_class = _dec2(_class = _dec3(_class = function RangeSeries() {
-    _classCallCheck(this, RangeSeries);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRating = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejRating = exports.ejRating = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rating'), _dec2 = (0, _decorators.generateBindables)('ejRating', ['allowReset', 'cssClass', 'enabled', 'enablePersistence', 'height', 'htmlAttributes', 'incrementStep', 'maxValue', 'minValue', 'orientation', 'precision', 'readOnly', 'shapeHeight', 'shapeWidth', 'showTooltip', 'value', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejRating, _WidgetBase);
-
-    function ejRating(element) {
-      _classCallCheck(this, ejRating);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRating;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejReportViewer = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejReportViewer = exports.ejReportViewer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'report-viewer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejReportViewer', ['dataSources', 'enablePageCache', 'exportSettings', 'isResponsive', 'locale', 'pageSettings', 'parameters', 'printMode', 'printOptions', 'processingMode', 'renderMode', 'reportPath', 'reportServerUrl', 'reportServiceUrl', 'toolbarSettings', 'zoomFactor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejReportViewer, _WidgetBase);
-
-    function ejReportViewer(element) {
-      _classCallCheck(this, ejReportViewer);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejReportViewer;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRibbon = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejRibbon = exports.ejRibbon = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'ribbon'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRibbon', ['allowResizing', 'isResponsive', 'buttonDefaults', 'showQAT', 'cssClass', 'collapsePinSettings', 'enableOnDemand', 'collapsible', 'enableRTL', 'expandPinSettings', 'applicationTab', 'contextualTabs', 'disabledItemIndex', 'enabledItemIndex', 'selectedItemIndex', 'tabs', 'locale', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejRibbon, _WidgetBase);
-
-    function ejRibbon(element) {
-      _classCallCheck(this, ejRibbon);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRibbon;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRotator = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejRotator = exports.ejRotator = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rotator'), _dec2 = (0, _decorators.generateBindables)('ejRotator', ['allowKeyboardNavigation', 'animationSpeed', 'animationType', 'circularMode', 'cssClass', 'dataSource', 'delay', 'displayItemsCount', 'enableAutoPlay', 'enabled', 'enableRTL', 'fields', 'frameSpace', 'isResponsive', 'navigateSteps', 'orientation', 'pagerPosition', 'query', 'showCaption', 'showNavigateButton', 'showPager', 'showPlayButton', 'showThumbnail', 'slideHeight', 'slideWidth', 'startIndex', 'stopOnHover', 'template', 'templateId', 'thumbnailSourceID'], [], { 'enableRTL': 'enableRtl', 'thumbnailSourceID': 'thumbnailSourceId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejRotator, _WidgetBase);
-
-    function ejRotator(element) {
-      _classCallCheck(this, ejRotator);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRotator;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejRte = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejRte = exports.ejRte = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rte'), _dec2 = (0, _decorators.generateBindables)('ejRTE', ['allowEditing', 'allowKeyboardNavigation', 'autoFocus', 'autoHeight', 'pasteCleanupSettings', 'colorCode', 'colorPaletteColumns', 'colorPaletteRows', 'cssClass', 'enabled', 'enableHtmlEncode', 'enablePersistence', 'enableResize', 'enableRTL', 'enableXHTML', 'enableTabKeyNavigation', 'exportToPdfSettings', 'exportToWordSettings', 'externalCSS', 'fileBrowser', 'fontName', 'fontSize', 'format', 'height', 'htmlAttributes', 'iframeAttributes', 'imageBrowser', 'importSettings', 'isResponsive', 'locale', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'name', 'showClearAll', 'showClearFormat', 'showCustomTable', 'showContextMenu', 'showDimensions', 'showFontOption', 'showFooter', 'showHtmlSource', 'showHtmlTagInfo', 'showToolbar', 'showCharCount', 'showRoundedCorner', 'showWordCount', 'tableColumns', 'tableRows', 'tools', 'toolsList', 'toolbarOverflowMode', 'tooltipSettings', 'undoStackLimit', 'value', 'validationRules', 'validationMessage', 'width', 'zoomStep'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejRte, _WidgetBase);
-
-    function ejRte(element) {
-      _classCallCheck(this, ejRte);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejRte;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSchedule = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejSchedule = exports.ejSchedule = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'schedule'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSchedule', ['allowDragAndDrop', 'allowInline', 'allowKeyboardNavigation', 'appointmentSettings', 'appointmentTemplateId', 'cssClass', 'categorizeSettings', 'cellHeight', 'cellWidth', 'contextMenuSettings', 'currentDate', 'currentView', 'dateFormat', 'showAppointmentNavigator', 'enableAppointmentResize', 'enableLoadOnDemand', 'enablePersistence', 'enableRTL', 'endHour', 'group', 'height', 'workHours', 'isDST', 'isResponsive', 'locale', 'maxDate', 'minDate', 'orientation', 'prioritySettings', 'readOnly', 'reminderSettings', 'renderDates', 'resourceHeaderTemplateId', 'resources', 'showAllDayRow', 'showWeekend', 'showCurrentTimeIndicator', 'showHeaderBar', 'showLocationField', 'showTimeZoneFields', 'showQuickWindow', 'startHour', 'timeMode', 'timeZone', 'timeZoneCollection', 'views', 'width', 'enableRecurrenceValidation', 'agendaViewSettings', 'firstDayOfWeek', 'workWeek', 'tooltipSettings', 'timeScale', 'showDeleteConfirmationDialog', 'allDayCellsTemplateId', 'workCellsTemplateId', 'dateHeaderTemplateId', 'showOverflowButton', 'appointmentDragArea', 'showNextPrevMonth', 'blockoutSettings'], ['currentView', 'currentDate'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'schedule-resource'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejSchedule, _WidgetBase);
-
-    function ejSchedule(element) {
-      _classCallCheck(this, ejSchedule);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'resources', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'resources';
-      return _this;
-    }
-
-    return ejSchedule;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'resources', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ScheduleResource = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ScheduleResource = exports.ScheduleResource = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'schedule-resource'), _dec3 = (0, _decorators.generateBindables)('resources', ['field', 'title', 'name', 'allowMultiple', 'resourceSettings']), _dec(_class = _dec2(_class = _dec3(_class = function ScheduleResource() {
-    _classCallCheck(this, ScheduleResource);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejScroller = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejScroller = exports.ejScroller = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'scroller'), _dec2 = (0, _decorators.generateBindables)('ejScroller', ['animationSpeed', 'autoHide', 'buttonSize', 'enabled', 'enablePersistence', 'enableRTL', 'enableTouchScroll', 'height', 'scrollerSize', 'scrollLeft', 'scrollOneStepBy', 'scrollTop', 'targetPane', 'width'], ['scrollLeft', 'scrollTop'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejScroller, _WidgetBase);
-
-    function ejScroller(element) {
-      _classCallCheck(this, ejScroller);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejScroller;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSignature = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejSignature = exports.ejSignature = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'signature'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSignature', ['backgroundColor', 'backgroundImage', 'enabled', 'height', 'isResponsive', 'saveImageFormat', 'saveWithBackground', 'showRoundedCorner', 'strokeColor', 'strokeWidth', 'width']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejSignature, _WidgetBase);
-
-    function ejSignature(element) {
-      _classCallCheck(this, ejSignature);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSignature;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSlider = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejSlider = exports.ejSlider = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'slider'), _dec2 = (0, _decorators.generateBindables)('ejSlider', ['allowMouseWheel', 'animationSpeed', 'cssClass', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'incrementStep', 'largeStep', 'maxValue', 'minValue', 'orientation', 'readOnly', 'showButtons', 'showRoundedCorner', 'showScale', 'showSmallTicks', 'showTooltip', 'sliderType', 'smallStep', 'value', 'values', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejSlider, _WidgetBase);
-
-    function ejSlider(element) {
-      _classCallCheck(this, ejSlider);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSlider;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSparkline = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejSparkline = exports.ejSparkline = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'sparkline'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSparkline', ['background', 'fill', 'stroke', 'border', 'width', 'opacity', 'highPointColor', 'lowPointColor', 'startPointColor', 'endPointColor', 'negativePointColor', 'rangeBandSettings', 'locale', 'palette', 'isResponsive', 'enableCanvasRendering', 'enableGroupSeparator', 'dataSource', 'xName', 'yName', 'padding', 'type', 'theme', 'tooltip', 'markerSettings', 'size', 'axisLineSettings']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejSparkline, _WidgetBase);
-
-    function ejSparkline(element) {
-      _classCallCheck(this, ejSparkline);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSparkline;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSpellCheck = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejSpellCheck = exports.ejSpellCheck = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'spell-check'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSpellCheck', ['dictionarySettings', 'misspellWordCss', 'locale', 'maxSuggestionCount', 'ignoreWords', 'contextMenuSettings', 'ignoreSettings', 'isResponsive', 'enableValidateOnType', 'controlsToValidate', 'enableAsync', 'ajaxDataType']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejSpellCheck, _WidgetBase);
-
-    function ejSpellCheck(element) {
-      _classCallCheck(this, ejSpellCheck);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSpellCheck;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSplitButton = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejSplitButton = exports.ejSplitButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'split-button'), _dec2 = (0, _decorators.generateBindables)('ejSplitButton', ['arrowPosition', 'buttonMode', 'contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'showRoundedCorner', 'size', 'suffixIcon', 'targetID', 'target', 'text', 'width'], [], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejSplitButton, _WidgetBase);
-
-    function ejSplitButton(element) {
-      _classCallCheck(this, ejSplitButton);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSplitButton;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSplitter = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejSplitter = exports.ejSplitter = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'splitter'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSplitter', ['allowKeyboardNavigation', 'animationSpeed', 'cssClass', 'enableAnimation', 'enableRTL', 'height', 'htmlAttributes', 'isResponsive', 'orientation', 'properties', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejSplitter, _WidgetBase);
-
-    function ejSplitter(element) {
-      _classCallCheck(this, ejSplitter);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSplitter;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Sheet = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var Sheet = exports.Sheet = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'sheet'), _dec3 = (0, _decorators.generateBindables)('sheets', ['border', 'cellTypes', 'cFormatRule', 'colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'frozenRows', 'frozenColumns', 'headerStyles', 'hideColumns', 'hideRows', 'mergeCells', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'rows', 'showGridlines', 'showHeader', 'showHeadings', 'sheetName', 'startCell']), _dec(_class = _dec2(_class = _dec3(_class = function Sheet() {
-    _classCallCheck(this, Sheet);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSpreadsheet = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejSpreadsheet = exports.ejSpreadsheet = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'spreadsheet'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSpreadsheet', ['activeSheetIndex', 'allowAutoCellType', 'allowAutoFill', 'allowAutoSum', 'allowCellFormatting', 'allowCellType', 'allowCharts', 'allowClear', 'allowClipboard', 'allowComments', 'allowConditionalFormats', 'allowDataValidation', 'allowDelete', 'allowDragAndDrop', 'allowEditing', 'allowFiltering', 'allowFormatAsTable', 'allowFormatPainter', 'allowFormulaBar', 'allowFreezing', 'allowHyperlink', 'allowImport', 'allowInsert', 'allowKeyboardNavigation', 'allowLockCell', 'allowMerging', 'allowOverflow', 'allowResizing', 'allowSearching', 'allowSelection', 'allowSorting', 'allowUndoRedo', 'allowWrap', 'apWidth', 'autoFillSettings', 'chartSettings', 'columnCount', 'columnWidth', 'cssClass', 'customFormulas', 'enableContextMenu', 'enablePivotTable', 'enableTouch', 'exportSettings', 'formatSettings', 'importSettings', 'isReadOnly', 'locale', 'nameManager', 'pictureSettings', 'printSettings', 'ribbonSettings', 'rowCount', 'rowHeight', 'scrollSettings', 'selectionSettings', 'sheetCount', 'sheets', 'showPager', 'showRibbon', 'undoRedoStep', 'userName']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'sheet'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejSpreadsheet, _WidgetBase);
-
-    function ejSpreadsheet(element) {
-      _classCallCheck(this, ejSpreadsheet);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'sheets', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'sheets';
-      return _this;
-    }
-
-    return ejSpreadsheet;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'sheets', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSunburstChart = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejSunburstChart = exports.ejSunburstChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'sunburst-chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSunburstChart', ['background', 'valueMemberPath', 'border', 'segmentBorder', 'dataSource', 'palette', 'parentNode', 'xName', 'yName', 'isResponsive', 'size', 'visible', 'tooltip', 'points', 'startAngle', 'endAngle', 'radius', 'innerRadius', 'dataLabelSettings', 'title', 'highlightSettings', 'selectionSettings', 'levels', 'legend', 'theme', 'margin', 'enableAnimation', 'opacity', 'zoomSettings', 'animationType']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'sunburst-levels'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejSunburstChart, _WidgetBase);
-
-    function ejSunburstChart(element) {
-      _classCallCheck(this, ejSunburstChart);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'levels', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'levels';
-      return _this;
-    }
-
-    return ejSunburstChart;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'levels', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.SunburstLevels = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var SunburstLevels = exports.SunburstLevels = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'sunburst-levels'), _dec3 = (0, _decorators.generateBindables)('levels', ['groupMemberPath']), _dec(_class = _dec2(_class = _dec3(_class = function SunburstLevels() {
-    _classCallCheck(this, SunburstLevels);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejSymbolPalette = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejSymbolPalette = exports.ejSymbolPalette = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'symbol-palette'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSymbolPalette', ['allowDrag', 'cssClass', 'defaultSettings', 'diagramId', 'headerHeight', 'height', 'paletteItemHeight', 'paletteItemWidth', 'palettes', 'previewHeight', 'previewOffset', 'previewWidth', 'showPaletteItemText', 'width']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejSymbolPalette, _WidgetBase);
-
-    function ejSymbolPalette(element) {
-      _classCallCheck(this, ejSymbolPalette);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejSymbolPalette;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTab = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejTab = exports.ejTab = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tab'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTab', ['ajaxSettings', 'allowKeyboardNavigation', 'collapsible', 'cssClass', 'disabledItemIndex', 'enableAnimation', 'enabled', 'enabledItemIndex', 'enablePersistence', 'enableRTL', 'enableTabScroll', 'events', 'headerPosition', 'headerSize', 'height', 'heightAdjustMode', 'hiddenItemIndex', 'htmlAttributes', 'idPrefix', 'selectedItemIndex', 'showCloseButton', 'showReloadIcon', 'showRoundedCorner', 'width'], ['selectedItemIndex'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejTab, _WidgetBase);
-
-    function ejTab(element) {
-      _classCallCheck(this, ejTab);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTab;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTagCloud = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejTagCloud = exports.ejTagCloud = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tag-cloud'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTagCloud', ['cssClass', 'dataSource', 'enableRTL', 'fields', 'htmlAttributes', 'format', 'maxFontSize', 'minFontSize', 'query', 'showTitle', 'titleImage', 'titleText'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejTagCloud, _WidgetBase);
-
-    function ejTagCloud(element) {
-      _classCallCheck(this, ejTagCloud);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTagCloud;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTile = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejTile = exports.ejTile = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tile'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTile', ['badge', 'caption', 'cssClass', 'enablePersistence', 'height', 'imageClass', 'imagePosition', 'imageTemplateId', 'imageUrl', 'locale', 'liveTile', 'tileSize', 'width', 'showRoundedCorner', 'allowSelection', 'backgroundColor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejTile, _WidgetBase);
-
-    function ejTile(element) {
-      _classCallCheck(this, ejTile);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTile;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTimePicker = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejTimePicker = exports.ejTimePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'time-picker'), _dec2 = (0, _decorators.generateBindables)('ejTimePicker', ['cssClass', 'disableTimeRanges', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'height', 'hourInterval', 'htmlAttributes', 'interval', 'locale', 'maxTime', 'minTime', 'minutesInterval', 'popupHeight', 'popupWidth', 'readOnly', 'secondsInterval', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejTimePicker, _WidgetBase);
-
-    function ejTimePicker(element) {
-      _classCallCheck(this, ejTimePicker);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.isEditor = true;
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTimePicker;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejToggleButton = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejToggleButton = exports.ejToggleButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'toggle-button'), _dec2 = (0, _decorators.generateBindables)('ejToggleButton', ['activePrefixIcon', 'activeSuffixIcon', 'activeText', 'contentType', 'cssClass', 'defaultPrefixIcon', 'defaultSuffixIcon', 'defaultText', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'preventToggle', 'showRoundedCorner', 'size', 'toggleState', 'type', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejToggleButton, _WidgetBase);
-
-    function ejToggleButton(element) {
-      _classCallCheck(this, ejToggleButton);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejToggleButton;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejToolbar = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejToolbar = exports.ejToolbar = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'toolbar'), _dec2 = (0, _decorators.generateBindables)('ejToolbar', ['cssClass', 'dataSource', 'disabledItemIndices', 'enabled', 'enabledItemIndices', 'enableRTL', 'enableSeparator', 'fields', 'height', 'htmlAttributes', 'hide', 'isResponsive', 'Items', 'orientation', 'query', 'responsiveType', 'showRoundedCorner', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejToolbar, _WidgetBase);
-
-    function ejToolbar(element) {
-      _classCallCheck(this, ejToolbar);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejToolbar;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTooltip = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejTooltip = exports.ejTooltip = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'tooltip'), _dec2 = (0, _decorators.generateBindables)('ejTooltip', ['allowKeyboardNavigation', 'animation', 'associate', 'autoCloseTimeout', 'closeMode', 'collision', 'containment', 'content', 'cssClass', 'enabled', 'enableRTL', 'height', 'isBalloon', 'position', 'showRoundedCorner', 'showShadow', 'target', 'tip', 'title', 'trigger', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejTooltip, _WidgetBase);
-
-    function ejTooltip(element) {
-      _classCallCheck(this, ejTooltip);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTooltip;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTreeGrid = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejTreeGrid = exports.ejTreeGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTreeGrid', ['allowColumnResize', 'allowColumnReordering', 'allowDragAndDrop', 'allowFiltering', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowSelection', 'allowSorting', 'allowPaging', 'allowTextWrap', 'altRowTemplateID', 'expandStateMapping', 'childMapping', 'columns', 'columnDialogFields', 'contextMenuSettings', 'cssClass', 'dataSource', 'headerTextOverflow', 'dragTooltip', 'editSettings', 'enableAltRow', 'enableCollapseAll', 'enableResize', 'enableVirtualization', 'enableLoadOnDemand', 'columnResizeSettings', 'commonWidth', 'filterSettings', 'locale', 'parseRowTemplate', 'idMapping', 'isResponsive', 'parentIdMapping', 'pageSettings', 'cellTooltipTemplate', 'query', 'rowHeight', 'rowTemplateID', 'selectedRowIndex', 'selectedCellIndexes', 'selectionSettings', 'showColumnOptions', 'showColumnChooser', 'showDetailsRow', 'showDetailsRowInfoColumn', 'detailsTemplate', 'detailsRowHeight', 'showStackedHeader', 'stackedHeaderRows', 'showSummaryRow', 'showTotalSummary', 'summaryRows', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'sizeSettings', 'sortSettings', 'toolbarSettings', 'treeColumnIndex'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes', 'pageSettings.currentPage'], { 'altRowTemplateID': 'altRowTemplateId', 'rowTemplateID': 'rowTemplateId' }), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'tree-grid-column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejTreeGrid, _WidgetBase);
-
-    function ejTreeGrid(element, templateEngine) {
-      _classCallCheck(this, ejTreeGrid);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'columns', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'columns';
-      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
-      _this.templateProcessor.initTemplate();
-      return _this;
-    }
-
-    return ejTreeGrid;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TreeGridColumn = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
-
-  var TreeGridColumn = exports.TreeGridColumn = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-grid-column'), _dec3 = (0, _decorators.generateBindables)('columns', ['allowFiltering', 'allowFilteringBlankContent', 'allowSorting', 'allowCellSelection', 'editParams', 'editTemplate', 'editType', 'dropdownData', 'field', 'template', 'templateID', 'angularTemplate', 'filterEditType', 'headerText', 'displayAsCheckbox', 'showCheckbox', 'visible', 'width', 'headerTemplateID', 'format', 'isTemplateColumn', 'headerTextAlign', 'isFrozen', 'textAlign', 'allowEditing', 'commands', 'showInColumnChooser', 'clipMode', 'tooltip', 'headerTooltip', 'validationRules', 'priority', 'allowFreezing']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
-    function TreeGridColumn() {
-      _classCallCheck(this, TreeGridColumn);
-
-      _initDefineProp(this, 'angularTemplate', _descriptor, this);
-    }
-
-    TreeGridColumn.prototype.setTemplates = function setTemplates() {
-      if (this.angularTemplate[0]) {
-        var util = new _util.Util();
-        this[util.getBindablePropertyName('angularTemplate')] = this.angularTemplate[0].template;
-      }
-    };
-
-    return TreeGridColumn;
-  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'angularTemplate', [_dec4], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class);
-});
-define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Level = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var Level = exports.Level = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'level'), _dec3 = (0, _decorators.generateBindables)('levels', ['groupBackground', 'groupBorderColor', 'groupBorderThickness', 'groupGap', 'groupPadding', 'groupPath', 'headerHeight', 'headerTemplate', 'headerVisibilityMode', 'labelPosition', 'textOverflow', 'labelTemplate', 'labelVisibilityMode', 'showHeader', 'showLabels']), _dec(_class = _dec2(_class = _dec3(_class = function Level() {
-    _classCallCheck(this, Level);
-  }) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTreeMap = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
-
-  var ejTreeMap = exports.ejTreeMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTreeMap', ['borderBrush', 'borderThickness', 'uniColorMapping', 'desaturationColorMapping', 'paletteColorMapping', 'colorValuePath', 'dataSource', 'dockPosition', 'drillDownHeaderColor', 'drillDownSelectionColor', 'isHierarchicalDatasource', 'header', 'enableDrillDown', 'isResponsive', 'enableResize', 'draggingOnSelection', 'draggingGroupOnSelection', 'groupColorMapping', 'legendSettings', 'highlightBorderBrush', 'highlightBorderThickness', 'highlightGroupBorderBrush', 'highlightGroupBorderThickness', 'highlightGroupOnSelection', 'highlightOnSelection', 'itemsLayoutMode', 'enableGroupSeparator', 'locale', 'leafItemSettings', 'rangeColorMapping', 'selectionMode', 'groupSelectionMode', 'showLegend', 'enableGradient', 'showTooltip', 'tooltipTemplate', 'treeMapItems', 'levels', 'weightValuePath'], ['dataSource', 'weightValuePath']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'level'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
-    _inherits(ejTreeMap, _WidgetBase);
-
-    function ejTreeMap(element) {
-      _classCallCheck(this, ejTreeMap);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _initDefineProp(_this, 'levels', _descriptor, _this);
-
-      _this.element = element;
-      _this.hasChildProperty = true;
-      _this.childPropertyName = 'levels';
-      return _this;
-    }
-
-    return ejTreeMap;
-  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'levels', [_dec5], {
-    enumerable: true,
-    initializer: function initializer() {
-      return [];
-    }
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejTreeView = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejTreeView = exports.ejTreeView = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'tree-view'), _dec2 = (0, _decorators.generateBindables)('ejTreeView', ['allowDragAndDrop', 'allowDragAndDropAcrossControl', 'allowDropSibling', 'allowDropChild', 'allowEditing', 'allowKeyboardNavigation', 'allowMultiSelection', 'autoCheck', 'autoCheckParentNode', 'checkedNodes', 'cssClass', 'enableAnimation', 'enabled', 'enableMultipleExpand', 'enablePersistence', 'enableRTL', 'expandedNodes', 'expandOn', 'fields', 'fullRowSelect', 'height', 'htmlAttributes', 'loadOnDemand', 'selectedNode', 'selectedNodes', 'showCheckbox', 'sortSettings', 'template', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejTreeView, _WidgetBase);
-
-    function ejTreeView(element) {
-      _classCallCheck(this, ejTreeView);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejTreeView;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejUploadbox = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class;
-
-  var ejUploadbox = exports.ejUploadbox = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'uploadbox'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejUploadbox', ['allowDragAndDrop', 'asyncUpload', 'autoUpload', 'buttonText', 'cssClass', 'customFileDetails', 'dialogAction', 'dialogPosition', 'dialogText', 'dropAreaText', 'dropAreaHeight', 'dropAreaWidth', 'enabled', 'enableRTL', 'extensionsAllow', 'extensionsDeny', 'fileSize', 'height', 'htmlAttributes', 'locale', 'multipleFilesSelection', 'pushFile', 'removeUrl', 'saveUrl', 'showBrowseButton', 'showFileDetails', 'showRoundedCorner', 'uploadName', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
-    _inherits(ejUploadbox, _WidgetBase);
-
-    function ejUploadbox(element) {
-      _classCallCheck(this, ejUploadbox);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejUploadbox;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
-});
-define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.ejWaitingPopup = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  var _dec, _dec2, _dec3, _class;
-
-  var ejWaitingPopup = exports.ejWaitingPopup = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'waiting-popup'), _dec2 = (0, _decorators.generateBindables)('ejWaitingPopup', ['cssClass', 'htmlAttributes', 'showImage', 'showOnInit', 'target', 'appendTo', 'template', 'text']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-    _inherits(ejWaitingPopup, _WidgetBase);
-
-    function ejWaitingPopup(element) {
-      _classCallCheck(this, ejWaitingPopup);
-
-      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-      _this.element = element;
-      return _this;
-    }
-
-    return ejWaitingPopup;
-  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
-});
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.TemplatingEngine = exports.children = exports.customElement = exports.inlineView = exports.inject = exports.bindable = exports.customAttribute = undefined;
-
-var _aureliaTemplating = require('aurelia-templating');
-
-var _aureliaDependencyInjection = require('aurelia-dependency-injection');
-
-exports.customAttribute = _aureliaTemplating.customAttribute;
-exports.bindable = _aureliaTemplating.bindable;
-exports.inject = _aureliaDependencyInjection.inject;
-exports.inlineView = _aureliaTemplating.inlineView;
-exports.customElement = _aureliaTemplating.customElement;
-exports.children = _aureliaTemplating.children;
-exports.TemplatingEngine = _aureliaTemplating.TemplatingEngine;
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var constants = exports.constants = {
-  eventPrefix: 'e-on-',
-  bindablePrefix: 'e-',
-  attributePrefix: 'ej-',
-  elementPrefix: 'ej-',
-  aureliaTemplateString: '<template><slot></slot></template>'
-};
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.generateBindables = generateBindables;
-exports.delayed = delayed;
-
-var _aureliaTemplating = require('aurelia-templating');
-
-var _aureliaDependencyInjection = require('aurelia-dependency-injection');
-
-var _aureliaMetadata = require('aurelia-metadata');
-
-var _aureliaTaskQueue = require('aurelia-task-queue');
-
-var _aureliaBinding = require('aurelia-binding');
-
-var _util = require('./util');
-
-function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
-  return function (target, key, descriptor) {
-    var behaviorResource = _aureliaMetadata.metadata.getOrCreateOwn(_aureliaMetadata.metadata.resource, _aureliaTemplating.HtmlBehaviorResource, target);
-    var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
-    var util = container.get(_util.Util);
-    var bindingInstance = container.get(_aureliaBinding.BindingEngine);
-    inputs.push('options');
-    inputs.push('widget');
-    var len = inputs.length;
-    if (observerCollection) {
-      target.prototype.arrayObserver = [];
-      observerCollection.forEach(function (element) {
-        target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
-      });
-      target.prototype.bindingInstance = bindingInstance;
-    }
-    target.prototype.controlName = controlName;
-    target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
-    target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
-    if (len) {
-      target.prototype.controlProperties = inputs;
-      for (var i = 0; i < len; i++) {
-        var option = inputs[i];
-        if (abbrevProperties && option in abbrevProperties) {
-          option = abbrevProperties[option];
-        }
-        var nameOrConfigOrTarget = {
-          name: util.getBindablePropertyName(option)
-        };
-
-        if (option === 'widget') {
-          nameOrConfigOrTarget.defaultBindingMode = _aureliaBinding.bindingMode.twoWay;
-        }
-
-        var prop = new _aureliaTemplating.BindableProperty(nameOrConfigOrTarget);
-        prop.registerWith(target, behaviorResource, descriptor);
-      }
-    }
-  };
-}
-
-function delayed() {
-  return function (target, key, descriptor) {
-    var taskQueue = (_aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container()).get(_aureliaTaskQueue.TaskQueue);
-    var ptr = descriptor.value;
-
-    descriptor.value = function () {
-      var _this = this;
-
-      for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      if (this.childPropertyName) {
-        taskQueue.queueTask(function () {
-          return ptr.apply(_this, args);
-        });
-      } else {
-        ptr.apply(this, args);
-      }
-    };
-
-    return descriptor;
-  };
-}
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getEventOption = getEventOption;
-exports.fireEvent = fireEvent;
-
-var _util = require('./util');
-
-var _aureliaDependencyInjection = require('aurelia-dependency-injection');
-
-var _constants = require('./constants');
-
-function getEventOption(element) {
-  var name = void 0;
-  var attr = void 0;
-  var attributes = element.attributes;
-  var option = {};
-  var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
-  var util = container.get(_util.Util);
-
-  var _loop = function _loop(i, len) {
-    attr = attributes[i];
-    name = attr.name;
-    if (!name.startsWith(_constants.constants.eventPrefix)) {
-      return 'continue';
-    }
-    var actualEventName = name.split('.')[0];
-    var eventName = util._unhyphenate(actualEventName.split(_constants.constants.eventPrefix)[1]);
-    option[eventName] = function (e) {
-      return fireEvent(element, actualEventName, e);
-    };
-  };
-
-  for (var i = 0, len = attributes.length; i < len; i++) {
-    var _ret = _loop(i, len);
-
-    if (_ret === 'continue') continue;
-  }
-  return option;
-}
-function fireEvent(element, name) {
-  var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-  var event = new CustomEvent(name, {
-    detail: data,
-    bubbles: true
-  });
-  element.dispatchEvent(event);
-  return event;
-}
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.TemplateProcessor = undefined;
-
-var _dec, _class;
-
-var _aureliaDependencyInjection = require('aurelia-dependency-injection');
-
-var _util = require('../common/util');
-
-var _aureliaTemplating = require('aurelia-templating');
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var TemplateProcessor = exports.TemplateProcessor = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TemplatingEngine, _util.Util), _dec(_class = function () {
-  function TemplateProcessor(context, templateEngine) {
-    _classCallCheck(this, TemplateProcessor);
-
-    this.context = context;
-    this.templatingEngine = templateEngine;
-    this.util = new _util.Util();
-  }
-
-  TemplateProcessor.prototype.initTemplate = function initTemplate() {
-    var proxy = this;
-    ej.template.render = function (self, selector, data, index) {
-      return proxy.renderStringTemplate(self, selector, data, index);
-    };
-  };
-
-  TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
-    if (this.context.widget.aureliaTemplate) {
-      this.compileTemplate(this.context.widget.element);
-    }
-    var proxy = this.context;
-    var element = this.context.widget.element;
-    element.on(this.context.widget.pluginName + 'refresh', function () {
-      if (proxy.widget.aureliaTemplate) {
-        proxy.templateProcessor.compileTemplate(element);
-      }
-    });
-  };
-
-  TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
-    var templateObject = self.aureliaTemplate;
-    if (!templateObject || !templateObject[selector]) {
-      templateObject = templateObject || {};
-      templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
-      self.aureliaTemplate = templateObject;
-    }
-    var scope = templateObject[selector];
-    if (this.util.hasValue(index)) {
-      scope.itemData[index] = data;
-    } else {
-      scope.itemData = [data];
-    }
-    var actElement = $(selector).html();
-    var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
-    return tempElement;
-  };
-
-  TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
-    var templates = $(element).find('.ej-aurelia-template');
-    var templateObject = this.context.widget.aureliaTemplate;
-    for (var template in templateObject) {
-      var tmplElement = templates.filter('.' + templateObject[template].key);
-      if (tmplElement.length) {
-        for (var i = 0; i < tmplElement.length; i++) {
-          var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
-          var view = this.templatingEngine.enhance(tmplElement[i]);
-          view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
-          templateObject[template].views[dataIndex] = view;
-        }
-      } else {
-        this.unbindViews(templateObject[template]);
-        delete templateObject[template];
-      }
-    }
-  };
-
-  TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
-    var templateObject = this.context.widget.aureliaTemplate;
-    if (templateObject && Object.keys(templateObject).length) {
-      for (var t in templateObject) {
-        this.unbindViews(templateObject[t]);
-        delete templateObject[t];
-      }
-    }
-  };
-
-  TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
-    for (var i = 0; i < obj.views.length; i++) {
-      var view = obj.views[i];
-      view.unbind();
-    }
-  };
-
-  return TemplateProcessor;
-}()) || _class);
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Template = undefined;
-
-var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
-
-var _aureliaDependencyInjection = require('aurelia-dependency-injection');
-
-var _aureliaTemplating = require('aurelia-templating');
-
-var _constants = require('./constants');
-
-function _initDefineProp(target, property, descriptor, context) {
-  if (!descriptor) return;
-  Object.defineProperty(target, property, {
-    enumerable: descriptor.enumerable,
-    configurable: descriptor.configurable,
-    writable: descriptor.writable,
-    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-  });
-}
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
-
-function _initializerWarningHelper(descriptor, context) {
-  throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-}
-
-var Template = exports.Template = (_dec = (0, _aureliaTemplating.customElement)(_constants.constants.elementPrefix + 'template'), _dec2 = (0, _aureliaTemplating.noView)(), _dec3 = (0, _aureliaTemplating.processContent)(function (compiler, resources, element, instruction) {
-  var html = element.innerHTML;
-  if (html !== '') {
-    instruction.template = html;
-  }
-  element.innerHTML = '';
-}), _dec4 = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
-  _classCallCheck(this, Template);
-
-  _initDefineProp(this, 'template', _descriptor, this);
-
-  this.template = target.elementInstruction.template;
-}, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_aureliaTemplating.bindable], {
-  enumerable: true,
-  initializer: null
-})), _class2)) || _class) || _class) || _class) || _class);
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.Util = undefined;
-
-var _constants = require('./constants');
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Util = exports.Util = function () {
-  function Util() {
-    _classCallCheck(this, Util);
-  }
-
-  Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
-    var name = '' + _constants.constants.bindablePrefix + propertyName;
-    return this._unhyphenate(name);
-  };
-
-  Util.prototype._unhyphenate = function _unhyphenate(name) {
-    return name.replace(/-([a-z])/g, function (g) {
-      return g[1].toUpperCase();
-    });
-  };
-
-  Util.prototype.getOptions = function getOptions(model, properties) {
-    var bindableproperites = {};
-    var value = void 0;
-    for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-      var _ref;
-
-      if (_isArray) {
-        if (_i >= _iterator.length) break;
-        _ref = _iterator[_i++];
-      } else {
-        _i = _iterator.next();
-        if (_i.done) break;
-        _ref = _i.value;
-      }
-
-      var prop = _ref;
-
-      if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
-        value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
-      } else {
-        value = model[this.getBindablePropertyName(prop)];
-      }
-      if (this.hasValue(value)) {
-        if (typeof value === 'string') {
-          value = this.processData(value);
-        }
-        bindableproperites[prop] = value;
-      }
-    }
-    return bindableproperites;
-  };
-
-  Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
-    var property = void 0;
-    for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
-      var _ref2;
-
-      if (_isArray2) {
-        if (_i2 >= _iterator2.length) break;
-        _ref2 = _iterator2[_i2++];
-      } else {
-        _i2 = _iterator2.next();
-        if (_i2.done) break;
-        _ref2 = _i2.value;
-      }
-
-      var prop = _ref2;
-
-      if (propertyName === this.getBindablePropertyName(prop)) {
-        property = prop;
-        break;
-      }
-    }
-    return property;
-  };
-
-  Util.prototype.hasValue = function hasValue(prop) {
-    return typeof prop !== 'undefined' && prop !== null;
-  };
-
-  Util.prototype.processData = function processData(value) {
-    if (value === 'true') {
-      return true;
-    } else if (value === 'false') {
-      return false;
-    } else if (+value + '' === value) {
-      return +value;
-    }
-    return value;
-  };
-
-  return Util;
-}();
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.WidgetBase = undefined;
-
-var _dec, _desc, _value, _class;
-
-var _events = require('./events');
-
-var _util = require('../common/util');
-
-var _decorators = require('../common/decorators');
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-  var desc = {};
-  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-    desc[key] = descriptor[key];
-  });
-  desc.enumerable = !!desc.enumerable;
-  desc.configurable = !!desc.configurable;
-
-  if ('value' in desc || desc.initializer) {
-    desc.writable = true;
-  }
-
-  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-    return decorator(target, property, desc) || desc;
-  }, desc);
-
-  if (context && desc.initializer !== void 0) {
-    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-    desc.initializer = undefined;
-  }
-
-  if (desc.initializer === void 0) {
-    Object['define' + 'Property'](target, property, desc);
-    desc = null;
-  }
-
-  return desc;
-}
-
-var firstValue = {};
-var WidgetBase = exports.WidgetBase = (_dec = (0, _decorators.delayed)(), (_class = function () {
-  function WidgetBase() {
-    _classCallCheck(this, WidgetBase);
-  }
-
-  WidgetBase.prototype.createWidget = function createWidget(option) {
-    var _this = this;
-
-    this.allOption = this.getWidgetOptions(option.element);
-    if (!this.ejOptions && !this.isEditor) {
-      this.createTwoWays();
-    }
-    this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
-    if (this.templateProcessor) {
-      this.templateProcessor.initWidgetDependancies();
-    }
-    if (this.isEditor) {
-      this.widget.model._change = function (evt) {
-        if ('eValue' in _this) {
-          _this[_this.util.getBindablePropertyName('value')] = evt.value;
-        }
-      };
-    }
-  };
-
-  WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
-    this.parentCtx = overrideCtx;
-    if (this.widget && this.widget.element && this.isEditor) {
-      this.widget.option('value', this.eValue === undefined ? null : this.eValue);
-    }
-  };
-
-  WidgetBase.prototype.createTwoWays = function createTwoWays() {
-    var model = this.allOption;
-    var twoWays = this.twoWays;
-    var len = twoWays.length;
-    for (var i = 0; i < len; i++) {
-      var prop = twoWays[i];
-      ej.createObject(prop, this.addTwoways(prop), model);
-    }
-  };
-
-  WidgetBase.prototype.addTwoways = function addTwoways(prop) {
-    var model = this;
-    var value = firstValue;
-    return function (newVal, isApp) {
-      if (value === firstValue) {
-        var viewModelProp = model.util.getBindablePropertyName(prop);
-        value = model[viewModelProp];
-        if (value === undefined) {
-          value = this.defaults[prop];
-        }
-        return value;
-      }
-      if (newVal === undefined) {
-        return value;
-      }
-      if (value === newVal) {
-        return null;
-      }
-      value = newVal;
-      if (!isApp && model.util.hasValue(newVal)) {
-        var _viewModelProp = model.util.getBindablePropertyName(prop);
-        model[_viewModelProp] = newVal;
-      }
-      return null;
-    };
-  };
-
-  WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
-    var propOptions = void 0;
-    if (this.ejOptions) {
-      propOptions = this.ejOptions;
-    } else {
-      propOptions = this.util.getOptions(this, this.controlProperties);
-    }
-    var eventOption = (0, _events.getEventOption)(element);
-    if (this.hasChildProperty) {
-      this.getChildProperties(propOptions);
-    }
-    return Object.assign({}, propOptions, eventOption);
-  };
-
-  WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
-    var PropertyName = this.childPropertyName;
-    var childCollection = this[PropertyName];
-    var len = childCollection.length;
-    if (len) {
-      options[PropertyName] = [];
-      var childProperties = childCollection[0].controlProperties;
-      for (var i = 0; i < len; i++) {
-        options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
-      }
-    }
-  };
-
-  WidgetBase.prototype.attached = function attached() {
-    if (this.templateProcessor) {
-      this[this.childPropertyName].forEach(function (template) {
-        return template.setTemplates();
-      });
-    }
-    this.util = new _util.Util();
-    this.createWidget({ element: this.element });
-  };
-
-  WidgetBase.prototype.unsubscribe = function unsubscribe() {
-    if (this.subscription) {
-      this.subscription.dispose();
-      this.subscription = null;
-    }
-  };
-
-  WidgetBase.prototype.unbind = function unbind() {
-    this.unsubscribe();
-  };
-
-  WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
-    var _this2 = this;
-
-    if (this.widget) {
-      var modelValue = void 0;
-      var prop = this.util.getControlPropertyName(this, property);
-      this.unsubscribe();
-      if (this.arrayObserver) {
-        this.arrayObserver.forEach(function (arrayProp) {
-          if (_this2[arrayProp] instanceof Array) {
-            _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
-              _this2.update(e);
-            });
-          }
-        });
-      }
-      if (prop) {
-        if (prop === 'widget') {
-          return;
-        } else if (prop !== 'options') {
-          modelValue = this.widget.model[prop];
-          var isTwoway = typeof modelValue === 'function';
-          if (isTwoway) {
-            modelValue = modelValue();
-          }
-          if (modelValue !== newValue) {
-            if (isTwoway) {
-              newValue = this.addTwoways(prop);
-            }
-            this.widget.option(prop, newValue);
-          }
-        } else {
-          this.widget.option(newValue);
-        }
-      }
-    }
-  };
-
-  WidgetBase.prototype.update = function update(e) {
-    var _this3 = this;
-
-    var modelValue = void 0;
-    var newVal = void 0;
-    if (e.length) {
-      this.arrayObserver.forEach(function (arrayProp) {
-        if (_this3[arrayProp] instanceof Array) {
-          var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
-          modelValue = _this3.widget.model[prop];
-          if (typeof modelValue === 'function') {
-            modelValue = modelValue();
-            newVal = modelValue;
-            newVal = _this3.addTwoways(prop);
-            _this3.widget.option(prop, newVal);
-          } else {
-            _this3.widget.option(prop, modelValue);
-          }
-        }
-      });
-    }
-  };
-
-  WidgetBase.prototype.detached = function detached() {
-    if (this.templateProcessor) {
-      this.templateProcessor.clearTempalte();
-    }
-    if (this.widget) {
-      this.widget.destroy();
-    }
-  };
-
-  return WidgetBase;
-}(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class));
-define(['exports', 'aurelia-templating', 'aurelia-dependency-injection'], function (exports, _aureliaTemplating, _aureliaDependencyInjection) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TemplatingEngine = exports.children = exports.customElement = exports.inlineView = exports.inject = exports.bindable = exports.customAttribute = undefined;
-  exports.customAttribute = _aureliaTemplating.customAttribute;
-  exports.bindable = _aureliaTemplating.bindable;
-  exports.inject = _aureliaDependencyInjection.inject;
-  exports.inlineView = _aureliaTemplating.inlineView;
-  exports.customElement = _aureliaTemplating.customElement;
-  exports.children = _aureliaTemplating.children;
-  exports.TemplatingEngine = _aureliaTemplating.TemplatingEngine;
-});
-define(['exports'], function (exports) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  var constants = exports.constants = {
-    eventPrefix: 'e-on-',
-    bindablePrefix: 'e-',
-    attributePrefix: 'ej-',
-    elementPrefix: 'ej-',
-    aureliaTemplateString: '<template><slot></slot></template>'
-  };
-});
-define(['exports', 'aurelia-templating', 'aurelia-dependency-injection', 'aurelia-metadata', 'aurelia-task-queue', 'aurelia-binding', './util'], function (exports, _aureliaTemplating, _aureliaDependencyInjection, _aureliaMetadata, _aureliaTaskQueue, _aureliaBinding, _util) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.generateBindables = generateBindables;
-  exports.delayed = delayed;
-  function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
-    return function (target, key, descriptor) {
-      var behaviorResource = _aureliaMetadata.metadata.getOrCreateOwn(_aureliaMetadata.metadata.resource, _aureliaTemplating.HtmlBehaviorResource, target);
-      var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
-      var util = container.get(_util.Util);
-      var bindingInstance = container.get(_aureliaBinding.BindingEngine);
-      inputs.push('options');
-      inputs.push('widget');
-      var len = inputs.length;
-      if (observerCollection) {
-        target.prototype.arrayObserver = [];
-        observerCollection.forEach(function (element) {
-          target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
-        });
-        target.prototype.bindingInstance = bindingInstance;
-      }
-      target.prototype.controlName = controlName;
-      target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
-      target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
-      if (len) {
-        target.prototype.controlProperties = inputs;
-        for (var i = 0; i < len; i++) {
-          var option = inputs[i];
-          if (abbrevProperties && option in abbrevProperties) {
-            option = abbrevProperties[option];
-          }
-          var nameOrConfigOrTarget = {
-            name: util.getBindablePropertyName(option)
-          };
-
-          if (option === 'widget') {
-            nameOrConfigOrTarget.defaultBindingMode = _aureliaBinding.bindingMode.twoWay;
-          }
-
-          var prop = new _aureliaTemplating.BindableProperty(nameOrConfigOrTarget);
-          prop.registerWith(target, behaviorResource, descriptor);
-        }
-      }
-    };
-  }
-
-  function delayed() {
-    return function (target, key, descriptor) {
-      var taskQueue = (_aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container()).get(_aureliaTaskQueue.TaskQueue);
-      var ptr = descriptor.value;
-
-      descriptor.value = function () {
-        var _this = this;
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
-        }
-
-        if (this.childPropertyName) {
-          taskQueue.queueTask(function () {
-            return ptr.apply(_this, args);
-          });
-        } else {
-          ptr.apply(this, args);
-        }
-      };
-
-      return descriptor;
-    };
-  }
-});
-define(['exports', './util', 'aurelia-dependency-injection', './constants'], function (exports, _util, _aureliaDependencyInjection, _constants) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.getEventOption = getEventOption;
-  exports.fireEvent = fireEvent;
-  function getEventOption(element) {
-    var name = void 0;
-    var attr = void 0;
-    var attributes = element.attributes;
-    var option = {};
-    var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
-    var util = container.get(_util.Util);
-
-    var _loop = function _loop(i, len) {
-      attr = attributes[i];
-      name = attr.name;
-      if (!name.startsWith(_constants.constants.eventPrefix)) {
-        return 'continue';
-      }
-      var actualEventName = name.split('.')[0];
-      var eventName = util._unhyphenate(actualEventName.split(_constants.constants.eventPrefix)[1]);
-      option[eventName] = function (e) {
-        return fireEvent(element, actualEventName, e);
-      };
-    };
-
-    for (var i = 0, len = attributes.length; i < len; i++) {
-      var _ret = _loop(i, len);
-
-      if (_ret === 'continue') continue;
-    }
-    return option;
-  }
-  function fireEvent(element, name) {
-    var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-    var event = new CustomEvent(name, {
-      detail: data,
-      bubbles: true
-    });
-    element.dispatchEvent(event);
-    return event;
-  }
-});
-define(['exports', 'aurelia-dependency-injection', '../common/util', 'aurelia-templating'], function (exports, _aureliaDependencyInjection, _util, _aureliaTemplating) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.TemplateProcessor = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var _dec, _class;
-
-  var TemplateProcessor = exports.TemplateProcessor = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TemplatingEngine, _util.Util), _dec(_class = function () {
-    function TemplateProcessor(context, templateEngine) {
-      _classCallCheck(this, TemplateProcessor);
-
-      this.context = context;
-      this.templatingEngine = templateEngine;
-      this.util = new _util.Util();
-    }
-
-    TemplateProcessor.prototype.initTemplate = function initTemplate() {
-      var proxy = this;
-      ej.template.render = function (self, selector, data, index) {
-        return proxy.renderStringTemplate(self, selector, data, index);
-      };
-    };
-
-    TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
-      if (this.context.widget.aureliaTemplate) {
-        this.compileTemplate(this.context.widget.element);
-      }
-      var proxy = this.context;
-      var element = this.context.widget.element;
-      element.on(this.context.widget.pluginName + 'refresh', function () {
-        if (proxy.widget.aureliaTemplate) {
-          proxy.templateProcessor.compileTemplate(element);
-        }
-      });
-    };
-
-    TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
-      var templateObject = self.aureliaTemplate;
-      if (!templateObject || !templateObject[selector]) {
-        templateObject = templateObject || {};
-        templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
-        self.aureliaTemplate = templateObject;
-      }
-      var scope = templateObject[selector];
-      if (this.util.hasValue(index)) {
-        scope.itemData[index] = data;
-      } else {
-        scope.itemData = [data];
-      }
-      var actElement = $(selector).html();
-      var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
-      return tempElement;
-    };
-
-    TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
-      var templates = $(element).find('.ej-aurelia-template');
-      var templateObject = this.context.widget.aureliaTemplate;
-      for (var template in templateObject) {
-        var tmplElement = templates.filter('.' + templateObject[template].key);
-        if (tmplElement.length) {
-          for (var i = 0; i < tmplElement.length; i++) {
-            var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
-            var view = this.templatingEngine.enhance(tmplElement[i]);
-            view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
-            templateObject[template].views[dataIndex] = view;
-          }
-        } else {
-          this.unbindViews(templateObject[template]);
-          delete templateObject[template];
-        }
-      }
-    };
-
-    TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
-      var templateObject = this.context.widget.aureliaTemplate;
-      if (templateObject && Object.keys(templateObject).length) {
-        for (var t in templateObject) {
-          this.unbindViews(templateObject[t]);
-          delete templateObject[t];
-        }
-      }
-    };
-
-    TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
-      for (var i = 0; i < obj.views.length; i++) {
-        var view = obj.views[i];
-        view.unbind();
-      }
-    };
-
-    return TemplateProcessor;
-  }()) || _class);
-});
-define(['exports', 'aurelia-dependency-injection', 'aurelia-templating', './constants'], function (exports, _aureliaDependencyInjection, _aureliaTemplating, _constants) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Template = undefined;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
-  }
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
-  }
-
-  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
-
-  var Template = exports.Template = (_dec = (0, _aureliaTemplating.customElement)(_constants.constants.elementPrefix + 'template'), _dec2 = (0, _aureliaTemplating.noView)(), _dec3 = (0, _aureliaTemplating.processContent)(function (compiler, resources, element, instruction) {
-    var html = element.innerHTML;
-    if (html !== '') {
-      instruction.template = html;
-    }
-    element.innerHTML = '';
-  }), _dec4 = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
-    _classCallCheck(this, Template);
-
-    _initDefineProp(this, 'template', _descriptor, this);
-
-    this.template = target.elementInstruction.template;
-  }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_aureliaTemplating.bindable], {
-    enumerable: true,
-    initializer: null
-  })), _class2)) || _class) || _class) || _class) || _class);
-});
-define(['exports', './constants'], function (exports, _constants) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.Util = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  var Util = exports.Util = function () {
-    function Util() {
-      _classCallCheck(this, Util);
-    }
-
-    Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
-      var name = '' + _constants.constants.bindablePrefix + propertyName;
-      return this._unhyphenate(name);
-    };
-
-    Util.prototype._unhyphenate = function _unhyphenate(name) {
-      return name.replace(/-([a-z])/g, function (g) {
-        return g[1].toUpperCase();
-      });
-    };
-
-    Util.prototype.getOptions = function getOptions(model, properties) {
-      var bindableproperites = {};
-      var value = void 0;
-      for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-        var _ref;
-
-        if (_isArray) {
-          if (_i >= _iterator.length) break;
-          _ref = _iterator[_i++];
-        } else {
-          _i = _iterator.next();
-          if (_i.done) break;
-          _ref = _i.value;
-        }
-
-        var prop = _ref;
-
-        if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
-          value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
-        } else {
-          value = model[this.getBindablePropertyName(prop)];
-        }
-        if (this.hasValue(value)) {
-          if (typeof value === 'string') {
-            value = this.processData(value);
-          }
-          bindableproperites[prop] = value;
-        }
-      }
-      return bindableproperites;
-    };
-
-    Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
-      var property = void 0;
-      for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
-        var _ref2;
-
-        if (_isArray2) {
-          if (_i2 >= _iterator2.length) break;
-          _ref2 = _iterator2[_i2++];
-        } else {
-          _i2 = _iterator2.next();
-          if (_i2.done) break;
-          _ref2 = _i2.value;
-        }
-
-        var prop = _ref2;
-
-        if (propertyName === this.getBindablePropertyName(prop)) {
-          property = prop;
-          break;
-        }
-      }
-      return property;
-    };
-
-    Util.prototype.hasValue = function hasValue(prop) {
-      return typeof prop !== 'undefined' && prop !== null;
-    };
-
-    Util.prototype.processData = function processData(value) {
-      if (value === 'true') {
-        return true;
-      } else if (value === 'false') {
-        return false;
-      } else if (+value + '' === value) {
-        return +value;
-      }
-      return value;
-    };
-
-    return Util;
-  }();
-});
-define(['exports', './events', '../common/util', '../common/decorators'], function (exports, _events, _util, _decorators) {
-  'use strict';
-
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.WidgetBase = undefined;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
-
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
-  }
-
-  var _dec, _desc, _value, _class;
-
-  var firstValue = {};
-  var WidgetBase = exports.WidgetBase = (_dec = (0, _decorators.delayed)(), (_class = function () {
-    function WidgetBase() {
-      _classCallCheck(this, WidgetBase);
-    }
-
-    WidgetBase.prototype.createWidget = function createWidget(option) {
-      var _this = this;
-
-      this.allOption = this.getWidgetOptions(option.element);
-      if (!this.ejOptions && !this.isEditor) {
-        this.createTwoWays();
-      }
-      this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
-      if (this.templateProcessor) {
-        this.templateProcessor.initWidgetDependancies();
-      }
-      if (this.isEditor) {
-        this.widget.model._change = function (evt) {
-          if ('eValue' in _this) {
-            _this[_this.util.getBindablePropertyName('value')] = evt.value;
-          }
-        };
-      }
-    };
-
-    WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
-      this.parentCtx = overrideCtx;
-      if (this.widget && this.widget.element && this.isEditor) {
-        this.widget.option('value', this.eValue === undefined ? null : this.eValue);
-      }
-    };
-
-    WidgetBase.prototype.createTwoWays = function createTwoWays() {
-      var model = this.allOption;
-      var twoWays = this.twoWays;
-      var len = twoWays.length;
-      for (var i = 0; i < len; i++) {
-        var prop = twoWays[i];
-        ej.createObject(prop, this.addTwoways(prop), model);
-      }
-    };
-
-    WidgetBase.prototype.addTwoways = function addTwoways(prop) {
-      var model = this;
-      var value = firstValue;
-      return function (newVal, isApp) {
-        if (value === firstValue) {
-          var viewModelProp = model.util.getBindablePropertyName(prop);
-          value = model[viewModelProp];
-          if (value === undefined) {
-            value = this.defaults[prop];
-          }
-          return value;
-        }
-        if (newVal === undefined) {
-          return value;
-        }
-        if (value === newVal) {
-          return null;
-        }
-        value = newVal;
-        if (!isApp && model.util.hasValue(newVal)) {
-          var _viewModelProp = model.util.getBindablePropertyName(prop);
-          model[_viewModelProp] = newVal;
-        }
-        return null;
-      };
-    };
-
-    WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
-      var propOptions = void 0;
-      if (this.ejOptions) {
-        propOptions = this.ejOptions;
-      } else {
-        propOptions = this.util.getOptions(this, this.controlProperties);
-      }
-      var eventOption = (0, _events.getEventOption)(element);
-      if (this.hasChildProperty) {
-        this.getChildProperties(propOptions);
-      }
-      return Object.assign({}, propOptions, eventOption);
-    };
-
-    WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
-      var PropertyName = this.childPropertyName;
-      var childCollection = this[PropertyName];
-      var len = childCollection.length;
-      if (len) {
-        options[PropertyName] = [];
-        var childProperties = childCollection[0].controlProperties;
-        for (var i = 0; i < len; i++) {
-          options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
-        }
-      }
-    };
-
-    WidgetBase.prototype.attached = function attached() {
-      if (this.templateProcessor) {
-        this[this.childPropertyName].forEach(function (template) {
-          return template.setTemplates();
-        });
-      }
-      this.util = new _util.Util();
-      this.createWidget({ element: this.element });
-    };
-
-    WidgetBase.prototype.unsubscribe = function unsubscribe() {
-      if (this.subscription) {
-        this.subscription.dispose();
-        this.subscription = null;
-      }
-    };
-
-    WidgetBase.prototype.unbind = function unbind() {
-      this.unsubscribe();
-    };
-
-    WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
-      var _this2 = this;
-
-      if (this.widget) {
-        var modelValue = void 0;
-        var prop = this.util.getControlPropertyName(this, property);
-        this.unsubscribe();
-        if (this.arrayObserver) {
-          this.arrayObserver.forEach(function (arrayProp) {
-            if (_this2[arrayProp] instanceof Array) {
-              _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
-                _this2.update(e);
-              });
-            }
-          });
-        }
-        if (prop) {
-          if (prop === 'widget') {
-            return;
-          } else if (prop !== 'options') {
-            modelValue = this.widget.model[prop];
-            var isTwoway = typeof modelValue === 'function';
-            if (isTwoway) {
-              modelValue = modelValue();
-            }
-            if (modelValue !== newValue) {
-              if (isTwoway) {
-                newValue = this.addTwoways(prop);
-              }
-              this.widget.option(prop, newValue);
-            }
-          } else {
-            this.widget.option(newValue);
-          }
-        }
-      }
-    };
-
-    WidgetBase.prototype.update = function update(e) {
-      var _this3 = this;
-
-      var modelValue = void 0;
-      var newVal = void 0;
-      if (e.length) {
-        this.arrayObserver.forEach(function (arrayProp) {
-          if (_this3[arrayProp] instanceof Array) {
-            var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
-            modelValue = _this3.widget.model[prop];
-            if (typeof modelValue === 'function') {
-              modelValue = modelValue();
-              newVal = modelValue;
-              newVal = _this3.addTwoways(prop);
-              _this3.widget.option(prop, newVal);
-            } else {
-              _this3.widget.option(prop, modelValue);
-            }
-          }
-        });
-      }
-    };
-
-    WidgetBase.prototype.detached = function detached() {
-      if (this.templateProcessor) {
-        this.templateProcessor.clearTempalte();
-      }
-      if (this.widget) {
-        this.widget.destroy();
-      }
-    };
-
-    return WidgetBase;
-  }(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class));
-});
-@customElement(`${constants.elementPrefix}accordion`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejAccordion', ['ajaxSettings', 'allowKeyboardNavigation', 'collapseSpeed', 'collapsible', 'cssClass', 'customIcon', 'disabledItems', 'enableAnimation', 'enabled', 'enabledItems', 'enableMultipleOpen', 'enablePersistence', 'enableRTL', 'events', 'expandSpeed', 'headerSize', 'height', 'heightAdjustMode', 'htmlAttributes', 'selectedItemIndex', 'selectedItems', 'showCloseButton', 'showRoundedCorner', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejAccordion extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}autocomplete`)
-@generateBindables('ejAutocomplete', ['addNewText', 'allowAddNew', 'allowSorting', 'animateType', 'autoFocus', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delaySuggestionTimeout', 'delimiterChar', 'emptyResultText', 'enableAutoFill', 'enabled', 'enableDistinct', 'enablePersistence', 'enableRTL', 'fields', 'filterType', 'height', 'highlightSearch', 'itemsCount', 'locale', 'minCharacter', 'multiColumnSettings', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectValueByKey', 'showEmptyResultText', 'showLoadingIcon', 'showPopupButton', 'showRoundedCorner', 'showResetIcon', 'sortOrder', 'template', 'validationMessage', 'validationRules', 'value', 'visible', 'watermarkText', 'width'], ['value', 'selectValueByKey'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejAutocomplete extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}barcode`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejBarcode', ['barcodeToTextGapHeight', 'barHeight', 'darkBarColor', 'displayText', 'enabled', 'encodeStartStopSymbol', 'lightBarColor', 'narrowBarWidth', 'quietZone', 'symbologyType', 'text', 'textColor', 'wideBarWidth', 'xDimension'])
-@inject(Element)
-export class ejBarcode extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}bullet-graph`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejBulletGraph', ['applyRangeStrokeToLabels', 'applyRangeStrokeToTicks', 'captionSettings', 'comparativeMeasureValue', 'enableAnimation', 'enableResizing', 'flowDirection', 'height', 'isResponsive', 'enableGroupSeparator', 'locale', 'orientation', 'qualitativeRanges', 'qualitativeRangeSize', 'quantitativeScaleLength', 'quantitativeScaleSettings', 'theme', 'tooltipSettings', 'value', 'width'])
-@inject(Element)
-export class ejBulletGraph extends WidgetBase {
-  @children(`${constants.elementPrefix}qualitative-range`) qualitativeRanges = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'qualitativeRanges';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}qualitative-range`)
-@generateBindables('qualitativeRanges', ['rangeEnd', 'rangeOpacity', 'rangeStroke'])
-
-export class QualitativeRange {
-}
-
-
-@customAttribute(`${constants.attributePrefix}button`)
-@generateBindables('ejButton', ['contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'repeatButton', 'showRoundedCorner', 'size', 'suffixIcon', 'text', 'timeInterval', 'type', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejButton extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}chart`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejChart', ['annotations', 'background', 'backGroundImageUrl', 'border', 'exportSettings', 'chartArea', 'columnDefinitions', 'commonSeriesOptions', 'selectedDataPointIndexes', 'crosshair', 'depth', 'enable3D', 'enableCanvasRendering', 'initSeriesRender', 'enableRotation', 'indicators', 'isResponsive', 'legend', 'locale', 'palette', 'margin', 'perspectiveAngle', 'primaryXAxis', 'axes', 'primaryYAxis', 'rotation', 'rowDefinitions', 'series', 'sideBySideSeriesPlacement', 'size', 'theme', 'tilt', 'title', 'wallSize', 'zooming'])
-@inject(Element)
-export class ejChart extends WidgetBase {
-  @children(`${constants.elementPrefix}series`) series = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'series';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}series`)
-@generateBindables('series', ['bearFillColor', 'border', 'animationDuration', 'bullFillColor', 'columnFacet', 'columnWidth', 'columnSpacing', 'stackingGroup', 'dashArray', 'dataSource', 'cardinalSplineTension', 'doughnutCoefficient', 'doughnutSize', 'drawType', 'enableAnimation', 'enableSmartLabels', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'fill', 'font', 'funnelHeight', 'funnelWidth', 'gapRatio', 'isClosed', 'isStacking', 'isTransposed', 'showMedian', 'labelPosition', 'splitMode', 'boxPlotMode', 'bubbleOptions', 'splineType', 'lineCap', 'lineJoin', 'marker', 'name', 'opacity', 'outlierSettings', 'palette', 'pieCoefficient', 'pieOfPieCoefficient', 'splitValue', 'gapWidth', 'emptyPointSettings', 'positiveFill', 'connectorLine', 'dragSettings', 'errorBar', 'points', 'pyramidMode', 'query', 'startAngle', 'cornerRadius', 'tooltip', 'type', 'visibility', 'visibleOnLegend', 'xAxisName', 'xName', 'yAxisName', 'yName', 'high', 'low', 'open', 'close', 'pointColorMappingName', 'zOrder', 'size', 'trendlines', 'highlightSettings', 'selectionSettings'])
-
-export class Series {
-}
-
-
-@customAttribute(`${constants.attributePrefix}check-box`)
-@generateBindables('ejCheckBox', ['checked', 'checkState', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'enableTriState', 'htmlAttributes', 'id', 'idPrefix', 'name', 'showRoundedCorner', 'size', 'text', 'validationMessage', 'validationRules', 'value'], ['checked', 'checkState'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejCheckBox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}circular-gauge`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejCircularGauge', ['animationSpeed', 'backgroundColor', 'distanceFromCorner', 'rangeZOrder', 'enableAnimation', 'enableGroupSeparator', 'enableResize', 'frame', 'gaugePosition', 'height', 'interiorGradient', 'isRadialGradient', 'isResponsive', 'locale', 'maximum', 'minimum', 'outerCustomLabelPosition', 'radius', 'readOnly', 'scales', 'theme', 'legend', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum'])
-@inject(Element)
-export class ejCircularGauge extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}color-picker`)
-@generateBindables('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue'])
-@inject(Element)
-export class ejColorPicker extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}currency-textbox`)
-@generateBindables('ejCurrencyTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejCurrencyTextbox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}date-picker`)
-@generateBindables('ejDatePicker', ['allowEdit', 'allowDrillDown', 'blackoutDates', 'buttonText', 'cssClass', 'dateFormat', 'dayHeaderFormat', 'depthLevel', 'displayInline', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'fields', 'headerFormat', 'height', 'highlightSection', 'highlightWeekend', 'htmlAttributes', 'locale', 'maxDate', 'minDate', 'readOnly', 'showDisabledRange', 'showFooter', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'showTooltip', 'specialDates', 'startDay', 'startLevel', 'stepMonths', 'tooltipFormat', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'weekNumber', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejDatePicker extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}date-range-picker`)
-@generateBindables('ejDateRangePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateFormat', 'enableTimePicker', 'enabled', 'enablePersistence', 'endDate', 'height', 'locale', 'ranges', 'separator', 'startDate', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'watermarkText', 'width'], ['value'])
-@inject(Element)
-export class ejDateRangePicker extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}date-time-picker`)
-@generateBindables('ejDateTimePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateTimeFormat', 'dayHeaderFormat', 'depthLevel', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'headerFormat', 'height', 'htmlAttributes', 'interval', 'locale', 'maxDateTime', 'minDateTime', 'popupPosition', 'readOnly', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'startDay', 'startLevel', 'stepMonths', 'timeDisplayFormat', 'timeDrillDown', 'timePopupWidth', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejDateTimePicker extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}diagram`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejDiagram', ['backgroundColor', 'backgroundImage', 'bridgeDirection', 'commandManager', 'connectors', 'connectorTemplate', 'constraints', 'contextMenu', 'dataSourceSettings', 'defaultSettings', 'drawType', 'enableAutoScroll', 'enableContextMenu', 'height', 'historyManager', 'labelRenderingMode', 'layout', 'locale', 'nodes', 'nodeTemplate', 'pageSettings', 'scrollSettings', 'selectedItems', 'showTooltip', 'serializationSettings', 'rulerSettings', 'snapSettings', 'tool', 'tooltip', 'width', 'zoomFactor'])
-@inject(Element)
-export class ejDiagram extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}dialog`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejDialog', ['actionButtons', 'ajaxSettings', 'allowDraggable', 'allowKeyboardNavigation', 'animation', 'backgroundScroll', 'closeOnEscape', 'containment', 'contentType', 'contentUrl', 'cssClass', 'enableAnimation', 'enabled', 'enableModal', 'enablePersistence', 'enableResize', 'enableRTL', 'faviconCSS', 'height', 'htmlAttributes', 'isResponsive', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'position', 'showHeader', 'showOnInit', 'showRoundedCorner', 'target', 'title', 'tooltip', 'width', 'zIndex', 'showFooter', 'footerTemplateId'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejDialog extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}digital-gauge`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejDigitalGauge', ['frame', 'height', 'isResponsive', 'enableResize', 'items', 'matrixSegmentData', 'segmentData', 'themes', 'value', 'width'], ['value'])
-@inject(Element)
-export class ejDigitalGauge extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}drop-down-list`)
-@generateBindables('ejDropDownList', ['allowVirtualScrolling', 'cascadeTo', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delimiterChar', 'enableAnimation', 'enabled', 'enableIncrementalSearch', 'enableFilterSearch', 'enableServerFiltering', 'enablePersistence', 'enablePopupResize', 'enableRTL', 'enableSorting', 'fields', 'filterType', 'headerTemplate', 'height', 'htmlAttributes', 'itemsCount', 'locale', 'maxPopupHeight', 'minPopupHeight', 'maxPopupWidth', 'minPopupWidth', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showPopupOnLoad', 'showRoundedCorner', 'sortOrder', 'targetID', 'template', 'text', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width', 'virtualScrollMode'], ['value'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
-@inject(Element)
-export class ejDropDownList extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}file-explorer`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejFileExplorer', ['ajaxAction', 'ajaxDataType', 'ajaxSettings', 'allowDragAndDrop', 'allowKeyboardNavigation', 'allowMultiSelection', 'contextMenuSettings', 'cssClass', 'enablePersistence', 'enableResize', 'enableRTL', 'enableThumbnailCompress', 'fileTypes', 'filterSettings', 'gridSettings', 'height', 'isResponsive', 'layout', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'path', 'rootFolderName', 'selectedFolder', 'selectedItems', 'showCheckbox', 'showContextMenu', 'showFooter', 'showRoundedCorner', 'showThumbnail', 'showToolbar', 'showNavigationPane', 'tools', 'toolsList', 'uploadSettings', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejFileExplorer extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}gantt`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejGantt', ['addDialogFields', 'allowColumnResize', 'allowGanttChartEditing', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowMultipleExporting', 'allowSelection', 'allowSorting', 'allowDragAndDrop', 'enablePredecessorValidation', 'enableSerialNumber', 'baselineColor', 'workMapping', 'expandStateMapping', 'baselineEndDateMapping', 'baselineStartDateMapping', 'childMapping', 'columnDialogFields', 'connectorLineBackground', 'connectorlineWidth', 'cssClass', 'cellTooltipTemplate', 'dragTooltip', 'dataSource', 'dateFormat', 'dayWorkingTime', 'durationMapping', 'durationUnit', 'editDialogFields', 'filterSettings', 'isResponsive', 'splitterSettings', 'editSettings', 'enableAltRow', 'enableWBS', 'enableWBSPredecessor', 'enableCollapseAll', 'leftTaskLabelMapping', 'rightTaskLabelMapping', 'leftTaskLabelTemplate', 'rightTaskLabelTemplate', 'enableContextMenu', 'enableProgressBarResizing', 'enableResize', 'enableTaskbarDragTooltip', 'enableTaskbarTooltip', 'enableVirtualization', 'endDateMapping', 'highlightWeekends', 'holidays', 'includeWeekend', 'locale', 'milestoneMapping', 'showColumnOptions', 'parentTaskbarTemplate', 'taskType', 'workUnit', 'taskSchedulingMode', 'selectionType', 'parentProgressbarBackground', 'resourceUnitMapping', 'notesMapping', 'taskSchedulingModeMapping', 'durationUnitMapping', 'parentTaskbarBackground', 'parentTaskIdMapping', 'predecessorMapping', 'progressbarBackground', 'progressbarHeight', 'progressbarTooltipTemplate', 'progressbarTooltipTemplateId', 'progressMapping', 'query', 'renderBaseline', 'resourceIdMapping', 'resourceInfoMapping', 'resourceNameMapping', 'resources', 'roundOffDayworkingTime', 'rowHeight', 'scheduleEndDate', 'scheduleHeaderSettings', 'scheduleStartDate', 'selectedRowIndex', 'showColumnChooser', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'showProgressStatus', 'showResourceNames', 'showTaskNames', 'sizeSettings', 'selectedCellIndexes', 'sortSettings', 'splitterPosition', 'startDateMapping', 'stripLines', 'taskbarBackground', 'taskbarEditingTooltipTemplate', 'taskbarEditingTooltipTemplateId', 'taskbarHeight', 'taskbarTooltipTemplate', 'taskbarTemplate', 'milestoneTemplate', 'readOnly', 'taskbarTooltipTemplateId', 'taskIdMapping', 'taskNameMapping', 'toolbarSettings', 'treeColumnIndex', 'selectionMode', 'validateManualTasksOnLinking', 'weekendBackground', 'workingTimeScale', 'workWeek', 'viewType', 'groupCollection', 'resourceCollectionMapping', 'taskCollectionMapping', 'groupIdMapping', 'groupNameMapping'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes'])
-@inject(Element)
-export class ejGantt extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}column`)
-@generateBindables('columns', ['clipMode', 'allowEditing', 'allowFiltering', 'allowGrouping', 'allowSorting', 'allowResizing', 'commands', 'cssClass', 'customAttributes', 'dataSource', 'defaultValue', 'disableHtmlEncode', 'displayAsCheckbox', 'editParams', 'editTemplate', 'editType', 'enableGroupByFormat', 'field', 'filterBarTemplate', 'filterType', 'foreignKeyField', 'foreignKeyValue', 'format', 'headerTemplateID', 'headerText', 'headerTextAlign', 'headerTooltip', 'isFrozen', 'isIdentity', 'isPrimaryKey', 'priority', 'showInColumnChooser', 'template', 'textAlign', 'tooltip', 'type', 'validationRules', 'visible', 'width'])
-
-export class Column {
-  @children(`${constants.elementPrefix}template`) template = [];
-  setTemplates() {
-    if (this.template[0]) {
-      let util = new Util();
-      this[util.getBindablePropertyName('template')] = this.template[0].template;
-    }
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}grid`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejGrid', ['allowCellMerging', 'allowGrouping', 'allowKeyboardNavigation', 'allowFiltering', 'allowSorting', 'allowMultiSorting', 'allowPaging', 'allowReordering', 'allowResizeToFit', 'allowResizing', 'allowRowDragAndDrop', 'allowScrolling', 'allowSearching', 'allowSelection', 'allowTextWrap', 'allowMultipleExporting', 'commonWidth', 'gridLines', 'childGrid', 'columnLayout', 'columns', 'contextMenuSettings', 'cssClass', 'dataSource', 'detailsTemplate', 'editSettings', 'enableAltRow', 'enableAutoSaveOnSelectionChange', 'enableHeaderHover', 'enablePersistence', 'enableResponsiveRow', 'enableRowHover', 'enableRTL', 'enableTouch', 'enableToolbarItems', 'exportToExcelAction', 'exportToPdfAction', 'exportToWordAction', 'filterSettings', 'groupSettings', 'isResponsive', 'keySettings', 'locale', 'minWidth', 'pageSettings', 'query', 'resizeSettings', 'rowTemplate', 'rowDropSettings', 'searchSettings', 'selectedRecords', 'selectedRowIndex', 'selectedRowIndices', 'selectionSettings', 'selectionType', 'scrollSettings', 'showColumnChooser', 'showStackedHeader', 'showSummary', 'sortSettings', 'stackedHeaderRows', 'summaryRows', 'textWrapSettings', 'toolbarSettings'], ['dataSource', 'selectedRowIndices'], {'enableRTL': 'enableRtl'})
-@inject(Element, TemplatingEngine)
-export class ejGrid extends WidgetBase {
-  @children(`${constants.elementPrefix}column`) columns = [];
-  constructor(element, templateEngine) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'columns';
-    this.templateProcessor = new TemplateProcessor(this, templateEngine);
-    this.templateProcessor.initTemplate();
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}group-button`)
-@generateBindables('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejGroupButton extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}heat-map`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejHeatMap', ['width', 'height', 'id', 'showTooltip', 'tooltipSettings', 'itemsSource', 'heatMapCell', 'isResponsive', 'enableVirtualization', 'defaultColumnStyle', 'legendCollection', 'itemsMapping', 'colorMappingCollection'])
-@inject(Element)
-export class ejHeatMap extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}heat-map-legend`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejHeatMapLegend', ['width', 'height', 'isResponsive', 'showLabel', 'colorMappingCollection', 'orientation', 'legendMode'])
-@inject(Element)
-export class ejHeatMapLegend extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}kanban`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejKanban', ['allowDragAndDrop', 'allowTitle', 'swimlaneSettings', 'allowToggleColumn', 'allowSearching', 'allowFiltering', 'allowSelection', 'allowHover', 'allowKeyboardNavigation', 'allowScrolling', 'allowPrinting', 'contextMenuSettings', 'columns', 'cardSettings', 'customToolbarItems', 'cssClass', 'dataSource', 'enableTouch', 'enableRTL', 'enableTotalCount', 'editSettings', 'fields', 'keyField', 'isResponsive', 'minWidth', 'filterSettings', 'query', 'keySettings', 'scrollSettings', 'searchSettings', 'selectionType', 'stackedHeaderRows', 'tooltipSettings', 'workflows', 'locale'], ['dataSource'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejKanban extends WidgetBase {
-  @children(`${constants.elementPrefix}kanban-column`) columns = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'columns';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}kanban-column`)
-@generateBindables('columns', ['headerText', 'totalCount', 'key', 'allowDrop', 'allowDrag', 'isCollapsed', 'constraints', 'headerTemplate', 'width', 'visible', 'showAddButton'])
-
-export class KanbanColumn {
-}
-
-
-@customElement(`${constants.elementPrefix}linear-gauge`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejLinearGauge', ['animationSpeed', 'backgroundColor', 'borderColor', 'enableAnimation', 'enableMarkerPointerAnimation', 'isResponsive', 'enableGroupSeparator', 'enableResize', 'frame', 'height', 'labelColor', 'locale', 'maximum', 'minimum', 'orientation', 'outerCustomLabelPosition', 'pointerGradient1', 'pointerGradient2', 'readOnly', 'scales', 'theme', 'tickColor', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum'])
-@inject(Element)
-export class ejLinearGauge extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}list-box`)
-@generateBindables('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemHeight', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'sortOrder', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
-@inject(Element)
-export class ejListBox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}list-view`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejListView', ['ajaxSettings', 'checkedIndices', 'cssClass', 'dataSource', 'enableAjax', 'enableCache', 'enableCheckMark', 'enableFiltering', 'enableGroupList', 'enablePersistence', 'fieldSettings', 'items', 'headerBackButtonText', 'headerTitle', 'height', 'locale', 'persistSelection', 'preventSelection', 'query', 'renderTemplate', 'selectedItemIndex', 'showHeader', 'showHeaderBackButton', 'templateId', 'width', 'itemRequestCount', 'totalItemsCount', 'allowVirtualScrolling', 'virtualScrollMode'], ['dataSource', 'selectedItemIndex'])
-@inject(Element)
-export class ejListView extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}layer`)
-@generateBindables('layers', ['bingMapType', 'bubbleSettings', 'dataSource', 'shapeDataPath', 'shapePropertyPath', 'enableMouseHover', 'enableSelection', 'key', 'labelSettings', 'geometryType', 'layerType', 'legendSettings', 'mapItemsTemplate', 'markers', 'markerTemplate', 'selectedMapShapes', 'selectionMode', 'shapeData', 'shapeSettings', 'showMapItems', 'showTooltip', 'tooltipTemplate', 'urlTemplate', 'subLayers'])
-
-export class Layer {
-}
-
-
-@customElement(`${constants.elementPrefix}map`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejMap', ['background', 'baseMapIndex', 'centerPosition', 'draggingOnSelection', 'enableAnimation', 'enableLayerChangeAnimation', 'enablePan', 'enableResize', 'isResponsive', 'zoomSettings', 'navigationControl', 'locale', 'layers'], ['baseMapIndex', 'enablePan', 'enableResize', 'enableAnimation', 'zoomSettings.level', 'zoomSettings.minValue', 'zoomSettings.maxValue', 'zoomSettings.factor', 'zoomSettings.enableZoom', 'zoomSettings.enableZoomOnSelection', 'navigationControl.enableNavigation', 'navigationControl.orientation', 'navigationControl.absolutePosition', 'navigationControl.dockPosition'])
-@inject(Element)
-export class ejMap extends WidgetBase {
-  @children(`${constants.elementPrefix}layer`) layers = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'layers';
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}mask-edit`)
-@generateBindables('ejMaskEdit', ['cssClass', 'customCharacter', 'enabled', 'enablePersistence', 'height', 'hidePromptOnLeave', 'htmlAttributes', 'inputMode', 'locale', 'maskFormat', 'name', 'readOnly', 'showError', 'showPromptChar', 'showRoundedCorner', 'textAlign', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'])
-@inject(Element)
-export class ejMaskEdit extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}menu`)
-@generateBindables('ejMenu', ['animationType', 'contextMenuTarget', 'container', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width', 'overflowHeight', 'overflowWidth'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejMenu extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}navigation-drawer`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejNavigationDrawer', ['ajaxSettings', 'contentId', 'cssClass', 'direction', 'enableListView', 'items', 'listViewSettings', 'position', 'targetId', 'type', 'width', 'isPaneOpen'])
-@inject(Element)
-export class ejNavigationDrawer extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}numeric-textbox`)
-@generateBindables('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejNumericTextbox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}overview`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejOverview', ['sourceID', 'height', 'width'], [], {'sourceID': 'sourceId'})
-@inject(Element)
-export class ejOverview extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pager`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPager', ['customText', 'currentPage', 'enableExternalMessage', 'enableQueryString', 'enableRTL', 'externalMessage', 'locale', 'pageCount', 'pageSize', 'pageSizeList', 'totalPages', 'totalRecordsCount', 'showPageInfo'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPager extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pdf-viewer`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPdfViewer', ['locale', 'toolbarSettings', 'serverActionSettings', 'serviceUrl', 'documentPath', 'enableTextMarkupAnnotations', 'enableHighlightAnnotation', 'enableUnderlineAnnotation', 'enableStrikethroughAnnotation', 'enableSignature', 'strikethroughSettings', 'underlineSettings', 'highlightSettings', 'signatureSettings', 'annotationType', 'pageCount', 'currentPageNumber', 'zoomPercentage', 'pdfService', 'interactionMode', 'hyperlinkOpenState', 'enableHyperlink', 'enableTextSelection', 'isResponsive', 'isDocumentEdited', 'allowClientBuffering', 'fileName'])
-@inject(Element)
-export class ejPdfViewer extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}percentage-textbox`)
-@generateBindables('ejPercentageTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPercentageTextbox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pivot-chart`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPivotChart', ['analysisMode', 'cssClass', 'zooming', 'commonSeriesOptions', 'dataSource', 'customObject', 'enable3D', 'enableRTL', 'enableMultiLevelLabels', 'isResponsive', 'legend', 'locale', 'operationalMode', 'primaryXAxis', 'primaryYAxis', 'rotation', 'enableContextMenu', 'serviceMethodSettings', 'size', 'url'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPivotChart extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pivot-gauge`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPivotGauge', ['columnsCount', 'cssClass', 'customObject', 'dataSource', 'enableAnimation', 'enableTooltip', 'enableRTL', 'isResponsive', 'labelFormatSettings', 'locale', 'rowsCount', 'scales', 'serviceMethodSettings', 'showHeaderLabel', 'url', 'analysisMode', 'operationalMode'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPivotGauge extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pivot-grid`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPivotGrid', ['analysisMode', 'cssClass', 'pivotTableFieldListID', 'dataSource', 'valueSortSettings', 'frozenHeaderSettings', 'headerSettings', 'showUniqueNameOnPivotButton', 'customObject', 'collapsedMembers', 'enableCellContext', 'enableCellSelection', 'enableDrillThrough', 'enableCellDoubleClick', 'enableCellEditing', 'enableCollapseByDefault', 'enableColumnGrandTotal', 'enableConditionalFormatting', 'enableAdvancedFilter', 'enableDeferUpdate', 'enableGroupingBar', 'enableMemberEditorPaging', 'memberEditorPageSize', 'enableGrandTotal', 'enableJSONRendering', 'enablePivotFieldList', 'enableRowGrandTotal', 'enableRTL', 'enableToolTip', 'enableToolTipAnimation', 'enableColumnResizing', 'resizeColumnsToFit', 'enableContextMenu', 'enableVirtualScrolling', 'enablePaging', 'hyperlinkSettings', 'isResponsive', 'jsonRecords', 'layout', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'], [], {'pivotTableFieldListID': 'pivotTableFieldListId', 'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPivotGrid extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pivot-schema-designer`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPivotSchemaDesigner', ['cssClass', 'customObject', 'enableWrapper', 'enableRTL', 'olap', 'enableDragDrop', 'height', 'locale', 'pivotControl', 'serviceMethods', 'url', 'width', 'layout'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejPivotSchemaDesigner extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}pivot-tree-map`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejPivotTreeMap', ['cssClass', 'dataSource', 'customObject', 'isResponsive', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'])
-@inject(Element)
-export class ejPivotTreeMap extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}progress-bar`)
-@generateBindables('ejProgressBar', ['cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'maxValue', 'minValue', 'percentage', 'showRoundedCorner', 'text', 'value', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejProgressBar extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}item`)
-@generateBindables('items', ['imageUrl', 'prependTo', 'text', 'enabled', 'click', 'badge', 'type', 'sliderSettings', 'items'])
-
-export class Item {
-  @children(`${constants.elementPrefix}template`) template = [];
-  setTemplates() {
-    if (this.template[0]) {
-      let util = new Util();
-      this[util.getBindablePropertyName('template')] = this.template[0].template;
-    }
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}radial-menu`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejRadialMenu', ['autoOpen', 'backImageClass', 'cssClass', 'enableAnimation', 'imageClass', 'items', 'radius', 'targetElementId', 'position'])
-@inject(Element, TemplatingEngine)
-export class ejRadialMenu extends WidgetBase {
-  @children(`${constants.elementPrefix}item`) items = [];
-  constructor(element, templateEngine) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'items';
-    this.templateProcessor = new TemplateProcessor(this, templateEngine);
-    this.templateProcessor.initTemplate();
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}radial-slider`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejRadialSlider', ['autoOpen', 'cssClass', 'enableAnimation', 'enableRoundOff', 'endAngle', 'inline', 'innerCircleImageClass', 'innerCircleImageUrl', 'labelSpace', 'locale', 'radius', 'showInnerCircle', 'startAngle', 'strokeWidth', 'ticks', 'value'], ['value', 'ticks'])
-@inject(Element)
-export class ejRadialSlider extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}radio-button`)
-@generateBindables('ejRadioButton', ['checked', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'htmlAttributes', 'id', 'idPrefix', 'name', 'size', 'text', 'validationMessage', 'validationRules', 'value'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejRadioButton extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}range-navigator`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejRangeNavigator', ['allowSnapping', 'border', 'dataSource', 'series', 'seriesSettings', 'enableDeferredUpdate', 'enableScrollbar', 'enableAutoResizing', 'enableRTL', 'isResponsive', 'labelSettings', 'locale', 'navigatorStyleSettings', 'padding', 'rangePadding', 'rangeSettings', 'selectedData', 'selectedRangeSettings', 'scrollRangeSettings', 'sizeSettings', 'theme', 'tooltipSettings', 'valueAxisSettings', 'valueType', 'xName', 'yName'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejRangeNavigator extends WidgetBase {
-  @children(`${constants.elementPrefix}range-series`) series = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'series';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}range-series`)
-@generateBindables('series', ['xName', 'yName', 'dataSource', 'type', 'enableAnimation', 'fill'])
-
-export class RangeSeries {
-}
-
-
-@customAttribute(`${constants.attributePrefix}rating`)
-@generateBindables('ejRating', ['allowReset', 'cssClass', 'enabled', 'enablePersistence', 'height', 'htmlAttributes', 'incrementStep', 'maxValue', 'minValue', 'orientation', 'precision', 'readOnly', 'shapeHeight', 'shapeWidth', 'showTooltip', 'value', 'width'], ['value'])
-@inject(Element)
-export class ejRating extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}report-viewer`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejReportViewer', ['dataSources', 'enablePageCache', 'exportSettings', 'isResponsive', 'locale', 'pageSettings', 'parameters', 'printMode', 'printOptions', 'processingMode', 'renderMode', 'reportPath', 'reportServerUrl', 'reportServiceUrl', 'toolbarSettings', 'zoomFactor'])
-@inject(Element)
-export class ejReportViewer extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}ribbon`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejRibbon', ['allowResizing', 'isResponsive', 'buttonDefaults', 'showQAT', 'cssClass', 'collapsePinSettings', 'enableOnDemand', 'collapsible', 'enableRTL', 'expandPinSettings', 'applicationTab', 'contextualTabs', 'disabledItemIndex', 'enabledItemIndex', 'selectedItemIndex', 'tabs', 'locale', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejRibbon extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}rotator`)
-@generateBindables('ejRotator', ['allowKeyboardNavigation', 'animationSpeed', 'animationType', 'circularMode', 'cssClass', 'dataSource', 'delay', 'displayItemsCount', 'enableAutoPlay', 'enabled', 'enableRTL', 'fields', 'frameSpace', 'isResponsive', 'navigateSteps', 'orientation', 'pagerPosition', 'query', 'showCaption', 'showNavigateButton', 'showPager', 'showPlayButton', 'showThumbnail', 'slideHeight', 'slideWidth', 'startIndex', 'stopOnHover', 'template', 'templateId', 'thumbnailSourceID'], [], {'enableRTL': 'enableRtl', 'thumbnailSourceID': 'thumbnailSourceId'})
-@inject(Element)
-export class ejRotator extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}rte`)
-@generateBindables('ejRTE', ['allowEditing', 'allowKeyboardNavigation', 'autoFocus', 'autoHeight', 'pasteCleanupSettings', 'colorCode', 'colorPaletteColumns', 'colorPaletteRows', 'cssClass', 'enabled', 'enableHtmlEncode', 'enablePersistence', 'enableResize', 'enableRTL', 'enableXHTML', 'enableTabKeyNavigation', 'exportToPdfSettings', 'exportToWordSettings', 'externalCSS', 'fileBrowser', 'fontName', 'fontSize', 'format', 'height', 'htmlAttributes', 'iframeAttributes', 'imageBrowser', 'importSettings', 'isResponsive', 'locale', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'name', 'showClearAll', 'showClearFormat', 'showCustomTable', 'showContextMenu', 'showDimensions', 'showFontOption', 'showFooter', 'showHtmlSource', 'showHtmlTagInfo', 'showToolbar', 'showCharCount', 'showRoundedCorner', 'showWordCount', 'tableColumns', 'tableRows', 'tools', 'toolsList', 'toolbarOverflowMode', 'tooltipSettings', 'undoStackLimit', 'value', 'validationRules', 'validationMessage', 'width', 'zoomStep'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejRte extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}schedule`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSchedule', ['allowDragAndDrop', 'allowInline', 'allowKeyboardNavigation', 'appointmentSettings', 'appointmentTemplateId', 'cssClass', 'categorizeSettings', 'cellHeight', 'cellWidth', 'contextMenuSettings', 'currentDate', 'currentView', 'dateFormat', 'showAppointmentNavigator', 'enableAppointmentResize', 'enableLoadOnDemand', 'enablePersistence', 'enableRTL', 'endHour', 'group', 'height', 'workHours', 'isDST', 'isResponsive', 'locale', 'maxDate', 'minDate', 'orientation', 'prioritySettings', 'readOnly', 'reminderSettings', 'renderDates', 'resourceHeaderTemplateId', 'resources', 'showAllDayRow', 'showWeekend', 'showCurrentTimeIndicator', 'showHeaderBar', 'showLocationField', 'showTimeZoneFields', 'showQuickWindow', 'startHour', 'timeMode', 'timeZone', 'timeZoneCollection', 'views', 'width', 'enableRecurrenceValidation', 'agendaViewSettings', 'firstDayOfWeek', 'workWeek', 'tooltipSettings', 'timeScale', 'showDeleteConfirmationDialog', 'allDayCellsTemplateId', 'workCellsTemplateId', 'dateHeaderTemplateId', 'showOverflowButton', 'appointmentDragArea', 'showNextPrevMonth', 'blockoutSettings'], ['currentView', 'currentDate'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejSchedule extends WidgetBase {
-  @children(`${constants.elementPrefix}schedule-resource`) resources = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'resources';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}schedule-resource`)
-@generateBindables('resources', ['field', 'title', 'name', 'allowMultiple', 'resourceSettings'])
-
-export class ScheduleResource {
-}
-
-
-@customAttribute(`${constants.attributePrefix}scroller`)
-@generateBindables('ejScroller', ['animationSpeed', 'autoHide', 'buttonSize', 'enabled', 'enablePersistence', 'enableRTL', 'enableTouchScroll', 'height', 'scrollerSize', 'scrollLeft', 'scrollOneStepBy', 'scrollTop', 'targetPane', 'width'], ['scrollLeft', 'scrollTop'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejScroller extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}signature`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSignature', ['backgroundColor', 'backgroundImage', 'enabled', 'height', 'isResponsive', 'saveImageFormat', 'saveWithBackground', 'showRoundedCorner', 'strokeColor', 'strokeWidth', 'width'])
-@inject(Element)
-export class ejSignature extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}slider`)
-@generateBindables('ejSlider', ['allowMouseWheel', 'animationSpeed', 'cssClass', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'incrementStep', 'largeStep', 'maxValue', 'minValue', 'orientation', 'readOnly', 'showButtons', 'showRoundedCorner', 'showScale', 'showSmallTicks', 'showTooltip', 'sliderType', 'smallStep', 'value', 'values', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejSlider extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}sparkline`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSparkline', ['background', 'fill', 'stroke', 'border', 'width', 'opacity', 'highPointColor', 'lowPointColor', 'startPointColor', 'endPointColor', 'negativePointColor', 'rangeBandSettings', 'locale', 'palette', 'isResponsive', 'enableCanvasRendering', 'enableGroupSeparator', 'dataSource', 'xName', 'yName', 'padding', 'type', 'theme', 'tooltip', 'markerSettings', 'size', 'axisLineSettings'])
-@inject(Element)
-export class ejSparkline extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}spell-check`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSpellCheck', ['dictionarySettings', 'misspellWordCss', 'locale', 'maxSuggestionCount', 'ignoreWords', 'contextMenuSettings', 'ignoreSettings', 'isResponsive', 'enableValidateOnType', 'controlsToValidate', 'enableAsync', 'ajaxDataType'])
-@inject(Element)
-export class ejSpellCheck extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}split-button`)
-@generateBindables('ejSplitButton', ['arrowPosition', 'buttonMode', 'contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'showRoundedCorner', 'size', 'suffixIcon', 'targetID', 'target', 'text', 'width'], [], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
-@inject(Element)
-export class ejSplitButton extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}splitter`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSplitter', ['allowKeyboardNavigation', 'animationSpeed', 'cssClass', 'enableAnimation', 'enableRTL', 'height', 'htmlAttributes', 'isResponsive', 'orientation', 'properties', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejSplitter extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}sheet`)
-@generateBindables('sheets', ['border', 'cellTypes', 'cFormatRule', 'colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'frozenRows', 'frozenColumns', 'headerStyles', 'hideColumns', 'hideRows', 'mergeCells', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'rows', 'showGridlines', 'showHeader', 'showHeadings', 'sheetName', 'startCell'])
-
-export class Sheet {
-}
-
-
-@customElement(`${constants.elementPrefix}spreadsheet`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSpreadsheet', ['activeSheetIndex', 'allowAutoCellType', 'allowAutoFill', 'allowAutoSum', 'allowCellFormatting', 'allowCellType', 'allowCharts', 'allowClear', 'allowClipboard', 'allowComments', 'allowConditionalFormats', 'allowDataValidation', 'allowDelete', 'allowDragAndDrop', 'allowEditing', 'allowFiltering', 'allowFormatAsTable', 'allowFormatPainter', 'allowFormulaBar', 'allowFreezing', 'allowHyperlink', 'allowImport', 'allowInsert', 'allowKeyboardNavigation', 'allowLockCell', 'allowMerging', 'allowOverflow', 'allowResizing', 'allowSearching', 'allowSelection', 'allowSorting', 'allowUndoRedo', 'allowWrap', 'apWidth', 'autoFillSettings', 'chartSettings', 'columnCount', 'columnWidth', 'cssClass', 'customFormulas', 'enableContextMenu', 'enablePivotTable', 'enableTouch', 'exportSettings', 'formatSettings', 'importSettings', 'isReadOnly', 'locale', 'nameManager', 'pictureSettings', 'printSettings', 'ribbonSettings', 'rowCount', 'rowHeight', 'scrollSettings', 'selectionSettings', 'sheetCount', 'sheets', 'showPager', 'showRibbon', 'undoRedoStep', 'userName'])
-@inject(Element)
-export class ejSpreadsheet extends WidgetBase {
-  @children(`${constants.elementPrefix}sheet`) sheets = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'sheets';
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}sunburst-chart`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSunburstChart', ['background', 'valueMemberPath', 'border', 'segmentBorder', 'dataSource', 'palette', 'parentNode', 'xName', 'yName', 'isResponsive', 'size', 'visible', 'tooltip', 'points', 'startAngle', 'endAngle', 'radius', 'innerRadius', 'dataLabelSettings', 'title', 'highlightSettings', 'selectionSettings', 'levels', 'legend', 'theme', 'margin', 'enableAnimation', 'opacity', 'zoomSettings', 'animationType'])
-@inject(Element)
-export class ejSunburstChart extends WidgetBase {
-  @children(`${constants.elementPrefix}sunburst-levels`) levels = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'levels';
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}sunburst-levels`)
-@generateBindables('levels', ['groupMemberPath'])
-
-export class SunburstLevels {
-}
-
-
-@customElement(`${constants.elementPrefix}symbol-palette`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejSymbolPalette', ['allowDrag', 'cssClass', 'defaultSettings', 'diagramId', 'headerHeight', 'height', 'paletteItemHeight', 'paletteItemWidth', 'palettes', 'previewHeight', 'previewOffset', 'previewWidth', 'showPaletteItemText', 'width'])
-@inject(Element)
-export class ejSymbolPalette extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}tab`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejTab', ['ajaxSettings', 'allowKeyboardNavigation', 'collapsible', 'cssClass', 'disabledItemIndex', 'enableAnimation', 'enabled', 'enabledItemIndex', 'enablePersistence', 'enableRTL', 'enableTabScroll', 'events', 'headerPosition', 'headerSize', 'height', 'heightAdjustMode', 'hiddenItemIndex', 'htmlAttributes', 'idPrefix', 'selectedItemIndex', 'showCloseButton', 'showReloadIcon', 'showRoundedCorner', 'width'], ['selectedItemIndex'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejTab extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}tag-cloud`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejTagCloud', ['cssClass', 'dataSource', 'enableRTL', 'fields', 'htmlAttributes', 'format', 'maxFontSize', 'minFontSize', 'query', 'showTitle', 'titleImage', 'titleText'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejTagCloud extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}time-picker`)
-@generateBindables('ejTimePicker', ['cssClass', 'disableTimeRanges', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'height', 'hourInterval', 'htmlAttributes', 'interval', 'locale', 'maxTime', 'minTime', 'minutesInterval', 'popupHeight', 'popupWidth', 'readOnly', 'secondsInterval', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'width'], ['value'], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejTimePicker extends WidgetBase {
-  constructor(element) {
-    super();
-    this.isEditor = true;
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}tile`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejTile', ['badge', 'caption', 'cssClass', 'enablePersistence', 'height', 'imageClass', 'imagePosition', 'imageTemplateId', 'imageUrl', 'locale', 'liveTile', 'tileSize', 'width', 'showRoundedCorner', 'allowSelection', 'backgroundColor'])
-@inject(Element)
-export class ejTile extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}toggle-button`)
-@generateBindables('ejToggleButton', ['activePrefixIcon', 'activeSuffixIcon', 'activeText', 'contentType', 'cssClass', 'defaultPrefixIcon', 'defaultSuffixIcon', 'defaultText', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'preventToggle', 'showRoundedCorner', 'size', 'toggleState', 'type', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejToggleButton extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}toolbar`)
-@generateBindables('ejToolbar', ['cssClass', 'dataSource', 'disabledItemIndices', 'enabled', 'enabledItemIndices', 'enableRTL', 'enableSeparator', 'fields', 'height', 'htmlAttributes', 'hide', 'isResponsive', 'Items', 'orientation', 'query', 'responsiveType', 'showRoundedCorner', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejToolbar extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}tree-grid`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejTreeGrid', ['allowColumnResize', 'allowColumnReordering', 'allowDragAndDrop', 'allowFiltering', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowSelection', 'allowSorting', 'allowPaging', 'allowTextWrap', 'altRowTemplateID', 'expandStateMapping', 'childMapping', 'columns', 'columnDialogFields', 'contextMenuSettings', 'cssClass', 'dataSource', 'headerTextOverflow', 'dragTooltip', 'editSettings', 'enableAltRow', 'enableCollapseAll', 'enableResize', 'enableVirtualization', 'enableLoadOnDemand', 'columnResizeSettings', 'commonWidth', 'filterSettings', 'locale', 'parseRowTemplate', 'idMapping', 'isResponsive', 'parentIdMapping', 'pageSettings', 'cellTooltipTemplate', 'query', 'rowHeight', 'rowTemplateID', 'selectedRowIndex', 'selectedCellIndexes', 'selectionSettings', 'showColumnOptions', 'showColumnChooser', 'showDetailsRow', 'showDetailsRowInfoColumn', 'detailsTemplate', 'detailsRowHeight', 'showStackedHeader', 'stackedHeaderRows', 'showSummaryRow', 'showTotalSummary', 'summaryRows', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'sizeSettings', 'sortSettings', 'toolbarSettings', 'treeColumnIndex'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes', 'pageSettings.currentPage'], {'altRowTemplateID': 'altRowTemplateId', 'rowTemplateID': 'rowTemplateId'})
-@inject(Element, TemplatingEngine)
-export class ejTreeGrid extends WidgetBase {
-  @children(`${constants.elementPrefix}tree-grid-column`) columns = [];
-  constructor(element, templateEngine) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'columns';
-    this.templateProcessor = new TemplateProcessor(this, templateEngine);
-    this.templateProcessor.initTemplate();
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}tree-grid-column`)
-@generateBindables('columns', ['allowFiltering', 'allowFilteringBlankContent', 'allowSorting', 'allowCellSelection', 'editParams', 'editTemplate', 'editType', 'dropdownData', 'field', 'template', 'templateID', 'angularTemplate', 'filterEditType', 'headerText', 'displayAsCheckbox', 'showCheckbox', 'visible', 'width', 'headerTemplateID', 'format', 'isTemplateColumn', 'headerTextAlign', 'isFrozen', 'textAlign', 'allowEditing', 'commands', 'showInColumnChooser', 'clipMode', 'tooltip', 'headerTooltip', 'validationRules', 'priority', 'allowFreezing'])
-
-export class TreeGridColumn {
-  @children(`${constants.elementPrefix}template`) angularTemplate = [];
-  setTemplates() {
-    if (this.angularTemplate[0]) {
-      let util = new Util();
-      this[util.getBindablePropertyName('angularTemplate')] = this.angularTemplate[0].template;
-    }
-  }
-}
-
-
-@inlineView(`${constants.aureliaTemplateString}`)
-@customElement(`${constants.elementPrefix}level`)
-@generateBindables('levels', ['groupBackground', 'groupBorderColor', 'groupBorderThickness', 'groupGap', 'groupPadding', 'groupPath', 'headerHeight', 'headerTemplate', 'headerVisibilityMode', 'labelPosition', 'textOverflow', 'labelTemplate', 'labelVisibilityMode', 'showHeader', 'showLabels'])
-
-export class Level {
-}
-
-
-@customElement(`${constants.elementPrefix}tree-map`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejTreeMap', ['borderBrush', 'borderThickness', 'uniColorMapping', 'desaturationColorMapping', 'paletteColorMapping', 'colorValuePath', 'dataSource', 'dockPosition', 'drillDownHeaderColor', 'drillDownSelectionColor', 'isHierarchicalDatasource', 'header', 'enableDrillDown', 'isResponsive', 'enableResize', 'draggingOnSelection', 'draggingGroupOnSelection', 'groupColorMapping', 'legendSettings', 'highlightBorderBrush', 'highlightBorderThickness', 'highlightGroupBorderBrush', 'highlightGroupBorderThickness', 'highlightGroupOnSelection', 'highlightOnSelection', 'itemsLayoutMode', 'enableGroupSeparator', 'locale', 'leafItemSettings', 'rangeColorMapping', 'selectionMode', 'groupSelectionMode', 'showLegend', 'enableGradient', 'showTooltip', 'tooltipTemplate', 'treeMapItems', 'levels', 'weightValuePath'], ['dataSource', 'weightValuePath'])
-@inject(Element)
-export class ejTreeMap extends WidgetBase {
-  @children(`${constants.elementPrefix}level`) levels = [];
-  constructor(element) {
-    super();
-    this.element = element;
-    this.hasChildProperty = true;
-    this.childPropertyName = 'levels';
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}tree-view`)
-@generateBindables('ejTreeView', ['allowDragAndDrop', 'allowDragAndDropAcrossControl', 'allowDropSibling', 'allowDropChild', 'allowEditing', 'allowKeyboardNavigation', 'allowMultiSelection', 'autoCheck', 'autoCheckParentNode', 'checkedNodes', 'cssClass', 'enableAnimation', 'enabled', 'enableMultipleExpand', 'enablePersistence', 'enableRTL', 'expandedNodes', 'expandOn', 'fields', 'fullRowSelect', 'height', 'htmlAttributes', 'loadOnDemand', 'selectedNode', 'selectedNodes', 'showCheckbox', 'sortSettings', 'template', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejTreeView extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customElement(`${constants.elementPrefix}uploadbox`)
-@inlineView(`${constants.aureliaTemplateString}`)
-@generateBindables('ejUploadbox', ['allowDragAndDrop', 'asyncUpload', 'autoUpload', 'buttonText', 'cssClass', 'customFileDetails', 'dialogAction', 'dialogPosition', 'dialogText', 'dropAreaText', 'dropAreaHeight', 'dropAreaWidth', 'enabled', 'enableRTL', 'extensionsAllow', 'extensionsDeny', 'fileSize', 'height', 'htmlAttributes', 'locale', 'multipleFilesSelection', 'pushFile', 'removeUrl', 'saveUrl', 'showBrowseButton', 'showFileDetails', 'showRoundedCorner', 'uploadName', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejUploadbox extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}tooltip`)
-@generateBindables('ejTooltip', ['allowKeyboardNavigation', 'animation', 'associate', 'autoCloseTimeout', 'closeMode', 'collision', 'containment', 'content', 'cssClass', 'enabled', 'enableRTL', 'height', 'isBalloon', 'position', 'showRoundedCorner', 'showShadow', 'target', 'tip', 'title', 'trigger', 'width'], [], {'enableRTL': 'enableRtl'})
-@inject(Element)
-export class ejTooltip extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
-@customAttribute(`${constants.attributePrefix}waiting-popup`)
-@generateBindables('ejWaitingPopup', ['cssClass', 'htmlAttributes', 'showImage', 'showOnInit', 'target', 'appendTo', 'template', 'text'])
-@inject(Element)
-export class ejWaitingPopup extends WidgetBase {
-  constructor(element) {
-    super();
-    this.element = element;
-  }
-}
-
-
 'use strict';
 
 System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
@@ -16377,6 +9550,74 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
 System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
   "use strict";
 
+  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejColorPicker;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  return {
+    setters: [function (_commonWidgetBase) {
+      WidgetBase = _commonWidgetBase.WidgetBase;
+    }, function (_commonConstants) {
+      constants = _commonConstants.constants;
+    }, function (_commonDecorators) {
+      generateBindables = _commonDecorators.generateBindables;
+    }, function (_commonCommon) {
+      customAttribute = _commonCommon.customAttribute;
+      inject = _commonCommon.inject;
+    }],
+    execute: function () {
+      _export('ejColorPicker', ejColorPicker = (_dec = customAttribute(constants.attributePrefix + 'color-picker'), _dec2 = generateBindables('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue']), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+        _inherits(ejColorPicker, _WidgetBase);
+
+        function ejColorPicker(element) {
+          _classCallCheck(this, ejColorPicker);
+
+          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+          _this.element = element;
+          return _this;
+        }
+
+        return ejColorPicker;
+      }(WidgetBase)) || _class) || _class) || _class));
+
+      _export('ejColorPicker', ejColorPicker);
+    }
+  };
+});
+'use strict';
+
+System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
+  "use strict";
+
   var WidgetBase, constants, generateBindables, customElement, inlineView, inject, _dec, _dec2, _dec3, _dec4, _class, ejCircularGauge;
 
   function _classCallCheck(instance, Constructor) {
@@ -16438,74 +9679,6 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
       }(WidgetBase)) || _class) || _class) || _class) || _class));
 
       _export('ejCircularGauge', ejCircularGauge);
-    }
-  };
-});
-'use strict';
-
-System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
-  "use strict";
-
-  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejColorPicker;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  return {
-    setters: [function (_commonWidgetBase) {
-      WidgetBase = _commonWidgetBase.WidgetBase;
-    }, function (_commonConstants) {
-      constants = _commonConstants.constants;
-    }, function (_commonDecorators) {
-      generateBindables = _commonDecorators.generateBindables;
-    }, function (_commonCommon) {
-      customAttribute = _commonCommon.customAttribute;
-      inject = _commonCommon.inject;
-    }],
-    execute: function () {
-      _export('ejColorPicker', ejColorPicker = (_dec = customAttribute(constants.attributePrefix + 'color-picker'), _dec2 = generateBindables('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue']), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-        _inherits(ejColorPicker, _WidgetBase);
-
-        function ejColorPicker(element) {
-          _classCallCheck(this, ejColorPicker);
-
-          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-          _this.element = element;
-          return _this;
-        }
-
-        return ejColorPicker;
-      }(WidgetBase)) || _class) || _class) || _class));
-
-      _export('ejColorPicker', ejColorPicker);
     }
   };
 });
@@ -17426,74 +10599,6 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
 System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
   "use strict";
 
-  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejGroupButton;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  return {
-    setters: [function (_commonWidgetBase) {
-      WidgetBase = _commonWidgetBase.WidgetBase;
-    }, function (_commonConstants) {
-      constants = _commonConstants.constants;
-    }, function (_commonDecorators) {
-      generateBindables = _commonDecorators.generateBindables;
-    }, function (_commonCommon) {
-      customAttribute = _commonCommon.customAttribute;
-      inject = _commonCommon.inject;
-    }],
-    execute: function () {
-      _export('ejGroupButton', ejGroupButton = (_dec = customAttribute(constants.attributePrefix + 'group-button'), _dec2 = generateBindables('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-        _inherits(ejGroupButton, _WidgetBase);
-
-        function ejGroupButton(element) {
-          _classCallCheck(this, ejGroupButton);
-
-          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-          _this.element = element;
-          return _this;
-        }
-
-        return ejGroupButton;
-      }(WidgetBase)) || _class) || _class) || _class));
-
-      _export('ejGroupButton', ejGroupButton);
-    }
-  };
-});
-'use strict';
-
-System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
-  "use strict";
-
   var WidgetBase, constants, generateBindables, customElement, inlineView, inject, _dec, _dec2, _dec3, _dec4, _class, ejHeatMap;
 
   function _classCallCheck(instance, Constructor) {
@@ -17555,6 +10660,74 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
       }(WidgetBase)) || _class) || _class) || _class) || _class));
 
       _export('ejHeatMap', ejHeatMap);
+    }
+  };
+});
+'use strict';
+
+System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
+  "use strict";
+
+  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejGroupButton;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  return {
+    setters: [function (_commonWidgetBase) {
+      WidgetBase = _commonWidgetBase.WidgetBase;
+    }, function (_commonConstants) {
+      constants = _commonConstants.constants;
+    }, function (_commonDecorators) {
+      generateBindables = _commonDecorators.generateBindables;
+    }, function (_commonCommon) {
+      customAttribute = _commonCommon.customAttribute;
+      inject = _commonCommon.inject;
+    }],
+    execute: function () {
+      _export('ejGroupButton', ejGroupButton = (_dec = customAttribute(constants.attributePrefix + 'group-button'), _dec2 = generateBindables('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+        _inherits(ejGroupButton, _WidgetBase);
+
+        function ejGroupButton(element) {
+          _classCallCheck(this, ejGroupButton);
+
+          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+          _this.element = element;
+          return _this;
+        }
+
+        return ejGroupButton;
+      }(WidgetBase)) || _class) || _class) || _class));
+
+      _export('ejGroupButton', ejGroupButton);
     }
   };
 });
@@ -17988,6 +11161,778 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
 });
 'use strict';
 
+System.register(['aurelia-templating', 'aurelia-dependency-injection'], function (_export, _context) {
+  "use strict";
+
+  var customAttribute, bindable, customElement, children, TemplatingEngine, inlineView, inject;
+  return {
+    setters: [function (_aureliaTemplating) {
+      customAttribute = _aureliaTemplating.customAttribute;
+      bindable = _aureliaTemplating.bindable;
+      customElement = _aureliaTemplating.customElement;
+      children = _aureliaTemplating.children;
+      TemplatingEngine = _aureliaTemplating.TemplatingEngine;
+      inlineView = _aureliaTemplating.inlineView;
+    }, function (_aureliaDependencyInjection) {
+      inject = _aureliaDependencyInjection.inject;
+    }],
+    execute: function () {
+      _export('customAttribute', customAttribute);
+
+      _export('bindable', bindable);
+
+      _export('inject', inject);
+
+      _export('inlineView', inlineView);
+
+      _export('customElement', customElement);
+
+      _export('children', children);
+
+      _export('TemplatingEngine', TemplatingEngine);
+    }
+  };
+});
+'use strict';
+
+System.register([], function (_export, _context) {
+  "use strict";
+
+  var constants;
+  return {
+    setters: [],
+    execute: function () {
+      _export('constants', constants = {
+        eventPrefix: 'e-on-',
+        bindablePrefix: 'e-',
+        attributePrefix: 'ej-',
+        elementPrefix: 'ej-',
+        aureliaTemplateString: '<template><slot></slot></template>'
+      });
+
+      _export('constants', constants);
+    }
+  };
+});
+'use strict';
+
+System.register(['aurelia-templating', 'aurelia-dependency-injection', 'aurelia-metadata', 'aurelia-task-queue', 'aurelia-binding', './util'], function (_export, _context) {
+  "use strict";
+
+  var BindableProperty, HtmlBehaviorResource, Container, metadata, TaskQueue, bindingMode, BindingEngine, Util;
+  function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
+    return function (target, key, descriptor) {
+      var behaviorResource = metadata.getOrCreateOwn(metadata.resource, HtmlBehaviorResource, target);
+      var container = Container.instance || new Container();
+      var util = container.get(Util);
+      var bindingInstance = container.get(BindingEngine);
+      inputs.push('options');
+      inputs.push('widget');
+      var len = inputs.length;
+      if (observerCollection) {
+        target.prototype.arrayObserver = [];
+        observerCollection.forEach(function (element) {
+          target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
+        });
+        target.prototype.bindingInstance = bindingInstance;
+      }
+      target.prototype.controlName = controlName;
+      target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
+      target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
+      if (len) {
+        target.prototype.controlProperties = inputs;
+        for (var i = 0; i < len; i++) {
+          var option = inputs[i];
+          if (abbrevProperties && option in abbrevProperties) {
+            option = abbrevProperties[option];
+          }
+          var nameOrConfigOrTarget = {
+            name: util.getBindablePropertyName(option)
+          };
+
+          if (option === 'widget') {
+            nameOrConfigOrTarget.defaultBindingMode = bindingMode.twoWay;
+          }
+
+          var prop = new BindableProperty(nameOrConfigOrTarget);
+          prop.registerWith(target, behaviorResource, descriptor);
+        }
+      }
+    };
+  }
+
+  _export('generateBindables', generateBindables);
+
+  function delayed() {
+    return function (target, key, descriptor) {
+      var taskQueue = (Container.instance || new Container()).get(TaskQueue);
+      var ptr = descriptor.value;
+
+      descriptor.value = function () {
+        var _this = this;
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        if (this.childPropertyName) {
+          taskQueue.queueTask(function () {
+            return ptr.apply(_this, args);
+          });
+        } else {
+          ptr.apply(this, args);
+        }
+      };
+
+      return descriptor;
+    };
+  }
+
+  _export('delayed', delayed);
+
+  return {
+    setters: [function (_aureliaTemplating) {
+      BindableProperty = _aureliaTemplating.BindableProperty;
+      HtmlBehaviorResource = _aureliaTemplating.HtmlBehaviorResource;
+    }, function (_aureliaDependencyInjection) {
+      Container = _aureliaDependencyInjection.Container;
+    }, function (_aureliaMetadata) {
+      metadata = _aureliaMetadata.metadata;
+    }, function (_aureliaTaskQueue) {
+      TaskQueue = _aureliaTaskQueue.TaskQueue;
+    }, function (_aureliaBinding) {
+      bindingMode = _aureliaBinding.bindingMode;
+      BindingEngine = _aureliaBinding.BindingEngine;
+    }, function (_util) {
+      Util = _util.Util;
+    }],
+    execute: function () {}
+  };
+});
+'use strict';
+
+System.register(['./util', 'aurelia-dependency-injection', './constants'], function (_export, _context) {
+  "use strict";
+
+  var Util, Container, constants;
+  function getEventOption(element) {
+    var name = void 0;
+    var attr = void 0;
+    var attributes = element.attributes;
+    var option = {};
+    var container = Container.instance || new Container();
+    var util = container.get(Util);
+
+    var _loop = function _loop(i, len) {
+      attr = attributes[i];
+      name = attr.name;
+      if (!name.startsWith(constants.eventPrefix)) {
+        return 'continue';
+      }
+      var actualEventName = name.split('.')[0];
+      var eventName = util._unhyphenate(actualEventName.split(constants.eventPrefix)[1]);
+      option[eventName] = function (e) {
+        return fireEvent(element, actualEventName, e);
+      };
+    };
+
+    for (var i = 0, len = attributes.length; i < len; i++) {
+      var _ret = _loop(i, len);
+
+      if (_ret === 'continue') continue;
+    }
+    return option;
+  }
+
+  _export('getEventOption', getEventOption);
+
+  function fireEvent(element, name) {
+    var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    var event = new CustomEvent(name, {
+      detail: data,
+      bubbles: true
+    });
+    element.dispatchEvent(event);
+    return event;
+  }
+
+  _export('fireEvent', fireEvent);
+
+  return {
+    setters: [function (_util) {
+      Util = _util.Util;
+    }, function (_aureliaDependencyInjection) {
+      Container = _aureliaDependencyInjection.Container;
+    }, function (_constants) {
+      constants = _constants.constants;
+    }],
+    execute: function () {}
+  };
+});
+'use strict';
+
+System.register(['aurelia-dependency-injection', '../common/util', 'aurelia-templating'], function (_export, _context) {
+  "use strict";
+
+  var inject, Util, TemplatingEngine, _dec, _class, TemplateProcessor;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  return {
+    setters: [function (_aureliaDependencyInjection) {
+      inject = _aureliaDependencyInjection.inject;
+    }, function (_commonUtil) {
+      Util = _commonUtil.Util;
+    }, function (_aureliaTemplating) {
+      TemplatingEngine = _aureliaTemplating.TemplatingEngine;
+    }],
+    execute: function () {
+      _export('TemplateProcessor', TemplateProcessor = (_dec = inject(TemplatingEngine, Util), _dec(_class = function () {
+        function TemplateProcessor(context, templateEngine) {
+          _classCallCheck(this, TemplateProcessor);
+
+          this.context = context;
+          this.templatingEngine = templateEngine;
+          this.util = new Util();
+        }
+
+        TemplateProcessor.prototype.initTemplate = function initTemplate() {
+          var proxy = this;
+          ej.template.render = function (self, selector, data, index) {
+            return proxy.renderStringTemplate(self, selector, data, index);
+          };
+        };
+
+        TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
+          if (this.context.widget.aureliaTemplate) {
+            this.compileTemplate(this.context.widget.element);
+          }
+          var proxy = this.context;
+          var element = this.context.widget.element;
+          element.on(this.context.widget.pluginName + 'refresh', function () {
+            if (proxy.widget.aureliaTemplate) {
+              proxy.templateProcessor.compileTemplate(element);
+            }
+          });
+        };
+
+        TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
+          var templateObject = self.aureliaTemplate;
+          if (!templateObject || !templateObject[selector]) {
+            templateObject = templateObject || {};
+            templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
+            self.aureliaTemplate = templateObject;
+          }
+          var scope = templateObject[selector];
+          if (this.util.hasValue(index)) {
+            scope.itemData[index] = data;
+          } else {
+            scope.itemData = [data];
+          }
+          var actElement = $(selector).html();
+          var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
+          return tempElement;
+        };
+
+        TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
+          var templates = $(element).find('.ej-aurelia-template');
+          var templateObject = this.context.widget.aureliaTemplate;
+          for (var template in templateObject) {
+            var tmplElement = templates.filter('.' + templateObject[template].key);
+            if (tmplElement.length) {
+              for (var i = 0; i < tmplElement.length; i++) {
+                var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
+                var view = this.templatingEngine.enhance(tmplElement[i]);
+                view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
+                templateObject[template].views[dataIndex] = view;
+              }
+            } else {
+              this.unbindViews(templateObject[template]);
+              delete templateObject[template];
+            }
+          }
+        };
+
+        TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
+          var templateObject = this.context.widget.aureliaTemplate;
+          if (templateObject && Object.keys(templateObject).length) {
+            for (var t in templateObject) {
+              this.unbindViews(templateObject[t]);
+              delete templateObject[t];
+            }
+          }
+        };
+
+        TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
+          for (var i = 0; i < obj.views.length; i++) {
+            var view = obj.views[i];
+            view.unbind();
+          }
+        };
+
+        return TemplateProcessor;
+      }()) || _class));
+
+      _export('TemplateProcessor', TemplateProcessor);
+    }
+  };
+});
+'use strict';
+
+System.register(['aurelia-dependency-injection', 'aurelia-templating', './constants'], function (_export, _context) {
+  "use strict";
+
+  var inject, customElement, bindable, noView, processContent, TargetInstruction, constants, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, Template;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  return {
+    setters: [function (_aureliaDependencyInjection) {
+      inject = _aureliaDependencyInjection.inject;
+    }, function (_aureliaTemplating) {
+      customElement = _aureliaTemplating.customElement;
+      bindable = _aureliaTemplating.bindable;
+      noView = _aureliaTemplating.noView;
+      processContent = _aureliaTemplating.processContent;
+      TargetInstruction = _aureliaTemplating.TargetInstruction;
+    }, function (_constants) {
+      constants = _constants.constants;
+    }],
+    execute: function () {
+      _export('Template', Template = (_dec = customElement(constants.elementPrefix + 'template'), _dec2 = noView(), _dec3 = processContent(function (compiler, resources, element, instruction) {
+        var html = element.innerHTML;
+        if (html !== '') {
+          instruction.template = html;
+        }
+        element.innerHTML = '';
+      }), _dec4 = inject(TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
+        _classCallCheck(this, Template);
+
+        _initDefineProp(this, 'template', _descriptor, this);
+
+        this.template = target.elementInstruction.template;
+      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [bindable], {
+        enumerable: true,
+        initializer: null
+      })), _class2)) || _class) || _class) || _class) || _class));
+
+      _export('Template', Template);
+    }
+  };
+});
+'use strict';
+
+System.register(['./constants'], function (_export, _context) {
+  "use strict";
+
+  var constants, Util;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  return {
+    setters: [function (_constants) {
+      constants = _constants.constants;
+    }],
+    execute: function () {
+      _export('Util', Util = function () {
+        function Util() {
+          _classCallCheck(this, Util);
+        }
+
+        Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
+          var name = '' + constants.bindablePrefix + propertyName;
+          return this._unhyphenate(name);
+        };
+
+        Util.prototype._unhyphenate = function _unhyphenate(name) {
+          return name.replace(/-([a-z])/g, function (g) {
+            return g[1].toUpperCase();
+          });
+        };
+
+        Util.prototype.getOptions = function getOptions(model, properties) {
+          var bindableproperites = {};
+          var value = void 0;
+          for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+            var _ref;
+
+            if (_isArray) {
+              if (_i >= _iterator.length) break;
+              _ref = _iterator[_i++];
+            } else {
+              _i = _iterator.next();
+              if (_i.done) break;
+              _ref = _i.value;
+            }
+
+            var prop = _ref;
+
+            if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
+              value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
+            } else {
+              value = model[this.getBindablePropertyName(prop)];
+            }
+            if (this.hasValue(value)) {
+              if (typeof value === 'string') {
+                value = this.processData(value);
+              }
+              bindableproperites[prop] = value;
+            }
+          }
+          return bindableproperites;
+        };
+
+        Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
+          var property = void 0;
+          for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
+            var _ref2;
+
+            if (_isArray2) {
+              if (_i2 >= _iterator2.length) break;
+              _ref2 = _iterator2[_i2++];
+            } else {
+              _i2 = _iterator2.next();
+              if (_i2.done) break;
+              _ref2 = _i2.value;
+            }
+
+            var prop = _ref2;
+
+            if (propertyName === this.getBindablePropertyName(prop)) {
+              property = prop;
+              break;
+            }
+          }
+          return property;
+        };
+
+        Util.prototype.hasValue = function hasValue(prop) {
+          return typeof prop !== 'undefined' && prop !== null;
+        };
+
+        Util.prototype.processData = function processData(value) {
+          if (value === 'true') {
+            return true;
+          } else if (value === 'false') {
+            return false;
+          } else if (+value + '' === value) {
+            return +value;
+          }
+          return value;
+        };
+
+        return Util;
+      }());
+
+      _export('Util', Util);
+    }
+  };
+});
+'use strict';
+
+System.register(['./events', '../common/util', '../common/decorators'], function (_export, _context) {
+  "use strict";
+
+  var getEventOption, Util, delayed, _dec, _desc, _value, _class, firstValue, WidgetBase;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  return {
+    setters: [function (_events) {
+      getEventOption = _events.getEventOption;
+    }, function (_commonUtil) {
+      Util = _commonUtil.Util;
+    }, function (_commonDecorators) {
+      delayed = _commonDecorators.delayed;
+    }],
+    execute: function () {
+      firstValue = {};
+
+      _export('WidgetBase', WidgetBase = (_dec = delayed(), (_class = function () {
+        function WidgetBase() {
+          _classCallCheck(this, WidgetBase);
+        }
+
+        WidgetBase.prototype.createWidget = function createWidget(option) {
+          var _this = this;
+
+          this.allOption = this.getWidgetOptions(option.element);
+          if (!this.ejOptions && !this.isEditor) {
+            this.createTwoWays();
+          }
+          this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
+          if (this.templateProcessor) {
+            this.templateProcessor.initWidgetDependancies();
+          }
+          if (this.isEditor) {
+            this.widget.model._change = function (evt) {
+              if ('eValue' in _this) {
+                _this[_this.util.getBindablePropertyName('value')] = evt.value;
+              }
+            };
+          }
+        };
+
+        WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
+          this.parentCtx = overrideCtx;
+          if (this.widget && this.widget.element && this.isEditor) {
+            this.widget.option('value', this.eValue === undefined ? null : this.eValue);
+          }
+        };
+
+        WidgetBase.prototype.createTwoWays = function createTwoWays() {
+          var model = this.allOption;
+          var twoWays = this.twoWays;
+          var len = twoWays.length;
+          for (var i = 0; i < len; i++) {
+            var prop = twoWays[i];
+            ej.createObject(prop, this.addTwoways(prop), model);
+          }
+        };
+
+        WidgetBase.prototype.addTwoways = function addTwoways(prop) {
+          var model = this;
+          var value = firstValue;
+          return function (newVal, isApp) {
+            if (value === firstValue) {
+              var viewModelProp = model.util.getBindablePropertyName(prop);
+              value = model[viewModelProp];
+              if (value === undefined) {
+                value = this.defaults[prop];
+              }
+              return value;
+            }
+            if (newVal === undefined) {
+              return value;
+            }
+            if (value === newVal) {
+              return null;
+            }
+            value = newVal;
+            if (!isApp && model.util.hasValue(newVal)) {
+              var _viewModelProp = model.util.getBindablePropertyName(prop);
+              model[_viewModelProp] = newVal;
+            }
+            return null;
+          };
+        };
+
+        WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
+          var propOptions = void 0;
+          if (this.ejOptions) {
+            propOptions = this.ejOptions;
+          } else {
+            propOptions = this.util.getOptions(this, this.controlProperties);
+          }
+          var eventOption = getEventOption(element);
+          if (this.hasChildProperty) {
+            this.getChildProperties(propOptions);
+          }
+          return Object.assign({}, propOptions, eventOption);
+        };
+
+        WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
+          var PropertyName = this.childPropertyName;
+          var childCollection = this[PropertyName];
+          var len = childCollection.length;
+          if (len) {
+            options[PropertyName] = [];
+            var childProperties = childCollection[0].controlProperties;
+            for (var i = 0; i < len; i++) {
+              options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
+            }
+          }
+        };
+
+        WidgetBase.prototype.attached = function attached() {
+          if (this.templateProcessor) {
+            this[this.childPropertyName].forEach(function (template) {
+              return template.setTemplates();
+            });
+          }
+          this.util = new Util();
+          this.createWidget({ element: this.element });
+        };
+
+        WidgetBase.prototype.unsubscribe = function unsubscribe() {
+          if (this.subscription) {
+            this.subscription.dispose();
+            this.subscription = null;
+          }
+        };
+
+        WidgetBase.prototype.unbind = function unbind() {
+          this.unsubscribe();
+        };
+
+        WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
+          var _this2 = this;
+
+          if (this.widget) {
+            var modelValue = void 0;
+            var prop = this.util.getControlPropertyName(this, property);
+            this.unsubscribe();
+            if (this.arrayObserver) {
+              this.arrayObserver.forEach(function (arrayProp) {
+                if (_this2[arrayProp] instanceof Array) {
+                  _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
+                    _this2.update(e);
+                  });
+                }
+              });
+            }
+            if (prop) {
+              if (prop === 'widget') {
+                return;
+              } else if (prop !== 'options') {
+                modelValue = this.widget.model[prop];
+                var isTwoway = typeof modelValue === 'function';
+                if (isTwoway) {
+                  modelValue = modelValue();
+                }
+                if (modelValue !== newValue) {
+                  if (isTwoway) {
+                    newValue = this.addTwoways(prop);
+                  }
+                  this.widget.option(prop, newValue);
+                }
+              } else {
+                this.widget.option(newValue);
+              }
+            }
+          }
+        };
+
+        WidgetBase.prototype.update = function update(e) {
+          var _this3 = this;
+
+          var modelValue = void 0;
+          var newVal = void 0;
+          if (e.length) {
+            this.arrayObserver.forEach(function (arrayProp) {
+              if (_this3[arrayProp] instanceof Array) {
+                var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
+                modelValue = _this3.widget.model[prop];
+                if (typeof modelValue === 'function') {
+                  modelValue = modelValue();
+                  newVal = modelValue;
+                  newVal = _this3.addTwoways(prop);
+                  _this3.widget.option(prop, newVal);
+                } else {
+                  _this3.widget.option(prop, modelValue);
+                }
+              }
+            });
+          }
+        };
+
+        WidgetBase.prototype.detached = function detached() {
+          if (this.templateProcessor) {
+            this.templateProcessor.clearTempalte();
+          }
+          if (this.widget) {
+            this.widget.destroy();
+          }
+        };
+
+        return WidgetBase;
+      }(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class)));
+
+      _export('WidgetBase', WidgetBase);
+    }
+  };
+});
+'use strict';
+
 System.register(['../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
   "use strict";
 
@@ -18281,75 +12226,6 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
 System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
   "use strict";
 
-  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejNumericTextbox;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (!self) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
-
-    return call && (typeof call === "object" || typeof call === "function") ? call : self;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
-      constructor: {
-        value: subClass,
-        enumerable: false,
-        writable: true,
-        configurable: true
-      }
-    });
-    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-  }
-
-  return {
-    setters: [function (_commonWidgetBase) {
-      WidgetBase = _commonWidgetBase.WidgetBase;
-    }, function (_commonConstants) {
-      constants = _commonConstants.constants;
-    }, function (_commonDecorators) {
-      generateBindables = _commonDecorators.generateBindables;
-    }, function (_commonCommon) {
-      customAttribute = _commonCommon.customAttribute;
-      inject = _commonCommon.inject;
-    }],
-    execute: function () {
-      _export('ejNumericTextbox', ejNumericTextbox = (_dec = customAttribute(constants.attributePrefix + 'numeric-textbox'), _dec2 = generateBindables('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
-        _inherits(ejNumericTextbox, _WidgetBase);
-
-        function ejNumericTextbox(element) {
-          _classCallCheck(this, ejNumericTextbox);
-
-          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
-
-          _this.isEditor = true;
-          _this.element = element;
-          return _this;
-        }
-
-        return ejNumericTextbox;
-      }(WidgetBase)) || _class) || _class) || _class));
-
-      _export('ejNumericTextbox', ejNumericTextbox);
-    }
-  };
-});
-'use strict';
-
-System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
-  "use strict";
-
   var WidgetBase, constants, generateBindables, customElement, inlineView, inject, _dec, _dec2, _dec3, _dec4, _class, ejNavigationDrawer;
 
   function _classCallCheck(instance, Constructor) {
@@ -18411,6 +12287,75 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
       }(WidgetBase)) || _class) || _class) || _class) || _class));
 
       _export('ejNavigationDrawer', ejNavigationDrawer);
+    }
+  };
+});
+'use strict';
+
+System.register(['../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (_export, _context) {
+  "use strict";
+
+  var WidgetBase, constants, generateBindables, customAttribute, inject, _dec, _dec2, _dec3, _class, ejNumericTextbox;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  return {
+    setters: [function (_commonWidgetBase) {
+      WidgetBase = _commonWidgetBase.WidgetBase;
+    }, function (_commonConstants) {
+      constants = _commonConstants.constants;
+    }, function (_commonDecorators) {
+      generateBindables = _commonDecorators.generateBindables;
+    }, function (_commonCommon) {
+      customAttribute = _commonCommon.customAttribute;
+      inject = _commonCommon.inject;
+    }],
+    execute: function () {
+      _export('ejNumericTextbox', ejNumericTextbox = (_dec = customAttribute(constants.attributePrefix + 'numeric-textbox'), _dec2 = generateBindables('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = inject(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+        _inherits(ejNumericTextbox, _WidgetBase);
+
+        function ejNumericTextbox(element) {
+          _classCallCheck(this, ejNumericTextbox);
+
+          var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+          _this.isEditor = true;
+          _this.element = element;
+          return _this;
+        }
+
+        return ejNumericTextbox;
+      }(WidgetBase)) || _class) || _class) || _class));
+
+      _export('ejNumericTextbox', ejNumericTextbox);
     }
   };
 });
@@ -22025,6 +15970,6004 @@ System.register(['../common/widget-base', '../common/constants', '../common/deco
     }
   };
 });
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejAccordion = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejAccordion = exports.ejAccordion = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'accordion'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejAccordion', ['ajaxSettings', 'allowKeyboardNavigation', 'collapseSpeed', 'collapsible', 'cssClass', 'customIcon', 'disabledItems', 'enableAnimation', 'enabled', 'enabledItems', 'enableMultipleOpen', 'enablePersistence', 'enableRTL', 'events', 'expandSpeed', 'headerSize', 'height', 'heightAdjustMode', 'htmlAttributes', 'selectedItemIndex', 'selectedItems', 'showCloseButton', 'showRoundedCorner', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejAccordion, _WidgetBase);
+
+    function ejAccordion(element) {
+      _classCallCheck(this, ejAccordion);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejAccordion;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejAutocomplete = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejAutocomplete = exports.ejAutocomplete = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'autocomplete'), _dec2 = (0, _decorators.generateBindables)('ejAutocomplete', ['addNewText', 'allowAddNew', 'allowSorting', 'animateType', 'autoFocus', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delaySuggestionTimeout', 'delimiterChar', 'emptyResultText', 'enableAutoFill', 'enabled', 'enableDistinct', 'enablePersistence', 'enableRTL', 'fields', 'filterType', 'height', 'highlightSearch', 'itemsCount', 'locale', 'minCharacter', 'multiColumnSettings', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectValueByKey', 'showEmptyResultText', 'showLoadingIcon', 'showPopupButton', 'showRoundedCorner', 'showResetIcon', 'sortOrder', 'template', 'validationMessage', 'validationRules', 'value', 'visible', 'watermarkText', 'width'], ['value', 'selectValueByKey'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejAutocomplete, _WidgetBase);
+
+    function ejAutocomplete(element) {
+      _classCallCheck(this, ejAutocomplete);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejAutocomplete;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejBarcode = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejBarcode = exports.ejBarcode = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'barcode'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejBarcode', ['barcodeToTextGapHeight', 'barHeight', 'darkBarColor', 'displayText', 'enabled', 'encodeStartStopSymbol', 'lightBarColor', 'narrowBarWidth', 'quietZone', 'symbologyType', 'text', 'textColor', 'wideBarWidth', 'xDimension']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejBarcode, _WidgetBase);
+
+    function ejBarcode(element) {
+      _classCallCheck(this, ejBarcode);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejBarcode;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejBulletGraph = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejBulletGraph = exports.ejBulletGraph = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'bullet-graph'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejBulletGraph', ['applyRangeStrokeToLabels', 'applyRangeStrokeToTicks', 'captionSettings', 'comparativeMeasureValue', 'enableAnimation', 'enableResizing', 'flowDirection', 'height', 'isResponsive', 'enableGroupSeparator', 'locale', 'orientation', 'qualitativeRanges', 'qualitativeRangeSize', 'quantitativeScaleLength', 'quantitativeScaleSettings', 'theme', 'tooltipSettings', 'value', 'width']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'qualitative-range'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejBulletGraph, _WidgetBase);
+
+    function ejBulletGraph(element) {
+      _classCallCheck(this, ejBulletGraph);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'qualitativeRanges', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'qualitativeRanges';
+      return _this;
+    }
+
+    return ejBulletGraph;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'qualitativeRanges', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.QualitativeRange = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var QualitativeRange = exports.QualitativeRange = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'qualitative-range'), _dec3 = (0, _decorators.generateBindables)('qualitativeRanges', ['rangeEnd', 'rangeOpacity', 'rangeStroke']), _dec(_class = _dec2(_class = _dec3(_class = function QualitativeRange() {
+    _classCallCheck(this, QualitativeRange);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejButton = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejButton = exports.ejButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'button'), _dec2 = (0, _decorators.generateBindables)('ejButton', ['contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'repeatButton', 'showRoundedCorner', 'size', 'suffixIcon', 'text', 'timeInterval', 'type', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejButton, _WidgetBase);
+
+    function ejButton(element) {
+      _classCallCheck(this, ejButton);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejButton;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejChart = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejChart = exports.ejChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejChart', ['annotations', 'background', 'backGroundImageUrl', 'border', 'exportSettings', 'chartArea', 'columnDefinitions', 'commonSeriesOptions', 'selectedDataPointIndexes', 'crosshair', 'depth', 'enable3D', 'enableCanvasRendering', 'initSeriesRender', 'enableRotation', 'indicators', 'isResponsive', 'legend', 'locale', 'palette', 'margin', 'perspectiveAngle', 'primaryXAxis', 'axes', 'primaryYAxis', 'rotation', 'rowDefinitions', 'series', 'sideBySideSeriesPlacement', 'size', 'theme', 'tilt', 'title', 'wallSize', 'zooming']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'series'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejChart, _WidgetBase);
+
+    function ejChart(element) {
+      _classCallCheck(this, ejChart);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'series', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'series';
+      return _this;
+    }
+
+    return ejChart;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'series', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Series = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var Series = exports.Series = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'series'), _dec3 = (0, _decorators.generateBindables)('series', ['bearFillColor', 'border', 'animationDuration', 'bullFillColor', 'columnFacet', 'columnWidth', 'columnSpacing', 'stackingGroup', 'dashArray', 'dataSource', 'cardinalSplineTension', 'doughnutCoefficient', 'doughnutSize', 'drawType', 'enableAnimation', 'enableSmartLabels', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'fill', 'font', 'funnelHeight', 'funnelWidth', 'gapRatio', 'isClosed', 'isStacking', 'isTransposed', 'showMedian', 'labelPosition', 'splitMode', 'boxPlotMode', 'bubbleOptions', 'splineType', 'lineCap', 'lineJoin', 'marker', 'name', 'opacity', 'outlierSettings', 'palette', 'pieCoefficient', 'pieOfPieCoefficient', 'splitValue', 'gapWidth', 'emptyPointSettings', 'positiveFill', 'connectorLine', 'dragSettings', 'errorBar', 'points', 'pyramidMode', 'query', 'startAngle', 'cornerRadius', 'tooltip', 'type', 'visibility', 'visibleOnLegend', 'xAxisName', 'xName', 'yAxisName', 'yName', 'high', 'low', 'open', 'close', 'pointColorMappingName', 'zOrder', 'size', 'trendlines', 'highlightSettings', 'selectionSettings']), _dec(_class = _dec2(_class = _dec3(_class = function Series() {
+    _classCallCheck(this, Series);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejCheckBox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejCheckBox = exports.ejCheckBox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'check-box'), _dec2 = (0, _decorators.generateBindables)('ejCheckBox', ['checked', 'checkState', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'enableTriState', 'htmlAttributes', 'id', 'idPrefix', 'name', 'showRoundedCorner', 'size', 'text', 'validationMessage', 'validationRules', 'value'], ['checked', 'checkState'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejCheckBox, _WidgetBase);
+
+    function ejCheckBox(element) {
+      _classCallCheck(this, ejCheckBox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejCheckBox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejCircularGauge = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejCircularGauge = exports.ejCircularGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'circular-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejCircularGauge', ['animationSpeed', 'backgroundColor', 'distanceFromCorner', 'rangeZOrder', 'enableAnimation', 'enableGroupSeparator', 'enableResize', 'frame', 'gaugePosition', 'height', 'interiorGradient', 'isRadialGradient', 'isResponsive', 'locale', 'maximum', 'minimum', 'outerCustomLabelPosition', 'radius', 'readOnly', 'scales', 'theme', 'legend', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejCircularGauge, _WidgetBase);
+
+    function ejCircularGauge(element) {
+      _classCallCheck(this, ejCircularGauge);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejCircularGauge;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejColorPicker = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejColorPicker = exports.ejColorPicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'color-picker'), _dec2 = (0, _decorators.generateBindables)('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejColorPicker, _WidgetBase);
+
+    function ejColorPicker(element) {
+      _classCallCheck(this, ejColorPicker);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejColorPicker;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejCurrencyTextbox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejCurrencyTextbox = exports.ejCurrencyTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'currency-textbox'), _dec2 = (0, _decorators.generateBindables)('ejCurrencyTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejCurrencyTextbox, _WidgetBase);
+
+    function ejCurrencyTextbox(element) {
+      _classCallCheck(this, ejCurrencyTextbox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejCurrencyTextbox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDatePicker = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejDatePicker = exports.ejDatePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-picker'), _dec2 = (0, _decorators.generateBindables)('ejDatePicker', ['allowEdit', 'allowDrillDown', 'blackoutDates', 'buttonText', 'cssClass', 'dateFormat', 'dayHeaderFormat', 'depthLevel', 'displayInline', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'fields', 'headerFormat', 'height', 'highlightSection', 'highlightWeekend', 'htmlAttributes', 'locale', 'maxDate', 'minDate', 'readOnly', 'showDisabledRange', 'showFooter', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'showTooltip', 'specialDates', 'startDay', 'startLevel', 'stepMonths', 'tooltipFormat', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'weekNumber', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejDatePicker, _WidgetBase);
+
+    function ejDatePicker(element) {
+      _classCallCheck(this, ejDatePicker);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDatePicker;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDateRangePicker = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejDateRangePicker = exports.ejDateRangePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-range-picker'), _dec2 = (0, _decorators.generateBindables)('ejDateRangePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateFormat', 'enableTimePicker', 'enabled', 'enablePersistence', 'endDate', 'height', 'locale', 'ranges', 'separator', 'startDate', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'watermarkText', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejDateRangePicker, _WidgetBase);
+
+    function ejDateRangePicker(element) {
+      _classCallCheck(this, ejDateRangePicker);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDateRangePicker;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDateTimePicker = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejDateTimePicker = exports.ejDateTimePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'date-time-picker'), _dec2 = (0, _decorators.generateBindables)('ejDateTimePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateTimeFormat', 'dayHeaderFormat', 'depthLevel', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'headerFormat', 'height', 'htmlAttributes', 'interval', 'locale', 'maxDateTime', 'minDateTime', 'popupPosition', 'readOnly', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'startDay', 'startLevel', 'stepMonths', 'timeDisplayFormat', 'timeDrillDown', 'timePopupWidth', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejDateTimePicker, _WidgetBase);
+
+    function ejDateTimePicker(element) {
+      _classCallCheck(this, ejDateTimePicker);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDateTimePicker;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDiagram = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejDiagram = exports.ejDiagram = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'diagram'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDiagram', ['backgroundColor', 'backgroundImage', 'bridgeDirection', 'commandManager', 'connectors', 'connectorTemplate', 'constraints', 'contextMenu', 'dataSourceSettings', 'defaultSettings', 'drawType', 'enableAutoScroll', 'enableContextMenu', 'height', 'historyManager', 'labelRenderingMode', 'layout', 'locale', 'nodes', 'nodeTemplate', 'pageSettings', 'scrollSettings', 'selectedItems', 'showTooltip', 'serializationSettings', 'rulerSettings', 'snapSettings', 'tool', 'tooltip', 'width', 'zoomFactor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejDiagram, _WidgetBase);
+
+    function ejDiagram(element) {
+      _classCallCheck(this, ejDiagram);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDiagram;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDialog = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejDialog = exports.ejDialog = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'dialog'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDialog', ['actionButtons', 'ajaxSettings', 'allowDraggable', 'allowKeyboardNavigation', 'animation', 'backgroundScroll', 'closeOnEscape', 'containment', 'contentType', 'contentUrl', 'cssClass', 'enableAnimation', 'enabled', 'enableModal', 'enablePersistence', 'enableResize', 'enableRTL', 'faviconCSS', 'height', 'htmlAttributes', 'isResponsive', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'position', 'showHeader', 'showOnInit', 'showRoundedCorner', 'target', 'title', 'tooltip', 'width', 'zIndex', 'showFooter', 'footerTemplateId'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejDialog, _WidgetBase);
+
+    function ejDialog(element) {
+      _classCallCheck(this, ejDialog);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDialog;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDigitalGauge = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejDigitalGauge = exports.ejDigitalGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'digital-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejDigitalGauge', ['frame', 'height', 'isResponsive', 'enableResize', 'items', 'matrixSegmentData', 'segmentData', 'themes', 'value', 'width'], ['value']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejDigitalGauge, _WidgetBase);
+
+    function ejDigitalGauge(element) {
+      _classCallCheck(this, ejDigitalGauge);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDigitalGauge;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejDropDownList = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejDropDownList = exports.ejDropDownList = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'drop-down-list'), _dec2 = (0, _decorators.generateBindables)('ejDropDownList', ['allowVirtualScrolling', 'cascadeTo', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delimiterChar', 'enableAnimation', 'enabled', 'enableIncrementalSearch', 'enableFilterSearch', 'enableServerFiltering', 'enablePersistence', 'enablePopupResize', 'enableRTL', 'enableSorting', 'fields', 'filterType', 'headerTemplate', 'height', 'htmlAttributes', 'itemsCount', 'locale', 'maxPopupHeight', 'minPopupHeight', 'maxPopupWidth', 'minPopupWidth', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showPopupOnLoad', 'showRoundedCorner', 'sortOrder', 'targetID', 'template', 'text', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width', 'virtualScrollMode'], ['value'], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejDropDownList, _WidgetBase);
+
+    function ejDropDownList(element) {
+      _classCallCheck(this, ejDropDownList);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejDropDownList;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejFileExplorer = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejFileExplorer = exports.ejFileExplorer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'file-explorer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejFileExplorer', ['ajaxAction', 'ajaxDataType', 'ajaxSettings', 'allowDragAndDrop', 'allowKeyboardNavigation', 'allowMultiSelection', 'contextMenuSettings', 'cssClass', 'enablePersistence', 'enableResize', 'enableRTL', 'enableThumbnailCompress', 'fileTypes', 'filterSettings', 'gridSettings', 'height', 'isResponsive', 'layout', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'path', 'rootFolderName', 'selectedFolder', 'selectedItems', 'showCheckbox', 'showContextMenu', 'showFooter', 'showRoundedCorner', 'showThumbnail', 'showToolbar', 'showNavigationPane', 'tools', 'toolsList', 'uploadSettings', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejFileExplorer, _WidgetBase);
+
+    function ejFileExplorer(element) {
+      _classCallCheck(this, ejFileExplorer);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejFileExplorer;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejGantt = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejGantt = exports.ejGantt = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'gantt'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejGantt', ['addDialogFields', 'allowColumnResize', 'allowGanttChartEditing', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowMultipleExporting', 'allowSelection', 'allowSorting', 'allowDragAndDrop', 'enablePredecessorValidation', 'enableSerialNumber', 'baselineColor', 'workMapping', 'expandStateMapping', 'baselineEndDateMapping', 'baselineStartDateMapping', 'childMapping', 'columnDialogFields', 'connectorLineBackground', 'connectorlineWidth', 'cssClass', 'cellTooltipTemplate', 'dragTooltip', 'dataSource', 'dateFormat', 'dayWorkingTime', 'durationMapping', 'durationUnit', 'editDialogFields', 'filterSettings', 'isResponsive', 'splitterSettings', 'editSettings', 'enableAltRow', 'enableWBS', 'enableWBSPredecessor', 'enableCollapseAll', 'leftTaskLabelMapping', 'rightTaskLabelMapping', 'leftTaskLabelTemplate', 'rightTaskLabelTemplate', 'enableContextMenu', 'enableProgressBarResizing', 'enableResize', 'enableTaskbarDragTooltip', 'enableTaskbarTooltip', 'enableVirtualization', 'endDateMapping', 'highlightWeekends', 'holidays', 'includeWeekend', 'locale', 'milestoneMapping', 'showColumnOptions', 'parentTaskbarTemplate', 'taskType', 'workUnit', 'taskSchedulingMode', 'selectionType', 'parentProgressbarBackground', 'resourceUnitMapping', 'notesMapping', 'taskSchedulingModeMapping', 'durationUnitMapping', 'parentTaskbarBackground', 'parentTaskIdMapping', 'predecessorMapping', 'progressbarBackground', 'progressbarHeight', 'progressbarTooltipTemplate', 'progressbarTooltipTemplateId', 'progressMapping', 'query', 'renderBaseline', 'resourceIdMapping', 'resourceInfoMapping', 'resourceNameMapping', 'resources', 'roundOffDayworkingTime', 'rowHeight', 'scheduleEndDate', 'scheduleHeaderSettings', 'scheduleStartDate', 'selectedRowIndex', 'showColumnChooser', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'showProgressStatus', 'showResourceNames', 'showTaskNames', 'sizeSettings', 'selectedCellIndexes', 'sortSettings', 'splitterPosition', 'startDateMapping', 'stripLines', 'taskbarBackground', 'taskbarEditingTooltipTemplate', 'taskbarEditingTooltipTemplateId', 'taskbarHeight', 'taskbarTooltipTemplate', 'taskbarTemplate', 'milestoneTemplate', 'readOnly', 'taskbarTooltipTemplateId', 'taskIdMapping', 'taskNameMapping', 'toolbarSettings', 'treeColumnIndex', 'selectionMode', 'validateManualTasksOnLinking', 'weekendBackground', 'workingTimeScale', 'workWeek', 'viewType', 'groupCollection', 'resourceCollectionMapping', 'taskCollectionMapping', 'groupIdMapping', 'groupNameMapping'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejGantt, _WidgetBase);
+
+    function ejGantt(element) {
+      _classCallCheck(this, ejGantt);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejGantt;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Column = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
+
+  var Column = exports.Column = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'column'), _dec3 = (0, _decorators.generateBindables)('columns', ['clipMode', 'allowEditing', 'allowFiltering', 'allowGrouping', 'allowSorting', 'allowResizing', 'commands', 'cssClass', 'customAttributes', 'dataSource', 'defaultValue', 'disableHtmlEncode', 'displayAsCheckbox', 'editParams', 'editTemplate', 'editType', 'enableGroupByFormat', 'field', 'filterBarTemplate', 'filterType', 'foreignKeyField', 'foreignKeyValue', 'format', 'headerTemplateID', 'headerText', 'headerTextAlign', 'headerTooltip', 'isFrozen', 'isIdentity', 'isPrimaryKey', 'priority', 'showInColumnChooser', 'template', 'textAlign', 'tooltip', 'type', 'validationRules', 'visible', 'width']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+    function Column() {
+      _classCallCheck(this, Column);
+
+      _initDefineProp(this, 'template', _descriptor, this);
+    }
+
+    Column.prototype.setTemplates = function setTemplates() {
+      if (this.template[0]) {
+        var util = new _util.Util();
+        this[util.getBindablePropertyName('template')] = this.template[0].template;
+      }
+    };
+
+    return Column;
+  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_dec4], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejGrid = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejGrid = exports.ejGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejGrid', ['allowCellMerging', 'allowGrouping', 'allowKeyboardNavigation', 'allowFiltering', 'allowSorting', 'allowMultiSorting', 'allowPaging', 'allowReordering', 'allowResizeToFit', 'allowResizing', 'allowRowDragAndDrop', 'allowScrolling', 'allowSearching', 'allowSelection', 'allowTextWrap', 'allowMultipleExporting', 'commonWidth', 'gridLines', 'childGrid', 'columnLayout', 'columns', 'contextMenuSettings', 'cssClass', 'dataSource', 'detailsTemplate', 'editSettings', 'enableAltRow', 'enableAutoSaveOnSelectionChange', 'enableHeaderHover', 'enablePersistence', 'enableResponsiveRow', 'enableRowHover', 'enableRTL', 'enableTouch', 'enableToolbarItems', 'exportToExcelAction', 'exportToPdfAction', 'exportToWordAction', 'filterSettings', 'groupSettings', 'isResponsive', 'keySettings', 'locale', 'minWidth', 'pageSettings', 'query', 'resizeSettings', 'rowTemplate', 'rowDropSettings', 'searchSettings', 'selectedRecords', 'selectedRowIndex', 'selectedRowIndices', 'selectionSettings', 'selectionType', 'scrollSettings', 'showColumnChooser', 'showStackedHeader', 'showSummary', 'sortSettings', 'stackedHeaderRows', 'summaryRows', 'textWrapSettings', 'toolbarSettings'], ['dataSource', 'selectedRowIndices'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejGrid, _WidgetBase);
+
+    function ejGrid(element, templateEngine) {
+      _classCallCheck(this, ejGrid);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'columns', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'columns';
+      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
+      _this.templateProcessor.initTemplate();
+      return _this;
+    }
+
+    return ejGrid;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejGroupButton = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejGroupButton = exports.ejGroupButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'group-button'), _dec2 = (0, _decorators.generateBindables)('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejGroupButton, _WidgetBase);
+
+    function ejGroupButton(element) {
+      _classCallCheck(this, ejGroupButton);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejGroupButton;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejHeatMap = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejHeatMap = exports.ejHeatMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'heat-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejHeatMap', ['width', 'height', 'id', 'showTooltip', 'tooltipSettings', 'itemsSource', 'heatMapCell', 'isResponsive', 'enableVirtualization', 'defaultColumnStyle', 'legendCollection', 'itemsMapping', 'colorMappingCollection']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejHeatMap, _WidgetBase);
+
+    function ejHeatMap(element) {
+      _classCallCheck(this, ejHeatMap);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejHeatMap;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejHeatMapLegend = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejHeatMapLegend = exports.ejHeatMapLegend = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'heat-map-legend'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejHeatMapLegend', ['width', 'height', 'isResponsive', 'showLabel', 'colorMappingCollection', 'orientation', 'legendMode']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejHeatMapLegend, _WidgetBase);
+
+    function ejHeatMapLegend(element) {
+      _classCallCheck(this, ejHeatMapLegend);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejHeatMapLegend;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejKanban = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejKanban = exports.ejKanban = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'kanban'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejKanban', ['allowDragAndDrop', 'allowTitle', 'swimlaneSettings', 'allowToggleColumn', 'allowSearching', 'allowFiltering', 'allowSelection', 'allowHover', 'allowKeyboardNavigation', 'allowScrolling', 'allowPrinting', 'contextMenuSettings', 'columns', 'cardSettings', 'customToolbarItems', 'cssClass', 'dataSource', 'enableTouch', 'enableRTL', 'enableTotalCount', 'editSettings', 'fields', 'keyField', 'isResponsive', 'minWidth', 'filterSettings', 'query', 'keySettings', 'scrollSettings', 'searchSettings', 'selectionType', 'stackedHeaderRows', 'tooltipSettings', 'workflows', 'locale'], ['dataSource'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'kanban-column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejKanban, _WidgetBase);
+
+    function ejKanban(element) {
+      _classCallCheck(this, ejKanban);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'columns', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'columns';
+      return _this;
+    }
+
+    return ejKanban;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.KanbanColumn = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var KanbanColumn = exports.KanbanColumn = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'kanban-column'), _dec3 = (0, _decorators.generateBindables)('columns', ['headerText', 'totalCount', 'key', 'allowDrop', 'allowDrag', 'isCollapsed', 'constraints', 'headerTemplate', 'width', 'visible', 'showAddButton']), _dec(_class = _dec2(_class = _dec3(_class = function KanbanColumn() {
+    _classCallCheck(this, KanbanColumn);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejLinearGauge = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejLinearGauge = exports.ejLinearGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'linear-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejLinearGauge', ['animationSpeed', 'backgroundColor', 'borderColor', 'enableAnimation', 'enableMarkerPointerAnimation', 'isResponsive', 'enableGroupSeparator', 'enableResize', 'frame', 'height', 'labelColor', 'locale', 'maximum', 'minimum', 'orientation', 'outerCustomLabelPosition', 'pointerGradient1', 'pointerGradient2', 'readOnly', 'scales', 'theme', 'tickColor', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejLinearGauge, _WidgetBase);
+
+    function ejLinearGauge(element) {
+      _classCallCheck(this, ejLinearGauge);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejLinearGauge;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejListBox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejListBox = exports.ejListBox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'list-box'), _dec2 = (0, _decorators.generateBindables)('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemHeight', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'sortOrder', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejListBox, _WidgetBase);
+
+    function ejListBox(element) {
+      _classCallCheck(this, ejListBox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejListBox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejListView = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejListView = exports.ejListView = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'list-view'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejListView', ['ajaxSettings', 'checkedIndices', 'cssClass', 'dataSource', 'enableAjax', 'enableCache', 'enableCheckMark', 'enableFiltering', 'enableGroupList', 'enablePersistence', 'fieldSettings', 'items', 'headerBackButtonText', 'headerTitle', 'height', 'locale', 'persistSelection', 'preventSelection', 'query', 'renderTemplate', 'selectedItemIndex', 'showHeader', 'showHeaderBackButton', 'templateId', 'width', 'itemRequestCount', 'totalItemsCount', 'allowVirtualScrolling', 'virtualScrollMode'], ['dataSource', 'selectedItemIndex']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejListView, _WidgetBase);
+
+    function ejListView(element) {
+      _classCallCheck(this, ejListView);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejListView;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Layer = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var Layer = exports.Layer = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'layer'), _dec3 = (0, _decorators.generateBindables)('layers', ['bingMapType', 'bubbleSettings', 'dataSource', 'shapeDataPath', 'shapePropertyPath', 'enableMouseHover', 'enableSelection', 'key', 'labelSettings', 'geometryType', 'layerType', 'legendSettings', 'mapItemsTemplate', 'markers', 'markerTemplate', 'selectedMapShapes', 'selectionMode', 'shapeData', 'shapeSettings', 'showMapItems', 'showTooltip', 'tooltipTemplate', 'urlTemplate', 'subLayers']), _dec(_class = _dec2(_class = _dec3(_class = function Layer() {
+    _classCallCheck(this, Layer);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejMap = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejMap = exports.ejMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejMap', ['background', 'baseMapIndex', 'centerPosition', 'draggingOnSelection', 'enableAnimation', 'enableLayerChangeAnimation', 'enablePan', 'enableResize', 'isResponsive', 'zoomSettings', 'navigationControl', 'locale', 'layers'], ['baseMapIndex', 'enablePan', 'enableResize', 'enableAnimation', 'zoomSettings.level', 'zoomSettings.minValue', 'zoomSettings.maxValue', 'zoomSettings.factor', 'zoomSettings.enableZoom', 'zoomSettings.enableZoomOnSelection', 'navigationControl.enableNavigation', 'navigationControl.orientation', 'navigationControl.absolutePosition', 'navigationControl.dockPosition']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'layer'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejMap, _WidgetBase);
+
+    function ejMap(element) {
+      _classCallCheck(this, ejMap);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'layers', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'layers';
+      return _this;
+    }
+
+    return ejMap;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'layers', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejMaskEdit = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejMaskEdit = exports.ejMaskEdit = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'mask-edit'), _dec2 = (0, _decorators.generateBindables)('ejMaskEdit', ['cssClass', 'customCharacter', 'enabled', 'enablePersistence', 'height', 'hidePromptOnLeave', 'htmlAttributes', 'inputMode', 'locale', 'maskFormat', 'name', 'readOnly', 'showError', 'showPromptChar', 'showRoundedCorner', 'textAlign', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejMaskEdit, _WidgetBase);
+
+    function ejMaskEdit(element) {
+      _classCallCheck(this, ejMaskEdit);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejMaskEdit;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejMenu = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejMenu = exports.ejMenu = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'menu'), _dec2 = (0, _decorators.generateBindables)('ejMenu', ['animationType', 'contextMenuTarget', 'container', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width', 'overflowHeight', 'overflowWidth'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejMenu, _WidgetBase);
+
+    function ejMenu(element) {
+      _classCallCheck(this, ejMenu);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejMenu;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejNavigationDrawer = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejNavigationDrawer = exports.ejNavigationDrawer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'navigation-drawer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejNavigationDrawer', ['ajaxSettings', 'contentId', 'cssClass', 'direction', 'enableListView', 'items', 'listViewSettings', 'position', 'targetId', 'type', 'width', 'isPaneOpen']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejNavigationDrawer, _WidgetBase);
+
+    function ejNavigationDrawer(element) {
+      _classCallCheck(this, ejNavigationDrawer);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejNavigationDrawer;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejNumericTextbox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejNumericTextbox = exports.ejNumericTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'numeric-textbox'), _dec2 = (0, _decorators.generateBindables)('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejNumericTextbox, _WidgetBase);
+
+    function ejNumericTextbox(element) {
+      _classCallCheck(this, ejNumericTextbox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejNumericTextbox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejOverview = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejOverview = exports.ejOverview = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'overview'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejOverview', ['sourceID', 'height', 'width'], [], { 'sourceID': 'sourceId' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejOverview, _WidgetBase);
+
+    function ejOverview(element) {
+      _classCallCheck(this, ejOverview);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejOverview;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPager = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPager = exports.ejPager = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pager'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPager', ['customText', 'currentPage', 'enableExternalMessage', 'enableQueryString', 'enableRTL', 'externalMessage', 'locale', 'pageCount', 'pageSize', 'pageSizeList', 'totalPages', 'totalRecordsCount', 'showPageInfo'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPager, _WidgetBase);
+
+    function ejPager(element) {
+      _classCallCheck(this, ejPager);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPager;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPdfViewer = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPdfViewer = exports.ejPdfViewer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pdf-viewer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPdfViewer', ['locale', 'toolbarSettings', 'serverActionSettings', 'serviceUrl', 'documentPath', 'enableTextMarkupAnnotations', 'enableHighlightAnnotation', 'enableUnderlineAnnotation', 'enableStrikethroughAnnotation', 'enableSignature', 'strikethroughSettings', 'underlineSettings', 'highlightSettings', 'signatureSettings', 'annotationType', 'pageCount', 'currentPageNumber', 'zoomPercentage', 'pdfService', 'interactionMode', 'hyperlinkOpenState', 'enableHyperlink', 'enableTextSelection', 'isResponsive', 'isDocumentEdited', 'allowClientBuffering', 'fileName']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPdfViewer, _WidgetBase);
+
+    function ejPdfViewer(element) {
+      _classCallCheck(this, ejPdfViewer);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPdfViewer;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPercentageTextbox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejPercentageTextbox = exports.ejPercentageTextbox = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'percentage-textbox'), _dec2 = (0, _decorators.generateBindables)('ejPercentageTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejPercentageTextbox, _WidgetBase);
+
+    function ejPercentageTextbox(element) {
+      _classCallCheck(this, ejPercentageTextbox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPercentageTextbox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPivotChart = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPivotChart = exports.ejPivotChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotChart', ['analysisMode', 'cssClass', 'zooming', 'commonSeriesOptions', 'dataSource', 'customObject', 'enable3D', 'enableRTL', 'enableMultiLevelLabels', 'isResponsive', 'legend', 'locale', 'operationalMode', 'primaryXAxis', 'primaryYAxis', 'rotation', 'enableContextMenu', 'serviceMethodSettings', 'size', 'url'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPivotChart, _WidgetBase);
+
+    function ejPivotChart(element) {
+      _classCallCheck(this, ejPivotChart);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPivotChart;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPivotGauge = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPivotGauge = exports.ejPivotGauge = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-gauge'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotGauge', ['columnsCount', 'cssClass', 'customObject', 'dataSource', 'enableAnimation', 'enableTooltip', 'enableRTL', 'isResponsive', 'labelFormatSettings', 'locale', 'rowsCount', 'scales', 'serviceMethodSettings', 'showHeaderLabel', 'url', 'analysisMode', 'operationalMode'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPivotGauge, _WidgetBase);
+
+    function ejPivotGauge(element) {
+      _classCallCheck(this, ejPivotGauge);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPivotGauge;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPivotGrid = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPivotGrid = exports.ejPivotGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotGrid', ['analysisMode', 'cssClass', 'pivotTableFieldListID', 'dataSource', 'valueSortSettings', 'frozenHeaderSettings', 'headerSettings', 'showUniqueNameOnPivotButton', 'customObject', 'collapsedMembers', 'enableCellContext', 'enableCellSelection', 'enableDrillThrough', 'enableCellDoubleClick', 'enableCellEditing', 'enableCollapseByDefault', 'enableColumnGrandTotal', 'enableConditionalFormatting', 'enableAdvancedFilter', 'enableDeferUpdate', 'enableGroupingBar', 'enableMemberEditorPaging', 'memberEditorPageSize', 'enableGrandTotal', 'enableJSONRendering', 'enablePivotFieldList', 'enableRowGrandTotal', 'enableRTL', 'enableToolTip', 'enableToolTipAnimation', 'enableColumnResizing', 'resizeColumnsToFit', 'enableContextMenu', 'enableVirtualScrolling', 'enablePaging', 'hyperlinkSettings', 'isResponsive', 'jsonRecords', 'layout', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'], [], { 'pivotTableFieldListID': 'pivotTableFieldListId', 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPivotGrid, _WidgetBase);
+
+    function ejPivotGrid(element) {
+      _classCallCheck(this, ejPivotGrid);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPivotGrid;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPivotSchemaDesigner = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPivotSchemaDesigner = exports.ejPivotSchemaDesigner = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-schema-designer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotSchemaDesigner', ['cssClass', 'customObject', 'enableWrapper', 'enableRTL', 'olap', 'enableDragDrop', 'height', 'locale', 'pivotControl', 'serviceMethods', 'url', 'width', 'layout'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPivotSchemaDesigner, _WidgetBase);
+
+    function ejPivotSchemaDesigner(element) {
+      _classCallCheck(this, ejPivotSchemaDesigner);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPivotSchemaDesigner;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejPivotTreeMap = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejPivotTreeMap = exports.ejPivotTreeMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'pivot-tree-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejPivotTreeMap', ['cssClass', 'dataSource', 'customObject', 'isResponsive', 'locale', 'operationalMode', 'serviceMethodSettings', 'url']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejPivotTreeMap, _WidgetBase);
+
+    function ejPivotTreeMap(element) {
+      _classCallCheck(this, ejPivotTreeMap);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejPivotTreeMap;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejProgressBar = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejProgressBar = exports.ejProgressBar = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'progress-bar'), _dec2 = (0, _decorators.generateBindables)('ejProgressBar', ['cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'maxValue', 'minValue', 'percentage', 'showRoundedCorner', 'text', 'value', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejProgressBar, _WidgetBase);
+
+    function ejProgressBar(element) {
+      _classCallCheck(this, ejProgressBar);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejProgressBar;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Item = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
+
+  var Item = exports.Item = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'item'), _dec3 = (0, _decorators.generateBindables)('items', ['imageUrl', 'prependTo', 'text', 'enabled', 'click', 'badge', 'type', 'sliderSettings', 'items']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+    function Item() {
+      _classCallCheck(this, Item);
+
+      _initDefineProp(this, 'template', _descriptor, this);
+    }
+
+    Item.prototype.setTemplates = function setTemplates() {
+      if (this.template[0]) {
+        var util = new _util.Util();
+        this[util.getBindablePropertyName('template')] = this.template[0].template;
+      }
+    };
+
+    return Item;
+  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_dec4], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRadialMenu = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejRadialMenu = exports.ejRadialMenu = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'radial-menu'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRadialMenu', ['autoOpen', 'backImageClass', 'cssClass', 'enableAnimation', 'imageClass', 'items', 'radius', 'targetElementId', 'position']), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'item'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejRadialMenu, _WidgetBase);
+
+    function ejRadialMenu(element, templateEngine) {
+      _classCallCheck(this, ejRadialMenu);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'items', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'items';
+      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
+      _this.templateProcessor.initTemplate();
+      return _this;
+    }
+
+    return ejRadialMenu;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'items', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRadialSlider = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejRadialSlider = exports.ejRadialSlider = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'radial-slider'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRadialSlider', ['autoOpen', 'cssClass', 'enableAnimation', 'enableRoundOff', 'endAngle', 'inline', 'innerCircleImageClass', 'innerCircleImageUrl', 'labelSpace', 'locale', 'radius', 'showInnerCircle', 'startAngle', 'strokeWidth', 'ticks', 'value'], ['value', 'ticks']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejRadialSlider, _WidgetBase);
+
+    function ejRadialSlider(element) {
+      _classCallCheck(this, ejRadialSlider);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRadialSlider;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRadioButton = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejRadioButton = exports.ejRadioButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'radio-button'), _dec2 = (0, _decorators.generateBindables)('ejRadioButton', ['checked', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'htmlAttributes', 'id', 'idPrefix', 'name', 'size', 'text', 'validationMessage', 'validationRules', 'value'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejRadioButton, _WidgetBase);
+
+    function ejRadioButton(element) {
+      _classCallCheck(this, ejRadioButton);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRadioButton;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRangeNavigator = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejRangeNavigator = exports.ejRangeNavigator = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'range-navigator'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRangeNavigator', ['allowSnapping', 'border', 'dataSource', 'series', 'seriesSettings', 'enableDeferredUpdate', 'enableScrollbar', 'enableAutoResizing', 'enableRTL', 'isResponsive', 'labelSettings', 'locale', 'navigatorStyleSettings', 'padding', 'rangePadding', 'rangeSettings', 'selectedData', 'selectedRangeSettings', 'scrollRangeSettings', 'sizeSettings', 'theme', 'tooltipSettings', 'valueAxisSettings', 'valueType', 'xName', 'yName'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'range-series'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejRangeNavigator, _WidgetBase);
+
+    function ejRangeNavigator(element) {
+      _classCallCheck(this, ejRangeNavigator);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'series', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'series';
+      return _this;
+    }
+
+    return ejRangeNavigator;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'series', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.RangeSeries = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var RangeSeries = exports.RangeSeries = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'range-series'), _dec3 = (0, _decorators.generateBindables)('series', ['xName', 'yName', 'dataSource', 'type', 'enableAnimation', 'fill']), _dec(_class = _dec2(_class = _dec3(_class = function RangeSeries() {
+    _classCallCheck(this, RangeSeries);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRating = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejRating = exports.ejRating = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rating'), _dec2 = (0, _decorators.generateBindables)('ejRating', ['allowReset', 'cssClass', 'enabled', 'enablePersistence', 'height', 'htmlAttributes', 'incrementStep', 'maxValue', 'minValue', 'orientation', 'precision', 'readOnly', 'shapeHeight', 'shapeWidth', 'showTooltip', 'value', 'width'], ['value']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejRating, _WidgetBase);
+
+    function ejRating(element) {
+      _classCallCheck(this, ejRating);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRating;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejReportViewer = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejReportViewer = exports.ejReportViewer = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'report-viewer'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejReportViewer', ['dataSources', 'enablePageCache', 'exportSettings', 'isResponsive', 'locale', 'pageSettings', 'parameters', 'printMode', 'printOptions', 'processingMode', 'renderMode', 'reportPath', 'reportServerUrl', 'reportServiceUrl', 'toolbarSettings', 'zoomFactor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejReportViewer, _WidgetBase);
+
+    function ejReportViewer(element) {
+      _classCallCheck(this, ejReportViewer);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejReportViewer;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRibbon = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejRibbon = exports.ejRibbon = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'ribbon'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejRibbon', ['allowResizing', 'isResponsive', 'buttonDefaults', 'showQAT', 'cssClass', 'collapsePinSettings', 'enableOnDemand', 'collapsible', 'enableRTL', 'expandPinSettings', 'applicationTab', 'contextualTabs', 'disabledItemIndex', 'enabledItemIndex', 'selectedItemIndex', 'tabs', 'locale', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejRibbon, _WidgetBase);
+
+    function ejRibbon(element) {
+      _classCallCheck(this, ejRibbon);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRibbon;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRotator = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejRotator = exports.ejRotator = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rotator'), _dec2 = (0, _decorators.generateBindables)('ejRotator', ['allowKeyboardNavigation', 'animationSpeed', 'animationType', 'circularMode', 'cssClass', 'dataSource', 'delay', 'displayItemsCount', 'enableAutoPlay', 'enabled', 'enableRTL', 'fields', 'frameSpace', 'isResponsive', 'navigateSteps', 'orientation', 'pagerPosition', 'query', 'showCaption', 'showNavigateButton', 'showPager', 'showPlayButton', 'showThumbnail', 'slideHeight', 'slideWidth', 'startIndex', 'stopOnHover', 'template', 'templateId', 'thumbnailSourceID'], [], { 'enableRTL': 'enableRtl', 'thumbnailSourceID': 'thumbnailSourceId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejRotator, _WidgetBase);
+
+    function ejRotator(element) {
+      _classCallCheck(this, ejRotator);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRotator;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejRte = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejRte = exports.ejRte = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'rte'), _dec2 = (0, _decorators.generateBindables)('ejRTE', ['allowEditing', 'allowKeyboardNavigation', 'autoFocus', 'autoHeight', 'pasteCleanupSettings', 'colorCode', 'colorPaletteColumns', 'colorPaletteRows', 'cssClass', 'enabled', 'enableHtmlEncode', 'enablePersistence', 'enableResize', 'enableRTL', 'enableXHTML', 'enableTabKeyNavigation', 'exportToPdfSettings', 'exportToWordSettings', 'externalCSS', 'fileBrowser', 'fontName', 'fontSize', 'format', 'height', 'htmlAttributes', 'iframeAttributes', 'imageBrowser', 'importSettings', 'isResponsive', 'locale', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'name', 'showClearAll', 'showClearFormat', 'showCustomTable', 'showContextMenu', 'showDimensions', 'showFontOption', 'showFooter', 'showHtmlSource', 'showHtmlTagInfo', 'showToolbar', 'showCharCount', 'showRoundedCorner', 'showWordCount', 'tableColumns', 'tableRows', 'tools', 'toolsList', 'toolbarOverflowMode', 'tooltipSettings', 'undoStackLimit', 'value', 'validationRules', 'validationMessage', 'width', 'zoomStep'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejRte, _WidgetBase);
+
+    function ejRte(element) {
+      _classCallCheck(this, ejRte);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejRte;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSchedule = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejSchedule = exports.ejSchedule = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'schedule'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSchedule', ['allowDragAndDrop', 'allowInline', 'allowKeyboardNavigation', 'appointmentSettings', 'appointmentTemplateId', 'cssClass', 'categorizeSettings', 'cellHeight', 'cellWidth', 'contextMenuSettings', 'currentDate', 'currentView', 'dateFormat', 'showAppointmentNavigator', 'enableAppointmentResize', 'enableLoadOnDemand', 'enablePersistence', 'enableRTL', 'endHour', 'group', 'height', 'workHours', 'isDST', 'isResponsive', 'locale', 'maxDate', 'minDate', 'orientation', 'prioritySettings', 'readOnly', 'reminderSettings', 'renderDates', 'resourceHeaderTemplateId', 'resources', 'showAllDayRow', 'showWeekend', 'showCurrentTimeIndicator', 'showHeaderBar', 'showLocationField', 'showTimeZoneFields', 'showQuickWindow', 'startHour', 'timeMode', 'timeZone', 'timeZoneCollection', 'views', 'width', 'enableRecurrenceValidation', 'agendaViewSettings', 'firstDayOfWeek', 'workWeek', 'tooltipSettings', 'timeScale', 'showDeleteConfirmationDialog', 'allDayCellsTemplateId', 'workCellsTemplateId', 'dateHeaderTemplateId', 'showOverflowButton', 'appointmentDragArea', 'showNextPrevMonth', 'blockoutSettings'], ['currentView', 'currentDate'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'schedule-resource'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejSchedule, _WidgetBase);
+
+    function ejSchedule(element) {
+      _classCallCheck(this, ejSchedule);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'resources', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'resources';
+      return _this;
+    }
+
+    return ejSchedule;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'resources', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ScheduleResource = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ScheduleResource = exports.ScheduleResource = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'schedule-resource'), _dec3 = (0, _decorators.generateBindables)('resources', ['field', 'title', 'name', 'allowMultiple', 'resourceSettings']), _dec(_class = _dec2(_class = _dec3(_class = function ScheduleResource() {
+    _classCallCheck(this, ScheduleResource);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejScroller = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejScroller = exports.ejScroller = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'scroller'), _dec2 = (0, _decorators.generateBindables)('ejScroller', ['animationSpeed', 'autoHide', 'buttonSize', 'enabled', 'enablePersistence', 'enableRTL', 'enableTouchScroll', 'height', 'scrollerSize', 'scrollLeft', 'scrollOneStepBy', 'scrollTop', 'targetPane', 'width'], ['scrollLeft', 'scrollTop'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejScroller, _WidgetBase);
+
+    function ejScroller(element) {
+      _classCallCheck(this, ejScroller);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejScroller;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSignature = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejSignature = exports.ejSignature = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'signature'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSignature', ['backgroundColor', 'backgroundImage', 'enabled', 'height', 'isResponsive', 'saveImageFormat', 'saveWithBackground', 'showRoundedCorner', 'strokeColor', 'strokeWidth', 'width']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejSignature, _WidgetBase);
+
+    function ejSignature(element) {
+      _classCallCheck(this, ejSignature);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSignature;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSlider = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejSlider = exports.ejSlider = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'slider'), _dec2 = (0, _decorators.generateBindables)('ejSlider', ['allowMouseWheel', 'animationSpeed', 'cssClass', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'incrementStep', 'largeStep', 'maxValue', 'minValue', 'orientation', 'readOnly', 'showButtons', 'showRoundedCorner', 'showScale', 'showSmallTicks', 'showTooltip', 'sliderType', 'smallStep', 'value', 'values', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejSlider, _WidgetBase);
+
+    function ejSlider(element) {
+      _classCallCheck(this, ejSlider);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSlider;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSparkline = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejSparkline = exports.ejSparkline = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'sparkline'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSparkline', ['background', 'fill', 'stroke', 'border', 'width', 'opacity', 'highPointColor', 'lowPointColor', 'startPointColor', 'endPointColor', 'negativePointColor', 'rangeBandSettings', 'locale', 'palette', 'isResponsive', 'enableCanvasRendering', 'enableGroupSeparator', 'dataSource', 'xName', 'yName', 'padding', 'type', 'theme', 'tooltip', 'markerSettings', 'size', 'axisLineSettings']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejSparkline, _WidgetBase);
+
+    function ejSparkline(element) {
+      _classCallCheck(this, ejSparkline);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSparkline;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSplitButton = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejSplitButton = exports.ejSplitButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'split-button'), _dec2 = (0, _decorators.generateBindables)('ejSplitButton', ['arrowPosition', 'buttonMode', 'contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'showRoundedCorner', 'size', 'suffixIcon', 'targetID', 'target', 'text', 'width'], [], { 'enableRTL': 'enableRtl', 'targetID': 'targetId' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejSplitButton, _WidgetBase);
+
+    function ejSplitButton(element) {
+      _classCallCheck(this, ejSplitButton);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSplitButton;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSpellCheck = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejSpellCheck = exports.ejSpellCheck = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'spell-check'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSpellCheck', ['dictionarySettings', 'misspellWordCss', 'locale', 'maxSuggestionCount', 'ignoreWords', 'contextMenuSettings', 'ignoreSettings', 'isResponsive', 'enableValidateOnType', 'controlsToValidate', 'enableAsync', 'ajaxDataType']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejSpellCheck, _WidgetBase);
+
+    function ejSpellCheck(element) {
+      _classCallCheck(this, ejSpellCheck);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSpellCheck;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSplitter = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejSplitter = exports.ejSplitter = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'splitter'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSplitter', ['allowKeyboardNavigation', 'animationSpeed', 'cssClass', 'enableAnimation', 'enableRTL', 'height', 'htmlAttributes', 'isResponsive', 'orientation', 'properties', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejSplitter, _WidgetBase);
+
+    function ejSplitter(element) {
+      _classCallCheck(this, ejSplitter);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSplitter;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Sheet = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var Sheet = exports.Sheet = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'sheet'), _dec3 = (0, _decorators.generateBindables)('sheets', ['border', 'cellTypes', 'cFormatRule', 'colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'frozenRows', 'frozenColumns', 'headerStyles', 'hideColumns', 'hideRows', 'mergeCells', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'rows', 'showGridlines', 'showHeader', 'showHeadings', 'sheetName', 'startCell']), _dec(_class = _dec2(_class = _dec3(_class = function Sheet() {
+    _classCallCheck(this, Sheet);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSpreadsheet = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejSpreadsheet = exports.ejSpreadsheet = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'spreadsheet'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSpreadsheet', ['activeSheetIndex', 'allowAutoCellType', 'allowAutoFill', 'allowAutoSum', 'allowCellFormatting', 'allowCellType', 'allowCharts', 'allowClear', 'allowClipboard', 'allowComments', 'allowConditionalFormats', 'allowDataValidation', 'allowDelete', 'allowDragAndDrop', 'allowEditing', 'allowFiltering', 'allowFormatAsTable', 'allowFormatPainter', 'allowFormulaBar', 'allowFreezing', 'allowHyperlink', 'allowImport', 'allowInsert', 'allowKeyboardNavigation', 'allowLockCell', 'allowMerging', 'allowOverflow', 'allowResizing', 'allowSearching', 'allowSelection', 'allowSorting', 'allowUndoRedo', 'allowWrap', 'apWidth', 'autoFillSettings', 'chartSettings', 'columnCount', 'columnWidth', 'cssClass', 'customFormulas', 'enableContextMenu', 'enablePivotTable', 'enableTouch', 'exportSettings', 'formatSettings', 'importSettings', 'isReadOnly', 'locale', 'nameManager', 'pictureSettings', 'printSettings', 'ribbonSettings', 'rowCount', 'rowHeight', 'scrollSettings', 'selectionSettings', 'sheetCount', 'sheets', 'showPager', 'showRibbon', 'undoRedoStep', 'userName']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'sheet'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejSpreadsheet, _WidgetBase);
+
+    function ejSpreadsheet(element) {
+      _classCallCheck(this, ejSpreadsheet);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'sheets', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'sheets';
+      return _this;
+    }
+
+    return ejSpreadsheet;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'sheets', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSunburstChart = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejSunburstChart = exports.ejSunburstChart = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'sunburst-chart'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSunburstChart', ['background', 'valueMemberPath', 'border', 'segmentBorder', 'dataSource', 'palette', 'parentNode', 'xName', 'yName', 'isResponsive', 'size', 'visible', 'tooltip', 'points', 'startAngle', 'endAngle', 'radius', 'innerRadius', 'dataLabelSettings', 'title', 'highlightSettings', 'selectionSettings', 'levels', 'legend', 'theme', 'margin', 'enableAnimation', 'opacity', 'zoomSettings', 'animationType']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'sunburst-levels'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejSunburstChart, _WidgetBase);
+
+    function ejSunburstChart(element) {
+      _classCallCheck(this, ejSunburstChart);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'levels', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'levels';
+      return _this;
+    }
+
+    return ejSunburstChart;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'levels', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.SunburstLevels = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var SunburstLevels = exports.SunburstLevels = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'sunburst-levels'), _dec3 = (0, _decorators.generateBindables)('levels', ['groupMemberPath']), _dec(_class = _dec2(_class = _dec3(_class = function SunburstLevels() {
+    _classCallCheck(this, SunburstLevels);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejSymbolPalette = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejSymbolPalette = exports.ejSymbolPalette = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'symbol-palette'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejSymbolPalette', ['allowDrag', 'cssClass', 'defaultSettings', 'diagramId', 'headerHeight', 'height', 'paletteItemHeight', 'paletteItemWidth', 'palettes', 'previewHeight', 'previewOffset', 'previewWidth', 'showPaletteItemText', 'width']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejSymbolPalette, _WidgetBase);
+
+    function ejSymbolPalette(element) {
+      _classCallCheck(this, ejSymbolPalette);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejSymbolPalette;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTagCloud = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejTagCloud = exports.ejTagCloud = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tag-cloud'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTagCloud', ['cssClass', 'dataSource', 'enableRTL', 'fields', 'htmlAttributes', 'format', 'maxFontSize', 'minFontSize', 'query', 'showTitle', 'titleImage', 'titleText'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejTagCloud, _WidgetBase);
+
+    function ejTagCloud(element) {
+      _classCallCheck(this, ejTagCloud);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTagCloud;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTab = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejTab = exports.ejTab = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tab'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTab', ['ajaxSettings', 'allowKeyboardNavigation', 'collapsible', 'cssClass', 'disabledItemIndex', 'enableAnimation', 'enabled', 'enabledItemIndex', 'enablePersistence', 'enableRTL', 'enableTabScroll', 'events', 'headerPosition', 'headerSize', 'height', 'heightAdjustMode', 'hiddenItemIndex', 'htmlAttributes', 'idPrefix', 'selectedItemIndex', 'showCloseButton', 'showReloadIcon', 'showRoundedCorner', 'width'], ['selectedItemIndex'], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejTab, _WidgetBase);
+
+    function ejTab(element) {
+      _classCallCheck(this, ejTab);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTab;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTile = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejTile = exports.ejTile = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tile'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTile', ['badge', 'caption', 'cssClass', 'enablePersistence', 'height', 'imageClass', 'imagePosition', 'imageTemplateId', 'imageUrl', 'locale', 'liveTile', 'tileSize', 'width', 'showRoundedCorner', 'allowSelection', 'backgroundColor']), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejTile, _WidgetBase);
+
+    function ejTile(element) {
+      _classCallCheck(this, ejTile);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTile;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTimePicker = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejTimePicker = exports.ejTimePicker = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'time-picker'), _dec2 = (0, _decorators.generateBindables)('ejTimePicker', ['cssClass', 'disableTimeRanges', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'height', 'hourInterval', 'htmlAttributes', 'interval', 'locale', 'maxTime', 'minTime', 'minutesInterval', 'popupHeight', 'popupWidth', 'readOnly', 'secondsInterval', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'width'], ['value'], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejTimePicker, _WidgetBase);
+
+    function ejTimePicker(element) {
+      _classCallCheck(this, ejTimePicker);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.isEditor = true;
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTimePicker;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejToggleButton = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejToggleButton = exports.ejToggleButton = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'toggle-button'), _dec2 = (0, _decorators.generateBindables)('ejToggleButton', ['activePrefixIcon', 'activeSuffixIcon', 'activeText', 'contentType', 'cssClass', 'defaultPrefixIcon', 'defaultSuffixIcon', 'defaultText', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'preventToggle', 'showRoundedCorner', 'size', 'toggleState', 'type', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejToggleButton, _WidgetBase);
+
+    function ejToggleButton(element) {
+      _classCallCheck(this, ejToggleButton);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejToggleButton;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejToolbar = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejToolbar = exports.ejToolbar = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'toolbar'), _dec2 = (0, _decorators.generateBindables)('ejToolbar', ['cssClass', 'dataSource', 'disabledItemIndices', 'enabled', 'enabledItemIndices', 'enableRTL', 'enableSeparator', 'fields', 'height', 'htmlAttributes', 'hide', 'isResponsive', 'Items', 'orientation', 'query', 'responsiveType', 'showRoundedCorner', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejToolbar, _WidgetBase);
+
+    function ejToolbar(element) {
+      _classCallCheck(this, ejToolbar);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejToolbar;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTooltip = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejTooltip = exports.ejTooltip = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'tooltip'), _dec2 = (0, _decorators.generateBindables)('ejTooltip', ['allowKeyboardNavigation', 'animation', 'associate', 'autoCloseTimeout', 'closeMode', 'collision', 'containment', 'content', 'cssClass', 'enabled', 'enableRTL', 'height', 'isBalloon', 'position', 'showRoundedCorner', 'showShadow', 'target', 'tip', 'title', 'trigger', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejTooltip, _WidgetBase);
+
+    function ejTooltip(element) {
+      _classCallCheck(this, ejTooltip);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTooltip;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common', '../common/template-processor'], function (exports, _widgetBase, _constants, _decorators, _common, _templateProcessor) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTreeGrid = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejTreeGrid = exports.ejTreeGrid = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-grid'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTreeGrid', ['allowColumnResize', 'allowColumnReordering', 'allowDragAndDrop', 'allowFiltering', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowSelection', 'allowSorting', 'allowPaging', 'allowTextWrap', 'altRowTemplateID', 'expandStateMapping', 'childMapping', 'columns', 'columnDialogFields', 'contextMenuSettings', 'cssClass', 'dataSource', 'headerTextOverflow', 'dragTooltip', 'editSettings', 'enableAltRow', 'enableCollapseAll', 'enableResize', 'enableVirtualization', 'enableLoadOnDemand', 'columnResizeSettings', 'commonWidth', 'filterSettings', 'locale', 'parseRowTemplate', 'idMapping', 'isResponsive', 'parentIdMapping', 'pageSettings', 'cellTooltipTemplate', 'query', 'rowHeight', 'rowTemplateID', 'selectedRowIndex', 'selectedCellIndexes', 'selectionSettings', 'showColumnOptions', 'showColumnChooser', 'showDetailsRow', 'showDetailsRowInfoColumn', 'detailsTemplate', 'detailsRowHeight', 'showStackedHeader', 'stackedHeaderRows', 'showSummaryRow', 'showTotalSummary', 'summaryRows', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'sizeSettings', 'sortSettings', 'toolbarSettings', 'treeColumnIndex'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes', 'pageSettings.currentPage'], { 'altRowTemplateID': 'altRowTemplateId', 'rowTemplateID': 'rowTemplateId' }), _dec4 = (0, _common.inject)(Element, _common.TemplatingEngine), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'tree-grid-column'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejTreeGrid, _WidgetBase);
+
+    function ejTreeGrid(element, templateEngine) {
+      _classCallCheck(this, ejTreeGrid);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'columns', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'columns';
+      _this.templateProcessor = new _templateProcessor.TemplateProcessor(_this, templateEngine);
+      _this.templateProcessor.initTemplate();
+      return _this;
+    }
+
+    return ejTreeGrid;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'columns', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common', '../common/util'], function (exports, _constants, _decorators, _common, _util) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.TreeGridColumn = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
+
+  var TreeGridColumn = exports.TreeGridColumn = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-grid-column'), _dec3 = (0, _decorators.generateBindables)('columns', ['allowFiltering', 'allowFilteringBlankContent', 'allowSorting', 'allowCellSelection', 'editParams', 'editTemplate', 'editType', 'dropdownData', 'field', 'template', 'templateID', 'angularTemplate', 'filterEditType', 'headerText', 'displayAsCheckbox', 'showCheckbox', 'visible', 'width', 'headerTemplateID', 'format', 'isTemplateColumn', 'headerTextAlign', 'isFrozen', 'textAlign', 'allowEditing', 'commands', 'showInColumnChooser', 'clipMode', 'tooltip', 'headerTooltip', 'validationRules', 'priority', 'allowFreezing']), _dec4 = (0, _common.children)(_constants.constants.elementPrefix + 'template'), _dec(_class = _dec2(_class = _dec3(_class = (_class2 = function () {
+    function TreeGridColumn() {
+      _classCallCheck(this, TreeGridColumn);
+
+      _initDefineProp(this, 'angularTemplate', _descriptor, this);
+    }
+
+    TreeGridColumn.prototype.setTemplates = function setTemplates() {
+      if (this.angularTemplate[0]) {
+        var util = new _util.Util();
+        this[util.getBindablePropertyName('angularTemplate')] = this.angularTemplate[0].template;
+      }
+    };
+
+    return TreeGridColumn;
+  }(), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'angularTemplate', [_dec4], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class);
+});
+define(['exports', '../common/constants', '../common/decorators', '../common/common'], function (exports, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Level = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var Level = exports.Level = (_dec = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec2 = (0, _common.customElement)(_constants.constants.elementPrefix + 'level'), _dec3 = (0, _decorators.generateBindables)('levels', ['groupBackground', 'groupBorderColor', 'groupBorderThickness', 'groupGap', 'groupPadding', 'groupPath', 'headerHeight', 'headerTemplate', 'headerVisibilityMode', 'labelPosition', 'textOverflow', 'labelTemplate', 'labelVisibilityMode', 'showHeader', 'showLabels']), _dec(_class = _dec2(_class = _dec3(_class = function Level() {
+    _classCallCheck(this, Level);
+  }) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTreeMap = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _dec5, _class, _desc, _value, _class2, _descriptor;
+
+  var ejTreeMap = exports.ejTreeMap = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'tree-map'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejTreeMap', ['borderBrush', 'borderThickness', 'uniColorMapping', 'desaturationColorMapping', 'paletteColorMapping', 'colorValuePath', 'dataSource', 'dockPosition', 'drillDownHeaderColor', 'drillDownSelectionColor', 'isHierarchicalDatasource', 'header', 'enableDrillDown', 'isResponsive', 'enableResize', 'draggingOnSelection', 'draggingGroupOnSelection', 'groupColorMapping', 'legendSettings', 'highlightBorderBrush', 'highlightBorderThickness', 'highlightGroupBorderBrush', 'highlightGroupBorderThickness', 'highlightGroupOnSelection', 'highlightOnSelection', 'itemsLayoutMode', 'enableGroupSeparator', 'locale', 'leafItemSettings', 'rangeColorMapping', 'selectionMode', 'groupSelectionMode', 'showLegend', 'enableGradient', 'showTooltip', 'tooltipTemplate', 'treeMapItems', 'levels', 'weightValuePath'], ['dataSource', 'weightValuePath']), _dec4 = (0, _common.inject)(Element), _dec5 = (0, _common.children)(_constants.constants.elementPrefix + 'level'), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function (_WidgetBase) {
+    _inherits(ejTreeMap, _WidgetBase);
+
+    function ejTreeMap(element) {
+      _classCallCheck(this, ejTreeMap);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _initDefineProp(_this, 'levels', _descriptor, _this);
+
+      _this.element = element;
+      _this.hasChildProperty = true;
+      _this.childPropertyName = 'levels';
+      return _this;
+    }
+
+    return ejTreeMap;
+  }(_widgetBase.WidgetBase), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'levels', [_dec5], {
+    enumerable: true,
+    initializer: function initializer() {
+      return [];
+    }
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejTreeView = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejTreeView = exports.ejTreeView = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'tree-view'), _dec2 = (0, _decorators.generateBindables)('ejTreeView', ['allowDragAndDrop', 'allowDragAndDropAcrossControl', 'allowDropSibling', 'allowDropChild', 'allowEditing', 'allowKeyboardNavigation', 'allowMultiSelection', 'autoCheck', 'autoCheckParentNode', 'checkedNodes', 'cssClass', 'enableAnimation', 'enabled', 'enableMultipleExpand', 'enablePersistence', 'enableRTL', 'expandedNodes', 'expandOn', 'fields', 'fullRowSelect', 'height', 'htmlAttributes', 'loadOnDemand', 'selectedNode', 'selectedNodes', 'showCheckbox', 'sortSettings', 'template', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejTreeView, _WidgetBase);
+
+    function ejTreeView(element) {
+      _classCallCheck(this, ejTreeView);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejTreeView;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejUploadbox = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class;
+
+  var ejUploadbox = exports.ejUploadbox = (_dec = (0, _common.customElement)(_constants.constants.elementPrefix + 'uploadbox'), _dec2 = (0, _common.inlineView)('' + _constants.constants.aureliaTemplateString), _dec3 = (0, _decorators.generateBindables)('ejUploadbox', ['allowDragAndDrop', 'asyncUpload', 'autoUpload', 'buttonText', 'cssClass', 'customFileDetails', 'dialogAction', 'dialogPosition', 'dialogText', 'dropAreaText', 'dropAreaHeight', 'dropAreaWidth', 'enabled', 'enableRTL', 'extensionsAllow', 'extensionsDeny', 'fileSize', 'height', 'htmlAttributes', 'locale', 'multipleFilesSelection', 'pushFile', 'removeUrl', 'saveUrl', 'showBrowseButton', 'showFileDetails', 'showRoundedCorner', 'uploadName', 'width'], [], { 'enableRTL': 'enableRtl' }), _dec4 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = function (_WidgetBase) {
+    _inherits(ejUploadbox, _WidgetBase);
+
+    function ejUploadbox(element) {
+      _classCallCheck(this, ejUploadbox);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejUploadbox;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class) || _class);
+});
+define(['exports', '../common/widget-base', '../common/constants', '../common/decorators', '../common/common'], function (exports, _widgetBase, _constants, _decorators, _common) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.ejWaitingPopup = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _possibleConstructorReturn(self, call) {
+    if (!self) {
+      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    }
+
+    return call && (typeof call === "object" || typeof call === "function") ? call : self;
+  }
+
+  function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) {
+      throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+    }
+
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+      constructor: {
+        value: subClass,
+        enumerable: false,
+        writable: true,
+        configurable: true
+      }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+  }
+
+  var _dec, _dec2, _dec3, _class;
+
+  var ejWaitingPopup = exports.ejWaitingPopup = (_dec = (0, _common.customAttribute)(_constants.constants.attributePrefix + 'waiting-popup'), _dec2 = (0, _decorators.generateBindables)('ejWaitingPopup', ['cssClass', 'htmlAttributes', 'showImage', 'showOnInit', 'target', 'appendTo', 'template', 'text']), _dec3 = (0, _common.inject)(Element), _dec(_class = _dec2(_class = _dec3(_class = function (_WidgetBase) {
+    _inherits(ejWaitingPopup, _WidgetBase);
+
+    function ejWaitingPopup(element) {
+      _classCallCheck(this, ejWaitingPopup);
+
+      var _this = _possibleConstructorReturn(this, _WidgetBase.call(this));
+
+      _this.element = element;
+      return _this;
+    }
+
+    return ejWaitingPopup;
+  }(_widgetBase.WidgetBase)) || _class) || _class) || _class);
+});
+@customElement(`${constants.elementPrefix}accordion`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejAccordion', ['ajaxSettings', 'allowKeyboardNavigation', 'collapseSpeed', 'collapsible', 'cssClass', 'customIcon', 'disabledItems', 'enableAnimation', 'enabled', 'enabledItems', 'enableMultipleOpen', 'enablePersistence', 'enableRTL', 'events', 'expandSpeed', 'headerSize', 'height', 'heightAdjustMode', 'htmlAttributes', 'selectedItemIndex', 'selectedItems', 'showCloseButton', 'showRoundedCorner', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejAccordion extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}autocomplete`)
+@generateBindables('ejAutocomplete', ['addNewText', 'allowAddNew', 'allowSorting', 'animateType', 'autoFocus', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delaySuggestionTimeout', 'delimiterChar', 'emptyResultText', 'enableAutoFill', 'enabled', 'enableDistinct', 'enablePersistence', 'enableRTL', 'fields', 'filterType', 'height', 'highlightSearch', 'itemsCount', 'locale', 'minCharacter', 'multiColumnSettings', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectValueByKey', 'showEmptyResultText', 'showLoadingIcon', 'showPopupButton', 'showRoundedCorner', 'showResetIcon', 'sortOrder', 'template', 'validationMessage', 'validationRules', 'value', 'visible', 'watermarkText', 'width'], ['value', 'selectValueByKey'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejAutocomplete extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}barcode`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejBarcode', ['barcodeToTextGapHeight', 'barHeight', 'darkBarColor', 'displayText', 'enabled', 'encodeStartStopSymbol', 'lightBarColor', 'narrowBarWidth', 'quietZone', 'symbologyType', 'text', 'textColor', 'wideBarWidth', 'xDimension'])
+@inject(Element)
+export class ejBarcode extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}bullet-graph`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejBulletGraph', ['applyRangeStrokeToLabels', 'applyRangeStrokeToTicks', 'captionSettings', 'comparativeMeasureValue', 'enableAnimation', 'enableResizing', 'flowDirection', 'height', 'isResponsive', 'enableGroupSeparator', 'locale', 'orientation', 'qualitativeRanges', 'qualitativeRangeSize', 'quantitativeScaleLength', 'quantitativeScaleSettings', 'theme', 'tooltipSettings', 'value', 'width'])
+@inject(Element)
+export class ejBulletGraph extends WidgetBase {
+  @children(`${constants.elementPrefix}qualitative-range`) qualitativeRanges = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'qualitativeRanges';
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}qualitative-range`)
+@generateBindables('qualitativeRanges', ['rangeEnd', 'rangeOpacity', 'rangeStroke'])
+
+export class QualitativeRange {
+}
+
+
+@customAttribute(`${constants.attributePrefix}button`)
+@generateBindables('ejButton', ['contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'repeatButton', 'showRoundedCorner', 'size', 'suffixIcon', 'text', 'timeInterval', 'type', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejButton extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}check-box`)
+@generateBindables('ejCheckBox', ['checked', 'checkState', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'enableTriState', 'htmlAttributes', 'id', 'idPrefix', 'name', 'showRoundedCorner', 'size', 'text', 'validationMessage', 'validationRules', 'value'], ['checked', 'checkState'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejCheckBox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}chart`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejChart', ['annotations', 'background', 'backGroundImageUrl', 'border', 'exportSettings', 'chartArea', 'columnDefinitions', 'commonSeriesOptions', 'selectedDataPointIndexes', 'crosshair', 'depth', 'enable3D', 'enableCanvasRendering', 'initSeriesRender', 'enableRotation', 'indicators', 'isResponsive', 'legend', 'locale', 'palette', 'margin', 'perspectiveAngle', 'primaryXAxis', 'axes', 'primaryYAxis', 'rotation', 'rowDefinitions', 'series', 'sideBySideSeriesPlacement', 'size', 'theme', 'tilt', 'title', 'wallSize', 'zooming'])
+@inject(Element)
+export class ejChart extends WidgetBase {
+  @children(`${constants.elementPrefix}series`) series = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'series';
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}series`)
+@generateBindables('series', ['bearFillColor', 'border', 'animationDuration', 'bullFillColor', 'columnFacet', 'columnWidth', 'columnSpacing', 'stackingGroup', 'dashArray', 'dataSource', 'cardinalSplineTension', 'doughnutCoefficient', 'doughnutSize', 'drawType', 'enableAnimation', 'enableSmartLabels', 'endAngle', 'explode', 'explodeAll', 'explodeIndex', 'explodeOffset', 'fill', 'font', 'funnelHeight', 'funnelWidth', 'gapRatio', 'isClosed', 'isStacking', 'isTransposed', 'showMedian', 'labelPosition', 'splitMode', 'boxPlotMode', 'bubbleOptions', 'splineType', 'lineCap', 'lineJoin', 'marker', 'name', 'opacity', 'outlierSettings', 'palette', 'pieCoefficient', 'pieOfPieCoefficient', 'splitValue', 'gapWidth', 'emptyPointSettings', 'positiveFill', 'connectorLine', 'dragSettings', 'errorBar', 'points', 'pyramidMode', 'query', 'startAngle', 'cornerRadius', 'tooltip', 'type', 'visibility', 'visibleOnLegend', 'xAxisName', 'xName', 'yAxisName', 'yName', 'high', 'low', 'open', 'close', 'pointColorMappingName', 'zOrder', 'size', 'trendlines', 'highlightSettings', 'selectionSettings'])
+
+export class Series {
+}
+
+
+@customElement(`${constants.elementPrefix}circular-gauge`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejCircularGauge', ['animationSpeed', 'backgroundColor', 'distanceFromCorner', 'rangeZOrder', 'enableAnimation', 'enableGroupSeparator', 'enableResize', 'frame', 'gaugePosition', 'height', 'interiorGradient', 'isRadialGradient', 'isResponsive', 'locale', 'maximum', 'minimum', 'outerCustomLabelPosition', 'radius', 'readOnly', 'scales', 'theme', 'legend', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum'])
+@inject(Element)
+export class ejCircularGauge extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}color-picker`)
+@generateBindables('ejColorPicker', ['buttonText', 'buttonMode', 'columns', 'cssClass', 'custom', 'displayInline', 'enabled', 'enableOpacity', 'htmlAttributes', 'locale', 'modelType', 'opacityValue', 'palette', 'presetType', 'showApplyCancel', 'showClearButton', 'showPreview', 'showRecentColors', 'showSwitcher', 'showTooltip', 'toolIcon', 'tooltipText', 'value'], ['value', 'opacityValue'])
+@inject(Element)
+export class ejColorPicker extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+define(['exports', 'aurelia-templating', 'aurelia-dependency-injection'], function (exports, _aureliaTemplating, _aureliaDependencyInjection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.TemplatingEngine = exports.children = exports.customElement = exports.inlineView = exports.inject = exports.bindable = exports.customAttribute = undefined;
+  exports.customAttribute = _aureliaTemplating.customAttribute;
+  exports.bindable = _aureliaTemplating.bindable;
+  exports.inject = _aureliaDependencyInjection.inject;
+  exports.inlineView = _aureliaTemplating.inlineView;
+  exports.customElement = _aureliaTemplating.customElement;
+  exports.children = _aureliaTemplating.children;
+  exports.TemplatingEngine = _aureliaTemplating.TemplatingEngine;
+});
+define(['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var constants = exports.constants = {
+    eventPrefix: 'e-on-',
+    bindablePrefix: 'e-',
+    attributePrefix: 'ej-',
+    elementPrefix: 'ej-',
+    aureliaTemplateString: '<template><slot></slot></template>'
+  };
+});
+define(['exports', 'aurelia-templating', 'aurelia-dependency-injection', 'aurelia-metadata', 'aurelia-task-queue', 'aurelia-binding', './util'], function (exports, _aureliaTemplating, _aureliaDependencyInjection, _aureliaMetadata, _aureliaTaskQueue, _aureliaBinding, _util) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.generateBindables = generateBindables;
+  exports.delayed = delayed;
+  function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
+    return function (target, key, descriptor) {
+      var behaviorResource = _aureliaMetadata.metadata.getOrCreateOwn(_aureliaMetadata.metadata.resource, _aureliaTemplating.HtmlBehaviorResource, target);
+      var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
+      var util = container.get(_util.Util);
+      var bindingInstance = container.get(_aureliaBinding.BindingEngine);
+      inputs.push('options');
+      inputs.push('widget');
+      var len = inputs.length;
+      if (observerCollection) {
+        target.prototype.arrayObserver = [];
+        observerCollection.forEach(function (element) {
+          target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
+        });
+        target.prototype.bindingInstance = bindingInstance;
+      }
+      target.prototype.controlName = controlName;
+      target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
+      target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
+      if (len) {
+        target.prototype.controlProperties = inputs;
+        for (var i = 0; i < len; i++) {
+          var option = inputs[i];
+          if (abbrevProperties && option in abbrevProperties) {
+            option = abbrevProperties[option];
+          }
+          var nameOrConfigOrTarget = {
+            name: util.getBindablePropertyName(option)
+          };
+
+          if (option === 'widget') {
+            nameOrConfigOrTarget.defaultBindingMode = _aureliaBinding.bindingMode.twoWay;
+          }
+
+          var prop = new _aureliaTemplating.BindableProperty(nameOrConfigOrTarget);
+          prop.registerWith(target, behaviorResource, descriptor);
+        }
+      }
+    };
+  }
+
+  function delayed() {
+    return function (target, key, descriptor) {
+      var taskQueue = (_aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container()).get(_aureliaTaskQueue.TaskQueue);
+      var ptr = descriptor.value;
+
+      descriptor.value = function () {
+        var _this = this;
+
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+          args[_key] = arguments[_key];
+        }
+
+        if (this.childPropertyName) {
+          taskQueue.queueTask(function () {
+            return ptr.apply(_this, args);
+          });
+        } else {
+          ptr.apply(this, args);
+        }
+      };
+
+      return descriptor;
+    };
+  }
+});
+define(['exports', './util', 'aurelia-dependency-injection', './constants'], function (exports, _util, _aureliaDependencyInjection, _constants) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.getEventOption = getEventOption;
+  exports.fireEvent = fireEvent;
+  function getEventOption(element) {
+    var name = void 0;
+    var attr = void 0;
+    var attributes = element.attributes;
+    var option = {};
+    var container = _aureliaDependencyInjection.Container.instance || new _aureliaDependencyInjection.Container();
+    var util = container.get(_util.Util);
+
+    var _loop = function _loop(i, len) {
+      attr = attributes[i];
+      name = attr.name;
+      if (!name.startsWith(_constants.constants.eventPrefix)) {
+        return 'continue';
+      }
+      var actualEventName = name.split('.')[0];
+      var eventName = util._unhyphenate(actualEventName.split(_constants.constants.eventPrefix)[1]);
+      option[eventName] = function (e) {
+        return fireEvent(element, actualEventName, e);
+      };
+    };
+
+    for (var i = 0, len = attributes.length; i < len; i++) {
+      var _ret = _loop(i, len);
+
+      if (_ret === 'continue') continue;
+    }
+    return option;
+  }
+  function fireEvent(element, name) {
+    var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+
+    var event = new CustomEvent(name, {
+      detail: data,
+      bubbles: true
+    });
+    element.dispatchEvent(event);
+    return event;
+  }
+});
+define(['exports', 'aurelia-dependency-injection', '../common/util', 'aurelia-templating'], function (exports, _aureliaDependencyInjection, _util, _aureliaTemplating) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.TemplateProcessor = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var _dec, _class;
+
+  var TemplateProcessor = exports.TemplateProcessor = (_dec = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TemplatingEngine, _util.Util), _dec(_class = function () {
+    function TemplateProcessor(context, templateEngine) {
+      _classCallCheck(this, TemplateProcessor);
+
+      this.context = context;
+      this.templatingEngine = templateEngine;
+      this.util = new _util.Util();
+    }
+
+    TemplateProcessor.prototype.initTemplate = function initTemplate() {
+      var proxy = this;
+      ej.template.render = function (self, selector, data, index) {
+        return proxy.renderStringTemplate(self, selector, data, index);
+      };
+    };
+
+    TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
+      if (this.context.widget.aureliaTemplate) {
+        this.compileTemplate(this.context.widget.element);
+      }
+      var proxy = this.context;
+      var element = this.context.widget.element;
+      element.on(this.context.widget.pluginName + 'refresh', function () {
+        if (proxy.widget.aureliaTemplate) {
+          proxy.templateProcessor.compileTemplate(element);
+        }
+      });
+    };
+
+    TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
+      var templateObject = self.aureliaTemplate;
+      if (!templateObject || !templateObject[selector]) {
+        templateObject = templateObject || {};
+        templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
+        self.aureliaTemplate = templateObject;
+      }
+      var scope = templateObject[selector];
+      if (this.util.hasValue(index)) {
+        scope.itemData[index] = data;
+      } else {
+        scope.itemData = [data];
+      }
+      var actElement = $(selector).html();
+      var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
+      return tempElement;
+    };
+
+    TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
+      var templates = $(element).find('.ej-aurelia-template');
+      var templateObject = this.context.widget.aureliaTemplate;
+      for (var template in templateObject) {
+        var tmplElement = templates.filter('.' + templateObject[template].key);
+        if (tmplElement.length) {
+          for (var i = 0; i < tmplElement.length; i++) {
+            var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
+            var view = this.templatingEngine.enhance(tmplElement[i]);
+            view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
+            templateObject[template].views[dataIndex] = view;
+          }
+        } else {
+          this.unbindViews(templateObject[template]);
+          delete templateObject[template];
+        }
+      }
+    };
+
+    TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
+      var templateObject = this.context.widget.aureliaTemplate;
+      if (templateObject && Object.keys(templateObject).length) {
+        for (var t in templateObject) {
+          this.unbindViews(templateObject[t]);
+          delete templateObject[t];
+        }
+      }
+    };
+
+    TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
+      for (var i = 0; i < obj.views.length; i++) {
+        var view = obj.views[i];
+        view.unbind();
+      }
+    };
+
+    return TemplateProcessor;
+  }()) || _class);
+});
+define(['exports', 'aurelia-dependency-injection', 'aurelia-templating', './constants'], function (exports, _aureliaDependencyInjection, _aureliaTemplating, _constants) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Template = undefined;
+
+  function _initDefineProp(target, property, descriptor, context) {
+    if (!descriptor) return;
+    Object.defineProperty(target, property, {
+      enumerable: descriptor.enumerable,
+      configurable: descriptor.configurable,
+      writable: descriptor.writable,
+      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+    });
+  }
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  function _initializerWarningHelper(descriptor, context) {
+    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+  }
+
+  var _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor;
+
+  var Template = exports.Template = (_dec = (0, _aureliaTemplating.customElement)(_constants.constants.elementPrefix + 'template'), _dec2 = (0, _aureliaTemplating.noView)(), _dec3 = (0, _aureliaTemplating.processContent)(function (compiler, resources, element, instruction) {
+    var html = element.innerHTML;
+    if (html !== '') {
+      instruction.template = html;
+    }
+    element.innerHTML = '';
+  }), _dec4 = (0, _aureliaDependencyInjection.inject)(_aureliaTemplating.TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
+    _classCallCheck(this, Template);
+
+    _initDefineProp(this, 'template', _descriptor, this);
+
+    this.template = target.elementInstruction.template;
+  }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [_aureliaTemplating.bindable], {
+    enumerable: true,
+    initializer: null
+  })), _class2)) || _class) || _class) || _class) || _class);
+});
+define(['exports', './constants'], function (exports, _constants) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Util = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  var Util = exports.Util = function () {
+    function Util() {
+      _classCallCheck(this, Util);
+    }
+
+    Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
+      var name = '' + _constants.constants.bindablePrefix + propertyName;
+      return this._unhyphenate(name);
+    };
+
+    Util.prototype._unhyphenate = function _unhyphenate(name) {
+      return name.replace(/-([a-z])/g, function (g) {
+        return g[1].toUpperCase();
+      });
+    };
+
+    Util.prototype.getOptions = function getOptions(model, properties) {
+      var bindableproperites = {};
+      var value = void 0;
+      for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+        var _ref;
+
+        if (_isArray) {
+          if (_i >= _iterator.length) break;
+          _ref = _iterator[_i++];
+        } else {
+          _i = _iterator.next();
+          if (_i.done) break;
+          _ref = _i.value;
+        }
+
+        var prop = _ref;
+
+        if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
+          value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
+        } else {
+          value = model[this.getBindablePropertyName(prop)];
+        }
+        if (this.hasValue(value)) {
+          if (typeof value === 'string') {
+            value = this.processData(value);
+          }
+          bindableproperites[prop] = value;
+        }
+      }
+      return bindableproperites;
+    };
+
+    Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
+      var property = void 0;
+      for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
+        var _ref2;
+
+        if (_isArray2) {
+          if (_i2 >= _iterator2.length) break;
+          _ref2 = _iterator2[_i2++];
+        } else {
+          _i2 = _iterator2.next();
+          if (_i2.done) break;
+          _ref2 = _i2.value;
+        }
+
+        var prop = _ref2;
+
+        if (propertyName === this.getBindablePropertyName(prop)) {
+          property = prop;
+          break;
+        }
+      }
+      return property;
+    };
+
+    Util.prototype.hasValue = function hasValue(prop) {
+      return typeof prop !== 'undefined' && prop !== null;
+    };
+
+    Util.prototype.processData = function processData(value) {
+      if (value === 'true') {
+        return true;
+      } else if (value === 'false') {
+        return false;
+      } else if (+value + '' === value) {
+        return +value;
+      }
+      return value;
+    };
+
+    return Util;
+  }();
+});
+define(['exports', './events', '../common/util', '../common/decorators'], function (exports, _events, _util, _decorators) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.WidgetBase = undefined;
+
+  function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) {
+      throw new TypeError("Cannot call a class as a function");
+    }
+  }
+
+  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
+    var desc = {};
+    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+      desc[key] = descriptor[key];
+    });
+    desc.enumerable = !!desc.enumerable;
+    desc.configurable = !!desc.configurable;
+
+    if ('value' in desc || desc.initializer) {
+      desc.writable = true;
+    }
+
+    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+      return decorator(target, property, desc) || desc;
+    }, desc);
+
+    if (context && desc.initializer !== void 0) {
+      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+      desc.initializer = undefined;
+    }
+
+    if (desc.initializer === void 0) {
+      Object['define' + 'Property'](target, property, desc);
+      desc = null;
+    }
+
+    return desc;
+  }
+
+  var _dec, _desc, _value, _class;
+
+  var firstValue = {};
+  var WidgetBase = exports.WidgetBase = (_dec = (0, _decorators.delayed)(), (_class = function () {
+    function WidgetBase() {
+      _classCallCheck(this, WidgetBase);
+    }
+
+    WidgetBase.prototype.createWidget = function createWidget(option) {
+      var _this = this;
+
+      this.allOption = this.getWidgetOptions(option.element);
+      if (!this.ejOptions && !this.isEditor) {
+        this.createTwoWays();
+      }
+      this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
+      if (this.templateProcessor) {
+        this.templateProcessor.initWidgetDependancies();
+      }
+      if (this.isEditor) {
+        this.widget.model._change = function (evt) {
+          if ('eValue' in _this) {
+            _this[_this.util.getBindablePropertyName('value')] = evt.value;
+          }
+        };
+      }
+    };
+
+    WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
+      this.parentCtx = overrideCtx;
+      if (this.widget && this.widget.element && this.isEditor) {
+        this.widget.option('value', this.eValue === undefined ? null : this.eValue);
+      }
+    };
+
+    WidgetBase.prototype.createTwoWays = function createTwoWays() {
+      var model = this.allOption;
+      var twoWays = this.twoWays;
+      var len = twoWays.length;
+      for (var i = 0; i < len; i++) {
+        var prop = twoWays[i];
+        ej.createObject(prop, this.addTwoways(prop), model);
+      }
+    };
+
+    WidgetBase.prototype.addTwoways = function addTwoways(prop) {
+      var model = this;
+      var value = firstValue;
+      return function (newVal, isApp) {
+        if (value === firstValue) {
+          var viewModelProp = model.util.getBindablePropertyName(prop);
+          value = model[viewModelProp];
+          if (value === undefined) {
+            value = this.defaults[prop];
+          }
+          return value;
+        }
+        if (newVal === undefined) {
+          return value;
+        }
+        if (value === newVal) {
+          return null;
+        }
+        value = newVal;
+        if (!isApp && model.util.hasValue(newVal)) {
+          var _viewModelProp = model.util.getBindablePropertyName(prop);
+          model[_viewModelProp] = newVal;
+        }
+        return null;
+      };
+    };
+
+    WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
+      var propOptions = void 0;
+      if (this.ejOptions) {
+        propOptions = this.ejOptions;
+      } else {
+        propOptions = this.util.getOptions(this, this.controlProperties);
+      }
+      var eventOption = (0, _events.getEventOption)(element);
+      if (this.hasChildProperty) {
+        this.getChildProperties(propOptions);
+      }
+      return Object.assign({}, propOptions, eventOption);
+    };
+
+    WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
+      var PropertyName = this.childPropertyName;
+      var childCollection = this[PropertyName];
+      var len = childCollection.length;
+      if (len) {
+        options[PropertyName] = [];
+        var childProperties = childCollection[0].controlProperties;
+        for (var i = 0; i < len; i++) {
+          options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
+        }
+      }
+    };
+
+    WidgetBase.prototype.attached = function attached() {
+      if (this.templateProcessor) {
+        this[this.childPropertyName].forEach(function (template) {
+          return template.setTemplates();
+        });
+      }
+      this.util = new _util.Util();
+      this.createWidget({ element: this.element });
+    };
+
+    WidgetBase.prototype.unsubscribe = function unsubscribe() {
+      if (this.subscription) {
+        this.subscription.dispose();
+        this.subscription = null;
+      }
+    };
+
+    WidgetBase.prototype.unbind = function unbind() {
+      this.unsubscribe();
+    };
+
+    WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
+      var _this2 = this;
+
+      if (this.widget) {
+        var modelValue = void 0;
+        var prop = this.util.getControlPropertyName(this, property);
+        this.unsubscribe();
+        if (this.arrayObserver) {
+          this.arrayObserver.forEach(function (arrayProp) {
+            if (_this2[arrayProp] instanceof Array) {
+              _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
+                _this2.update(e);
+              });
+            }
+          });
+        }
+        if (prop) {
+          if (prop === 'widget') {
+            return;
+          } else if (prop !== 'options') {
+            modelValue = this.widget.model[prop];
+            var isTwoway = typeof modelValue === 'function';
+            if (isTwoway) {
+              modelValue = modelValue();
+            }
+            if (modelValue !== newValue) {
+              if (isTwoway) {
+                newValue = this.addTwoways(prop);
+              }
+              this.widget.option(prop, newValue);
+            }
+          } else {
+            this.widget.option(newValue);
+          }
+        }
+      }
+    };
+
+    WidgetBase.prototype.update = function update(e) {
+      var _this3 = this;
+
+      var modelValue = void 0;
+      var newVal = void 0;
+      if (e.length) {
+        this.arrayObserver.forEach(function (arrayProp) {
+          if (_this3[arrayProp] instanceof Array) {
+            var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
+            modelValue = _this3.widget.model[prop];
+            if (typeof modelValue === 'function') {
+              modelValue = modelValue();
+              newVal = modelValue;
+              newVal = _this3.addTwoways(prop);
+              _this3.widget.option(prop, newVal);
+            } else {
+              _this3.widget.option(prop, modelValue);
+            }
+          }
+        });
+      }
+    };
+
+    WidgetBase.prototype.detached = function detached() {
+      if (this.templateProcessor) {
+        this.templateProcessor.clearTempalte();
+      }
+      if (this.widget) {
+        this.widget.destroy();
+      }
+    };
+
+    return WidgetBase;
+  }(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class));
+});
+@customAttribute(`${constants.attributePrefix}currency-textbox`)
+@generateBindables('ejCurrencyTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejCurrencyTextbox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}date-picker`)
+@generateBindables('ejDatePicker', ['allowEdit', 'allowDrillDown', 'blackoutDates', 'buttonText', 'cssClass', 'dateFormat', 'dayHeaderFormat', 'depthLevel', 'displayInline', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'fields', 'headerFormat', 'height', 'highlightSection', 'highlightWeekend', 'htmlAttributes', 'locale', 'maxDate', 'minDate', 'readOnly', 'showDisabledRange', 'showFooter', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'showTooltip', 'specialDates', 'startDay', 'startLevel', 'stepMonths', 'tooltipFormat', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'weekNumber', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejDatePicker extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}date-range-picker`)
+@generateBindables('ejDateRangePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateFormat', 'enableTimePicker', 'enabled', 'enablePersistence', 'endDate', 'height', 'locale', 'ranges', 'separator', 'startDate', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'watermarkText', 'width'], ['value'])
+@inject(Element)
+export class ejDateRangePicker extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}date-time-picker`)
+@generateBindables('ejDateTimePicker', ['allowEdit', 'buttonText', 'cssClass', 'dateTimeFormat', 'dayHeaderFormat', 'depthLevel', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'headerFormat', 'height', 'htmlAttributes', 'interval', 'locale', 'maxDateTime', 'minDateTime', 'popupPosition', 'readOnly', 'showOtherMonths', 'showPopupButton', 'showRoundedCorner', 'startDay', 'startLevel', 'stepMonths', 'timeDisplayFormat', 'timeDrillDown', 'timePopupWidth', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejDateTimePicker extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}diagram`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejDiagram', ['backgroundColor', 'backgroundImage', 'bridgeDirection', 'commandManager', 'connectors', 'connectorTemplate', 'constraints', 'contextMenu', 'dataSourceSettings', 'defaultSettings', 'drawType', 'enableAutoScroll', 'enableContextMenu', 'height', 'historyManager', 'labelRenderingMode', 'layout', 'locale', 'nodes', 'nodeTemplate', 'pageSettings', 'scrollSettings', 'selectedItems', 'showTooltip', 'serializationSettings', 'rulerSettings', 'snapSettings', 'tool', 'tooltip', 'width', 'zoomFactor'])
+@inject(Element)
+export class ejDiagram extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}dialog`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejDialog', ['actionButtons', 'ajaxSettings', 'allowDraggable', 'allowKeyboardNavigation', 'animation', 'backgroundScroll', 'closeOnEscape', 'containment', 'contentType', 'contentUrl', 'cssClass', 'enableAnimation', 'enabled', 'enableModal', 'enablePersistence', 'enableResize', 'enableRTL', 'faviconCSS', 'height', 'htmlAttributes', 'isResponsive', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'position', 'showHeader', 'showOnInit', 'showRoundedCorner', 'target', 'title', 'tooltip', 'width', 'zIndex', 'showFooter', 'footerTemplateId'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejDialog extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
 export {customAttribute, bindable, inject, inlineView, customElement, children, TemplatingEngine};
 
 export const constants = {
@@ -22482,775 +22425,831 @@ export class WidgetBase {
   }
 }
 
-'use strict';
-
-System.register(['aurelia-templating', 'aurelia-dependency-injection'], function (_export, _context) {
-  "use strict";
-
-  var customAttribute, bindable, customElement, children, TemplatingEngine, inlineView, inject;
-  return {
-    setters: [function (_aureliaTemplating) {
-      customAttribute = _aureliaTemplating.customAttribute;
-      bindable = _aureliaTemplating.bindable;
-      customElement = _aureliaTemplating.customElement;
-      children = _aureliaTemplating.children;
-      TemplatingEngine = _aureliaTemplating.TemplatingEngine;
-      inlineView = _aureliaTemplating.inlineView;
-    }, function (_aureliaDependencyInjection) {
-      inject = _aureliaDependencyInjection.inject;
-    }],
-    execute: function () {
-      _export('customAttribute', customAttribute);
-
-      _export('bindable', bindable);
-
-      _export('inject', inject);
-
-      _export('inlineView', inlineView);
-
-      _export('customElement', customElement);
-
-      _export('children', children);
-
-      _export('TemplatingEngine', TemplatingEngine);
-    }
-  };
-});
-'use strict';
-
-System.register([], function (_export, _context) {
-  "use strict";
-
-  var constants;
-  return {
-    setters: [],
-    execute: function () {
-      _export('constants', constants = {
-        eventPrefix: 'e-on-',
-        bindablePrefix: 'e-',
-        attributePrefix: 'ej-',
-        elementPrefix: 'ej-',
-        aureliaTemplateString: '<template><slot></slot></template>'
-      });
-
-      _export('constants', constants);
-    }
-  };
-});
-'use strict';
-
-System.register(['aurelia-templating', 'aurelia-dependency-injection', 'aurelia-metadata', 'aurelia-task-queue', 'aurelia-binding', './util'], function (_export, _context) {
-  "use strict";
-
-  var BindableProperty, HtmlBehaviorResource, Container, metadata, TaskQueue, bindingMode, BindingEngine, Util;
-  function generateBindables(controlName, inputs, twoWayProperties, abbrevProperties, observerCollection) {
-    return function (target, key, descriptor) {
-      var behaviorResource = metadata.getOrCreateOwn(metadata.resource, HtmlBehaviorResource, target);
-      var container = Container.instance || new Container();
-      var util = container.get(Util);
-      var bindingInstance = container.get(BindingEngine);
-      inputs.push('options');
-      inputs.push('widget');
-      var len = inputs.length;
-      if (observerCollection) {
-        target.prototype.arrayObserver = [];
-        observerCollection.forEach(function (element) {
-          target.prototype.arrayObserver.push(util.getBindablePropertyName(element));
-        });
-        target.prototype.bindingInstance = bindingInstance;
-      }
-      target.prototype.controlName = controlName;
-      target.prototype.twoWays = twoWayProperties ? twoWayProperties : [];
-      target.prototype.abbrevProperties = abbrevProperties ? abbrevProperties : [];
-      if (len) {
-        target.prototype.controlProperties = inputs;
-        for (var i = 0; i < len; i++) {
-          var option = inputs[i];
-          if (abbrevProperties && option in abbrevProperties) {
-            option = abbrevProperties[option];
-          }
-          var nameOrConfigOrTarget = {
-            name: util.getBindablePropertyName(option)
-          };
-
-          if (option === 'widget') {
-            nameOrConfigOrTarget.defaultBindingMode = bindingMode.twoWay;
-          }
-
-          var prop = new BindableProperty(nameOrConfigOrTarget);
-          prop.registerWith(target, behaviorResource, descriptor);
-        }
-      }
-    };
+@customElement(`${constants.elementPrefix}digital-gauge`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejDigitalGauge', ['frame', 'height', 'isResponsive', 'enableResize', 'items', 'matrixSegmentData', 'segmentData', 'themes', 'value', 'width'], ['value'])
+@inject(Element)
+export class ejDigitalGauge extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
   }
+}
 
-  _export('generateBindables', generateBindables);
 
-  function delayed() {
-    return function (target, key, descriptor) {
-      var taskQueue = (Container.instance || new Container()).get(TaskQueue);
-      var ptr = descriptor.value;
-
-      descriptor.value = function () {
-        var _this = this;
-
-        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-          args[_key] = arguments[_key];
-        }
-
-        if (this.childPropertyName) {
-          taskQueue.queueTask(function () {
-            return ptr.apply(_this, args);
-          });
-        } else {
-          ptr.apply(this, args);
-        }
-      };
-
-      return descriptor;
-    };
+@customAttribute(`${constants.attributePrefix}drop-down-list`)
+@generateBindables('ejDropDownList', ['allowVirtualScrolling', 'cascadeTo', 'caseSensitiveSearch', 'cssClass', 'dataSource', 'delimiterChar', 'enableAnimation', 'enabled', 'enableIncrementalSearch', 'enableFilterSearch', 'enableServerFiltering', 'enablePersistence', 'enablePopupResize', 'enableRTL', 'enableSorting', 'fields', 'filterType', 'headerTemplate', 'height', 'htmlAttributes', 'itemsCount', 'locale', 'maxPopupHeight', 'minPopupHeight', 'maxPopupWidth', 'minPopupWidth', 'multiSelectMode', 'popupHeight', 'popupWidth', 'query', 'readOnly', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showPopupOnLoad', 'showRoundedCorner', 'sortOrder', 'targetID', 'template', 'text', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width', 'virtualScrollMode'], ['value'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
+@inject(Element)
+export class ejDropDownList extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
   }
+}
 
-  _export('delayed', delayed);
 
-  return {
-    setters: [function (_aureliaTemplating) {
-      BindableProperty = _aureliaTemplating.BindableProperty;
-      HtmlBehaviorResource = _aureliaTemplating.HtmlBehaviorResource;
-    }, function (_aureliaDependencyInjection) {
-      Container = _aureliaDependencyInjection.Container;
-    }, function (_aureliaMetadata) {
-      metadata = _aureliaMetadata.metadata;
-    }, function (_aureliaTaskQueue) {
-      TaskQueue = _aureliaTaskQueue.TaskQueue;
-    }, function (_aureliaBinding) {
-      bindingMode = _aureliaBinding.bindingMode;
-      BindingEngine = _aureliaBinding.BindingEngine;
-    }, function (_util) {
-      Util = _util.Util;
-    }],
-    execute: function () {}
-  };
-});
-'use strict';
-
-System.register(['./util', 'aurelia-dependency-injection', './constants'], function (_export, _context) {
-  "use strict";
-
-  var Util, Container, constants;
-  function getEventOption(element) {
-    var name = void 0;
-    var attr = void 0;
-    var attributes = element.attributes;
-    var option = {};
-    var container = Container.instance || new Container();
-    var util = container.get(Util);
-
-    var _loop = function _loop(i, len) {
-      attr = attributes[i];
-      name = attr.name;
-      if (!name.startsWith(constants.eventPrefix)) {
-        return 'continue';
-      }
-      var actualEventName = name.split('.')[0];
-      var eventName = util._unhyphenate(actualEventName.split(constants.eventPrefix)[1]);
-      option[eventName] = function (e) {
-        return fireEvent(element, actualEventName, e);
-      };
-    };
-
-    for (var i = 0, len = attributes.length; i < len; i++) {
-      var _ret = _loop(i, len);
-
-      if (_ret === 'continue') continue;
-    }
-    return option;
+@customElement(`${constants.elementPrefix}file-explorer`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejFileExplorer', ['ajaxAction', 'ajaxDataType', 'ajaxSettings', 'allowDragAndDrop', 'allowKeyboardNavigation', 'allowMultiSelection', 'contextMenuSettings', 'cssClass', 'enablePersistence', 'enableResize', 'enableRTL', 'enableThumbnailCompress', 'fileTypes', 'filterSettings', 'gridSettings', 'height', 'isResponsive', 'layout', 'locale', 'maxHeight', 'maxWidth', 'minHeight', 'minWidth', 'path', 'rootFolderName', 'selectedFolder', 'selectedItems', 'showCheckbox', 'showContextMenu', 'showFooter', 'showRoundedCorner', 'showThumbnail', 'showToolbar', 'showNavigationPane', 'tools', 'toolsList', 'uploadSettings', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejFileExplorer extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
   }
+}
 
-  _export('getEventOption', getEventOption);
 
-  function fireEvent(element, name) {
-    var data = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-
-    var event = new CustomEvent(name, {
-      detail: data,
-      bubbles: true
-    });
-    element.dispatchEvent(event);
-    return event;
+@customElement(`${constants.elementPrefix}gantt`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejGantt', ['addDialogFields', 'allowColumnResize', 'allowGanttChartEditing', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowMultipleExporting', 'allowSelection', 'allowSorting', 'allowDragAndDrop', 'enablePredecessorValidation', 'enableSerialNumber', 'baselineColor', 'workMapping', 'expandStateMapping', 'baselineEndDateMapping', 'baselineStartDateMapping', 'childMapping', 'columnDialogFields', 'connectorLineBackground', 'connectorlineWidth', 'cssClass', 'cellTooltipTemplate', 'dragTooltip', 'dataSource', 'dateFormat', 'dayWorkingTime', 'durationMapping', 'durationUnit', 'editDialogFields', 'filterSettings', 'isResponsive', 'splitterSettings', 'editSettings', 'enableAltRow', 'enableWBS', 'enableWBSPredecessor', 'enableCollapseAll', 'leftTaskLabelMapping', 'rightTaskLabelMapping', 'leftTaskLabelTemplate', 'rightTaskLabelTemplate', 'enableContextMenu', 'enableProgressBarResizing', 'enableResize', 'enableTaskbarDragTooltip', 'enableTaskbarTooltip', 'enableVirtualization', 'endDateMapping', 'highlightWeekends', 'holidays', 'includeWeekend', 'locale', 'milestoneMapping', 'showColumnOptions', 'parentTaskbarTemplate', 'taskType', 'workUnit', 'taskSchedulingMode', 'selectionType', 'parentProgressbarBackground', 'resourceUnitMapping', 'notesMapping', 'taskSchedulingModeMapping', 'durationUnitMapping', 'parentTaskbarBackground', 'parentTaskIdMapping', 'predecessorMapping', 'progressbarBackground', 'progressbarHeight', 'progressbarTooltipTemplate', 'progressbarTooltipTemplateId', 'progressMapping', 'query', 'renderBaseline', 'resourceIdMapping', 'resourceInfoMapping', 'resourceNameMapping', 'resources', 'roundOffDayworkingTime', 'rowHeight', 'scheduleEndDate', 'scheduleHeaderSettings', 'scheduleStartDate', 'selectedRowIndex', 'showColumnChooser', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'showProgressStatus', 'showResourceNames', 'showTaskNames', 'sizeSettings', 'selectedCellIndexes', 'sortSettings', 'splitterPosition', 'startDateMapping', 'stripLines', 'taskbarBackground', 'taskbarEditingTooltipTemplate', 'taskbarEditingTooltipTemplateId', 'taskbarHeight', 'taskbarTooltipTemplate', 'taskbarTemplate', 'milestoneTemplate', 'readOnly', 'taskbarTooltipTemplateId', 'taskIdMapping', 'taskNameMapping', 'toolbarSettings', 'treeColumnIndex', 'selectionMode', 'validateManualTasksOnLinking', 'weekendBackground', 'workingTimeScale', 'workWeek', 'viewType', 'groupCollection', 'resourceCollectionMapping', 'taskCollectionMapping', 'groupIdMapping', 'groupNameMapping'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes'])
+@inject(Element)
+export class ejGantt extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
   }
+}
 
-  _export('fireEvent', fireEvent);
 
-  return {
-    setters: [function (_util) {
-      Util = _util.Util;
-    }, function (_aureliaDependencyInjection) {
-      Container = _aureliaDependencyInjection.Container;
-    }, function (_constants) {
-      constants = _constants.constants;
-    }],
-    execute: function () {}
-  };
-});
-'use strict';
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}column`)
+@generateBindables('columns', ['clipMode', 'allowEditing', 'allowFiltering', 'allowGrouping', 'allowSorting', 'allowResizing', 'commands', 'cssClass', 'customAttributes', 'dataSource', 'defaultValue', 'disableHtmlEncode', 'displayAsCheckbox', 'editParams', 'editTemplate', 'editType', 'enableGroupByFormat', 'field', 'filterBarTemplate', 'filterType', 'foreignKeyField', 'foreignKeyValue', 'format', 'headerTemplateID', 'headerText', 'headerTextAlign', 'headerTooltip', 'isFrozen', 'isIdentity', 'isPrimaryKey', 'priority', 'showInColumnChooser', 'template', 'textAlign', 'tooltip', 'type', 'validationRules', 'visible', 'width'])
 
-System.register(['aurelia-dependency-injection', '../common/util', 'aurelia-templating'], function (_export, _context) {
-  "use strict";
-
-  var inject, Util, TemplatingEngine, _dec, _class, TemplateProcessor;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+export class Column {
+  @children(`${constants.elementPrefix}template`) template = [];
+  setTemplates() {
+    if (this.template[0]) {
+      let util = new Util();
+      this[util.getBindablePropertyName('template')] = this.template[0].template;
     }
   }
+}
 
-  return {
-    setters: [function (_aureliaDependencyInjection) {
-      inject = _aureliaDependencyInjection.inject;
-    }, function (_commonUtil) {
-      Util = _commonUtil.Util;
-    }, function (_aureliaTemplating) {
-      TemplatingEngine = _aureliaTemplating.TemplatingEngine;
-    }],
-    execute: function () {
-      _export('TemplateProcessor', TemplateProcessor = (_dec = inject(TemplatingEngine, Util), _dec(_class = function () {
-        function TemplateProcessor(context, templateEngine) {
-          _classCallCheck(this, TemplateProcessor);
 
-          this.context = context;
-          this.templatingEngine = templateEngine;
-          this.util = new Util();
-        }
-
-        TemplateProcessor.prototype.initTemplate = function initTemplate() {
-          var proxy = this;
-          ej.template.render = function (self, selector, data, index) {
-            return proxy.renderStringTemplate(self, selector, data, index);
-          };
-        };
-
-        TemplateProcessor.prototype.initWidgetDependancies = function initWidgetDependancies() {
-          if (this.context.widget.aureliaTemplate) {
-            this.compileTemplate(this.context.widget.element);
-          }
-          var proxy = this.context;
-          var element = this.context.widget.element;
-          element.on(this.context.widget.pluginName + 'refresh', function () {
-            if (proxy.widget.aureliaTemplate) {
-              proxy.templateProcessor.compileTemplate(element);
-            }
-          });
-        };
-
-        TemplateProcessor.prototype.renderStringTemplate = function renderStringTemplate(self, selector, data, index) {
-          var templateObject = self.aureliaTemplate;
-          if (!templateObject || !templateObject[selector]) {
-            templateObject = templateObject || {};
-            templateObject[selector] = { key: ej.getGuid('aurtmpl'), itemData: [], views: [] };
-            self.aureliaTemplate = templateObject;
-          }
-          var scope = templateObject[selector];
-          if (this.util.hasValue(index)) {
-            scope.itemData[index] = data;
-          } else {
-            scope.itemData = [data];
-          }
-          var actElement = $(selector).html();
-          var tempElement = "<div ej-prop='" + index + "' class='" + templateObject[selector].key + " ej-aurelia-template'>" + actElement + '</div>';
-          return tempElement;
-        };
-
-        TemplateProcessor.prototype.compileTemplate = function compileTemplate(element) {
-          var templates = $(element).find('.ej-aurelia-template');
-          var templateObject = this.context.widget.aureliaTemplate;
-          for (var template in templateObject) {
-            var tmplElement = templates.filter('.' + templateObject[template].key);
-            if (tmplElement.length) {
-              for (var i = 0; i < tmplElement.length; i++) {
-                var dataIndex = parseInt($(tmplElement[i]).attr('ej-prop'));
-                var view = this.templatingEngine.enhance(tmplElement[i]);
-                view.bind(templateObject[template].itemData[dataIndex], this.context.parentCtx);
-                templateObject[template].views[dataIndex] = view;
-              }
-            } else {
-              this.unbindViews(templateObject[template]);
-              delete templateObject[template];
-            }
-          }
-        };
-
-        TemplateProcessor.prototype.clearTempalte = function clearTempalte() {
-          var templateObject = this.context.widget.aureliaTemplate;
-          if (templateObject && Object.keys(templateObject).length) {
-            for (var t in templateObject) {
-              this.unbindViews(templateObject[t]);
-              delete templateObject[t];
-            }
-          }
-        };
-
-        TemplateProcessor.prototype.unbindViews = function unbindViews(obj) {
-          for (var i = 0; i < obj.views.length; i++) {
-            var view = obj.views[i];
-            view.unbind();
-          }
-        };
-
-        return TemplateProcessor;
-      }()) || _class));
-
-      _export('TemplateProcessor', TemplateProcessor);
-    }
-  };
-});
-'use strict';
-
-System.register(['aurelia-dependency-injection', 'aurelia-templating', './constants'], function (_export, _context) {
-  "use strict";
-
-  var inject, customElement, bindable, noView, processContent, TargetInstruction, constants, _dec, _dec2, _dec3, _dec4, _class, _desc, _value, _class2, _descriptor, Template;
-
-  function _initDefineProp(target, property, descriptor, context) {
-    if (!descriptor) return;
-    Object.defineProperty(target, property, {
-      enumerable: descriptor.enumerable,
-      configurable: descriptor.configurable,
-      writable: descriptor.writable,
-      value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-    });
+@customElement(`${constants.elementPrefix}grid`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejGrid', ['allowCellMerging', 'allowGrouping', 'allowKeyboardNavigation', 'allowFiltering', 'allowSorting', 'allowMultiSorting', 'allowPaging', 'allowReordering', 'allowResizeToFit', 'allowResizing', 'allowRowDragAndDrop', 'allowScrolling', 'allowSearching', 'allowSelection', 'allowTextWrap', 'allowMultipleExporting', 'commonWidth', 'gridLines', 'childGrid', 'columnLayout', 'columns', 'contextMenuSettings', 'cssClass', 'dataSource', 'detailsTemplate', 'editSettings', 'enableAltRow', 'enableAutoSaveOnSelectionChange', 'enableHeaderHover', 'enablePersistence', 'enableResponsiveRow', 'enableRowHover', 'enableRTL', 'enableTouch', 'enableToolbarItems', 'exportToExcelAction', 'exportToPdfAction', 'exportToWordAction', 'filterSettings', 'groupSettings', 'isResponsive', 'keySettings', 'locale', 'minWidth', 'pageSettings', 'query', 'resizeSettings', 'rowTemplate', 'rowDropSettings', 'searchSettings', 'selectedRecords', 'selectedRowIndex', 'selectedRowIndices', 'selectionSettings', 'selectionType', 'scrollSettings', 'showColumnChooser', 'showStackedHeader', 'showSummary', 'sortSettings', 'stackedHeaderRows', 'summaryRows', 'textWrapSettings', 'toolbarSettings'], ['dataSource', 'selectedRowIndices'], {'enableRTL': 'enableRtl'})
+@inject(Element, TemplatingEngine)
+export class ejGrid extends WidgetBase {
+  @children(`${constants.elementPrefix}column`) columns = [];
+  constructor(element, templateEngine) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'columns';
+    this.templateProcessor = new TemplateProcessor(this, templateEngine);
+    this.templateProcessor.initTemplate();
   }
+}
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+
+@customAttribute(`${constants.attributePrefix}group-button`)
+@generateBindables('ejGroupButton', ['cssClass', 'dataSource', 'enableRTL', 'enabled', 'fields', 'groupButtonMode', 'height', 'htmlAttributes', 'orientation', 'query', 'selectedItemIndex', 'showRoundedCorner', 'size', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejGroupButton extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}heat-map`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejHeatMap', ['width', 'height', 'id', 'showTooltip', 'tooltipSettings', 'itemsSource', 'heatMapCell', 'isResponsive', 'enableVirtualization', 'defaultColumnStyle', 'legendCollection', 'itemsMapping', 'colorMappingCollection'])
+@inject(Element)
+export class ejHeatMap extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}heat-map-legend`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejHeatMapLegend', ['width', 'height', 'isResponsive', 'showLabel', 'colorMappingCollection', 'orientation', 'legendMode'])
+@inject(Element)
+export class ejHeatMapLegend extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}kanban`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejKanban', ['allowDragAndDrop', 'allowTitle', 'swimlaneSettings', 'allowToggleColumn', 'allowSearching', 'allowFiltering', 'allowSelection', 'allowHover', 'allowKeyboardNavigation', 'allowScrolling', 'allowPrinting', 'contextMenuSettings', 'columns', 'cardSettings', 'customToolbarItems', 'cssClass', 'dataSource', 'enableTouch', 'enableRTL', 'enableTotalCount', 'editSettings', 'fields', 'keyField', 'isResponsive', 'minWidth', 'filterSettings', 'query', 'keySettings', 'scrollSettings', 'searchSettings', 'selectionType', 'stackedHeaderRows', 'tooltipSettings', 'workflows', 'locale'], ['dataSource'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejKanban extends WidgetBase {
+  @children(`${constants.elementPrefix}kanban-column`) columns = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'columns';
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}kanban-column`)
+@generateBindables('columns', ['headerText', 'totalCount', 'key', 'allowDrop', 'allowDrag', 'isCollapsed', 'constraints', 'headerTemplate', 'width', 'visible', 'showAddButton'])
+
+export class KanbanColumn {
+}
+
+
+@customElement(`${constants.elementPrefix}linear-gauge`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejLinearGauge', ['animationSpeed', 'backgroundColor', 'borderColor', 'enableAnimation', 'enableMarkerPointerAnimation', 'isResponsive', 'enableGroupSeparator', 'enableResize', 'frame', 'height', 'labelColor', 'locale', 'maximum', 'minimum', 'orientation', 'outerCustomLabelPosition', 'pointerGradient1', 'pointerGradient2', 'readOnly', 'scales', 'theme', 'tickColor', 'tooltip', 'value', 'width'], ['value', 'minimum', 'maximum'])
+@inject(Element)
+export class ejLinearGauge extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}list-box`)
+@generateBindables('ejListBox', ['allowDrag', 'allowDrop', 'allowMultiSelection', 'allowVirtualScrolling', 'caseSensitiveSearch', 'cascadeTo', 'checkedIndices', 'cssClass', 'dataSource', 'enabled', 'enableIncrementalSearch', 'enablePersistence', 'enableRTL', 'enableWordWrap', 'fields', 'height', 'itemHeight', 'itemsCount', 'totalItemsCount', 'itemRequestCount', 'loadDataOnInit', 'query', 'selectedIndex', 'selectedIndices', 'showCheckbox', 'showRoundedCorner', 'sortOrder', 'template', 'value', 'virtualScrollMode', 'width', 'targetID'], ['value', 'dataSource'], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
+@inject(Element)
+export class ejListBox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}list-view`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejListView', ['ajaxSettings', 'checkedIndices', 'cssClass', 'dataSource', 'enableAjax', 'enableCache', 'enableCheckMark', 'enableFiltering', 'enableGroupList', 'enablePersistence', 'fieldSettings', 'items', 'headerBackButtonText', 'headerTitle', 'height', 'locale', 'persistSelection', 'preventSelection', 'query', 'renderTemplate', 'selectedItemIndex', 'showHeader', 'showHeaderBackButton', 'templateId', 'width', 'itemRequestCount', 'totalItemsCount', 'allowVirtualScrolling', 'virtualScrollMode'], ['dataSource', 'selectedItemIndex'])
+@inject(Element)
+export class ejListView extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}layer`)
+@generateBindables('layers', ['bingMapType', 'bubbleSettings', 'dataSource', 'shapeDataPath', 'shapePropertyPath', 'enableMouseHover', 'enableSelection', 'key', 'labelSettings', 'geometryType', 'layerType', 'legendSettings', 'mapItemsTemplate', 'markers', 'markerTemplate', 'selectedMapShapes', 'selectionMode', 'shapeData', 'shapeSettings', 'showMapItems', 'showTooltip', 'tooltipTemplate', 'urlTemplate', 'subLayers'])
+
+export class Layer {
+}
+
+
+@customElement(`${constants.elementPrefix}map`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejMap', ['background', 'baseMapIndex', 'centerPosition', 'draggingOnSelection', 'enableAnimation', 'enableLayerChangeAnimation', 'enablePan', 'enableResize', 'isResponsive', 'zoomSettings', 'navigationControl', 'locale', 'layers'], ['baseMapIndex', 'enablePan', 'enableResize', 'enableAnimation', 'zoomSettings.level', 'zoomSettings.minValue', 'zoomSettings.maxValue', 'zoomSettings.factor', 'zoomSettings.enableZoom', 'zoomSettings.enableZoomOnSelection', 'navigationControl.enableNavigation', 'navigationControl.orientation', 'navigationControl.absolutePosition', 'navigationControl.dockPosition'])
+@inject(Element)
+export class ejMap extends WidgetBase {
+  @children(`${constants.elementPrefix}layer`) layers = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'layers';
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}mask-edit`)
+@generateBindables('ejMaskEdit', ['cssClass', 'customCharacter', 'enabled', 'enablePersistence', 'height', 'hidePromptOnLeave', 'htmlAttributes', 'inputMode', 'locale', 'maskFormat', 'name', 'readOnly', 'showError', 'showPromptChar', 'showRoundedCorner', 'textAlign', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'])
+@inject(Element)
+export class ejMaskEdit extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}menu`)
+@generateBindables('ejMenu', ['animationType', 'contextMenuTarget', 'container', 'cssClass', 'enableAnimation', 'enableCenterAlign', 'enabled', 'enableRTL', 'enableSeparator', 'excludeTarget', 'fields', 'height', 'htmlAttributes', 'isResponsive', 'menuType', 'openOnClick', 'orientation', 'showRootLevelArrows', 'showSubLevelArrows', 'subMenuDirection', 'titleText', 'width', 'overflowHeight', 'overflowWidth'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejMenu extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}navigation-drawer`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejNavigationDrawer', ['ajaxSettings', 'contentId', 'cssClass', 'direction', 'enableListView', 'items', 'listViewSettings', 'position', 'targetId', 'type', 'width', 'isPaneOpen'])
+@inject(Element)
+export class ejNavigationDrawer extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}numeric-textbox`)
+@generateBindables('ejNumericTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejNumericTextbox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}overview`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejOverview', ['sourceID', 'height', 'width'], [], {'sourceID': 'sourceId'})
+@inject(Element)
+export class ejOverview extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pager`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPager', ['customText', 'currentPage', 'enableExternalMessage', 'enableQueryString', 'enableRTL', 'externalMessage', 'locale', 'pageCount', 'pageSize', 'pageSizeList', 'totalPages', 'totalRecordsCount', 'showPageInfo'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPager extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pdf-viewer`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPdfViewer', ['locale', 'toolbarSettings', 'serverActionSettings', 'serviceUrl', 'documentPath', 'enableTextMarkupAnnotations', 'enableHighlightAnnotation', 'enableUnderlineAnnotation', 'enableStrikethroughAnnotation', 'enableSignature', 'strikethroughSettings', 'underlineSettings', 'highlightSettings', 'signatureSettings', 'annotationType', 'pageCount', 'currentPageNumber', 'zoomPercentage', 'pdfService', 'interactionMode', 'hyperlinkOpenState', 'enableHyperlink', 'enableTextSelection', 'isResponsive', 'isDocumentEdited', 'allowClientBuffering', 'fileName'])
+@inject(Element)
+export class ejPdfViewer extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pivot-chart`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPivotChart', ['analysisMode', 'cssClass', 'zooming', 'commonSeriesOptions', 'dataSource', 'customObject', 'enable3D', 'enableRTL', 'enableMultiLevelLabels', 'isResponsive', 'legend', 'locale', 'operationalMode', 'primaryXAxis', 'primaryYAxis', 'rotation', 'enableContextMenu', 'serviceMethodSettings', 'size', 'url'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPivotChart extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pivot-gauge`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPivotGauge', ['columnsCount', 'cssClass', 'customObject', 'dataSource', 'enableAnimation', 'enableTooltip', 'enableRTL', 'isResponsive', 'labelFormatSettings', 'locale', 'rowsCount', 'scales', 'serviceMethodSettings', 'showHeaderLabel', 'url', 'analysisMode', 'operationalMode'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPivotGauge extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}percentage-textbox`)
+@generateBindables('ejPercentageTextbox', ['currencySymbol', 'cssClass', 'decimalPlaces', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'groupSize', 'groupSeparator', 'height', 'htmlAttributes', 'incrementStep', 'locale', 'maxValue', 'minValue', 'name', 'negativePattern', 'positivePattern', 'readOnly', 'showRoundedCorner', 'showSpinButton', 'validateOnType', 'validationMessage', 'validationRules', 'value', 'watermarkText', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPercentageTextbox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pivot-grid`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPivotGrid', ['analysisMode', 'cssClass', 'pivotTableFieldListID', 'dataSource', 'valueSortSettings', 'frozenHeaderSettings', 'headerSettings', 'showUniqueNameOnPivotButton', 'customObject', 'collapsedMembers', 'enableCellContext', 'enableCellSelection', 'enableDrillThrough', 'enableCellDoubleClick', 'enableCellEditing', 'enableCollapseByDefault', 'enableColumnGrandTotal', 'enableConditionalFormatting', 'enableAdvancedFilter', 'enableDeferUpdate', 'enableGroupingBar', 'enableMemberEditorPaging', 'memberEditorPageSize', 'enableGrandTotal', 'enableJSONRendering', 'enablePivotFieldList', 'enableRowGrandTotal', 'enableRTL', 'enableToolTip', 'enableToolTipAnimation', 'enableColumnResizing', 'resizeColumnsToFit', 'enableContextMenu', 'enableVirtualScrolling', 'enablePaging', 'hyperlinkSettings', 'isResponsive', 'jsonRecords', 'layout', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'], [], {'pivotTableFieldListID': 'pivotTableFieldListId', 'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPivotGrid extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pivot-schema-designer`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPivotSchemaDesigner', ['cssClass', 'customObject', 'enableWrapper', 'enableRTL', 'olap', 'enableDragDrop', 'height', 'locale', 'pivotControl', 'serviceMethods', 'url', 'width', 'layout'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejPivotSchemaDesigner extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}pivot-tree-map`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejPivotTreeMap', ['cssClass', 'dataSource', 'customObject', 'isResponsive', 'locale', 'operationalMode', 'serviceMethodSettings', 'url'])
+@inject(Element)
+export class ejPivotTreeMap extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}progress-bar`)
+@generateBindables('ejProgressBar', ['cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'maxValue', 'minValue', 'percentage', 'showRoundedCorner', 'text', 'value', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejProgressBar extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}item`)
+@generateBindables('items', ['imageUrl', 'prependTo', 'text', 'enabled', 'click', 'badge', 'type', 'sliderSettings', 'items'])
+
+export class Item {
+  @children(`${constants.elementPrefix}template`) template = [];
+  setTemplates() {
+    if (this.template[0]) {
+      let util = new Util();
+      this[util.getBindablePropertyName('template')] = this.template[0].template;
     }
   }
+}
 
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
 
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
+@customElement(`${constants.elementPrefix}radial-menu`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejRadialMenu', ['autoOpen', 'backImageClass', 'cssClass', 'enableAnimation', 'imageClass', 'items', 'radius', 'targetElementId', 'position'])
+@inject(Element, TemplatingEngine)
+export class ejRadialMenu extends WidgetBase {
+  @children(`${constants.elementPrefix}item`) items = [];
+  constructor(element, templateEngine) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'items';
+    this.templateProcessor = new TemplateProcessor(this, templateEngine);
+    this.templateProcessor.initTemplate();
   }
+}
 
-  function _initializerWarningHelper(descriptor, context) {
-    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+
+@customElement(`${constants.elementPrefix}radial-slider`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejRadialSlider', ['autoOpen', 'cssClass', 'enableAnimation', 'enableRoundOff', 'endAngle', 'inline', 'innerCircleImageClass', 'innerCircleImageUrl', 'labelSpace', 'locale', 'radius', 'showInnerCircle', 'startAngle', 'strokeWidth', 'ticks', 'value'], ['value', 'ticks'])
+@inject(Element)
+export class ejRadialSlider extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
   }
+}
 
-  return {
-    setters: [function (_aureliaDependencyInjection) {
-      inject = _aureliaDependencyInjection.inject;
-    }, function (_aureliaTemplating) {
-      customElement = _aureliaTemplating.customElement;
-      bindable = _aureliaTemplating.bindable;
-      noView = _aureliaTemplating.noView;
-      processContent = _aureliaTemplating.processContent;
-      TargetInstruction = _aureliaTemplating.TargetInstruction;
-    }, function (_constants) {
-      constants = _constants.constants;
-    }],
-    execute: function () {
-      _export('Template', Template = (_dec = customElement(constants.elementPrefix + 'template'), _dec2 = noView(), _dec3 = processContent(function (compiler, resources, element, instruction) {
-        var html = element.innerHTML;
-        if (html !== '') {
-          instruction.template = html;
-        }
-        element.innerHTML = '';
-      }), _dec4 = inject(TargetInstruction), _dec(_class = _dec2(_class = _dec3(_class = _dec4(_class = (_class2 = function Template(target) {
-        _classCallCheck(this, Template);
 
-        _initDefineProp(this, 'template', _descriptor, this);
+@customAttribute(`${constants.attributePrefix}radio-button`)
+@generateBindables('ejRadioButton', ['checked', 'cssClass', 'enabled', 'enablePersistence', 'enableRTL', 'htmlAttributes', 'id', 'idPrefix', 'name', 'size', 'text', 'validationMessage', 'validationRules', 'value'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejRadioButton extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
 
-        this.template = target.elementInstruction.template;
-      }, (_descriptor = _applyDecoratedDescriptor(_class2.prototype, 'template', [bindable], {
-        enumerable: true,
-        initializer: null
-      })), _class2)) || _class) || _class) || _class) || _class));
 
-      _export('Template', Template);
-    }
-  };
-});
-'use strict';
+@customElement(`${constants.elementPrefix}range-navigator`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejRangeNavigator', ['allowSnapping', 'border', 'dataSource', 'series', 'seriesSettings', 'enableDeferredUpdate', 'enableScrollbar', 'enableAutoResizing', 'enableRTL', 'isResponsive', 'labelSettings', 'locale', 'navigatorStyleSettings', 'padding', 'rangePadding', 'rangeSettings', 'selectedData', 'selectedRangeSettings', 'scrollRangeSettings', 'sizeSettings', 'theme', 'tooltipSettings', 'valueAxisSettings', 'valueType', 'xName', 'yName'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejRangeNavigator extends WidgetBase {
+  @children(`${constants.elementPrefix}range-series`) series = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'series';
+  }
+}
 
-System.register(['./constants'], function (_export, _context) {
-  "use strict";
 
-  var constants, Util;
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}range-series`)
+@generateBindables('series', ['xName', 'yName', 'dataSource', 'type', 'enableAnimation', 'fill'])
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+export class RangeSeries {
+}
+
+
+@customAttribute(`${constants.attributePrefix}rating`)
+@generateBindables('ejRating', ['allowReset', 'cssClass', 'enabled', 'enablePersistence', 'height', 'htmlAttributes', 'incrementStep', 'maxValue', 'minValue', 'orientation', 'precision', 'readOnly', 'shapeHeight', 'shapeWidth', 'showTooltip', 'value', 'width'], ['value'])
+@inject(Element)
+export class ejRating extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}report-viewer`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejReportViewer', ['dataSources', 'enablePageCache', 'exportSettings', 'isResponsive', 'locale', 'pageSettings', 'parameters', 'printMode', 'printOptions', 'processingMode', 'renderMode', 'reportPath', 'reportServerUrl', 'reportServiceUrl', 'toolbarSettings', 'zoomFactor'])
+@inject(Element)
+export class ejReportViewer extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}ribbon`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejRibbon', ['allowResizing', 'isResponsive', 'buttonDefaults', 'showQAT', 'cssClass', 'collapsePinSettings', 'enableOnDemand', 'collapsible', 'enableRTL', 'expandPinSettings', 'applicationTab', 'contextualTabs', 'disabledItemIndex', 'enabledItemIndex', 'selectedItemIndex', 'tabs', 'locale', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejRibbon extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}rotator`)
+@generateBindables('ejRotator', ['allowKeyboardNavigation', 'animationSpeed', 'animationType', 'circularMode', 'cssClass', 'dataSource', 'delay', 'displayItemsCount', 'enableAutoPlay', 'enabled', 'enableRTL', 'fields', 'frameSpace', 'isResponsive', 'navigateSteps', 'orientation', 'pagerPosition', 'query', 'showCaption', 'showNavigateButton', 'showPager', 'showPlayButton', 'showThumbnail', 'slideHeight', 'slideWidth', 'startIndex', 'stopOnHover', 'template', 'templateId', 'thumbnailSourceID'], [], {'enableRTL': 'enableRtl', 'thumbnailSourceID': 'thumbnailSourceId'})
+@inject(Element)
+export class ejRotator extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}rte`)
+@generateBindables('ejRTE', ['allowEditing', 'allowKeyboardNavigation', 'autoFocus', 'autoHeight', 'pasteCleanupSettings', 'colorCode', 'colorPaletteColumns', 'colorPaletteRows', 'cssClass', 'enabled', 'enableHtmlEncode', 'enablePersistence', 'enableResize', 'enableRTL', 'enableXHTML', 'enableTabKeyNavigation', 'exportToPdfSettings', 'exportToWordSettings', 'externalCSS', 'fileBrowser', 'fontName', 'fontSize', 'format', 'height', 'htmlAttributes', 'iframeAttributes', 'imageBrowser', 'importSettings', 'isResponsive', 'locale', 'maxHeight', 'maxLength', 'maxWidth', 'minHeight', 'minWidth', 'name', 'showClearAll', 'showClearFormat', 'showCustomTable', 'showContextMenu', 'showDimensions', 'showFontOption', 'showFooter', 'showHtmlSource', 'showHtmlTagInfo', 'showToolbar', 'showCharCount', 'showRoundedCorner', 'showWordCount', 'tableColumns', 'tableRows', 'tools', 'toolsList', 'toolbarOverflowMode', 'tooltipSettings', 'undoStackLimit', 'value', 'validationRules', 'validationMessage', 'width', 'zoomStep'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejRte extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}schedule`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSchedule', ['allowDragAndDrop', 'allowInline', 'allowKeyboardNavigation', 'appointmentSettings', 'appointmentTemplateId', 'cssClass', 'categorizeSettings', 'cellHeight', 'cellWidth', 'contextMenuSettings', 'currentDate', 'currentView', 'dateFormat', 'showAppointmentNavigator', 'enableAppointmentResize', 'enableLoadOnDemand', 'enablePersistence', 'enableRTL', 'endHour', 'group', 'height', 'workHours', 'isDST', 'isResponsive', 'locale', 'maxDate', 'minDate', 'orientation', 'prioritySettings', 'readOnly', 'reminderSettings', 'renderDates', 'resourceHeaderTemplateId', 'resources', 'showAllDayRow', 'showWeekend', 'showCurrentTimeIndicator', 'showHeaderBar', 'showLocationField', 'showTimeZoneFields', 'showQuickWindow', 'startHour', 'timeMode', 'timeZone', 'timeZoneCollection', 'views', 'width', 'enableRecurrenceValidation', 'agendaViewSettings', 'firstDayOfWeek', 'workWeek', 'tooltipSettings', 'timeScale', 'showDeleteConfirmationDialog', 'allDayCellsTemplateId', 'workCellsTemplateId', 'dateHeaderTemplateId', 'showOverflowButton', 'appointmentDragArea', 'showNextPrevMonth', 'blockoutSettings'], ['currentView', 'currentDate'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejSchedule extends WidgetBase {
+  @children(`${constants.elementPrefix}schedule-resource`) resources = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'resources';
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}schedule-resource`)
+@generateBindables('resources', ['field', 'title', 'name', 'allowMultiple', 'resourceSettings'])
+
+export class ScheduleResource {
+}
+
+
+@customAttribute(`${constants.attributePrefix}scroller`)
+@generateBindables('ejScroller', ['animationSpeed', 'autoHide', 'buttonSize', 'enabled', 'enablePersistence', 'enableRTL', 'enableTouchScroll', 'height', 'scrollerSize', 'scrollLeft', 'scrollOneStepBy', 'scrollTop', 'targetPane', 'width'], ['scrollLeft', 'scrollTop'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejScroller extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}signature`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSignature', ['backgroundColor', 'backgroundImage', 'enabled', 'height', 'isResponsive', 'saveImageFormat', 'saveWithBackground', 'showRoundedCorner', 'strokeColor', 'strokeWidth', 'width'])
+@inject(Element)
+export class ejSignature extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}slider`)
+@generateBindables('ejSlider', ['allowMouseWheel', 'animationSpeed', 'cssClass', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'incrementStep', 'largeStep', 'maxValue', 'minValue', 'orientation', 'readOnly', 'showButtons', 'showRoundedCorner', 'showScale', 'showSmallTicks', 'showTooltip', 'sliderType', 'smallStep', 'value', 'values', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejSlider extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}sparkline`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSparkline', ['background', 'fill', 'stroke', 'border', 'width', 'opacity', 'highPointColor', 'lowPointColor', 'startPointColor', 'endPointColor', 'negativePointColor', 'rangeBandSettings', 'locale', 'palette', 'isResponsive', 'enableCanvasRendering', 'enableGroupSeparator', 'dataSource', 'xName', 'yName', 'padding', 'type', 'theme', 'tooltip', 'markerSettings', 'size', 'axisLineSettings'])
+@inject(Element)
+export class ejSparkline extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}spell-check`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSpellCheck', ['dictionarySettings', 'misspellWordCss', 'locale', 'maxSuggestionCount', 'ignoreWords', 'contextMenuSettings', 'ignoreSettings', 'isResponsive', 'enableValidateOnType', 'controlsToValidate', 'enableAsync', 'ajaxDataType'])
+@inject(Element)
+export class ejSpellCheck extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}split-button`)
+@generateBindables('ejSplitButton', ['arrowPosition', 'buttonMode', 'contentType', 'cssClass', 'enabled', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'prefixIcon', 'showRoundedCorner', 'size', 'suffixIcon', 'targetID', 'target', 'text', 'width'], [], {'enableRTL': 'enableRtl', 'targetID': 'targetId'})
+@inject(Element)
+export class ejSplitButton extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}splitter`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSplitter', ['allowKeyboardNavigation', 'animationSpeed', 'cssClass', 'enableAnimation', 'enableRTL', 'height', 'htmlAttributes', 'isResponsive', 'orientation', 'properties', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejSplitter extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}sheet`)
+@generateBindables('sheets', ['border', 'cellTypes', 'cFormatRule', 'colCount', 'columnWidth', 'dataSource', 'fieldAsColumnHeader', 'frozenRows', 'frozenColumns', 'headerStyles', 'hideColumns', 'hideRows', 'mergeCells', 'primaryKey', 'query', 'rangeSettings', 'rowCount', 'rows', 'showGridlines', 'showHeader', 'showHeadings', 'sheetName', 'startCell'])
+
+export class Sheet {
+}
+
+
+@customElement(`${constants.elementPrefix}spreadsheet`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSpreadsheet', ['activeSheetIndex', 'allowAutoCellType', 'allowAutoFill', 'allowAutoSum', 'allowCellFormatting', 'allowCellType', 'allowCharts', 'allowClear', 'allowClipboard', 'allowComments', 'allowConditionalFormats', 'allowDataValidation', 'allowDelete', 'allowDragAndDrop', 'allowEditing', 'allowFiltering', 'allowFormatAsTable', 'allowFormatPainter', 'allowFormulaBar', 'allowFreezing', 'allowHyperlink', 'allowImport', 'allowInsert', 'allowKeyboardNavigation', 'allowLockCell', 'allowMerging', 'allowOverflow', 'allowResizing', 'allowSearching', 'allowSelection', 'allowSorting', 'allowUndoRedo', 'allowWrap', 'apWidth', 'autoFillSettings', 'chartSettings', 'columnCount', 'columnWidth', 'cssClass', 'customFormulas', 'enableContextMenu', 'enablePivotTable', 'enableTouch', 'exportSettings', 'formatSettings', 'importSettings', 'isReadOnly', 'locale', 'nameManager', 'pictureSettings', 'printSettings', 'ribbonSettings', 'rowCount', 'rowHeight', 'scrollSettings', 'selectionSettings', 'sheetCount', 'sheets', 'showPager', 'showRibbon', 'undoRedoStep', 'userName'])
+@inject(Element)
+export class ejSpreadsheet extends WidgetBase {
+  @children(`${constants.elementPrefix}sheet`) sheets = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'sheets';
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}sunburst-chart`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSunburstChart', ['background', 'valueMemberPath', 'border', 'segmentBorder', 'dataSource', 'palette', 'parentNode', 'xName', 'yName', 'isResponsive', 'size', 'visible', 'tooltip', 'points', 'startAngle', 'endAngle', 'radius', 'innerRadius', 'dataLabelSettings', 'title', 'highlightSettings', 'selectionSettings', 'levels', 'legend', 'theme', 'margin', 'enableAnimation', 'opacity', 'zoomSettings', 'animationType'])
+@inject(Element)
+export class ejSunburstChart extends WidgetBase {
+  @children(`${constants.elementPrefix}sunburst-levels`) levels = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'levels';
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}sunburst-levels`)
+@generateBindables('levels', ['groupMemberPath'])
+
+export class SunburstLevels {
+}
+
+
+@customElement(`${constants.elementPrefix}symbol-palette`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejSymbolPalette', ['allowDrag', 'cssClass', 'defaultSettings', 'diagramId', 'headerHeight', 'height', 'paletteItemHeight', 'paletteItemWidth', 'palettes', 'previewHeight', 'previewOffset', 'previewWidth', 'showPaletteItemText', 'width'])
+@inject(Element)
+export class ejSymbolPalette extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}tab`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejTab', ['ajaxSettings', 'allowKeyboardNavigation', 'collapsible', 'cssClass', 'disabledItemIndex', 'enableAnimation', 'enabled', 'enabledItemIndex', 'enablePersistence', 'enableRTL', 'enableTabScroll', 'events', 'headerPosition', 'headerSize', 'height', 'heightAdjustMode', 'hiddenItemIndex', 'htmlAttributes', 'idPrefix', 'selectedItemIndex', 'showCloseButton', 'showReloadIcon', 'showRoundedCorner', 'width'], ['selectedItemIndex'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejTab extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}tag-cloud`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejTagCloud', ['cssClass', 'dataSource', 'enableRTL', 'fields', 'htmlAttributes', 'format', 'maxFontSize', 'minFontSize', 'query', 'showTitle', 'titleImage', 'titleText'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejTagCloud extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}tile`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejTile', ['badge', 'caption', 'cssClass', 'enablePersistence', 'height', 'imageClass', 'imagePosition', 'imageTemplateId', 'imageUrl', 'locale', 'liveTile', 'tileSize', 'width', 'showRoundedCorner', 'allowSelection', 'backgroundColor'])
+@inject(Element)
+export class ejTile extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}time-picker`)
+@generateBindables('ejTimePicker', ['cssClass', 'disableTimeRanges', 'enableAnimation', 'enabled', 'enablePersistence', 'enableRTL', 'enableStrictMode', 'height', 'hourInterval', 'htmlAttributes', 'interval', 'locale', 'maxTime', 'minTime', 'minutesInterval', 'popupHeight', 'popupWidth', 'readOnly', 'secondsInterval', 'showPopupButton', 'showRoundedCorner', 'timeFormat', 'value', 'width'], ['value'], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejTimePicker extends WidgetBase {
+  constructor(element) {
+    super();
+    this.isEditor = true;
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}toggle-button`)
+@generateBindables('ejToggleButton', ['activePrefixIcon', 'activeSuffixIcon', 'activeText', 'contentType', 'cssClass', 'defaultPrefixIcon', 'defaultSuffixIcon', 'defaultText', 'enabled', 'enablePersistence', 'enableRTL', 'height', 'htmlAttributes', 'imagePosition', 'preventToggle', 'showRoundedCorner', 'size', 'toggleState', 'type', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejToggleButton extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}toolbar`)
+@generateBindables('ejToolbar', ['cssClass', 'dataSource', 'disabledItemIndices', 'enabled', 'enabledItemIndices', 'enableRTL', 'enableSeparator', 'fields', 'height', 'htmlAttributes', 'hide', 'isResponsive', 'Items', 'orientation', 'query', 'responsiveType', 'showRoundedCorner', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejToolbar extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customAttribute(`${constants.attributePrefix}tooltip`)
+@generateBindables('ejTooltip', ['allowKeyboardNavigation', 'animation', 'associate', 'autoCloseTimeout', 'closeMode', 'collision', 'containment', 'content', 'cssClass', 'enabled', 'enableRTL', 'height', 'isBalloon', 'position', 'showRoundedCorner', 'showShadow', 'target', 'tip', 'title', 'trigger', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejTooltip extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
+
+
+@customElement(`${constants.elementPrefix}tree-grid`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejTreeGrid', ['allowColumnResize', 'allowColumnReordering', 'allowDragAndDrop', 'allowFiltering', 'allowKeyboardNavigation', 'allowMultiSorting', 'allowSelection', 'allowSorting', 'allowPaging', 'allowTextWrap', 'altRowTemplateID', 'expandStateMapping', 'childMapping', 'columns', 'columnDialogFields', 'contextMenuSettings', 'cssClass', 'dataSource', 'headerTextOverflow', 'dragTooltip', 'editSettings', 'enableAltRow', 'enableCollapseAll', 'enableResize', 'enableVirtualization', 'enableLoadOnDemand', 'columnResizeSettings', 'commonWidth', 'filterSettings', 'locale', 'parseRowTemplate', 'idMapping', 'isResponsive', 'parentIdMapping', 'pageSettings', 'cellTooltipTemplate', 'query', 'rowHeight', 'rowTemplateID', 'selectedRowIndex', 'selectedCellIndexes', 'selectionSettings', 'showColumnOptions', 'showColumnChooser', 'showDetailsRow', 'showDetailsRowInfoColumn', 'detailsTemplate', 'detailsRowHeight', 'showStackedHeader', 'stackedHeaderRows', 'showSummaryRow', 'showTotalSummary', 'summaryRows', 'showGridCellTooltip', 'showGridExpandCellTooltip', 'sizeSettings', 'sortSettings', 'toolbarSettings', 'treeColumnIndex'], ['dataSource', 'selectedRowIndex', 'selectedCellIndexes', 'pageSettings.currentPage'], {'altRowTemplateID': 'altRowTemplateId', 'rowTemplateID': 'rowTemplateId'})
+@inject(Element, TemplatingEngine)
+export class ejTreeGrid extends WidgetBase {
+  @children(`${constants.elementPrefix}tree-grid-column`) columns = [];
+  constructor(element, templateEngine) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'columns';
+    this.templateProcessor = new TemplateProcessor(this, templateEngine);
+    this.templateProcessor.initTemplate();
+  }
+}
+
+
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}tree-grid-column`)
+@generateBindables('columns', ['allowFiltering', 'allowFilteringBlankContent', 'allowSorting', 'allowCellSelection', 'editParams', 'editTemplate', 'editType', 'dropdownData', 'field', 'template', 'templateID', 'angularTemplate', 'filterEditType', 'headerText', 'displayAsCheckbox', 'showCheckbox', 'visible', 'width', 'headerTemplateID', 'format', 'isTemplateColumn', 'headerTextAlign', 'isFrozen', 'textAlign', 'allowEditing', 'commands', 'showInColumnChooser', 'clipMode', 'tooltip', 'headerTooltip', 'validationRules', 'priority', 'allowFreezing'])
+
+export class TreeGridColumn {
+  @children(`${constants.elementPrefix}template`) angularTemplate = [];
+  setTemplates() {
+    if (this.angularTemplate[0]) {
+      let util = new Util();
+      this[util.getBindablePropertyName('angularTemplate')] = this.angularTemplate[0].template;
     }
   }
+}
 
-  return {
-    setters: [function (_constants) {
-      constants = _constants.constants;
-    }],
-    execute: function () {
-      _export('Util', Util = function () {
-        function Util() {
-          _classCallCheck(this, Util);
-        }
 
-        Util.prototype.getBindablePropertyName = function getBindablePropertyName(propertyName) {
-          var name = '' + constants.bindablePrefix + propertyName;
-          return this._unhyphenate(name);
-        };
+@inlineView(`${constants.aureliaTemplateString}`)
+@customElement(`${constants.elementPrefix}level`)
+@generateBindables('levels', ['groupBackground', 'groupBorderColor', 'groupBorderThickness', 'groupGap', 'groupPadding', 'groupPath', 'headerHeight', 'headerTemplate', 'headerVisibilityMode', 'labelPosition', 'textOverflow', 'labelTemplate', 'labelVisibilityMode', 'showHeader', 'showLabels'])
 
-        Util.prototype._unhyphenate = function _unhyphenate(name) {
-          return name.replace(/-([a-z])/g, function (g) {
-            return g[1].toUpperCase();
-          });
-        };
+export class Level {
+}
 
-        Util.prototype.getOptions = function getOptions(model, properties) {
-          var bindableproperites = {};
-          var value = void 0;
-          for (var _iterator = properties, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-            var _ref;
 
-            if (_isArray) {
-              if (_i >= _iterator.length) break;
-              _ref = _iterator[_i++];
-            } else {
-              _i = _iterator.next();
-              if (_i.done) break;
-              _ref = _i.value;
-            }
-
-            var prop = _ref;
-
-            if (model.abbrevProperties && prop in model.abbrevProperties && model.abbrevProperties.hasOwnProperty(prop)) {
-              value = model[this.getBindablePropertyName(model.abbrevProperties[prop])];
-            } else {
-              value = model[this.getBindablePropertyName(prop)];
-            }
-            if (this.hasValue(value)) {
-              if (typeof value === 'string') {
-                value = this.processData(value);
-              }
-              bindableproperites[prop] = value;
-            }
-          }
-          return bindableproperites;
-        };
-
-        Util.prototype.getControlPropertyName = function getControlPropertyName(options, propertyName) {
-          var property = void 0;
-          for (var _iterator2 = options.controlProperties, _isArray2 = Array.isArray(_iterator2), _i2 = 0, _iterator2 = _isArray2 ? _iterator2 : _iterator2[Symbol.iterator]();;) {
-            var _ref2;
-
-            if (_isArray2) {
-              if (_i2 >= _iterator2.length) break;
-              _ref2 = _iterator2[_i2++];
-            } else {
-              _i2 = _iterator2.next();
-              if (_i2.done) break;
-              _ref2 = _i2.value;
-            }
-
-            var prop = _ref2;
-
-            if (propertyName === this.getBindablePropertyName(prop)) {
-              property = prop;
-              break;
-            }
-          }
-          return property;
-        };
-
-        Util.prototype.hasValue = function hasValue(prop) {
-          return typeof prop !== 'undefined' && prop !== null;
-        };
-
-        Util.prototype.processData = function processData(value) {
-          if (value === 'true') {
-            return true;
-          } else if (value === 'false') {
-            return false;
-          } else if (+value + '' === value) {
-            return +value;
-          }
-          return value;
-        };
-
-        return Util;
-      }());
-
-      _export('Util', Util);
-    }
-  };
-});
-'use strict';
-
-System.register(['./events', '../common/util', '../common/decorators'], function (_export, _context) {
-  "use strict";
-
-  var getEventOption, Util, delayed, _dec, _desc, _value, _class, firstValue, WidgetBase;
-
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
-    }
+@customElement(`${constants.elementPrefix}tree-map`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejTreeMap', ['borderBrush', 'borderThickness', 'uniColorMapping', 'desaturationColorMapping', 'paletteColorMapping', 'colorValuePath', 'dataSource', 'dockPosition', 'drillDownHeaderColor', 'drillDownSelectionColor', 'isHierarchicalDatasource', 'header', 'enableDrillDown', 'isResponsive', 'enableResize', 'draggingOnSelection', 'draggingGroupOnSelection', 'groupColorMapping', 'legendSettings', 'highlightBorderBrush', 'highlightBorderThickness', 'highlightGroupBorderBrush', 'highlightGroupBorderThickness', 'highlightGroupOnSelection', 'highlightOnSelection', 'itemsLayoutMode', 'enableGroupSeparator', 'locale', 'leafItemSettings', 'rangeColorMapping', 'selectionMode', 'groupSelectionMode', 'showLegend', 'enableGradient', 'showTooltip', 'tooltipTemplate', 'treeMapItems', 'levels', 'weightValuePath'], ['dataSource', 'weightValuePath'])
+@inject(Element)
+export class ejTreeMap extends WidgetBase {
+  @children(`${constants.elementPrefix}level`) levels = [];
+  constructor(element) {
+    super();
+    this.element = element;
+    this.hasChildProperty = true;
+    this.childPropertyName = 'levels';
   }
+}
 
-  function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-    var desc = {};
-    Object['ke' + 'ys'](descriptor).forEach(function (key) {
-      desc[key] = descriptor[key];
-    });
-    desc.enumerable = !!desc.enumerable;
-    desc.configurable = !!desc.configurable;
 
-    if ('value' in desc || desc.initializer) {
-      desc.writable = true;
-    }
-
-    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-      return decorator(target, property, desc) || desc;
-    }, desc);
-
-    if (context && desc.initializer !== void 0) {
-      desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-      desc.initializer = undefined;
-    }
-
-    if (desc.initializer === void 0) {
-      Object['define' + 'Property'](target, property, desc);
-      desc = null;
-    }
-
-    return desc;
+@customAttribute(`${constants.attributePrefix}tree-view`)
+@generateBindables('ejTreeView', ['allowDragAndDrop', 'allowDragAndDropAcrossControl', 'allowDropSibling', 'allowDropChild', 'allowEditing', 'allowKeyboardNavigation', 'allowMultiSelection', 'autoCheck', 'autoCheckParentNode', 'checkedNodes', 'cssClass', 'enableAnimation', 'enabled', 'enableMultipleExpand', 'enablePersistence', 'enableRTL', 'expandedNodes', 'expandOn', 'fields', 'fullRowSelect', 'height', 'htmlAttributes', 'loadOnDemand', 'selectedNode', 'selectedNodes', 'showCheckbox', 'sortSettings', 'template', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejTreeView extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
   }
+}
 
-  return {
-    setters: [function (_events) {
-      getEventOption = _events.getEventOption;
-    }, function (_commonUtil) {
-      Util = _commonUtil.Util;
-    }, function (_commonDecorators) {
-      delayed = _commonDecorators.delayed;
-    }],
-    execute: function () {
-      firstValue = {};
 
-      _export('WidgetBase', WidgetBase = (_dec = delayed(), (_class = function () {
-        function WidgetBase() {
-          _classCallCheck(this, WidgetBase);
-        }
+@customElement(`${constants.elementPrefix}uploadbox`)
+@inlineView(`${constants.aureliaTemplateString}`)
+@generateBindables('ejUploadbox', ['allowDragAndDrop', 'asyncUpload', 'autoUpload', 'buttonText', 'cssClass', 'customFileDetails', 'dialogAction', 'dialogPosition', 'dialogText', 'dropAreaText', 'dropAreaHeight', 'dropAreaWidth', 'enabled', 'enableRTL', 'extensionsAllow', 'extensionsDeny', 'fileSize', 'height', 'htmlAttributes', 'locale', 'multipleFilesSelection', 'pushFile', 'removeUrl', 'saveUrl', 'showBrowseButton', 'showFileDetails', 'showRoundedCorner', 'uploadName', 'width'], [], {'enableRTL': 'enableRtl'})
+@inject(Element)
+export class ejUploadbox extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
 
-        WidgetBase.prototype.createWidget = function createWidget(option) {
-          var _this = this;
 
-          this.allOption = this.getWidgetOptions(option.element);
-          if (!this.ejOptions && !this.isEditor) {
-            this.createTwoWays();
-          }
-          this.eWidget = this.widget = jQuery($(option.element))[this.controlName](this.allOption).data(this.controlName);
-          if (this.templateProcessor) {
-            this.templateProcessor.initWidgetDependancies();
-          }
-          if (this.isEditor) {
-            this.widget.model._change = function (evt) {
-              if ('eValue' in _this) {
-                _this[_this.util.getBindablePropertyName('value')] = evt.value;
-              }
-            };
-          }
-        };
+@customAttribute(`${constants.attributePrefix}waiting-popup`)
+@generateBindables('ejWaitingPopup', ['cssClass', 'htmlAttributes', 'showImage', 'showOnInit', 'target', 'appendTo', 'template', 'text'])
+@inject(Element)
+export class ejWaitingPopup extends WidgetBase {
+  constructor(element) {
+    super();
+    this.element = element;
+  }
+}
 
-        WidgetBase.prototype.bind = function bind(ctx, overrideCtx) {
-          this.parentCtx = overrideCtx;
-          if (this.widget && this.widget.element && this.isEditor) {
-            this.widget.option('value', this.eValue === undefined ? null : this.eValue);
-          }
-        };
-
-        WidgetBase.prototype.createTwoWays = function createTwoWays() {
-          var model = this.allOption;
-          var twoWays = this.twoWays;
-          var len = twoWays.length;
-          for (var i = 0; i < len; i++) {
-            var prop = twoWays[i];
-            ej.createObject(prop, this.addTwoways(prop), model);
-          }
-        };
-
-        WidgetBase.prototype.addTwoways = function addTwoways(prop) {
-          var model = this;
-          var value = firstValue;
-          return function (newVal, isApp) {
-            if (value === firstValue) {
-              var viewModelProp = model.util.getBindablePropertyName(prop);
-              value = model[viewModelProp];
-              if (value === undefined) {
-                value = this.defaults[prop];
-              }
-              return value;
-            }
-            if (newVal === undefined) {
-              return value;
-            }
-            if (value === newVal) {
-              return null;
-            }
-            value = newVal;
-            if (!isApp && model.util.hasValue(newVal)) {
-              var _viewModelProp = model.util.getBindablePropertyName(prop);
-              model[_viewModelProp] = newVal;
-            }
-            return null;
-          };
-        };
-
-        WidgetBase.prototype.getWidgetOptions = function getWidgetOptions(element) {
-          var propOptions = void 0;
-          if (this.ejOptions) {
-            propOptions = this.ejOptions;
-          } else {
-            propOptions = this.util.getOptions(this, this.controlProperties);
-          }
-          var eventOption = getEventOption(element);
-          if (this.hasChildProperty) {
-            this.getChildProperties(propOptions);
-          }
-          return Object.assign({}, propOptions, eventOption);
-        };
-
-        WidgetBase.prototype.getChildProperties = function getChildProperties(options) {
-          var PropertyName = this.childPropertyName;
-          var childCollection = this[PropertyName];
-          var len = childCollection.length;
-          if (len) {
-            options[PropertyName] = [];
-            var childProperties = childCollection[0].controlProperties;
-            for (var i = 0; i < len; i++) {
-              options[PropertyName].push(this.util.getOptions(childCollection[i], childProperties));
-            }
-          }
-        };
-
-        WidgetBase.prototype.attached = function attached() {
-          if (this.templateProcessor) {
-            this[this.childPropertyName].forEach(function (template) {
-              return template.setTemplates();
-            });
-          }
-          this.util = new Util();
-          this.createWidget({ element: this.element });
-        };
-
-        WidgetBase.prototype.unsubscribe = function unsubscribe() {
-          if (this.subscription) {
-            this.subscription.dispose();
-            this.subscription = null;
-          }
-        };
-
-        WidgetBase.prototype.unbind = function unbind() {
-          this.unsubscribe();
-        };
-
-        WidgetBase.prototype.propertyChanged = function propertyChanged(property, newValue, oldValue) {
-          var _this2 = this;
-
-          if (this.widget) {
-            var modelValue = void 0;
-            var prop = this.util.getControlPropertyName(this, property);
-            this.unsubscribe();
-            if (this.arrayObserver) {
-              this.arrayObserver.forEach(function (arrayProp) {
-                if (_this2[arrayProp] instanceof Array) {
-                  _this2.subscription = _this2.bindingInstance.collectionObserver(_this2[arrayProp]).subscribe(function (e) {
-                    _this2.update(e);
-                  });
-                }
-              });
-            }
-            if (prop) {
-              if (prop === 'widget') {
-                return;
-              } else if (prop !== 'options') {
-                modelValue = this.widget.model[prop];
-                var isTwoway = typeof modelValue === 'function';
-                if (isTwoway) {
-                  modelValue = modelValue();
-                }
-                if (modelValue !== newValue) {
-                  if (isTwoway) {
-                    newValue = this.addTwoways(prop);
-                  }
-                  this.widget.option(prop, newValue);
-                }
-              } else {
-                this.widget.option(newValue);
-              }
-            }
-          }
-        };
-
-        WidgetBase.prototype.update = function update(e) {
-          var _this3 = this;
-
-          var modelValue = void 0;
-          var newVal = void 0;
-          if (e.length) {
-            this.arrayObserver.forEach(function (arrayProp) {
-              if (_this3[arrayProp] instanceof Array) {
-                var prop = _this3.util.getControlPropertyName(_this3, arrayProp);
-                modelValue = _this3.widget.model[prop];
-                if (typeof modelValue === 'function') {
-                  modelValue = modelValue();
-                  newVal = modelValue;
-                  newVal = _this3.addTwoways(prop);
-                  _this3.widget.option(prop, newVal);
-                } else {
-                  _this3.widget.option(prop, modelValue);
-                }
-              }
-            });
-          }
-        };
-
-        WidgetBase.prototype.detached = function detached() {
-          if (this.templateProcessor) {
-            this.templateProcessor.clearTempalte();
-          }
-          if (this.widget) {
-            this.widget.destroy();
-          }
-        };
-
-        return WidgetBase;
-      }(), (_applyDecoratedDescriptor(_class.prototype, 'attached', [_dec], Object.getOwnPropertyDescriptor(_class.prototype, 'attached'), _class.prototype)), _class)));
-
-      _export('WidgetBase', WidgetBase);
-    }
-  };
-});
