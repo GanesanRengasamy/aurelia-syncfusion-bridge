@@ -1,13 +1,4 @@
 export class Template {
-    onChange(args) {
-      if (args.detail.value === 'Horizontal') {
-        $('#Schedule1').ejSchedule({ orientation: args.detail.value.toLowerCase(), cellWidth: '70px' });
-        $('#allDay').ejCheckBox({ enabled: false });
-      } else {
-        $('#Schedule1').ejSchedule({ orientation: args.detail.value.toLowerCase(), cellWidth: '' });
-        $('#allDay').ejCheckBox({ enabled: true });
-      }
-    }
     timeScale(args) {
       if (args.detail.isChecked) { $('#Schedule1').ejSchedule({ timeScale: {enable: false} }); $('#allDay').ejCheckBox({ enabled: false }); }
       else $('#Schedule1').ejSchedule({ timeScale: {enable: true} }); $('#allDay').ejCheckBox({ enabled: true });
@@ -26,7 +17,6 @@ export class Template {
     }
 
     constructor() {
-      this.orientation = ['Vertical', 'Horizontal'];
       this.timeCheck = false;
       this.allDayCheck = false;
       this.dateHeaderCheck = false;

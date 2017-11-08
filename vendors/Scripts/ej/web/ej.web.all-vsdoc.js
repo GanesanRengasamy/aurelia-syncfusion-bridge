@@ -6761,6 +6761,13 @@ exportDiagram:function(options){
 /// </summary>
 /// <param name="options"	type="Diagram.Options">options to export the desired region of diagram to the desired formats.</param>
 },
+exportImage:function(image, options){
+/// <summary>
+/// The exportImage method is used to export the image passed through argument with different image format and exporting options as like exportDiagram method.
+/// </summary>
+/// <param name="image"	type="string">pass the base64String image to be exported.</param>
+/// <param name="options"	type="Diagram.Options">options to export the desired region of diagram to the desired formats.</param>
+},
 findNode:function(name){
 /// <summary>
 /// Read a node/connector object by its name
@@ -6774,6 +6781,17 @@ fitToPage:function(mode, region, margin){
 /// <param name="mode"	type="ej.datavisualization.Diagram.FitMode">to set the mode of fit to command.</param>
 /// <param name="region"	type="ej.datavisualization.Diagram.Region">to set whether the region to be fit will be based on diagram elements or page settings.</param>
 /// <param name="margin"	type="any">to set the required margin</param>
+},
+getDiagramContent:function(styleSheets){
+/// <summary>
+/// Get the diagram DOM element as a string along with dependent stylesheets.
+/// </summary>
+/// <param name="styleSheets"	type="any[]">If its specified, will get the diagram DOM element along with specified stylesheet references. Please note that you have to define absolute path for local CSS file. If not specified, will get the diagram content along with all stylesheets loaded in the document.</param>
+},
+getDiagramBounds:function(){
+/// <summary>
+/// Get the bounds of the diagram.
+/// </summary>
 },
 group:function(){
 /// <summary>
@@ -6818,10 +6836,18 @@ paste:function(object, rename){
 /// <param name="object"	type="any">object to be added to diagram</param>
 /// <param name="rename"	type="boolean">to define whether the specified object is to be renamed or not</param>
 },
-print:function(){
+print:function(options){
 /// <summary>
 /// Print the diagram as image
 /// </summary>
+/// <param name="options"	type="Diagram.Options">options to print the desired region of diagram and print the diagram in multiple pages.</param>
+},
+printImage:function(image, options){
+/// <summary>
+/// The printImage method is used to print the image passed through argument with desired region and multiple pages as like print method.
+/// </summary>
+/// <param name="image"	type="string">pass the base64String image to be printed.</param>
+/// <param name="options"	type="Diagram.Options">options to export the desired region of diagram to the desired formats.</param>
 },
 redo:function(){
 /// <summary>
@@ -7081,6 +7107,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///Defines whether the label should be aligned within the connector boundaries
 ///<br/>boundaryConstraints-boolean	default-true
 ///<br/><br/>
+///Enables or disables the default behaviors of the label.
+///<br/>constraints-ej.datavisualization.Diagram.LabelConstraints|string	default-ej.datavisualization.Diagram.LabelConstraints.None
+///<br/><br/>
 ///Sets the fill color of the text area
 ///<br/>fillColor-string	default-transparent
 ///<br/><br/>
@@ -7092,6 +7121,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///<br/><br/>
 ///Defines the font size of the text
 ///<br/>fontSize-number	default-12
+///<br/><br/>
+///Sets the height of the label(the maximum value of label height and the connector height will be considered as label height)
+///<br/>height-number	default-0
 ///<br/><br/>
 ///Sets the horizontal alignment of the label.
 ///<br/>horizontalAlignment-ej.datavisualization.Diagram.HorizontalAlignment|string	default-ej.datavisualization.Diagram.HorizontalAlignment.Center
@@ -7585,6 +7617,15 @@ jQuery.fn.ejDiagram = function (options) {
 ///Sets the value is used to define the root node of the layout.
 ///<br/>root-string	default-30
 ///<br/><br/>
+///Defines how long edges should be, ideally. This will be the resting length for the springs.
+///<br/>springLength-number	default-100
+///<br/><br/>
+///Defines how long edges should be, ideally. This will be the resting length for the springs.
+///<br/>springFactor-number	default-0.442
+///<br/><br/>
+///Defines how long edges should be, ideally. This will be the resting length for the springs.
+///<br/>maxIteration-number	default-1000
+///<br/><br/>
 ///Defines the current culture of diagram
 ///<br/>locale-string	default-en-US
 ///<br/><br/>
@@ -7882,6 +7923,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///Sets the border width of the label
 ///<br/>borderWidth-number	default-0
 ///<br/><br/>
+///Enables or disables the default behaviors of the label.
+///<br/>constraints-ej.datavisualization.Diagram.LabelConstraints|string	default-ej.datavisualization.Diagram.LabelConstraints.None
+///<br/><br/>
 ///Sets the fill color of the text area
 ///<br/>fillColor-string	default-transparent
 ///<br/><br/>
@@ -7893,6 +7937,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///<br/><br/>
 ///Defines the font size of the text
 ///<br/>fontSize-number	default-12
+///<br/><br/>
+///Sets the height of the label(the maximum value of label height and the node height will be considered as label height)
+///<br/>height-number	default-0
 ///<br/><br/>
 ///Sets the horizontal alignment of the label.
 ///<br/>horizontalAlignment-ej.datavisualization.Diagram.HorizontalAlignment|string	default-ej.datavisualization.Diagram.HorizontalAlignment.Center
@@ -8137,6 +8184,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///Defines when the port should be visible.
 ///<br/>visibility-ej.datavisualization.Diagram.PortVisibility|string	default-ej.datavisualization.Diagram.PortVisibility.Default
 ///<br/><br/>
+///Sets the name of the node which contains this port.
+///<br/>parent-string	default-
+///<br/><br/>
 ///Sets the angle to which the node should be rotated
 ///<br/>rotateAngle-number	default-0
 ///<br/><br/>
@@ -8179,6 +8229,24 @@ jQuery.fn.ejDiagram = function (options) {
 ///Defines the collection of events that need to be appended with BPMN Sub-Process
 ///<br/>events-Array&lt;any&gt;	default-
 ///<br/><br/>
+///Sets the type of the event by which the sub-process will be triggered
+///<br/>event-ej.datavisualization.Diagram.BPMNEvents|string	default-ej.datavisualization.Diagram.BPMNEvents.Start
+///<br/><br/>
+///Sets the fraction/ratio(relative to parent) that defines the position of the event shape
+///<br/>offset-any	default-ej.datavisualization.Diagram.Point(0.5, 0.5)
+///<br/><br/>
+///Sets the name of the BPMN event shape.
+///<br/>name-string	default-
+///<br/><br/>
+///Defines the type of the event trigger
+///<br/>trigger-ej.datavisualization.Diagram.BPMNTriggers|string	default-ej.datavisualization.Diagram.BPMNTriggers.Message
+///<br/><br/>
+///An array of objects where each object represents a port
+///<br/>ports-Array&lt;any&gt;	default-[]
+///<br/><br/>
+///A collection of objects where each object represents a label
+///<br/>labels-Array&lt;any&gt;	default-[]
+///<br/><br/>
 ///Defines the loop type of a sub process.
 ///<br/>loop-ej.datavisualization.Diagram.BPMNLoops|string	default-ej.datavisualization.Diagram.BPMNLoops.None
 ///<br/><br/>
@@ -8205,6 +8273,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///<br/><br/>
 ///Sets the type of the BPMN task.
 ///<br/>type-ej.datavisualization.Diagram.BPMNTasks|string	default-ej.datavisualization.Diagram.BPMNTasks.None
+///<br/><br/>
+///Defines the collection of events that need to be appended with BPMN tasks
+///<br/>events-Array&lt;any&gt;	default-
 ///<br/><br/>
 ///Sets the id of svg/html templates. Applicable, if the node is HTML or native.
 ///<br/>templateId-string	default-
@@ -8329,6 +8400,12 @@ jQuery.fn.ejDiagram = function (options) {
 ///A collection of frequently used commands that will be added around the selector
 ///<br/>userHandles-Array&lt;any&gt;	default-[]
 ///<br/><br/>
+///Sets the horizontal alignment of the user handle
+///<br/>horizontalAlignment-ej.datavisualization.Diagram.HorizontalAlignment|string	default-ej.datavisualization.Diagram.HorizontalAlignment.Center
+///<br/><br/>
+///To set the margin of the user handle
+///<br/>margin-any	default-ej.datavisualization.Diagram.Margin()
+///<br/><br/>
 ///Defines the name of the user handle
 ///<br/>name-string	default-
 ///<br/><br/>
@@ -8340,6 +8417,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///<br/><br/>
 ///Defines whether the user handle should be added, when more than one element is selected
 ///<br/>enableMultiSelection-boolean	default-false
+///<br/><br/>
+///Sets the fraction/ratio(relative to node) that defines the position of the user handle
+///<br/>offset-any	default-ej.datavisualization.Diagram.point(0.5, 1)
 ///<br/><br/>
 ///Sets the stroke color of the user handle
 ///<br/>pathColor-string	default-transparent
@@ -8356,6 +8436,9 @@ jQuery.fn.ejDiagram = function (options) {
 ///Defines the interactive behaviors of the user handle
 ///<br/>tool-any	default-
 ///<br/><br/>
+///Sets the vertical alignment of the user handle
+///<br/>verticalAlignment-ej.datavisualization.Diagram.VerticalAlignment|string	default-ej.datavisualization.Diagram.VerticalAlignment.Center
+///<br/><br/>
 ///Defines the visibility of the user handle
 ///<br/>visible-boolean	default-true
 ///<br/><br/>
@@ -8364,6 +8447,12 @@ jQuery.fn.ejDiagram = function (options) {
 ///<br/><br/>
 ///Enables or disables tooltip of diagram
 ///<br/>showTooltip-boolean	default-true
+///<br/><br/>
+///Defines diagram serialization properties that would defines how the serialization content would be.
+///<br/>serializationSettings-SerializationSettings	default-
+///<br/><br/>
+///defines whether the default diagram properties can be serialized or not.
+///<br/>preventDefaultValues-boolean	default-false
 ///<br/><br/>
 ///Defines the properties of the both the horizontal and vertical gauge to measure the diagram area.
 ///<br/>rulerSettings-RulerSettings	default-
@@ -10154,6 +10243,24 @@ jQuery.fn.ejGantt = function (options) {
 ///<br/><br/>
 ///Gets or sets the working days of a week in a project.
 ///<br/>workWeek-Array&lt;any&gt;	default-[Monday,Tuesday,Wednesday,Thursday,Friday]
+///<br/><br/>
+///Specifies the view type for a project in the Gantt.
+///<br/>viewType-ej.Gantt.ViewType|string	default-ej.Gantt.ViewType.ProjectView
+///<br/><br/>
+///Specifies the data collection for grouping the resources in resource allocation view in Gantt.
+///<br/>groupCollection-Array&lt;any&gt;	default-[]
+///<br/><br/>
+///Default Value
+///<br/>resourceCollectionMapping-string	default-
+///<br/><br/>
+///Default Value
+///<br/>taskCollectionMapping-string	default-
+///<br/><br/>
+///Default Value
+///<br/>groupIdMapping-string	default-
+///<br/><br/>
+///Default Value
+///<br/>groupNameMapping-string	default-
 ///</summary>
 ///<param name="options" type="Object">
 ///The widget configuration options

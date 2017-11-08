@@ -11,9 +11,9 @@ export class CustomResourceDays {
       let steven = stevendays.model.selectedItems.sort();
 
       let nancyWorkweek = []; let michaelWorkweek = []; let stevenWorkweek = [];
-      for (i = 0; i < nancy.length; i++) { nancyWorkweek.push(weekDays[nancy[i]].toLowerCase()); }
-      for (i = 0; i < michael.length; i++) { michaelWorkweek.push(weekDays[michael[i]].toLowerCase()); }
-      for (i = 0; i < steven.length; i++) { stevenWorkweek.push(weekDays[steven[i]].toLowerCase()); }
+      for (let i = 0; i < nancy.length; i++) { nancyWorkweek.push(weekDays[nancy[i]].toLowerCase()); }
+      for (let i = 0; i < michael.length; i++) { michaelWorkweek.push(weekDays[michael[i]].toLowerCase()); }
+      for (let i = 0; i < steven.length; i++) { stevenWorkweek.push(weekDays[steven[i]].toLowerCase()); }
 
       let schObj = $('#Schedule1').data('ejSchedule');
       if (nancyWorkweek.length === 0) nancyWorkweek = schObj.model.workWeek;

@@ -8,44 +8,15 @@ export class ExternalDragAndDrop {
       let e = event.detail;
       if ($(e.target).parents('.e-schedule').length !== 0) {
         let scheduleObj = $('#Schedule1').data('ejSchedule');
-        let index = $($(e.target).context).hasClass('e-workcells') || $($(e.target).context).hasClass('e-alldaycells') ? $($(e.target).context).index() : $($(e.target).context).hasClass('e-alldaycells') ? $($(e.target).context).index() : 7 - ((parseInt($($(e.target).context).index() / 7) + 1) * 7 -  $($(e.target).context).index()) + ($($(e.target).context).parent().index() * 7); // eslint-disable-line radix
-        if (scheduleObj.model.orientation === 'horizontal') {
-          index = scheduleObj.model.showTimeScale ? scheduleObj.currentView() !== 'month' && !(scheduleObj._isCustomMonthView()) ? Math.floor(index / ((scheduleObj.model.endHour - scheduleObj.model.startHour) * 2)) : index : $(e.event.target).index();
-        }
-        let renderDate = (scheduleObj.model.orientation === 'horizontal' && scheduleObj.currentView() === 'month') ? scheduleObj.monthDays : scheduleObj.model.orientation === 'vertical' ? scheduleObj.dateRender : scheduleObj._dateRender;
-        renderDate = scheduleObj.model.orientation === 'horizontal' && scheduleObj.currentView() === 'customview' && scheduleObj._dateRender.length <= 7 ? scheduleObj._dateRender : renderDate;
-        let curDate = new Date(renderDate[index]);
-        let cur_StartTime;
-        let cur_EndTime;
-        let _target = $($(e.target).context);
-        if ($(_target).hasClass('e-workcells') && (scheduleObj.model.timeScale.enable) && scheduleObj.currentView() !== 'month' && !(scheduleObj._isCustomMonthView())) {
-          let time = scheduleObj.model.orientation === 'vertical' ? scheduleObj.model.startHour + ($(e.event.target).parent().index() / 2) : scheduleObj.model.startHour + (($(e.event.target).index() - (((scheduleObj.model.endHour - scheduleObj.model.startHour) * 2) * index)) / 2);
-          let timemin = time.toString().split('.');
-          cur_StartTime = new Date(curDate).setHours(parseInt(timemin[0]), parseInt(timemin[1]) === 5 ? 30 : 0);  // eslint-disable-line radix
-          let min = (parseInt(new Date(cur_StartTime).getHours()) === 23 && parseInt(new Date(cur_StartTime).getMinutes()) === 30) ? new Date(cur_StartTime).getMinutes() + 29 : new Date(cur_StartTime).getMinutes() + 30; // eslint-disable-line radix
-          cur_EndTime = new Date(new Date(cur_StartTime).setMinutes(min));
-        }else if ($(_target).hasClass('e-workcells') && scheduleObj.model.orientation === 'horizontal' && scheduleObj.currentView() === 'month') {
-          cur_StartTime = new Date(new Date(curDate).setHours(0, 0));
-          cur_EndTime = new Date(new Date(curDate).setHours(23, 59));
-        }else {
-          cur_StartTime = new Date(new Date(curDate).setHours(0, 0));
-          cur_EndTime = new Date(new Date(curDate).setHours(23, 59));
-          scheduleObj._appointmentAddWindow.find('.allday').ejCheckBox({ checked: true });
-        }
-        let StartTime = new Date(cur_StartTime);
-        let endTime = cur_EndTime;
-            // To find the resource details
-        let resource = scheduleObj._getResourceValue($($(e.target).context));
-
-            //custom appointmnt window
-
-        $('#subject').val(e.droppedElementData.text);
-        $('#customdescription').val(e.droppedElementData.text);
-        $('#StartTime').ejDateTimePicker({ value: new Date(StartTime) });
-        $('#EndTime').ejDateTimePicker({ value: new Date(endTime) });
-        $('#resource').val(resource.text);
-        $('#ownerId').val(resource.id);
-        $('#customWindow').ejDialog('open');
+        let result = scheduleObj.getSlotByElement($(e.target));
+        // set value to custom appointmnt window fields
+        $("#subject").val(e.droppedElementData.text);
+        $("#customdescription").val(e.droppedElementData.text);
+        $("#StartTime").ejDateTimePicker({ value: new Date(result.startTime) });
+        $("#EndTime").ejDateTimePicker({ value: new Date(result.endTime) });
+        $("#resource").val(result.resources.text);
+        $("#ownerId").val(result.resources.id);
+        $("#customWindow").ejDialog("open");
       }
     }
     save() {

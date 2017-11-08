@@ -24,7 +24,7 @@ export class Api {
       this.spellcheck.validate();
     }
     addIgnoreWords(args) {
-      this.spellcheck.option('ignoreWords', !ej.isNullOrUndefined(args.detail.model.value()) ? args.detail.model.value().split(',') : []);
+      this.spellcheck.option('ignoreWords', !ej.isNullOrUndefined(args.detail.model.value) ? args.detail.model.value.split(',') : []);
     }
     changeErrorHighlight(args) {
       this.spellcheck.option('misspellWordCss', args.detail.value);

@@ -2,7 +2,7 @@
     margin: 0 auto;
 }
 
-.frame {
+#frame {
     border-radius: 10px 10px 10px 10px;
     height: 250px;
     width: 360px;
@@ -10,7 +10,7 @@
     padding: 40px;
 }
 
-    .frame .e-slider-wrap {
+    #frame .e-slider-wrap {
         margin: 15px 35px;
     }
 
